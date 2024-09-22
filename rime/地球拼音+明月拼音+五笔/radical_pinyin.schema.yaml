@@ -1,0 +1,69 @@
+# Rime schema settings
+# encoding: utf-8
+# Copyright (C) Mirtle <mirtle.cn@outlook.com>
+# License: CC BY-SA 4.0 DEED (https://creativecommons.org/licenses/by-sa/4.0/)
+
+schema:
+  schema_id: radical_pinyin
+  name: "偏旁部件拆字"
+  version: "1.02"
+  author: Mirtle
+  description: |
+    用拼音按顺序拼出偏旁部件，以输入汉字。
+    码表：開放詞典 / henrysting / Mirtle
+    注音、校对、方案：Mirtle
+    报错：<https://github.com/mirtlecn/rime_radical_pinyin>
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - table_translator
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz;"
+  delimiter: " '"
+  algebra:
+    # 根据当前所用拼音方案选择 __include 的值
+    __include: algebra_pinyin           # 全拼
+    # __include: algebra_double_pinyin  # 自然码双拼
+    # __include: algebra_flypy          # 小鹤双拼
+    # __include: algebra_mspy           # 微软双拼
+    # __include: algebra_sogou          # 搜狗双拼
+    # __include: algebra_abc            # 智能ABC双拼
+    # __include: algebra_ziguang        # 紫光双拼
+
+translator:
+  dictionary: radical_pinyin
+  enable_user_dict: false
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+
+algebra_pinyin:
+  - xform/'//
+  - derive/^([nl])ue$/$1ve/
+  - derive/'([nl])ue$/'$1ve/
+  - derive/^([jqxy])u/$1v/
+  - derive/'([jqxy])u/'$1v/
