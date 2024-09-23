@@ -1,6 +1,6 @@
 --- 过滤器：单字在先
 local function single_char_first_filter(input, env)
-  on = env.engine.context:get_option("single_char")
+  on = env.engine.context:get_option("single_char_first")
   local l = {}
   for cand in input:iter() do
     if not on or utf8.len(cand.text) == 1 then
