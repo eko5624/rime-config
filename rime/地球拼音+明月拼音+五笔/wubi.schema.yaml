@@ -24,6 +24,13 @@ switches:
   - name: extend_charset # 0为CJK基本字符集，1为CJK扩展字符集
     states: [ 常, 扩 ]
     reset: 1
+  # 字符选单功能已失效 https://github.com/rime/librime/issues/929
+  #- options: [ "utf8", "gbk", "gb2312" ] # 字符集选单
+  #  states:
+  #    - UTF-8
+  #    - GBK
+  #    - GB2312
+  #  reset: 1 # 系统默认UTF8，改为GBK
   - name: charset_comment
     states: [码区关, 码区开]
     reset: 1
@@ -70,6 +77,10 @@ engine:
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@*single_char_first             # 单字优先
+    # 字符选单功能已失效 https://github.com/rime/librime/issues/929
+    # - charset_filter@gbk                        # GBK 过滤
+    # - charset_filter@gb2312                     # GB2312 过滤
+    # - single_char_filter                        # 单字优先
     - uniquifier                                # 去重
 
 # Lua 配置：农历的触发关键字
