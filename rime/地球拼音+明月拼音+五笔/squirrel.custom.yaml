@@ -13,6 +13,13 @@
 # 一般字体不需要指定，指定后的字体可能会出现候选框被拉伸成过高的情况，因为不同字体的纵向高度不同，默认字体适配最好
 
 patch:
+  # 特定App默认中/英文输入
+  app_options:
+    com.apple.Spotlight: # 聚焦搜索
+      ascii_mode: true             # true默认英文,false默认中文
+    com.apple.Terminal: # 终端
+      ascii_mode: true
+
   style:
     # 选择皮肤，亮色与暗色主题
     color_scheme: mint_light_blue
@@ -59,13 +66,13 @@ patch:
     # candidate_format: '%c. %@'
 
     # 全局字体及大小
-    font_face: 'PingFangSC'
+    font_face: 'SimSun-ExtB'
     font_point: 16
     # 序号字体及大小（建议使用「等宽字体」）
     label_font_face: 'Lucida Grande'
     label_font_point: 16
     # 注字体及大小
-    comment_font_face: 'PingFangSC'
+    comment_font_face: 'SimSun-ExtB'
     comment_font_point: 14
 
 

@@ -9,6 +9,7 @@ patch:
     - schema: wubi                  # 五笔86
     - schema: terra_pinyin          # 地球拼音
     - schema: luna_pinyin_simp      # 明月拼音
+    - schema: pinyin                # 简体拼音
 
   switcher:
     caption: 〈菜单项〉

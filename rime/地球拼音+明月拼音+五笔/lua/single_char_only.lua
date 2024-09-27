@@ -1,4 +1,4 @@
---- 过滤器：仅单字
+--- 过滤器：单字
 local function single_char_only_filter(input, env)
   on = env.engine.context:get_option("single_char_only")
   for cand in input:iter() do

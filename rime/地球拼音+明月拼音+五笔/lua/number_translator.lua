@@ -1,6 +1,6 @@
 ﻿-- 来源 https://github.com/yanhuacuo/98wubi-tables > http://98wb.ysepan.com/
 -- 数字、金额大写
--- 触发前缀默认为 recognizer/patterns/rmb 的第 2 个字符，即 R
+-- 触发前缀默认为 recognizer/patterns/rmb 的第 2 个字符，即 =
 
 local function splitNumPart(str)
     local part = {}

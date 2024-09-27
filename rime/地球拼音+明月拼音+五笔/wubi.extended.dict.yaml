@@ -2,6 +2,7 @@
 # encoding: utf-8
 # by: 空山明月
 # date: 2024-05-27
+# 添加cjk超大字符集
 
 ---
 name: wubi.extended
@@ -9,6 +10,20 @@ version: "2.0"
 sort: by_weight
 import_tables:
   - wubi
+  - cjk_dicts/cjk  
+  - cjk_dicts/cjk_a
+  - cjk_dicts/cjk_b
+  - cjk_dicts/cjk_c
+  - cjk_dicts/cjk_d
+  - cjk_dicts/cjk_e
+  - cjk_dicts/cjk_f
+  - cjk_dicts/cjk_g
+  - cjk_dicts/cjk_h
+  - cjk_dicts/cjk_compat
+  - cjk_dicts/cjk_compatsupp 
+  - cjk_dicts/cjk_kangxiradical
+  - cjk_dicts/cjk_radicalsupp
+  - cjk_dicts/cjk_stroke
 columns:
   - text
   - code

@@ -8,8 +8,6 @@ schema:
     - 创始人 王永民先生
   description: |
     五笔字形 86
-  dependencies:
-    - luna_pinyin        # 明月拼音
 
 switches:
   - name: emoji
@@ -23,14 +21,14 @@ switches:
     reset: 0
   - name: extend_charset # 0为CJK基本字符集，1为CJK扩展字符集
     states: [ 常, 扩 ]
-    reset: 1   
+    reset: 1
   - name: charset_comment
     states: [码区关, 码区开]
     reset: 1
   - name: single_char_only
     states: [词, 单]
     reset: 0
-  # - name: single_char_first
+  #- name: single_char_first
   #  states: [词优先, 字优先]
   #  reset: 0
   - name: full_shape
@@ -54,26 +52,29 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
+    - affix_segmentor@radical_lookup
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
+    - reverse_lookup_translator                 # 拼音返查
     - script_translator
+    - script_translator@radical_lookup
     - table_translator
     - lua_translator@*date_translator           # 时间、日期、星期
     - lua_translator@*lunar                     # 农历
     - lua_translator@*unicode                   # Unicode
     - lua_translator@*number_translator         # 数字、金额大写
     - lua_translator@*calculator                # 计算器
-    - reverse_lookup_translator                 # 反查地球拼音
   filters:
     - simplifier@emoji                          # Emoji
     - simplifier@transcription_cc               # 简繁切换
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
-    # - lua_filter@*single_char_first             # 单字优先
-    - lua_filter@*single_char_only              # 单字模式
+    - lua_filter@*single_char_first             # 仅单字
+    #- lua_filter@*single_char_first             # 单字优先
+    - reverse_lookup_filter@radical_reverse_lookup
     - uniquifier                                # 去重
 
 # Lua 配置：农历的触发关键字
@@ -92,7 +93,7 @@ speller:
 
 translator:
   dictionary: wubi.extended             # 翻译器将调取此字典文件
-  enable_charset_filter: true          # 开启字符集过滤
+  enable_charset_filter: true           # 开启字符集过滤
   enable_completion: false              # 是否显示编码未输入完整的词条
 
   enable_sentence: false                # 句子输入模式
@@ -115,16 +116,59 @@ transcription_cc:
   # opencc_config: t2hk.json            # 繁 -> 香港
   # opencc_config: s2tw.json            # 简 -> 臺灣標準
   # opencc_config: s2twp.json           # 簡 -> 臺灣片語
-  excluded_types: [ reverse_lookup ]  # 不转换反查（两分拼字）的内容
-  
-# 反查设置
+  #excluded_types: [ reverse_lookup ]  # 不转换反查（两分拼字）的内容
+
 reverse_lookup:
-  dictionary: luna_pinyin
-  enable_user_dict: false
-  enable_completion: true
-  prefix: "z" # 反查前缀（反查时前缀会消失影响打英文所以设定为两个字母，或可改成一个非字母符号），与 recognizer/patterns/rime_mint 匹配
+  dictionary: pinyin       # 反查使用的拼音词库
+  prefix: "z"              # 反查前缀，以它为起点
   suffix: "'"              # 反查后缀，以它为结点
   tips: [拼音]              # 反查时的提示信息
+
+radical_lookup:
+  tag: radical
+  dictionary: radical_pinyin
+  enable_completion: false
+  enable_sentence: false
+  prefix: 'vv'
+  tips: 〔拆字〕
+  preedit_format:
+    - xform/([nljqxy])v/$1ü/
+  comment_format:
+    - xform/([nljqxy])v/$1ü/
+    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
+    - xform ([aeo])([iuo])([1234]) $1$3$2
+    - xform a1 ā
+    - xform a2 á
+    - xform a3 ǎ
+    - xform a4 à
+    - xform e1 ē
+    - xform e2 é
+    - xform e3 ě
+    - xform e4 è
+    - xform o1 ō
+    - xform o2 ó
+    - xform o3 ǒ
+    - xform o4 ò
+    - xform i1 ī
+    - xform i2 í
+    - xform i3 ǐ
+    - xform i4 ì
+    - xform u1 ū
+    - xform u2 ú
+    - xform u3 ǔ
+    - xform u4 ù
+    - xform v1 ǖ
+    - xform v2 ǘ
+    - xform v3 ǚ
+    - xform v4 ǜ
+    - xform/([nljqxy])v/$1ü/
+    - xform/eh[0-5]?/ê/
+    - xform/([a-z]+)[0-5]/$1/
+
+radical_reverse_lookup:
+  tags: [radical]
+  overwrite_comment: true
+  dictionary: terra_pinyin
 
 # 标点符号
 # punctuator 下面有三个子项：
@@ -161,7 +205,8 @@ recognizer:
   import_preset: default  # 从 default.yaml 继承通用的
   patterns:  # 再增加方案专有的：
     punct: '^/([0-9]0?|[A-Za-z]+)$'
-    reverse_lookup: "^z[a-z]*'?$"       # 反查词条的正则
+    reverse_lookup: "^z[a-z]*'?$" # 反查词条的正则
+    radical: "vv[a-z]*'?$"
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
     rmb: "^R[0-9]+[.]?[0-9]*"           # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number_translator，数字金额大写
     gregorian_to_lunar: "^N[0-9]{1,8}"  # 脚本将自动获取第 2 个字符 N 作为触发前缀，响应 lua_translator@*lunar，公历转农历，输入 N20240115 得到「二〇二三年腊月初五」

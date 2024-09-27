@@ -48,8 +48,7 @@ local function is_charset(s)
 end
 
 local function is_cjk_ext(c)
-   return is_charset("ExtA")(c)
-      or is_charset("ExtB")(c)
+   return is_charset("ExtB")(c)
       or is_charset("ExtC")(c)
       or is_charset("ExtD")(c)
       or is_charset("ExtE")(c)
