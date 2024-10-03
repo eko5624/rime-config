@@ -6,10 +6,10 @@
 -- --=========================================================关键字修改--==========================================================
 -- --==========================================================--==========================================================
 rv_var={ week_var="week",date_var="date",nl_var="nl",time_var="time",jq_var="jq"}	-- 编码关键字修改
+single_keyword="single_char"	-- 单字过滤switcher参数
 -- --==========================================================--==========================================================
 -- --==========================================================--==========================================================
--- 拆分数据匹配
---calculator = require("calculator")
+calculator = require("calculator")
 require("lunarDate")
 require("lunarJq")
 require("lunarGz")
@@ -387,6 +387,17 @@ function QueryLunar_translator(input, seg)	--输入一个或一个以上等于�
 	end
 end
 
+--- 单字模式
+function single_char(input, env)
+	local b = env.engine.context:get_option(single_keyword)
+	local input_text = env.engine.context.input
+	for cand in input:iter() do
+		if (not b or utf8.len(cand.text) == 1 or table.vIn(rv_var, input_text) or input_text:find("^z") or input_text:find("^[%u%p]")) then
+			yield(cand)
+		end
+	end
+end
+
 -- 星期
 function week_translator(input, seg)
 	local keyword = rv_var["week_var"]
@@ -416,8 +427,14 @@ function Jq_translator(input, seg)
 	end
 end
 
+-------------------------------------------------------------
+--[[
+	hotstring.txt文件格式：
+			编码+tab+内容+tab+注解
+		或
+			编码+tab+内容
+--]]
 ----------------------------------------------------------------
-
 function number_translator(input, seg)
 	local str,num,numberPart
 	if string.match(input,"^(%u+%d+)(%.?)(%d*)$")~=nil then
@@ -522,6 +539,8 @@ function time_date(input, seg, env)
 	week_translator(input, seg)
 	lunar_translator(input, seg)
 	Jq_translator(input, seg)
+	-- longstring_translator(input, seg)
 	QueryLunar_translator(input, seg)
+	-- number_translator(input, seg)
 	str2datetime_translator(input, seg)
 end

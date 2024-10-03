@@ -1,14 +1,16 @@
-# Rime schema settings
+# Rime settings
 # encoding: utf-8
+# by: 空山明月
+# date: 2024-05-27
+
 schema:
   schema_id: wubi
-  name: "五笔86"
-  version: "1.0"
+  name: "86五笔"
+  version: "2.1"
   author:
-    - 创始人 王永民先生
+    - 发明人 王永民
   description: |
-    五笔字形 86
-
+    敲 z 键进入拼音反查
 switches:
   - name: emoji
     states: [ 💀, 😄 ]
@@ -25,12 +27,9 @@ switches:
   - name: charset_comment
     states: [码区关, 码区开]
     reset: 1
-  - name: single_char_only
+  - name: single_char
     states: [词, 单]
     reset: 0
-  #- name: single_char_first
-  #  states: [词优先, 字优先]
-  #  reset: 0
   - name: full_shape
     states: [ 半, 全 ]
     reset: 0
@@ -52,28 +51,45 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
-    - affix_segmentor@radical_lookup
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
-    - reverse_lookup_translator                 # 拼音返查
-    - script_translator
-    - script_translator@radical_lookup
+    - reverse_lookup_translator
     - table_translator
-    - lua_translator@*unicode                   # Unicode
+    - history_translator@history
     - lua_translator@time_date
-    - lua_translator@*calculator                # 计算器
+    - lua_translator@calculator
+    - lua_translator@*unicode                   # Unicode
   filters:
     - simplifier@emoji                          # Emoji
     - simplifier@tradition                      # 简繁切换
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
-    - lua_filter@*single_char_only              # 仅单字
-    #- lua_filter@*single_char_first             # 单字优先
-    - reverse_lookup_filter@radical_reverse_lookup
-    - uniquifier                                # 去重
+    - lua_filter@single_char
+    - uniquifier
+
+speller:
+#  max_code_length: 4                   # 设置输入码的最大长度
+#  auto_select: true                    # 四码唯一时，自动上屏
+#  auto_clear: max_length                # 空码时自动清空
+
+translator:
+  dictionary: wubi.extended
+  db_class: tabledb
+  initial_quality: 100000
+  enable_charset_filter: false
+  enable_sentence: false                # 开启句子输入模式
+  enable_user_dict: true                # 开启用户词典
+  enable_encoder: true                  # 开启自动造词
+  encode_commit_history: true           # 是否对已上屏词自动成词（仅 table_translator 有效）
+  max_phrase_length: 4                  # 设置候选词的最大长度
+  enable_completion: false              # 是否显示编码未输入完整的词条
+  preedit_format:                       # 上屏码自定义
+#    - xform/.+//
+  comment_format:                       # 提示码自定义
+    - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
 
 tradition:
   #  opencc_config: s2t.json  # 简 -> 繁
@@ -90,78 +106,17 @@ emoji:
   opencc_config: emoji.json
   inherit_comment: false  # 在 corrector.lua 及反查中，emoji 返回空注释
 
-speller:
-#  max_code_length: 4                   # 四码上屏
-#  auto_select: true                    # 四码唯一时，自动上屏
-  auto_clear: max_length                # 空码时自动清空
-
-translator:
-  dictionary: wubi.extended             # 翻译器将调取此字典文件
-  enable_charset_filter: false          # 开启字符集过滤
-  enable_completion: false              # 是否显示编码未输入完整的词条
-
-  enable_sentence: false                # 句子输入模式
-  enable_user_dict: false               # 是否开启用户词典（用户词典记录动态字词频，用户词）
-  enable_encoder: false
-
-  encode_commit_history: false          # 是否对已上屏词自动成词（仅 table_translator 有效）
-  preedit_format:                       # 上屏码自定义
-#    - xform/.+//
-  comment_format:                       # 提示码自定义
-    - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
+history:
+  input: z
+  size: 1
+  initial_quality: 1
 
 reverse_lookup:
   dictionary: pinyin       # 反查使用的拼音词库
   prefix: "z"              # 反查前缀，以它为起点
   suffix: "'"              # 反查后缀，以它为结点
   tips: [拼音]              # 反查时的提示信息
-
-radical_lookup:
-  tag: radical
-  dictionary: radical_pinyin
-  enable_completion: false
-  enable_sentence: false
-  prefix: '`'
-  tips: 〔拆字〕
-  preedit_format:
-    - xform/([nljqxy])v/$1ü/
-  comment_format:
-    - xform/([nljqxy])v/$1ü/
-    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
-    - xform ([aeo])([iuo])([1234]) $1$3$2
-    - xform a1 ā
-    - xform a2 á
-    - xform a3 ǎ
-    - xform a4 à
-    - xform e1 ē
-    - xform e2 é
-    - xform e3 ě
-    - xform e4 è
-    - xform o1 ō
-    - xform o2 ó
-    - xform o3 ǒ
-    - xform o4 ò
-    - xform i1 ī
-    - xform i2 í
-    - xform i3 ǐ
-    - xform i4 ì
-    - xform u1 ū
-    - xform u2 ú
-    - xform u3 ǔ
-    - xform u4 ù
-    - xform v1 ǖ
-    - xform v2 ǘ
-    - xform v3 ǚ
-    - xform v4 ǜ
-    - xform/([nljqxy])v/$1ü/
-    - xform/eh[0-5]?/ê/
-    - xform/([a-z]+)[0-5]/$1/
-
-radical_reverse_lookup:
-  tags: [radical]
-  overwrite_comment: true
-  dictionary: terra_pinyin
-
+  
 # 标点符号
 # punctuator 下面有三个子项：
 #   full_shape 全角标点映射

@@ -602,8 +602,8 @@ local function calculator(input, seg)
   if result == nil then return end
   
   result = serialize(result)
- -- yield(Candidate("number", seg.start, seg._end, result, "〈计算结果〉"))
- -- yield(Candidate("number", seg.start, seg._end, exp.." = "..result, "等式"))
+  -- yield(Candidate("number", seg.start, seg._end, result, "〈计算结果〉"))
+  -- yield(Candidate("number", seg.start, seg._end, exp.." = "..result, "等式"))
 
 
   if string.match(result, "^[%+%-]?%d*%.?%d*$") then -- sadly, lua does not support regex like {0,4}
