@@ -5,8 +5,8 @@
 patch:
   # 菜单中可选的方案列表，可根据喜好自行调整顺序，第一位为默认方案
   schema_list:
-  - {schema: wubi}
-  - {schema: wubi_pinyin}
+  - {schema: wubi86}
+  - {schema: wubi98}
   - {schema: luna_pinyin_simp}
 
   switcher:
@@ -28,7 +28,7 @@ patch:
 
   key_binder:
     bindings:
-      - { when: always, accept: Control+1, select: .next }              # 切换下个方案
+      - { when: always, accept: Control+1, select: .next }              # 切换最近使用方案
       - { when: always, accept: Control+2, toggle: ascii_mode }         # 切换 中文/英文
       - { when: always, accept: Control+3, toggle: full_shape }         # 切换 全角/半角
       - { when: always, accept: Control+4, toggle: simplification }     # 切换 简体/繁体
