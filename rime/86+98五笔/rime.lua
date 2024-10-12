@@ -1,11 +1,7 @@
-﻿----------------------------------------
------- wirting by 98wubi-------
------- http://98wb.ys168.com/--------
-----------------------------------------
--- Method example-------------------
---  translators:
---      - "lua_translator@time_date"
------------------------------------
+﻿--[
+--modify: 空山明月
+--date: 2024-04-03	
+--]
 
 -- --=========================================================关键字修改--==========================================================
 -- --==========================================================--==========================================================
@@ -14,12 +10,13 @@ trad_keyword="zh_trad"		-- 简繁切换switcher参数
 single_keyword="single_char"	-- 单字过滤switcher参数
 spelling_keyword="new_spelling"	-- 拆分switcher参数
 GB2312_keyword="GB2312"	-- GB2312开关switcher参数
-candidate_keywords={{"简繁","簡繁",trad_keyword},{"拆分","拆分",spelling_keyword},{"GB2312过滤","GB2312過濾",GB2312_keyword},{"单字模式","單字模式",single_keyword}} 	-- 活动开关项关键字
+emoji_keyword="show_es"	-- GB2312开关switcher参数
+candidate_keywords={{"Emoji😀","Emoji😀",emoji_keyword},{"简繁","簡繁",trad_keyword},{"拆分","拆分",spelling_keyword},{"GB2312过滤","GB2312過濾",GB2312_keyword},{"单字模式","單字模式",single_keyword}} 	-- 活动开关项关键字
 -- --==========================================================--==========================================================
 -- --==========================================================--==========================================================
 -- 拆分数据匹配
 new_spelling = require("new_spelling")
--- 监控并记录精准造词至文件等，必须配置lua_processor@submit_text_processor
+-- 监控并记录自造词至文件等，必须配置lua_processor@submit_text_processor
 submit_text_processor = require("Submit_text")
 helper = require("helper")
 switch_processor = require("switcher")
@@ -29,7 +26,6 @@ require("lunarJq")
 require("lunarGz")
 require("number")
 -- --=========================================================;获取Rime程序目录/用户目录/同步目录路径===========================
--- --==========================================================98资源库http://98wb.ys168.com/===============================
 function GetRimeAllDir()
 	local sync_dir=rime_api.get_sync_dir()         -- 获取同步资料目录
 	-- local rime_version=rime_api.get_rime_version()         -- 获取rime版本号macos无效
@@ -87,8 +83,8 @@ elseif rime_dirs.user_data_dir==debug_path then
 else
 	RimeDefalutDir=debug_path
 end
--- --=========================================================精准造词文件存放路径===========================================================
--- 精准造词文件存放路径
+-- --=========================================================自造词文件存放路径===========================================================
+-- 自造词文件存放路径
 userphrasepath=""
 if RimeDefalutDir~="" then
 	if RimeDefalutDir:find("\\") then
@@ -253,9 +249,17 @@ local format_Time= function()
 	if os.date("%p")=="AM" then return "上午" else return "下午" end
 end
 
+-- 星期格式转换
+-- modify by: 空山明月
 local format_week= function(n)
 	local obj={"日","一","二","三","四","五","六"}
-	if tonumber(n)==1 then return "周"..obj[os.date("%w")+1] else return "星期"..obj[os.date("%w")+1] end
+	if tonumber(n)==1 then 
+		return "周"..obj[os.date("%w")+1] 
+	elseif tonumber(n)==2 then 
+		return "星期"..obj[os.date("%w")+1] 
+	else
+		return "礼拜"..obj[os.date("%w")+1] 
+	end
 end
 ------------------------lua内置日期变量参考-------------------------------------
 --[[
@@ -486,16 +490,20 @@ end
 function date_translator(input, seg)
 	local keyword = rv_var["date_var"]
 	if (input == keyword) then
-		 local dates = {
-			os.date("%Y-%m-%d")
-			,os.date("%Y-%m-%d 第%W周")
-			,os.date("%Y年%m月%d日")
-			,CnDate_translator(os.date("%Y%m%d"))
-			,os.date("%Y-%m-%d｜%j/" .. IsLeap(os.date("%Y")))
+		local dates = {
+			os.date("%Y年%m月%d日")
+			,os.date("%Y-%m-%d")
+			,os.date("%Y%m%d")
+			-- ,os.date("%Y.%m.%d")
+			-- ,os.date("%Y%m%d")
+			-- ,os.date("%Y-%m-%d 第%W周")
+			,date2strcn(os.date("%Y.%m.%d"))
+			-- ,CnDate_translator(os.date("%Y%m%d"))
+			-- ,os.date("%Y-%m-%d｜%j/" .. IsLeap(os.date("%Y")))
 			}
 		-- Candidate(type, start, end, text, comment)
 		for i =1,#dates do
-			 yield(Candidate(keyword, seg.start, seg._end, dates[i], border_began .. "日期" .. border_end))
+			yield(Candidate(keyword, seg.start, seg._end, dates[i], "〈日期〉"))
 		end
 		dates = nil
 	end
@@ -506,11 +514,12 @@ function time_translator(input, seg)
 	local keyword = rv_var["time_var"]
 	if (input == keyword) then
 		local times = {
-			os.date("%Y-%m-%d %H:%M:%S")
-			,os.date("%Y-%m-%d " .. format_Time() .. "%I:%M")
+			os.date("%Y年%m月%d日 %H:%M:%S")
+			,os.date("%H").."时"..os.date("%M").."分"..os.date("%S").."秒"
+			,num2strcn(tostring(os.date("%H"))).."时"..num2strcn(tostring(os.date("%M"))).."分"..num2strcn(tostring(os.date("%S"))).."秒"
 			}
 		for i =1,#times do
-			yield(Candidate(keyword, seg.start, seg._end, times[i], border_began .. "时间" .. border_end))
+			yield(Candidate(keyword, seg.start, seg._end, times[i], "〈时间〉"))
 		end
 		times = nil
 	end
@@ -521,12 +530,12 @@ function lunar_translator(input, seg)
 	local keyword = rv_var["nl_var"]
 	if (input == keyword) then
 		local lunar = {
-				{Date2LunarDate(os.date("%Y%m%d")) .. JQtest(os.date("%Y%m%d")),border_began .. "公历⇉农历" .. border_end}
-				,{Date2LunarDate(os.date("%Y%m%d")) .. GetLunarSichen(os.date("%H"),1),border_began .. "公历⇉农历" .. border_end}
-				,{lunarJzl(os.date("%Y%m%d%H")),border_began .. "公历⇉干支" .. border_end}
-				,{LunarDate2Date(os.date("%Y%m%d"),0),border_began .. "农历⇉公历" .. border_end}
+				{Date2LunarDate(os.date("%Y%m%d")) .. JQtest(os.date("%Y%m%d")),"〈公历⇉农历〉"}
+				,{Date2LunarDate(os.date("%Y%m%d")) .. GetLunarSichen(os.date("%H"),1),"〈公历⇉农历〉"}
+				,{lunarJzl(os.date("%Y%m%d%H")),"〈公历⇉干支〉"}
+				,{LunarDate2Date(os.date("%Y%m%d"),0),"〈农历⇉公历〉"}
 			}
-		local leapDate={LunarDate2Date(os.date("%Y%m%d"),1).."（闰）",border_began .. "农历⇉公历" .. border_end}
+		local leapDate={LunarDate2Date(os.date("%Y%m%d"),1).."（闰）","〈农历⇉公历〉"}
 		if string.match(leapDate[1],"^(%d+)")~=nil then table.insert(lunar,leapDate) end
 		for i =1,#lunar do
 			yield(Candidate(keyword, seg.start, seg._end, lunar[i][1], lunar[i][2]))
@@ -546,13 +555,13 @@ local function QueryLunarInfo(date)
 		LunarDate=Date2LunarDate(str)  LunarGz=lunarJzl(str)  DateTime=LunarDate2Date(str,0)
 		if LunarGz~=nil then
 			result={
-				{CnDate_translator(string.sub(str,1,8)),border_began .. "中文日期" .. border_end}
-				,{LunarDate,border_began .. "公历⇉农历" .. border_end}
-				,{LunarGz,border_began .. "公历⇉干支" .. border_end}
+				{CnDate_translator(string.sub(str,1,8)),"〈中文日期〉"}
+				,{LunarDate,"〈公历⇉农历〉"}
+				,{LunarGz,"〈公历⇉干支〉"}
 			}
 			if tonumber(string.sub(str,7,8))<31 then
-				table.insert(result,{DateTime,border_began .. "农历⇉公历" .. border_end})
-				local leapDate={LunarDate2Date(str,1).."（闰）",border_began .. "农历⇉公历" .. border_end}
+				table.insert(result,{DateTime,"〈农历⇉公历〉"})
+				local leapDate={LunarDate2Date(str,1).."（闰）","〈农历⇉公历〉"}
 				if string.match(leapDate[1],"^(%d+)")~=nil then table.insert(result,leapDate) end
 			end
 		end
@@ -594,11 +603,12 @@ function week_translator(input, seg)
 	-- local luapath=debug.getinfo(1,"S").source:sub(2):sub(1,-9)   -- luapath.."lua\\user.txt"
 	if (input == keyword) then
 		local weeks = {
-			os.date("%Y年%m月%d日").." "..format_week(1)
-			, os.date("%Y年%m月%d日").." "..format_week(0).." "..os.date("%H:%M:%S")
+			format_week(1)
+			,format_week(2)
+			,format_week(0)
 			}
 		for i =1,#weeks do
-			yield(Candidate(keyword, seg.start, seg._end, weeks[i], border_began .. "星期" .. border_end))
+			yield(Candidate(keyword, seg.start, seg._end, weeks[i], "〈星期〉"))
 		end
 		weeks = nil
 	end
@@ -610,7 +620,7 @@ function Jq_translator(input, seg)
 	if (input == keyword) then
 		local jqs = GetNowTimeJq(os.date("%Y%m%d"))
 		for i =1,#jqs do
-			yield(Candidate(keyword, seg.start, seg._end, jqs[i], border_began .. "节气" .. border_end))
+			yield(Candidate(keyword, seg.start, seg._end, jqs[i], "〈节气〉"))
 		end
 		jqs = nil
 	end
@@ -618,7 +628,6 @@ end
 
 -------------------------------------------------------------
 --[[
-	文件lua\hotstring.txt可以自己编辑，也可以用工具编辑，工具98资源库下载http://98wb.ys168.com/ 「小狼毫助手.exe」
 	hotstring.txt文件格式：
 			编码+tab+内容+tab+注解
 		或
@@ -635,7 +644,7 @@ function longstring_translator(input, seg)	--编码为小写字母开头为过�
 				strings=hotstring_obj[str:lower(str)]
 				if type(strings)== "table" then
 					for i =1,#strings do
-						if strings[i][2]~="" then m=border_began .. "".. strings[i][2].."" .. border_end else m="" end
+						if strings[i][2]~="" then m="〈".. strings[i][2].."〉" else m="" end
 						yield(Candidate(input, seg.start, seg._end, strings[i][1],m))
 					end
 				end
@@ -665,7 +674,7 @@ local function set_switch_keywords(input, seg,env)
 	local trad_mode=env.engine.context:get_option(trad_keyword)
 
 	if input == rv_var.switch_keyword and #candidate_keywords>0 or input == rv_var.switch_schema and #enable_schema_list>0 and trad_mode then
-		if schema_name then segment.prompt =" 〔 当前方案："..schema_name.." " .. border_end end
+		if schema_name then segment.prompt =" 〈 当前方案："..schema_name.." 〉" end
 		local cand =nil
 		local seg_text=""
 		for i =1,#candidate_keywords do
@@ -779,15 +788,15 @@ function str2datetime_translator(input, seg)
 	end
 end
 
-function time_date(input, seg,env)
+function time_date(input, seg, env)
 	date_translator(input, seg)
 	time_translator(input, seg)
 	week_translator(input, seg)
 	lunar_translator(input, seg)
 	Jq_translator(input, seg)
-	longstring_translator(input, seg)
+	-- longstring_translator(input, seg)
 	QueryLunar_translator(input, seg)
-	number_translator(input, seg)
+	-- number_translator(input, seg)
 	set_switch_keywords(input, seg,env)
 	str2datetime_translator(input, seg)
 end

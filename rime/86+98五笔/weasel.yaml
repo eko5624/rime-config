@@ -19,7 +19,7 @@ style:
   comment_font_point: 13                          # 注释字号
   # ... 窗口...
   fullscreen: false                               # 是否全屏模式
-  horizontal: true                               # 是否横向布局
+  horizontal: false                               # 是否横向布局
   vertical_text: true                             # 是否启用竖排文本
   vertical_text_left_to_right: true               # 竖排方向是否从左到右
   vertical_text_with_wrap: false                  # 文本竖排模式下是否自动换行

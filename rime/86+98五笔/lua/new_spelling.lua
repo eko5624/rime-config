@@ -1,10 +1,8 @@
 ﻿local basic = require('lib/basic')
-local border = require('lib/border')
 local map = basic.map
 local index = basic.index
 local utf8chars = basic.utf8chars
 local matchstr = basic.matchstr
-
 
 local function SubStringGetByteCount(str, index)
 	local curByte = string.byte(str, index)
@@ -38,8 +36,8 @@ end
 
 local function xform(input)
 	if input == "" then return "" end
-	input = input:gsub('%[', border_began)
-	input = input:gsub('%]', border_end)
+	input = input:gsub('%[', '〈')
+	input = input:gsub('%]', '〉')
 	input = input:gsub('※', ' ')
 	input = input:gsub('_', ' ')
 	input = input:gsub(',', '·')
@@ -186,9 +184,9 @@ local function get_tricomment(cand, env)
 				code = matchstr(code, '%S+')
 				table.sort(code, function(i, j) return i:len() < j:len() end)
 				code = table.concat(code, ' ')
-				return border_began .. " " .. spelling .. ' · ' .. code .. " " .. border_end
+				return '〈 ' .. spelling .. ' · ' .. code .. ' 〉'
 			else
-				return border_began .. " " .. spelling .. " " .. border_end
+				return '〈 ' .. spelling .. ' 〉'
 			end
 		end
 	end
@@ -246,7 +244,7 @@ local function filter(input, env)
 	local spelling_states=env.engine.context:get_option(spelling_keyword)
 	local composition = env.engine.context.composition
 	local segment = composition:back()
-	-- if codetext==rv_var.switch_keyword and schema_name then segment.prompt =" 〔 当前方案："..schema_name.." " .. border_end end
+	-- if codetext==rv_var.switch_keyword and schema_name then segment.prompt =" 〈 当前方案："..schema_name.." 〉" end
 	-- 获取输入法常用参数
 	-- env.engine.context:get_commit_text() -- filter中为获取提交词
 	-- env.engine.context:get_script_text()-- 获取编码带引导符
@@ -261,7 +259,6 @@ local function filter(input, env)
 	-- local user_data_dir=rime_api.get_user_data_dir()         -- 获取用户目录路径
 	local horizontal=get_horizontal_style(schema_id..".custom.yaml","style/horizontal") or ""
 	CandidateText={}
-	-- 拆分开关开启状态才能显示字根拆分
 	if spelling_states then
 		for cand in input:iter() do
 			if isgb2312(cand,env)==1 and env.engine.context:get_option("GB2312") or not env.engine.context:get_option("GB2312") then
@@ -273,7 +270,6 @@ local function filter(input, env)
 						yield(Candidate(spelling_keyword, cand.start, cand._end, cand.text, comment))
 					end
 				else
-					-- 以z开头拼音反查时显示拆分逻辑
 					if script_text:find("^z[a-z]*") and not script_text:find("%p$") or script_text:find("^([%/])[a-z]*") and not script_text:find("%p$") then
 						-- cand.quality=10  -- 调整权值 "💡"   cand.type:'reverse_lookup'
 						local add_comment=get_tricomment(cand, env)
@@ -282,20 +278,18 @@ local function filter(input, env)
 							if cand.comment == "" then
 								yield(Candidate(spelling_keyword, cand.start, cand._end, cand.text,add_comment))
 							else
-								-- 编码栏同时显示组合编码
 								if cand.comment:find("(☯)") then
-									segment.prompt=border_began .. "编码："..get_en_code(cand.text, env.spll_rvdb).. border_end
+									segment.prompt="〈编码："..get_en_code(cand.text, env.spll_rvdb).. "〉"
 									yield(cand)
 								else
 									if utf8.len(cand.text) == 1 and code_comment and not hide_pinyin then
 										yield(Candidate(spelling_keyword, cand.start, cand._end, cand.text,xform(code_comment:gsub('%[(.-),(.-),(.-),(.-)%]', '[%1'..' · '..'%2'..' · '..'%3]'))))
 									else
-										yield(Candidate(spelling_keyword, cand.start, cand._end, cand.text,add_comment:gsub(border_end," · ") .. cand.comment .. " " .. border_end))
+										yield(Candidate(spelling_keyword, cand.start, cand._end, cand.text,add_comment:gsub("〉"," · ") .. cand.comment .. " 〉"))
 									end
 								end
 							end
 						end
-					-- 以形查音状态下拆分显示逻辑
 					elseif script_text:find("^([%~])[a-z]*") and not script_text:find("%p$") and env.engine.context:get_option("rvl_zhuyin") then
 						local code_comment=env.code_rvdb:lookup(cand.text)
 						if code_comment~="" then
@@ -305,14 +299,13 @@ local function filter(input, env)
 							yield(cand)
 						end
 					-- elseif script_text==rv_var.switch_keyword then
-					-- 	if cand.text:find("方案") then cand.comment="〔 "..schema_name.." " .. border_end end
+					-- 	if cand.text:find("方案") then cand.comment="〈 "..schema_name.." 〉" end
 					-- 	yield(cand)
 					else
 						local add_comment = ''
 						local code_comment=env.code_rvdb:lookup(cand.text)
-						-- 以`号引导造词时编码栏同时显示组合编码
 						if cand.comment:find("(☯)") and script_text:find("^%`*(%l+%`%l+)") then
-							segment.prompt=border_began .. "编码："..get_en_code(cand.text, env.spll_rvdb).. border_end
+							segment.prompt="〈编码："..get_en_code(cand.text, env.spll_rvdb).. "〉"
 						end
 						if cand.type == 'punct' then
 							add_comment = xform(code_comment:gsub('%[(.-),(.-),(.-),(.-)%]', '[%1'..' · '..'%2'..' · '..'%3]'))
@@ -322,20 +315,12 @@ local function filter(input, env)
 						if add_comment ~= '' then
 							if cand.comment=="" then cand.comment = add_comment .. cand.comment end
 						end
-						-- 逐码提示编码提示加拆分显示
-						if cand.comment:find("^[%~][a-zA-Z0-9]") then
-							add_comment = get_tricomment(cand, env)
-							-- yield(Candidate(spelling_keyword, cand.start, cand._end, cand.text,add_comment:gsub(border_end,"  ") .. cand.comment .. " " .. border_end))
-							yield(Candidate(spelling_keyword, cand.start, cand._end, cand.text,add_comment:gsub(border_end,"").. border_end))
-						else
-							yield(cand)
-						end
+						yield(cand)
 					end
 				end
 			end
 		end
 	else
-		-- 在拆分开关关闭状态下如果没有匹配到编码自动以字根组合补全「拼音反查编码是否能匹配到取决于你当前词库是否存在那个编码，强行组合编码没意义反而显示拆分能起到学习作用
 		if script_text:find("^z") then
 			for cand in input:iter() do
 				if isgb2312(cand,env)==1 and env.engine.context:get_option("GB2312") or not env.engine.context:get_option("GB2312") then
@@ -353,7 +338,7 @@ local function filter(input, env)
 							elseif utf8.len(cand.text) == 1 and code_comment and hide_pinyin then
 								cand.comment = xform(code_comment:gsub('%[(.-),(.-),(.-),(.-)%]', '[%1'..' · '..'%2]'))
 							else
-								cand.comment = add_comment:gsub(border_end," · ") .. cand.comment .. " " .. border_end
+								cand.comment = add_comment:gsub("〉"," · ") .. cand.comment .. " 〉"
 							end
 						end
 					else
@@ -362,7 +347,6 @@ local function filter(input, env)
 					yield(cand)
 				end
 			end
-		-- 在分开开关关闭状态下以字根拆分补全没有匹配到的选项
 		elseif script_text:find("^([%~])[a-z]*") and not script_text:find("%p$") and env.engine.context:get_option("rvl_zhuyin") then
 			for cand in input:iter() do
 				if isgb2312(cand,env)==1 and env.engine.context:get_option("GB2312") or not env.engine.context:get_option("GB2312") then
@@ -380,10 +364,10 @@ local function filter(input, env)
 				if isgb2312(cand,env)==1 and env.engine.context:get_option("GB2312") or not env.engine.context:get_option("GB2312") then
 					table.insert(CandidateText,cand.text)
 					-- if script_text==rv_var.switch_keyword then
-					-- 	if cand.text:find("方案") then cand.comment="〔 "..schema_name.." " .. border_end end
+					-- 	if cand.text:find("方案") then cand.comment="〈 "..schema_name.." 〉" end
 					-- end
 					if cand.comment:find("(☯)") and script_text:find("^%`*(%l+%`%l+)") then
-						segment.prompt =border_began .. "编码："..get_en_code(cand.text, env.spll_rvdb).. border_end
+						segment.prompt ="〈编码："..get_en_code(cand.text, env.spll_rvdb).. "〉"
 					end
 					yield(cand)
 				end

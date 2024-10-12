@@ -5,7 +5,7 @@
 
 schema:
   schema_id: wb86_spelling
-  name: "86版拆字"
+  name: "86五笔拆字-伪方案"
   version: "1.0"
   author:
     - LuaTable by wubixiaozhu

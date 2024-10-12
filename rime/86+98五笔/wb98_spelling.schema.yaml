@@ -5,7 +5,7 @@
 
 schema:
   schema_id: wb98_spelling
-  name: "98版拆字"
+  name: "98五笔拆字-伪方案"
   version: "1.0"
   author:
     - LuaTable by wubixiaozhu
