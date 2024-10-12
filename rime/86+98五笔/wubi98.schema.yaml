@@ -243,45 +243,24 @@ punctuator:
     __include: symbols:/symbols                # 从 symbols.yaml 导入配置
 
 key_binder:
+  import_preset: default
   bindings:
-    - {send: Up, accept: Left, when: has_menu}
-    - {send: Down, accept: Right, when: has_menu}
-    - {send: Page_Up, accept: minus, when: has_menu}
-    - {send: Page_Down, accept: equal, when: has_menu}
+    # 上下翻页 - =
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    
+    # 上下翻页 tab
+    - { when: has_menu, accept: Tab, send: Page_Down }
     - {send: Escape, accept: space, when: composing}
     - {send: space, accept: space, when: has_menu}
-    - {toggle: zh_trad, accept: "Control+Shift+4", when: always}
-    - {toggle: zh_trad, accept: "Control+Shift+dollar", when: always}
-    - {toggle: zh_trad, accept: "Control+Shift+F", when: always}
-    - {toggle: new_spelling, accept: "Control+Shift+H", when: always}
-    - {toggle: new_hide_pinyin, accept: "Control+Shift+J", when: always}
-    - {toggle: single_char, accept: "Control+Shift+D", when: always}
-    - {toggle: GB2312, accept: "Control+Shift+U", when: always}
-    # 回车清空编码
-    # - {accept: Return, send: Escape, when: composing}
-    # - {accept: Return, send: Escape, when: has_menu}
-    #
-    - {accept: semicolon, send: 2, when: has_menu}
-    - {accept: apostrophe, send: 3, when: has_menu}
-    #将小键盘 6~9 .映射到主键盘，数字金额大写的 Lua 如 R1234.5678 可使用小键盘输入
-    - {accept: KP_0, send: 0, when: composing}
-    - {accept: KP_1, send: 1, when: composing}
-    - {accept: KP_2, send: 2, when: composing}
-    - {accept: KP_3, send: 3, when: composing}
-    - {accept: KP_4, send: 4, when: composing}
-    - {accept: KP_5, send: 5, when: composing}
-    - {accept: KP_6, send: 6, when: composing}
-    - {accept: KP_7, send: 7, when: composing}
-    - {accept: KP_8, send: 8, when: composing}
-    - {accept: KP_9, send: 9, when: composing}
-    - {accept: KP_Decimal, send: period, when: composing}
-    - {accept: KP_Add, send: plus, when: composing}
-    - {accept: KP_Subtract, send: minus, when: composing}
-    - {accept: KP_Multiply, send:  asterisk, when: composing}
-    - {accept: KP_Divide, send: slash, when: composing}
-    #
-    - { when: always, accept: Shift+space, toggle: full_shape }  # shift + space 全角半角切换
-    - { when: always, accept: Control+period, toggle: ascii_punct }  # ctrl + . 中英文标点切换
+    - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
+    - {toggle: zh_trad, accept: "Control+2", when: always}           # 切换简繁
+    - {toggle: GB2312, accept: "Control+3", when: always}            # 切换字符集
+    - {toggle: full_shape, accept: "Control+4", when: always}        # 切换全半角
+    - {toggle: ascii_punct, accept: "Control+5", when: always}       # 切换中英标点
+    - {toggle: new_spelling, accept: "Control+6", when: always}      # 切换字根显隐
+    - {toggle: new_hide_pinyin, accept: "Control+7", when: always}   # 切换拼音显隐
+    - {toggle: single_char, accept: "Control+8", when: always}       # 切换单字/词组
 
 recognizer:
   import_preset: default

@@ -7,8 +7,8 @@ patch:
   schema_list:
     - {schema: wubi86}              # 86五笔
     - {schema: wubi98}              # 98五笔
-    - {schema: luna_pinyin_simp}    # 明月拼音
-    - {schema: terra_pinyin}        # 地球拼音 
+    - {schema: terra_pinyin}        # 地球拼音
+    - {schema: pinyin}              # 简体拼音
     - {schema: wb86_spelling}       # 伪方案-86五笔拆字
     - {schema: wb98_spelling}       # 伪方案-98五笔拆字
     
