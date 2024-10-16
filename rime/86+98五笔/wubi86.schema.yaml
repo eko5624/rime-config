@@ -31,14 +31,17 @@ switches:
     reset: 0
     states: [ 隐,显 ]
   - name: new_hide_pinyin
-    reset: 1
+    reset: 0
     states: [ 音,哑 ]
   - name: rvl_zhuyin
     reset: 1
     states: [ 形,拼 ]
-  - name: GB2312
-    reset: 0
-    states: [ 扩,常 ]
+  - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
+    reset: 1
+    states: [ 常, 扩 ]
+  - name: charset_comment
+    reset: 1
+    states: [码区关, 码区开]
   - name: single_char
     reset: 0
     states: [ 词,单 ]
@@ -87,6 +90,8 @@ engine:
     - lua_filter@new_spelling@spelling
     - simplifier
     - simplifier@es_conversion
+    - lua_filter@*charset*filter                # CJK字符集过滤
+    - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@single_char
     - reverse_lookup_filter@ci_reverse_lookup
     - uniquifier
@@ -164,7 +169,7 @@ rvl_zhuyin:
   max_phrase_length: 4
   prefix: "~"
   tag: zhuyin
-  tips: "〈以形查音〉"
+  # tips: "〈以形查音〉"
 reverse_lookup:
   db_class: tabledb
   dictionary: pinyin
