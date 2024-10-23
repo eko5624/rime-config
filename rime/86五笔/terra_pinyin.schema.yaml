@@ -314,7 +314,7 @@ key_binder:
     - {send: space, accept: space, when: has_menu}
     - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
     - {toggle: simplification, accept: "Control+2", when: always}    # 切换简繁
-    - { when: always, toggle: extended_charset, accept: Control+3 }  # 切换CJK字符集
+    - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集
     - { when: always, toggle: full_shape, accept: Control+4 }        # 切换全半角
     - { when: always, toggle: ascii_punct, accept: Control+5 }       # 切换中英标点
 
