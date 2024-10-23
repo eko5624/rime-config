@@ -156,3 +156,4 @@ recognizer:
     reverse_lookup: "^z[a-z]*'?$"       # 拼音反查五笔的正则
     radical: "^`[a-z]*'?$"              # 拆字的正则
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
+    expression: "^=.*$"                 # 计算器功能引导
