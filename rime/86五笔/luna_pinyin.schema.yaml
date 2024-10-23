@@ -60,10 +60,9 @@ engine:
     - script_translator
     - reverse_lookup_translator
     - table_translator
-    - lua_translator@*date_translator           # 时间、日期、星期
-    - lua_translator@*lunar                     # 农历
-    - lua_translator@*number_translator         # 数字、金额大写
-    - lua_translator@*calculator                # 计算器               
+    - lua_translator@time_date
+    - lua_translator@calculator
+    - lua_translator@*unicode                   # Unicode              
     - reverse_lookup_translator@radical_lookup
     - reverse_lookup_translator@stroke_lookup
   filters:
@@ -140,9 +139,7 @@ recognizer:
     punct: '^/([0-9]0?|[A-Za-z]+)$'
     stroke: "^`[a-z]*'?$"
     radical: "~[a-z]+'?$"
-    rmb: "^R[0-9]+[.]?[0-9]*"           # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number_translator，数字金额大写
-    gregorian_to_lunar: "^N[0-9]{1,8}"  # 脚本将自动获取第 2 个字符 N 作为触发前缀，响应 lua_translator@*lunar，公历转农历，输入 N20240115 得到「二〇二三年腊月初五」
-    calculator: "^coco.*$"              # 计算器功能引导
+    unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
 
 es_conversion:
   opencc_config: emoji.json
