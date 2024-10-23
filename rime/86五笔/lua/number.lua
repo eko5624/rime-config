@@ -1,4 +1,8 @@
-﻿local function splitNumPart(str)
+﻿-- 来源 https://github.com/yanhuacuo/98wubi
+-- 数字、金额大写
+-- 触发前缀为 =
+
+local function splitNumPart(str)
 	local part = {}
 	part.int, part.dot, part.dec = string.match(str, "^(%d*)(%.?)(%d*)")
 	return part
@@ -106,4 +110,17 @@ function number_translatorFunc(num)
 	return result
 end
 
--- print(#number_translatorFunc(3355.433))
+local function number_translator(input, seg)
+    local str, numberPart
+    -- 触发前缀为 =
+	if string.match(input,"^=+(%d+)(%.?)(%d*)$")~=nil then
+		str = string.gsub(input,"^(=+)", "")  numberPart=number_translatorFunc(str)
+		if #numberPart>0 then
+			for i=1,#numberPart do
+				yield(Candidate(input, seg.start, seg._end, numberPart[i][1],numberPart[i][2]))
+			end
+		end
+	end
+end
+
+return number_translator
