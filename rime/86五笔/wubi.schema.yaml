@@ -60,7 +60,7 @@ engine:
     - table_translator
     - history_translator@history
     - lua_translator@time_date
-    - lua_translator@calculator
+    - lua_translator@*calculator
     - lua_translator@*unicode                   # Unicode
   filters:
     - simplifier@emoji                          # Emoji
