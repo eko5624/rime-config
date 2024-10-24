@@ -53,7 +53,7 @@ engine:
     - fallback_segmentor
   translators:
     - lua_translator@time_date
-    - lua_translator@calculator
+    - lua_translator@*calculator
     - lua_translator@*unicode                   # Unicode 
     - punct_translator
     - script_translator
@@ -141,7 +141,7 @@ recognizer:
   patterns:
     punct: '^/([0-9]0?|[A-Za-z]+)$'
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
-    expression: "^=.*$"                 # 计算器功能引导
+    calculator: "^=.*$"                 # 计算器功能引导
   
 
   

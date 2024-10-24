@@ -9,7 +9,6 @@ rv_var={ week_var="week",date_var="date",nl_var="nl",time_var="time",jq_var="jq"
 single_keyword="single_char"	-- 单字过滤switcher参数
 -- --==========================================================--==========================================================
 -- --==========================================================--==========================================================
-calculator = require("calculator")
 require("lunarDate")
 require("lunarJq")
 require("lunarGz")
