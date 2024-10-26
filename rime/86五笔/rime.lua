@@ -27,7 +27,7 @@ function CnDate_translator(y)
 	    if i==8 and t2 ~= "〇" then t2 =t2 .. "日" elseif i==8 and t2 == "〇" then t2="日"  end
 	    t=t .. t2
 	end
-	    return t
+	return t
 end
 
 local GetLunarSichen= function(time,t)
