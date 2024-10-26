@@ -20,14 +20,14 @@ function CnDate_translator(y)
 	if t1.len(tostring(t1))~=8 then return t1 end
 	for i =1,t1.len(t1) do
 	    t2=cstr[tonumber(t1.sub(t1,i,i))+1]
-		if i==5 and t2 ~= "〇" then t2="年十" elseif i==5 and t2 == "〇" then t2="年"  end
-		if i==6 and t2 ~= "〇" then t2 =t2 .. "月" elseif i==6 and t2 == "〇" then t2="月"  end
-		--if t.sub(t,t.len(t)-1)=="年" then t2=t2 .. "月" end
-		if i==7 and tonumber(t1.sub(t1,7,7))>1 then t2= t2 .. "十" elseif i==7 and t2 == "〇" then t2="" elseif i==7 and tonumber(t1.sub(t1,7,7))==1 then t2="十" end
-		if i==8 and t2 ~= "〇" then t2 =t2 .. "日" elseif i==8 and t2 == "〇" then t2="日"  end
-		t=t .. t2
+	    if i==5 and t2 ~= "〇" then t2="年十" elseif i==5 and t2 == "〇" then t2="年"  end
+	    if i==6 and t2 ~= "〇" then t2 =t2 .. "月" elseif i==6 and t2 == "〇" then t2="月"  end
+	    --if t.sub(t,t.len(t)-1)=="年" then t2=t2 .. "月" end
+	    if i==7 and tonumber(t1.sub(t1,7,7))>1 then t2= t2 .. "十" elseif i==7 and t2 == "〇" then t2="" elseif i==7 and tonumber(t1.sub(t1,7,7))==1 then t2="十" end
+	    if i==8 and t2 ~= "〇" then t2 =t2 .. "日" elseif i==8 and t2 == "〇" then t2="日"  end
+	    t=t .. t2
 	end
-		return t
+	    return t
 end
 
 local GetLunarSichen= function(time,t)
