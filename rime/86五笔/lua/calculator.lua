@@ -422,7 +422,7 @@ local function speakOfficiallyLower(str)
 end
 
 local function speakOfficiallyUpper(str)
-  local part = splitNumStr(str)
+    local part = splitNumStr(str)
 	local speakSym = speakLiterally(part.sym)
 	local speakInt = speakIntOfficially(part.int, {[1]="仟"; [2]="佰"; [3]="拾"; [4]=""}, {[0]="零"; "壹"; "贰"; "叁" ;"肆"; "伍"; "陆"; "柒"; "捌"; "玖"})
 	local speakDig = speakLiterally(part.dig)
@@ -471,15 +471,15 @@ function T.func(input, seg, env)
         -- segment.prompt = "〔" .. T.tips .. "〕"
         -- 提取算式
         local express = input:gsub(T.prefix, "")
-        -- 算式长度 < 2 直接终止(没有计算意义)
-        if (string.len(express) < 2) and (not calc_methods[express]) then return end
-        if (string.len(express) == 2) and (express:match("^%d[^%!]$")) then return end
+        -- 算式长度 = 0 直接终止(只打出 = 没有计算意义)
+        if (string.len(express) == 0) and (not calc_methods[express]) then return end
+        -- if (string.len(express) == 2) and (express:match("^%d[^%!]$")) then return end
         local code = replaceToFactorial(express)
 
         local loaded_func, load_error = load("return " .. code, "calculate", "t", calc_methods)
         if loaded_func and (type(methods_desc[code]) == "string") then
             yield(Candidate(input, seg.start, seg._end, express .. ":" .. methods_desc[code], ""))
-    elseif loaded_func then
+            	elseif loaded_func then
             local success, result = pcall(loaded_func)
             if success then
                 yield(Candidate(input, seg.start, seg._end, express .. "=" .. tostring(result), "〈等式〉"))
@@ -490,11 +490,11 @@ function T.func(input, seg, env)
 			    yield(Candidate("number", seg.start, seg._end, speakOfficiallyLower(result), "〈小写数字〉"))
             else
                 -- 处理执行错误
-        yield(Candidate(input, seg.start, seg._end, express, "执行错误"))
+        		yield(Candidate(input, seg.start, seg._end, express, "执行错误"))
             end
         else
             -- 处理加载错误
-      yield(Candidate(input, seg.start, seg._end, express, "解析失败"))
+      		yield(Candidate(input, seg.start, seg._end, express, "解析失败"))
         end
     end
 end

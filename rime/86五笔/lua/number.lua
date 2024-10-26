@@ -149,7 +149,7 @@ local function number_translator(input, seg, env)
         env.engine.schema.config:get_string('recognizer/patterns/number'):sub(2, 2)
     local str, num, numberPart
     if env.number_keyword ~= '' and input:sub(1, 1) == env.number_keyword then
-        str = string.gsub(input, "^(%a+)", "")
+        str = string.gsub(input, env.number_keyword, "")
         numberPart = number_translatorFunc(str)
         if str and #str > 0 and #numberPart > 0 then
             for i = 1, #numberPart do

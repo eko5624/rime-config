@@ -12,7 +12,6 @@ single_keyword="single_char"	-- 单字过滤switcher参数
 require("lunarDate")
 require("lunarJq")
 require("lunarGz")
-require("number")
 --===================================================时间／日期／农历／历法／数字转换输出=================================================================
 -- --====================================================================================================================
 function CnDate_translator(y)
@@ -50,16 +49,9 @@ local format_Time= function()
 end
 
 -- 星期格式转换
--- modify by: 空山明月
 local format_week= function(n)
 	local obj={"日","一","二","三","四","五","六"}
-	if tonumber(n)==1 then 
-		return "周"..obj[os.date("%w")+1] 
-	elseif tonumber(n)==2 then 
-		return "星期"..obj[os.date("%w")+1] 
-	else
-		return "礼拜"..obj[os.date("%w")+1] 
-	end
+	if tonumber(n)==1 then return "周"..obj[os.date("%w")+1] else return "星期"..obj[os.date("%w")+1] end
 end
 ------------------------lua内置日期变量参考-------------------------------------
 --[[
@@ -80,212 +72,6 @@ end
 --]]
 ----------------------------------------------------------------
 
--- 分割字符串
--- str: 需要被分割的字符串
--- reps: 分割字符串的符号
--- return: 返回被一个字符集
--- author: 空山明月
-local function split(str,reps)
-    local resultStrList = {}
-    string.gsub(str,'[^'..reps..']+',function (w)
-        table.insert(resultStrList,w)
-    end)
-    return resultStrList
-end
-
--- 将数字转换成中文数字
--- author: 空山明月
-local function num2strcn(strNum)
-	local hzNum = {"一", "二", "三", "四", "五", "六", "七", "八", "九", "零"}
-	local hzWei = {"十", "百", "千"}
-	local strValue = ""
-
-	local num = tonumber(strNum)
-	if num < 10 then
-		if num == 0 then
-			num = 10
-		end
-		strValue = hzNum[num]
-	end
-
-	if num >= 10 and num < 20 then
-		if num == 10 then
-			strValue = hzWei[1]
-		else
-			local sencValue = string.sub(strNum,2,2)
-			strValue = hzWei[1]..hzNum[tonumber(sencValue)]
-		end
-	end
-
-	if num >= 20 and num < 100 then
-		local firstValue = string.sub(strNum,1,1)
-		local sencValue = string.sub(strNum,2,2)
-
-		if sencValue == "0" then
-			strValue = hzNum[tonumber(firstValue)]..hzWei[1]
-		else
-			strValue = hzNum[tonumber(firstValue)]..hzWei[1]..hzNum[tonumber(sencValue)]
-		end
-	end
-
-	return strValue
-end
-
--- 将时间字符串转换成中文时间格式
--- strDate: 格式 2024.05.12
--- return: 返回中文描述的时间字符串，格式 二〇二四年五月十二日
--- author: 空山明月
-local function date2strcn(strDate)
-	local hzNum = {"一", "二", "三", "四", "五", "六", "七", "八", "九", "零"}
-	local strYear = ""
-	local strMoth = ""
-	local strDay = ""
-
-	local dtArray = split(strDate, '.')
-    for i=1, #dtArray do
-		local szNum = dtArray[i]
-
-		for j=1, string.len(tostring(szNum)) do
-			local strNum = string.sub(szNum,j,j)
-
-			if i == 1 then
-				if strNum == "0" then
-					strNum = "10"
-				end
-	
-				local index = tonumber(strNum)
-				local strValue = hzNum[index]
-				strYear = strYear..strValue
-			end
-
-			if i == 2 then
-				if j == 1 then
-					if strNum ~= "0" then
-						local index = tonumber(strNum)
-						local strValue = hzNum[index]
-						strMoth = strMoth..strValue.."十"
-					end
-				end
-
-				if j == 2 then
-					if strNum ~= "0" then
-						local index = tonumber(strNum)
-						local strValue = hzNum[index]
-						strMoth = strMoth..strValue
-					end
-				end
-
-			end
-
-			if i == 3 then
-				if j == 1 then
-					if strNum ~= "0" then
-						local index = tonumber(strNum)
-						local strValue = hzNum[index]
-
-						if strNum == "1" then
-							strDay = strDay.."十"
-						else
-							strDay = strDay..strValue.."十"
-						end
-					end
-				end
-
-				if j == 2 then
-					if strNum ~= "0" then
-						local index = tonumber(strNum)
-						local strValue = hzNum[index]
-						strDay = strDay..strValue
-					end
-				end
-			end
-		end
-	end
-    
-    return strYear.."年"..strMoth.."月"..strDay.."日"
-end
-
--- 时间向前或向后计算
--- author: 空山明月
-local function addDaysToDate(days, format)
-    return os.date(format, os.time() + days * 86400)
-end
-
--- 从当前日期向前或向后计算
--- author: 空山明月
-function somedate_translator(input, seg, days)
-	local keyword = rv_var["date_var"]
-	if (input == keyword) then
-		local dates = {
-			addDaysToDate(days, "%Y年%m月%d日")
-			,addDaysToDate(days, "%Y-%m-%d")
-			,addDaysToDate(days, "%Y%m%d")
-			,date2strcn(addDaysToDate(days, "%Y.%m.%d"))
-			}
-		for i =1,#dates do
-			yield(Candidate(keyword, seg.start, seg._end, dates[i], "〈日期〉"))
-		end
-		dates = nil
-	end
-end
-
--- 获取本月相邻月份同一天时的日期
--- 比如今天是 2024-05-13，则可获取 2024-04/6-13 的日期
--- today: 当天日期
--- is_next: true 表示获取下个月，fase 表示获取上个月
--- retrun: 返回结果表示与当天相差的天数
--- author: 空山明月
-function get_month_sameday(is_next)
-	local offset_days = 0
-	local this_year, this_month = os.date("%Y", os.time()), os.date("%m", os.time())
-	local now_days = os.date("%d", os.time())  -- 本月第几天
-	
-	local last_month, next_month = 0, 0
-    local this_day_amount = 0
-	local last_day_amount = 0
-	local next_day_amount = 0
-
-	if is_next then
-		-- 如果现在是12月份，需要向后推一年
-		if this_month == 12 then
-			last_month, next_month = this_month - 1, 1
-		else
-			last_month, next_month = this_month - 1, this_month + 1
-		end
-
-        this_day_amount = os.date("%d", os.time({year=this_year, month=this_month+1, day=0}))
-	    next_day_amount = os.date("%d", os.time({year=this_year, month=next_month+1, day=0}))	
-
-        -- 如果时间间隔超出了下个月的最后一天，则按最后一天算
-        local temp_offset_max = this_day_amount
-        local temp_offset_min = this_day_amount - now_days + next_day_amount
-        if now_days >= next_day_amount then
-            offset_days = temp_offset_min
-        else
-            offset_days = temp_offset_max
-        end
-	else
-		-- 如果当前是1月份，需要向前推一年
-		if this_month == 1 then
-			last_month, next_month = 12, this_month + 1
-		else
-			last_month, next_month = this_month - 1, this_month + 1
-		end
-
-        this_day_amount = os.date("%d", os.time({year=this_year, month=this_month+1, day=0}))
-	    last_day_amount = os.date("%d", os.time({year=this_year, month=last_month+1, day=0}))	
-
-        -- 如果时间间隔超出了下个月的最后一天，则按最后一天算
-        if now_days <= last_day_amount then
-            offset_days = last_day_amount
-        else
-            offset_days = now_days
-        end
-	end
-    
-	return offset_days
-end
-
 -- 公历日期
 function date_translator(input, seg)
 	local keyword = rv_var["date_var"]
@@ -293,11 +79,9 @@ function date_translator(input, seg)
 		local dates = {
 			os.date("%Y年%m月%d日")
 			,os.date("%Y-%m-%d")
-			,os.date("%Y%m%d")
+			,os.date("%Y-%m-%d 第%W周")
 			-- ,os.date("%Y.%m.%d")
 			-- ,os.date("%Y%m%d")
-			-- ,os.date("%Y-%m-%d 第%W周")
-			,date2strcn(os.date("%Y.%m.%d"))
 			-- ,CnDate_translator(os.date("%Y%m%d"))
 			-- ,os.date("%Y-%m-%d｜%j/" .. IsLeap(os.date("%Y")))
 			}
@@ -315,8 +99,7 @@ function time_translator(input, seg)
 	if (input == keyword) then
 		local times = {
 			os.date("%Y年%m月%d日 %H:%M:%S")
-			,os.date("%H").."时"..os.date("%M").."分"..os.date("%S").."秒"
-			,num2strcn(tostring(os.date("%H"))).."时"..num2strcn(tostring(os.date("%M"))).."分"..num2strcn(tostring(os.date("%S"))).."秒"
+			,os.date("%Y-%m-%d " .. format_Time() .. "%I:%M")
 			}
 		for i =1,#times do
 			yield(Candidate(keyword, seg.start, seg._end, times[i], "〈时间〉"))
@@ -427,23 +210,85 @@ function Jq_translator(input, seg)
 end
 
 -------------------------------------------------------------
---[[
-	hotstring.txt文件格式：
-			编码+tab+内容+tab+注解
-		或
-			编码+tab+内容
---]]
-----------------------------------------------------------------
-function number_translator(input, seg)
-	local str,num,numberPart
-	if string.match(input,"^(%u+%d+)(%.?)(%d*)$")~=nil then
-		str = string.gsub(input,"^(%a+)", "")  numberPart=number_translatorFunc(str)
-		if #numberPart>0 then
-			for i=1,#numberPart do
-				yield(Candidate(input, seg.start, seg._end, numberPart[i][1],numberPart[i][2]))
-			end
+
+-- 时间向前或向后计算
+-- author: 空山明月
+local function addDaysToDate(days, format)
+    return os.date(format, os.time() + days * 86400)
+end
+
+-- 从当前日期向前或向后计算
+-- author: 空山明月
+function somedate_translator(input, seg, days)
+	local keyword = rv_var["date_var"]
+	if (input == keyword) then
+		local dates = {
+			addDaysToDate(days, "%Y年%m月%d日")
+			,addDaysToDate(days, "%Y-%m-%d")
+			,addDaysToDate(days, "%Y%m%d")
+			}
+		for i =1,#dates do
+			yield(Candidate(keyword, seg.start, seg._end, dates[i], "〈日期〉"))
 		end
+		dates = nil
 	end
+end
+
+-- 获取本月相邻月份同一天时的日期
+-- 比如今天是 2024-05-13，则可获取 2024-04/6-13 的日期
+-- today: 当天日期
+-- is_next: true 表示获取下个月，fase 表示获取上个月
+-- retrun: 返回结果表示与当天相差的天数
+-- author: 空山明月
+function get_month_sameday(is_next)
+	local offset_days = 0
+	local this_year, this_month = os.date("%Y", os.time()), os.date("%m", os.time())
+	local now_days = os.date("%d", os.time())  -- 本月第几天
+	
+	local last_month, next_month = 0, 0
+    local this_day_amount = 0
+	local last_day_amount = 0
+	local next_day_amount = 0
+
+	if is_next then
+		-- 如果现在是12月份，需要向后推一年
+		if this_month == 12 then
+			last_month, next_month = this_month - 1, 1
+		else
+			last_month, next_month = this_month - 1, this_month + 1
+		end
+
+        this_day_amount = os.date("%d", os.time({year=this_year, month=this_month+1, day=0}))
+	    next_day_amount = os.date("%d", os.time({year=this_year, month=next_month+1, day=0}))	
+
+        -- 如果时间间隔超出了下个月的最后一天，则按最后一天算
+        local temp_offset_max = this_day_amount
+        local temp_offset_min = this_day_amount - now_days + next_day_amount
+        if now_days >= next_day_amount then
+            offset_days = temp_offset_min
+        else
+            offset_days = temp_offset_max
+        end
+	else
+		-- 如果当前是1月份，需要向前推一年
+		if this_month == 1 then
+			last_month, next_month = 12, this_month + 1
+		else
+			last_month, next_month = this_month - 1, this_month + 1
+		end
+
+        this_day_amount = os.date("%d", os.time({year=this_year, month=this_month+1, day=0}))
+	    last_day_amount = os.date("%d", os.time({year=this_year, month=last_month+1, day=0}))	
+
+        -- 如果时间间隔超出了下个月的最后一天，则按最后一天算
+        if now_days <= last_day_amount then
+            offset_days = last_day_amount
+        else
+            offset_days = now_days
+        end
+	end
+    
+	return offset_days
 end
 
 -- 时期类字符串集
@@ -538,8 +383,6 @@ function time_date(input, seg, env)
 	week_translator(input, seg)
 	lunar_translator(input, seg)
 	Jq_translator(input, seg)
-	-- longstring_translator(input, seg)
 	QueryLunar_translator(input, seg)
-	-- number_translator(input, seg)
 	str2datetime_translator(input, seg)
 end
