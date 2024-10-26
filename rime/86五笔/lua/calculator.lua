@@ -33,8 +33,8 @@ local calc_methods = {
 }
 
 local methods_desc = {
-  ["e"] = "自然常数, 欧拉数",
-  ["pi"] = "圆周率 π",
+    ["e"] = "自然常数, 欧拉数",
+    ["pi"] = "圆周率 π",
     ["b"] = "百",
     ["q"] = "千",
     ["k"] = "千",
@@ -268,29 +268,29 @@ local function replaceToFactorial(str)
 end
 
 local function serialize(obj)
-  local type = type(obj)
-  if type == "number" then
-    return isinteger(obj) and floor(obj) or obj
-  elseif type == "boolean" then
-    return tostring(obj)
-  elseif type == "string" then
-    return '"'..obj..'"'
-  elseif type == "table" then
-    local str = "{"
-    local i = 1
-    for k, v in pairs(obj) do
-      if i ~= k then  
-        str = str.."["..serialize(k).."]="
-      end
-      str = str..serialize(v)..", "  
-      i = i + 1
-    end
-    str = str:len() > 3 and str:sub(0,-3) or str
-    return str.."}"
-  elseif pcall(obj) then -- function類型
-    return "callable"
-  end
-  return obj
+    local type = type(obj)
+    if type == "number" then
+        return isinteger(obj) and floor(obj) or obj
+    elseif type == "boolean" then
+    	return tostring(obj)
+  	elseif type == "string" then
+    	return '"'..obj..'"'
+  	elseif type == "table" then
+    	local str = "{"
+    	local i = 1
+    	for k, v in pairs(obj) do
+      		if i ~= k then  
+        		str = str.."["..serialize(k).."]="
+      		end
+      		str = str..serialize(v)..", "  
+      		i = i + 1
+    	end
+    	str = str:len() > 3 and str:sub(0,-3) or str
+    	return str.."}"
+  	elseif pcall(obj) then -- function類型
+    	return "callable"
+  	end
+  	return obj
 end
 
 local function speakLiterally(str, valMap)
