@@ -62,6 +62,7 @@ engine:
     - table_translator
     - lua_translator@time_date
     - lua_translator@*calculator
+    - lua_translator@*number                    # 数字金额大写
     - lua_translator@*unicode                   # Unicode              
     - reverse_lookup_translator@radical_lookup
     - reverse_lookup_translator@stroke_lookup
@@ -140,6 +141,7 @@ recognizer:
     stroke: "^`[a-z]*'?$"
     radical: "~[a-z]+'?$"
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
+    number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
     calculator: "^=.*$"                 # 计算器功能引导
 
 es_conversion:
