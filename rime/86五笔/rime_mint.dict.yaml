@@ -1,0 +1,15 @@
+---
+name: rime_mint                  # 注意name和文件名一致
+version: "2024.02.11"
+sort: by_weight
+# 此处为 输入法所用到的词库，既补充拓展词库的地方
+# 雾凇拼音词库，由Github Robot自动更新
+import_tables:
+  - tables/rime_ice.8105          # 霧凇拼音 常用字集合
+  - tables/rime_ice.41448         # 霧凇拼音 完整字集合
+  - tables/rime_ice.base          # 雾凇拼音 基础词库
+  - tables/rime_ice.ext           # 雾凇拼音 扩展词库
+  - tables/rime_ice.others        # 雾凇拼音 others词库（用于自动纠错）
+  # 20240608 Emoji完全交友OpenCC，不再使用字典作为补充
+  # - dicts/other_emoji            # Emoji(仅仅作为补充，实际使用一般是OpenCC生效)
+...

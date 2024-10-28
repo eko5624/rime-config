@@ -9,7 +9,7 @@ schema:
     「漢語拼音」，以符號按鍵 - / < \ 輸入四聲
     拼音碼表根據 CC-CEDICT 改編
   dependencies:
-    - stroke
+    - wubi86
     - radical_pinyin # 参考 https://github.com/mirtlecn/rime-radical-pinyin
 
 switches:
@@ -38,6 +38,8 @@ switches:
 engine:
   processors:
     - lua_processor@*pair_symbols        # 成对输入符号并使鼠标居中
+    - lua_processor@*select_character
+    - lua_processor@*codeLengthLimit_processor           # 使用Lua限制输入内容的最大长度(防止过长而卡顿)
     - ascii_composer
     - recognizer
     - key_binder
@@ -50,7 +52,7 @@ engine:
     - ascii_segmentor
     - matcher
     - affix_segmentor@radical_lookup
-    - affix_segmentor@stroke_lookup
+    - affix_segmentor@wubi86_lookup
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
@@ -61,18 +63,29 @@ engine:
     - lua_translator@*calculator
     - lua_translator@*number                    # 数字金额大写
     - lua_translator@*unicode                   # Unicode
+    - reverse_lookup_translator@radical_lookup
+    - reverse_lookup_translator@wubi86_lookup
     - table_translator@custom_phrase
     - script_translator
-    - script_translator@radical_lookup
-    - script_translator@stroke_lookup
+    #- script_translator@radical_lookup
   filters:
     - simplifier
+    - simplifier@tradition
     - simplifier@emoji                          # Emoji OpenCC
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
-    - reverse_lookup_filter@radical_reverse_lookup
-    - reverse_lookup_filter@stroke_reverse_lookup
     - uniquifier                                # 去重
+
+# 简入繁出
+tradition:
+  #  opencc_config: s2t.json  # 简 -> 繁
+  opencc_config: s2hk.json  # 繁 -> 香港
+  #  opencc_config: t2s.json   # 繁 -> 简
+  #  opencc_config: t2tw.json  # 繁 -> 台湾
+  #  opencc_config: t2hk.json  # 繁 -> 香港
+  #  opencc_config: s2tw.json  # 簡 -> 臺灣標準
+  #  opencc_config: s2twp.json  # 簡 -> 臺灣片語
+  option_name: zh_trad
 
 # Emoji
 emoji:
@@ -194,17 +207,17 @@ custom_phrase:
   enable_sentence: false
   initial_quality: 1
 
-stroke_lookup:
-  tag: stroke
-  dictionary: stroke
+wubi86_lookup:
+  tag: wubi86
+  dictionary: wubi86
   enable_user_dict: false
-  prefix: '`'
-  suffix: "'"
-  tips: 〔笔画〕
+  enable_completion: true
+  prefix: "`"
+  tips: 〔五笔〕
   preedit_format:
-    - xlit/hspnz/一丨丿丶乙/
+    - xform/([nljqxy])v/$1ü/
   comment_format:
-    - xform/([nl])v/$1ü/
+    - xform/([nljqxy])v/$1ü/
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
     - xform a1 ā
@@ -276,13 +289,8 @@ radical_lookup:
     - xform/eh[0-5]?/ê/
     - xform/([a-z]+)[0-5]/$1/
 
-stroke_reverse_lookup:
-  tags: [stroke]
-  overwrite_comment: true
-  dictionary: terra_pinyin
-
-radical_reverse_lookup:
-  tags: [radical]
+reverse_lookup:
+  tags: [wubi86,radical]
   overwrite_comment: true
   dictionary: terra_pinyin
 
@@ -320,12 +328,8 @@ recognizer:
   import_preset: default
   patterns:
     punct: '^/([0-9]0?|[A-Za-z]+)$'
-    stroke: "^`[a-z]*'?$"
     radical: "vv[a-z]*'?$"
+    wubi86: "^`[a-z]*'?$"
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
     number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
     calculator: "^=.*$"                 # 计算器功能引导
-
-menu:
-  # 候选词个数
-  page_size: 8

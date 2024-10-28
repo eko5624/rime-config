@@ -7,8 +7,8 @@ patch:
   # 菜单中可选的方案列表，可根据喜好自行调整顺序，第一位为默认方案
   schema_list:
     - schema: wubi                  # 五笔86
+    - schema: rime_mint             # 薄荷全拼
     - schema: terra_pinyin          # 地球拼音
-    - schema: luna_pinyin_simp      # 明月拼音
     - schema: pinyin                # 简体拼音
 
   switcher:
