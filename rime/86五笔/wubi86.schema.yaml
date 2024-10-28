@@ -4,7 +4,7 @@
 # date: 2024-05-27
 
 schema:
-  schema_id: wubi
+  schema_id: wubi86
   name: "86五笔"
   version: "2.1"
   author:
