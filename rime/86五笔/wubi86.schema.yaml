@@ -21,9 +21,9 @@ switches:
   - name: ascii_mode
     states: [中, 英]
     reset: 0
-  - name: zh_trad
+  - name: transcription
     states: [ 简, 繁 ]
-    reset: 0
+    reset: 1
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 0
@@ -75,7 +75,7 @@ engine:
     - script_translator@radical_lookup
   filters:
     - simplifier@emoji                          # Emoji
-    - simplifier@tradition                      # 简繁切换
+    - simplifier@transcription_cc                      # 简繁切换
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@single_char
@@ -105,15 +105,17 @@ translator:
   comment_format:                       # 提示码自定义
     - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
 
-tradition:
-  #  opencc_config: s2t.json            # 简 -> 繁
-  opencc_config: s2hk.json              # 繁 -> 香港
-  #  opencc_config: t2s.json            # 繁 -> 简
-  #  opencc_config: t2tw.json           # 繁 -> 台湾
-  #  opencc_config: t2hk.json           # 繁 -> 香港
-  #  opencc_config: s2tw.json           # 簡 -> 臺灣標準
-  #  opencc_config: s2twp.json          # 簡 -> 臺灣片語
-  option_name: zh_trad
+transcription_cc:
+  option_name: transcription
+  # opencc_config: s2t.json            # 简 -> 繁
+  # opencc_config: s2hk.json           # 繁 -> 香港
+  opencc_config: t2s.json              # 繁 -> 简
+  # opencc_config: t2tw.json           # 繁 -> 台湾
+  # opencc_config: t2hk.json           # 繁 -> 香港
+  # opencc_config: s2tw.json           # 簡 -> 臺灣標準
+  # opencc_config: s2twp.json          # 簡 -> 臺灣片語
+  tips: none                           # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  excluded_types: [pinyin_reverse_lookup,wubi86_reverse_lookup,radical_reverse_lookup]  # 不转换反查（两分拼字）的内容
 
 emoji:
   option_name: emoji
