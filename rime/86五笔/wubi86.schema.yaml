@@ -22,7 +22,7 @@ switches:
     states: [中, 英]
     reset: 0
   - name: transcription
-    states: [ 简, 繁 ]
+    states: [ 繁, 简 ]
     reset: 1
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
