@@ -3,6 +3,9 @@
 name: zhuyin
 version: "2024-10-30"
 sort: by_weight
+use_preset_vocabulary: true
+max_phrase_length: 7
+min_phrase_weight: 100
 ...
 〇	ling2
 㐀	qiu1
