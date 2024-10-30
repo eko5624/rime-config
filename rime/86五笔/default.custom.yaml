@@ -8,8 +8,7 @@ patch:
   schema_list:
     - schema: wubi86                # 五笔86
     - schema: rime_mint             # 薄荷全拼
-    - schema: terra_pinyin          # 地球拼音
-    - schema: pinyin                # 简体拼音
+    - schema: zhuyin                # 注音
 
   switcher:
     caption: 〈菜单项〉

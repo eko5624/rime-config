@@ -494,7 +494,7 @@ function T.func(input, seg, env)
             end
         else
             -- 处理加载错误
-      		yield(Candidate(input, seg.start, seg._end, express, "解析失败"))
+      		yield(Candidate(input, seg.start, seg._end, express, ""))
         end
     end
 end

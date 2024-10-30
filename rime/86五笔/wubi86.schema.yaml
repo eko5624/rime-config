@@ -26,7 +26,7 @@ switches:
     reset: 1
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
-    reset: 0
+    reset: 1
   - name: charset_comment
     states: [码区关, 码区开]
     reset: 0
@@ -75,7 +75,7 @@ engine:
     - script_translator@radical_lookup
   filters:
     - simplifier@emoji                          # Emoji
-    - simplifier@transcription_cc                      # 简繁切换
+    - simplifier@transcription_cc               # 简繁切换
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@single_char
@@ -107,15 +107,15 @@ translator:
 
 transcription_cc:
   option_name: transcription
-  # opencc_config: s2t.json            # 简 -> 繁
-  # opencc_config: s2hk.json           # 繁 -> 香港
-  opencc_config: t2s.json              # 繁 -> 简
-  # opencc_config: t2tw.json           # 繁 -> 台湾
-  # opencc_config: t2hk.json           # 繁 -> 香港
-  # opencc_config: s2tw.json           # 簡 -> 臺灣標準
-  # opencc_config: s2twp.json          # 簡 -> 臺灣片語
-  tips: none                           # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
-  excluded_types: [pinyin_reverse_lookup,wubi86_reverse_lookup,radical_reverse_lookup]  # 不转换反查（两分拼字）的内容
+  # opencc_config: s2t.json             # 简 -> 繁
+  # opencc_config: s2hk.json            # 繁 -> 香港
+  opencc_config: t2s.json               # 繁 -> 简
+  # opencc_config: t2tw.json            # 繁 -> 台湾
+  # opencc_config: t2hk.json            # 繁 -> 香港
+  # opencc_config: s2tw.json            # 簡 -> 臺灣標準
+  # opencc_config: s2twp.json           # 簡 -> 臺灣片語
+  tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  excluded_types: [ pinyin_reverse_lookup ]  # 不转换反查的内容
 
 emoji:
   option_name: emoji
@@ -129,15 +129,44 @@ history:
 
 pinyin:                                 # 临时拼音
   tag: pinyin
-  prefix: "~"
+  prefix: "Up"
   suffix: ;
   tips: 〔临时拼音〕
   closing_tips: 〔五笔〕
-  dictionary: terra_pinyin
+  dictionary: zhuyin
   preedit_format:
-    - xform/([nljqxy])v/$1ü/
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([nl])üen/$1uen/
+    - xform/([jqxy])v/$1u/
+    - xform/eh/ê/
+    - 'xform ([aeiou])(ng?|r)([-;/<,>\\]) $1$3$2'
+    - 'xform ([aeo])([iuo])([-;/<,>\\]) $1$3$2'
+    - 'xform a[-;] ā'
+    - 'xform a/ á'
+    - 'xform a[<,] ǎ'
+    - 'xform a[>\\] à'
+    - 'xform e[-;] ē'
+    - 'xform e/ é'
+    - 'xform e[<,] ě'
+    - 'xform e[>\\] è'
+    - 'xform o[-;] ō'
+    - 'xform o/ ó'
+    - 'xform o[<,] ǒ'
+    - 'xform o[>\\] ò'
+    - 'xform i[-;] ī'
+    - 'xform i/ í'
+    - 'xform i[<,] ǐ'
+    - 'xform i[>\\] ì'
+    - 'xform u[-;] ū'
+    - 'xform u/ ú'
+    - 'xform u[<,] ǔ'
+    - 'xform u[>\\] ù'
+    - 'xform ü[-;] ǖ'
+    - 'xform ü/ ǘ'
+    - 'xform ü[<,] ǚ'
+    - 'xform ü[>\\] ǜ'
   comment_format:
-    - xform/([nljqxy])v/$1ü/
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
     - xform a1 ā
@@ -170,12 +199,9 @@ pinyin:                                 # 临时拼音
 
 wubi86_lookup:                          # 拼音反查五笔
   tag: wubi86_lookup
+  dictionary: zhuyin
   prefix: "z"
-  suffix: ;
   tips: 〔拼音反查〕
-  closing_tips: 〔五笔〕
-  dictionary: terra_pinyin
-  initial_quality: 1
 
 pinyin_reverse_lookup:                  # 拼音反查五笔
   tags: [wubi86_lookup]
@@ -193,7 +219,7 @@ pinyin_lookup:                          # 五笔反查拼音
       
 wubi86_reverse_lookup:                  # 五笔反查拼音
   tags: [pinyin_lookup]
-  dictionary: terra_pinyin
+  dictionary: zhuyin
   enable_completion: true
   preedit_format:
     - xform/([nljqxy])v/$1ü/
@@ -233,7 +259,7 @@ radical_lookup:
   tag: radical_lookup
   enable_completion: false
   enable_sentence: false
-  prefix: 'vv'
+  prefix: 'Uu'
   dictionary: radical_pinyin
   tips: 〔拆字查音〕
   closing_tips: 〔五笔〕
@@ -241,7 +267,7 @@ radical_lookup:
 radical_reverse_lookup:
   tags: [radical_lookup]
   overwrite_comment: true
-  dictionary: terra_pinyin
+  dictionary: zhuyin
   preedit_format:
     - xform/([nljqxy])v/$1ü/
   comment_format:
@@ -301,7 +327,7 @@ key_binder:
     - {send: Escape, accept: space, when: composing}
     - {send: space, accept: space, when: has_menu}
     - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
-    - { when: always, toggle: zh_trad, accept: "Control+2", }        # 切换简繁
+    - { when: always, toggle: transcription, accept: Control+2}      # 切换简繁
     - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集    
     - { when: always, toggle: single_char, accept: Control+4 }       # 切换词组/单字
     - { when: always, toggle: full_shape, accept: Control+5 }        # 切换全半角
@@ -312,10 +338,10 @@ recognizer:
   import_preset: default  # 从 default.yaml 继承通用的
   patterns:  # 再增加方案专有的：
     punct: '^/([0-9]0?|[A-Za-z]+)$'
-    pinyin: "~[a-z']*;?$"               # 不能用数字选候选字，只能用鼠标
+    pinyin: "Up[a-z]*'?$"               # 不能用数字选候选字，只能用鼠标或者箭头键
     pinyin_lookup: "`[a-y]*;?$"         # 五笔反查拼音
     wubi86_lookup: "^z[a-z]*'?$"        # 拼音反查五笔
-    radical_lookup: "vv[a-z]*'?$"       # 拆字反查拼音
+    radical_lookup: "Uu[a-z]*'?$"       # 拆字反查拼音
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
     number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
     calculator: "^=.*$"                 # 计算器功能引导

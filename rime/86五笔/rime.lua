@@ -87,7 +87,9 @@ function date_translator(input, seg)
 			}
 		-- Candidate(type, start, end, text, comment)
 		for i =1,#dates do
-			yield(Candidate(keyword, seg.start, seg._end, dates[i], "〈日期〉"))
+			local gregorian_date = (Candidate(keyword, seg.start, seg._end, dates[i], "〈日期〉"))
+			gregorian_date.quality = 999
+			yield(gregorian_date)
 		end
 		dates = nil
 	end
@@ -102,7 +104,9 @@ function time_translator(input, seg)
 			,os.date("%Y-%m-%d " .. format_Time() .. "%I:%M")
 			}
 		for i =1,#times do
-			yield(Candidate(keyword, seg.start, seg._end, times[i], "〈时间〉"))
+			local current_time = (Candidate(keyword, seg.start, seg._end, times[i], "〈时间〉"))
+			current_time.quality = 999
+			yield(current_time)
 		end
 		times = nil
 	end
@@ -121,7 +125,9 @@ function lunar_translator(input, seg)
 		local leapDate={LunarDate2Date(os.date("%Y%m%d"),1).."（闰）","〈农历⇉公历〉"}
 		if string.match(leapDate[1],"^(%d+)")~=nil then table.insert(lunar,leapDate) end
 		for i =1,#lunar do
-			yield(Candidate(keyword, seg.start, seg._end, lunar[i][1], lunar[i][2]))
+			local lunar_ymd = (Candidate(keyword, seg.start, seg._end, lunar[i][1], lunar[i][2]))
+			lunar_ymd.quality = 999
+			yield(lunar_ymd)
 		end
 		lunar = nil
 	end
@@ -203,7 +209,9 @@ function Jq_translator(input, seg)
 	if (input == keyword) then
 		local jqs = GetNowTimeJq(os.date("%Y%m%d"))
 		for i =1,#jqs do
-			yield(Candidate(keyword, seg.start, seg._end, jqs[i], "〈节气〉"))
+			local lunar_jq = (Candidate(keyword, seg.start, seg._end, jqs[i], "〈节气〉"))
+			lunar_jq.quality = 999
+			yield(lunar_jq)
 		end
 		jqs = nil
 	end

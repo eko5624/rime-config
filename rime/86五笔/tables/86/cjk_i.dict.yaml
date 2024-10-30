@@ -20,7 +20,6 @@ encoder:
     - length_in_range: [4, 10]
       formula: "AaBaCaZa"
 ...
-
 𮯰	gjgd
 𮯱	etny
 𮯲	rnv
