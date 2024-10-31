@@ -18,8 +18,8 @@ switches:
     states: [ 中, 英 ]
     reset: 0
   - name: transcription
-    states: [ 繁, 简 ]
-    reset: 1
+    states: [ 简, 繁 ]
+    reset: 0
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 1
@@ -74,11 +74,12 @@ engine:
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - uniquifier                                # 去重
 
+# 简入繁出
 transcription_cc:
   option_name: transcription
   # opencc_config: s2t.json            # 简 -> 繁
-  # opencc_config: s2hk.json           # 繁 -> 香港
-  opencc_config: t2s.json              # 繁 -> 简
+  opencc_config: s2hk.json             # 繁 -> 香港
+  # opencc_config: t2s.json            # 繁 -> 简
   # opencc_config: t2tw.json           # 繁 -> 台湾
   # opencc_config: t2hk.json           # 繁 -> 香港
   # opencc_config: s2tw.json           # 簡 -> 臺灣標準
