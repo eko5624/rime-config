@@ -17,7 +17,7 @@ schema:
       * opencc - 開放中文轉換
   dependencies:
     - radical_pinyin # 参考 https://github.com/mirtlecn/rime-radical-pinyin
-    - terra_pinyin
+    - zhuyin
     - wubi86
     
 switches:
@@ -27,9 +27,9 @@ switches:
   - name: ascii_mode
     states: [ 中, 英 ]
     reset: 0
-  - name: zh_trad
+  - name: transcription
     states: [ 简, 繁 ]
-    reset: 0    # 初始状态为 0: 简 -> 简 1: 简 -> 繁
+    reset: 0
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 1
@@ -73,27 +73,28 @@ engine:
     - lua_translator@*unicode                            # Unicode 
     - reverse_lookup_translator@radical_lookup
     - reverse_lookup_translator@wubi86_lookup
-    # - reverse_lookup_translator                   # 反查模块，多标签情况下去除
-    # - echo_translator                             # ※ 没有候选词，返回字符
+    # - reverse_lookup_translator                        # 反查模块，多标签情况下去除
+    # - echo_translator                                  # ※ 没有候选词，返回字符
   filters:
     - lua_filter@*corrector_filter                       # 错音错字提示
     - simplifier
-    - simplifier@tradition
+    - simplifier@transcription_cc                        # 简繁切换
     - simplifier@emoji                                   # Emoji OpenCC
     - lua_filter@*charset*filter                         # CJK字符集过滤
     - lua_filter@*charset*comment_hint                   # CJK字符集码区提示
     - uniquifier
 
 # 简入繁出
-tradition:
-  #  opencc_config: s2t.json  # 简 -> 繁
-  opencc_config: s2hk.json  # 繁 -> 香港
-  #  opencc_config: t2s.json   # 繁 -> 简
-  #  opencc_config: t2tw.json  # 繁 -> 台湾
-  #  opencc_config: t2hk.json  # 繁 -> 香港
-  #  opencc_config: s2tw.json  # 簡 -> 臺灣標準
-  #  opencc_config: s2twp.json  # 簡 -> 臺灣片語
-  option_name: zh_trad
+transcription_cc:
+  option_name: transcription
+  # opencc_config: s2t.json             # 简 -> 繁
+  opencc_config: s2hk.json              # 繁 -> 香港
+  # opencc_config: t2s.json             # 繁 -> 简
+  # opencc_config: t2tw.json            # 繁 -> 台湾
+  # opencc_config: t2hk.json            # 繁 -> 香港
+  # opencc_config: s2tw.json            # 簡 -> 臺灣標準
+  # opencc_config: s2twp.json           # 簡 -> 臺灣片語
+  tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
 
 # 最大输入长度
 codeLengthLimit_processor: 25
@@ -250,7 +251,7 @@ radical_lookup:
 reverse_lookup:
   tags: [wubi86,radical]
   overwrite_comment: true
-  dictionary: terra_pinyin
+  dictionary: zhuyin
   
 # 标点符号
 # punctuator 下面有三个子项：
@@ -277,7 +278,7 @@ key_binder:
     - {send: Escape, accept: space, when: composing}
     - {send: space, accept: space, when: has_menu}
     - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
-    - {toggle: zh_trad, accept: "Control+2", when: always}           # 切换简繁
+    - { when: always, toggle: transcription, accept: Control+2}      # 切换简繁
     - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集
     - { when: always, toggle: full_shape, accept: Control+4 }        # 切换全半角
     - { when: always, toggle: ascii_punct, accept: Control+5 }       # 切换中英标点
