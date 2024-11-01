@@ -30,6 +30,9 @@ switches:
   - name: charset_comment
     states: [码区关, 码区开]
     reset: 0
+  - name: chaifen
+    states: [ 拆隐, 拆显 ]
+    reset: 0 
   - name: single_char
     states: [词, 单]
     reset: 0
@@ -83,6 +86,7 @@ engine:
     - reverse_lookup_filter@pinyin_reverse_lookup
     - reverse_lookup_filter@radical_reverse_lookup
     - uniquifier
+    - simplifier@chaifen                        # 五笔的拆分滤镜
 
 speller:
 #  max_code_length: 4                   # 设置输入码的最大长度
@@ -127,6 +131,15 @@ history:
   input: z
   size: 1
   initial_quality: 1
+
+chaifen:
+  opencc_config: wb86_spelling.json
+  option_name: chaifen
+  show_in_comment: true 
+  comment_format:     
+    - "xform/&nbsp;/ /"
+  tags: [abc, wubi86_lookup]
+  tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
 
 pinyin:                                 # 临时拼音
   tag: pinyin
@@ -333,6 +346,7 @@ key_binder:
     - { when: always, toggle: single_char, accept: Control+4 }       # 切换词组/单字
     - { when: always, toggle: full_shape, accept: Control+5 }        # 切换全半角
     - { when: always, toggle: ascii_punct, accept: Control+6 }       # 切换中英标点
+    - { when: always, toggle: chaifen, accept: Control+7}            # 切换字根拆分显隐
 
 # 处理符合特定规则的输入码，如网址、反查
 recognizer:

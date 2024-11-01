@@ -1,0 +1,362 @@
+# Rime settings
+# encoding: utf-8
+# by: 空山明月
+# date: 2024-05-27
+
+schema:
+  schema_id: wubi98
+  name: "98五笔"
+  version: "2.1"
+  author:
+    - 发明人 王永民
+  description: |
+    敲 z 键进入拼音反查
+  dependencies:
+    - rime_mint         # 薄荷拼音
+
+switches:
+  - name: emoji
+    states: [ 💀, 😄 ]
+    reset: 1  
+  - name: ascii_mode
+    states: [ 中, 英 ]
+    reset: 0
+  - name: transcription
+    states: [ 简, 繁 ]
+    reset: 0
+  - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
+    states: [ 常, 扩 ]
+    reset: 1
+  - name: charset_comment
+    states: [码区关, 码区开]
+    reset: 0
+  - name: chaifen
+    states: [ 拆隐, 拆显 ]
+    reset: 1 
+  - name: single_char
+    states: [词, 单]
+    reset: 0
+  - name: full_shape
+    states: [ 半, 全 ]
+    reset: 0
+  - name: ascii_punct  # 中英标点
+    states: [ "。，", "．，" ]
+    reset: 0
+
+engine:
+  processors:
+    - lua_processor@*pair_symbols        # 成对输入符号并使鼠标居中
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - affix_segmentor@pinyin
+    - affix_segmentor@pinyin_lookup
+    - affix_segmentor@wubi98_lookup
+    - affix_segmentor@radical_lookup
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - history_translator@history
+    - lua_translator@time_date
+    - lua_translator@*calculator
+    - lua_translator@*number                    # 数字金额大写
+    - lua_translator@*unicode                   # Unicode
+    - script_translator@pinyin
+    - script_translator@pinyin_lookup
+    - script_translator@wubi98_lookup
+    - script_translator@radical_lookup
+  filters:
+    - simplifier@emoji                          # Emoji
+    - simplifier@transcription_cc               # 简繁切换
+    - lua_filter@*charset*filter                # CJK字符集过滤
+    - lua_filter@*charset*comment_hint          # CJK字符集码区提示
+    - lua_filter@single_char
+    - reverse_lookup_filter@wubi98_reverse_lookup
+    - reverse_lookup_filter@pinyin_reverse_lookup
+    - reverse_lookup_filter@radical_reverse_lookup
+    - uniquifier
+    - simplifier@chaifen                        # 五笔的拆分滤镜
+
+speller:
+#  max_code_length: 4                   # 设置输入码的最大长度
+#  auto_select: true                    # 四码唯一时，自动上屏
+#  auto_clear: max_length               # 空码时自动清空
+
+translator:
+  dictionary: wubi98
+  db_class: tabledb
+  initial_quality: 100000
+  enable_charset_filter: false
+  enable_sentence: false                # 开启句子输入模式
+  enable_user_dict: true                # 开启用户词典
+  enable_encoder: true                  # 开启自动造词
+  encode_commit_history: true           # 是否对已上屏词自动成词（仅 table_translator 有效）
+  max_phrase_length: 4                  # 设置候选词的最大长度
+  enable_completion: false              # 是否显示编码未输入完整的词条
+  preedit_format:                       # 上屏码自定义
+#    - xform/.+//
+  comment_format:                       # 提示码自定义
+    - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
+
+# 简入繁出
+transcription_cc:
+  option_name: transcription
+  # opencc_config: s2t.json             # 简 -> 繁
+  opencc_config: s2hk.json              # 繁 -> 香港
+  # opencc_config: t2s.json             # 繁 -> 简
+  # opencc_config: t2tw.json            # 繁 -> 台湾
+  # opencc_config: t2hk.json            # 繁 -> 香港
+  # opencc_config: s2tw.json            # 簡 -> 臺灣標準
+  # opencc_config: s2twp.json           # 簡 -> 臺灣片語
+  tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  excluded_types: [ pinyin_reverse_lookup ]  # 不转换反查的内容
+
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  inherit_comment: false                # 在 corrector.lua 及反查中，emoji 返回空注释
+
+history:
+  input: z
+  size: 1
+  initial_quality: 1
+
+chaifen:
+  opencc_config: wb98_spelling.json
+  option_name: chaifen
+  show_in_comment: true 
+  comment_format:     
+    - "xform/&nbsp;/ /"
+  tags: [abc, wubi98_lookup]
+  tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
+
+pinyin:                                 # 临时拼音
+  tag: pinyin
+  prefix: "Up"
+  suffix: ;
+  tips: 〔临时拼音〕
+  closing_tips: 〔五笔〕
+  dictionary: zhuyin
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([nl])üen/$1uen/
+    - xform/([jqxy])v/$1u/
+    - xform/eh/ê/
+    - 'xform ([aeiou])(ng?|r)([-;/<,>\\]) $1$3$2'
+    - 'xform ([aeo])([iuo])([-;/<,>\\]) $1$3$2'
+    - 'xform a[-;] ā'
+    - 'xform a/ á'
+    - 'xform a[<,] ǎ'
+    - 'xform a[>\\] à'
+    - 'xform e[-;] ē'
+    - 'xform e/ é'
+    - 'xform e[<,] ě'
+    - 'xform e[>\\] è'
+    - 'xform o[-;] ō'
+    - 'xform o/ ó'
+    - 'xform o[<,] ǒ'
+    - 'xform o[>\\] ò'
+    - 'xform i[-;] ī'
+    - 'xform i/ í'
+    - 'xform i[<,] ǐ'
+    - 'xform i[>\\] ì'
+    - 'xform u[-;] ū'
+    - 'xform u/ ú'
+    - 'xform u[<,] ǔ'
+    - 'xform u[>\\] ù'
+    - 'xform ü[-;] ǖ'
+    - 'xform ü/ ǘ'
+    - 'xform ü[<,] ǚ'
+    - 'xform ü[>\\] ǜ'
+  comment_format:
+    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
+    - xform ([aeo])([iuo])([1234]) $1$3$2
+    - xform a1 ā
+    - xform a2 á
+    - xform a3 ǎ
+    - xform a4 à
+    - xform e1 ē
+    - xform e2 é
+    - xform e3 ě
+    - xform e4 è
+    - xform o1 ō
+    - xform o2 ó
+    - xform o3 ǒ
+    - xform o4 ò
+    - xform i1 ī
+    - xform i2 í
+    - xform i3 ǐ
+    - xform i4 ì
+    - xform u1 ū
+    - xform u2 ú
+    - xform u3 ǔ
+    - xform u4 ù
+    - xform v1 ǖ
+    - xform v2 ǘ
+    - xform v3 ǚ
+    - xform v4 ǜ
+    - xform/([nljqxy])v/$1ü/
+    - xform/eh[0-5]?/ê/
+    - xform/([a-z]+)[0-5]/$1/
+
+wubi98_lookup:                          # 拼音反查五笔
+  tag: wubi98_lookup
+  dictionary: zhuyin
+  prefix: "z"
+  tips: 〔拼音反查〕
+
+pinyin_reverse_lookup:                  # 拼音反查五笔
+  tags: [wubi98_lookup]
+  dictionary: wubi98
+  overwrite_comment: true
+
+pinyin_lookup:                          # 五笔反查拼音
+  tag: pinyin_lookup
+  prefix: "`"
+  suffix: ;
+  dictionary: wubi98
+  tips: 〔以形查音〕
+  closing_tips: 〔五笔〕
+  initial_quality: 1
+      
+wubi98_reverse_lookup:                  # 五笔反查拼音
+  tags: [pinyin_lookup]
+  dictionary: zhuyin
+  enable_completion: true
+  preedit_format:
+    - xform/([nljqxy])v/$1ü/
+  comment_format:
+    - xform/([nljqxy])v/$1ü/
+    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
+    - xform ([aeo])([iuo])([1234]) $1$3$2
+    - xform a1 ā
+    - xform a2 á
+    - xform a3 ǎ
+    - xform a4 à
+    - xform e1 ē
+    - xform e2 é
+    - xform e3 ě
+    - xform e4 è
+    - xform o1 ō
+    - xform o2 ó
+    - xform o3 ǒ
+    - xform o4 ò
+    - xform i1 ī
+    - xform i2 í
+    - xform i3 ǐ
+    - xform i4 ì
+    - xform u1 ū
+    - xform u2 ú
+    - xform u3 ǔ
+    - xform u4 ù
+    - xform v1 ǖ
+    - xform v2 ǘ
+    - xform v3 ǚ
+    - xform v4 ǜ
+    - xform/([nljqxy])v/$1ü/
+    - xform/eh[0-5]?/ê/
+    - xform/([a-z]+)[0-5]/$1/
+
+radical_lookup:
+  tag: radical_lookup
+  enable_completion: false
+  enable_sentence: false
+  prefix: 'Uu'
+  dictionary: radical_pinyin
+  tips: 〔拆字查音〕
+  closing_tips: 〔五笔〕
+
+radical_reverse_lookup:
+  tags: [radical_lookup]
+  overwrite_comment: true
+  dictionary: zhuyin
+  preedit_format:
+    - xform/([nljqxy])v/$1ü/
+  comment_format:
+    - xform/([nljqxy])v/$1ü/
+    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
+    - xform ([aeo])([iuo])([1234]) $1$3$2
+    - xform a1 ā
+    - xform a2 á
+    - xform a3 ǎ
+    - xform a4 à
+    - xform e1 ē
+    - xform e2 é
+    - xform e3 ě
+    - xform e4 è
+    - xform o1 ō
+    - xform o2 ó
+    - xform o3 ǒ
+    - xform o4 ò
+    - xform i1 ī
+    - xform i2 í
+    - xform i3 ǐ
+    - xform i4 ì
+    - xform u1 ū
+    - xform u2 ú
+    - xform u3 ǔ
+    - xform u4 ù
+    - xform v1 ǖ
+    - xform v2 ǘ
+    - xform v3 ǚ
+    - xform v4 ǜ
+    - xform/([nljqxy])v/$1ü/
+    - xform/eh[0-5]?/ê/
+    - xform/([a-z]+)[0-5]/$1/
+
+# 标点符号
+# punctuator 下面有三个子项：
+#   full_shape 全角标点映射
+#   half_shape 半角标点映射
+#   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符，自定义的 symbols_v.yaml 修改成了 'v' 开头。
+punctuator:
+  full_shape:
+    __include: default:/punctuator/full_shape  # 从 default.yaml 导入配置
+  half_shape:
+    __include: default:/punctuator/half_shape  # 从 default.yaml 导入配置
+  symbols:
+    __include: symbols:/symbols                # 从 symbols.yaml 导入配置
+
+key_binder:
+  import_preset: default
+  bindings:
+    # 上下翻页 - =
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    
+    # 上下翻页 tab
+    - { when: has_menu, accept: Tab, send: Page_Down }
+    - {send: Escape, accept: space, when: composing}
+    - {send: space, accept: space, when: has_menu}
+    - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
+    - { when: always, toggle: transcription, accept: Control+2}      # 切换简繁
+    - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集    
+    - { when: always, toggle: single_char, accept: Control+4 }       # 切换词组/单字
+    - { when: always, toggle: full_shape, accept: Control+5 }        # 切换全半角
+    - { when: always, toggle: ascii_punct, accept: Control+6 }       # 切换中英标点
+    - { when: always, toggle: chaifen, accept: Control+7}            # 切换字根拆分显隐
+
+# 处理符合特定规则的输入码，如网址、反查
+recognizer:
+  import_preset: default  # 从 default.yaml 继承通用的
+  patterns:  # 再增加方案专有的：
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+    pinyin: "Up[a-z]*'?$"               # 不能用数字选候选字，只能用鼠标或者箭头键
+    pinyin_lookup: "`[a-y]*;?$"         # 五笔反查拼音
+    wubi98_lookup: "^z[a-z]*'?$"        # 拼音反查五笔
+    radical_lookup: "Uu[a-z]*'?$"       # 拆字反查拼音
+    unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
+    number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
+    calculator: "^=.*$"                 # 计算器功能引导

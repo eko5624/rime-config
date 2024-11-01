@@ -74,7 +74,7 @@ patch:
     label_font_face: 'Lucida Grande'
     label_font_point: 16
     # 注字体及大小
-    comment_font_face: 'PingFangSC'
+    comment_font_face: '黑体字根, 98WB-0'
     comment_font_point: 14
 
 
