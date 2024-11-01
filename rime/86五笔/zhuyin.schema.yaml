@@ -100,12 +100,12 @@ speller:
   algebra:
     - xform/^r5$/er5/
     - erase/^xx$/
-    - derive/^([zcs])h/$1/ # zh, ch, sh => z, c, s
-    - derive/^([zcs])([^h])/$1h$2/ # z, c, s => zh, ch, sh
-    - derive/([aei])n$/$1ng/ # en => eng, in => ing
-    - derive/([aei])ng$/$1n/ # eng => en, ing => in
-    - derive/([iu])an$/$lang/ # ian => iang, uan => uang
-    - derive/([iu])ang$/$lan/ # iang => ian, uang => uan
+    # - derive/^([zcs])h/$1/ # zh, ch, sh => z, c, s            # 去除 zh, ch, sh => z, c, s 模糊音转换
+    # - derive/^([zcs])([^h])/$1h$2/ # z, c, s => zh, ch, sh    # 去除 z, c, s => zh, ch, sh 模糊音转换
+    # - derive/([aei])n$/$1ng/ # en => eng, in => ing           # 去除 en => eng, in => ing 模糊音转换
+    # - derive/([aei])ng$/$1n/ # eng => en, ing => in           # 去除 eng => en, ing => in 模糊音转换
+    # - derive/([iu])an$/$lang/ # ian => iang, uan => uang      # 去除 ian => iang, uan => uang 模糊音转换
+    # - derive/([iu])ang$/$lan/ # iang => ian, uang => uan      # 去除 iang => ian, uang => uan 模糊音转换
     - derive/([aeiou])ng$/$1gn/        # dagn => dang
     - derive/([dtngkhrzcs])o(u|ng)$/$1o/  # zho => zhong|zhou
     - derive/ong$/on/                  # zhonguo => zhong guo
