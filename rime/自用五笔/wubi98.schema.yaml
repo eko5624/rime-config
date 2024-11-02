@@ -252,10 +252,7 @@ wubi98_reverse_lookup:                  # 五笔反查拼音
   tags: [pinyin_lookup]
   dictionary: zhuyin
   enable_completion: true
-  preedit_format:
-    - xform/([nljqxy])v/$1ü/
   comment_format:
-    - xform/([nljqxy])v/$1ü/
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
     - xform a1 ā
