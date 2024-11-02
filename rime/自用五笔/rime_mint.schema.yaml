@@ -1,0 +1,297 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: rime_mint
+  name: 薄荷全拼
+  version: "24.10.02"
+  author:
+    - mintimate < @Mintimate|https://www.mintimate.cn >
+  description: |
+    Mintimate的薄荷拼音方案。
+    除了参考官方明月拼音，还参考：
+      * chenhe: https://chenhe.me
+      * rime wiki: https://github.com/rime/home/wiki
+      * rime ice: https://github.com/iDvel/rime-ice
+      * Chewing - 新酷音
+      * opencc - 開放中文轉換
+  dependencies:
+    - radical_pinyin # 参考 https://github.com/mirtlecn/rime-radical-pinyin
+    - zhuyin
+    - wubi86
+    
+switches:
+  - name: emoji
+    states: [ 💀, 😄 ]
+    reset: 1
+  - name: ascii_mode
+    states: [ 中, 英 ]
+    reset: 0
+  - name: transcription
+    states: [ 简, 繁 ]
+    reset: 0
+  - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
+    states: [ 常, 扩 ]
+    reset: 1
+  - name: charset_comment
+    states: [码区关, 码区开]
+    reset: 1
+  - name: full_shape
+    states: [ 半, 全 ]
+    reset: 0
+  - name: ascii_punct  # 中英标点
+    states: [ "。，", "．，" ]
+    reset: 0
+    
+engine:
+  processors:
+    - lua_processor@*pair_symbols        # 成对输入符号并使鼠标居中
+    - lua_processor@*select_character
+    - lua_processor@*codeLengthLimit_processor           # 使用Lua限制输入内容的最大长度(防止过长而卡顿)
+    - ascii_composer                                     # ※ 處理西文模式及中西文切換
+    - recognizer                                         # ※ 與 matcher 搭配，處理符合特定規則的輸入碼，如網址、反查等
+    - key_binder                                         # ※ 在特定條件下將按鍵綁定到其他按鍵，如重定義逗號、句號爲候選翻頁鍵
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor                                    # 標識西文段落
+    - matcher                                            # 標識符合特定規則的段落，如網址、反查等
+    - affix_segmentor@radical_lookup
+    - affix_segmentor@wubi86_lookup
+    - abc_segmentor                                      # 標識常規的文字段落
+    - punct_segmentor                                    # 標識句讀段落
+    - fallback_segmentor                                 # 標識其他未標識段落
+  translators:
+    - punct_translator                                   # ※ 轉換標點符號
+    - script_translator
+    - lua_translator@time_date
+    - lua_translator@*calculator
+    - lua_translator@*number                             # 数字金额大写
+    - lua_translator@*unicode                            # Unicode 
+    - reverse_lookup_translator@radical_lookup
+    - reverse_lookup_translator@wubi86_lookup
+    # - reverse_lookup_translator                        # 反查模块，多标签情况下去除
+    # - echo_translator                                  # ※ 没有候选词，返回字符
+  filters:
+    - lua_filter@*corrector_filter                       # 错音错字提示
+    - simplifier
+    - simplifier@transcription_cc                        # 简繁切换
+    - simplifier@emoji                                   # Emoji OpenCC
+    - lua_filter@*charset*filter                         # CJK字符集过滤
+    - lua_filter@*charset*comment_hint                   # CJK字符集码区提示
+    - uniquifier
+
+# 简入繁出
+transcription_cc:
+  option_name: transcription
+  # opencc_config: s2t.json             # 简 -> 繁
+  opencc_config: s2hk.json              # 繁 -> 香港
+  # opencc_config: t2s.json             # 繁 -> 简
+  # opencc_config: t2tw.json            # 繁 -> 台湾
+  # opencc_config: t2hk.json            # 繁 -> 香港
+  # opencc_config: s2tw.json            # 簡 -> 臺灣標準
+  # opencc_config: s2twp.json           # 簡 -> 臺灣片語
+  tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+
+# 最大输入长度
+codeLengthLimit_processor: 25
+
+# Emoji模块
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  inherit_comment: false  # 在 corrector.lua 及反查中，emoji 返回空注释
+
+# 错音错字提示
+corrector_filter:
+  # 当文字没有触发错字错音的情况下，保持原本的注释
+  keep_source_comment: false   
+
+# Lua 配置：为 corrector 格式化 comment，占位符为 {comment}
+# 默认 "{comment}" 输入 hun dun 时会在「馄饨」旁边生成 hún tun 的 comment
+# 例如左右加个括号 "({comment})" 就会变成 (hún tun)
+corrector: "{comment}"
+translator:
+  # enable_correction: true      # Rime自带的按键纠错，适用于手机26键 参考: https://github.com/rime/librime/pull/228
+  # 字典文件
+  dictionary: rime_mint          # 使用的字典文件
+  spelling_hints: 8              # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
+  always_show_comments: true     # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
+  comment_format:               # 标记拼音注释，供 corrector.lua 做判断用
+    - xform/^/［/
+    - xform/$/］/
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+  initial_quality: 1.2
+  enable_user_dict: true         # 开启用户词典，根据用户输入调频（默认开启，此处再次声明）
+
+speller:
+  # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射；默认没用大写字母，使用大写字母方便中英混熟词典生效
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+  # 第一位 「空格」是拼音之间的默认分隔符；第二位「`」表示可以手动输入单引号来分割拼音
+  delimiter: " `"
+  # 拼写匹配
+  algebra:
+    - erase/^xx$/ # 首选保留
+    # - derive/^([zcs])h/$1/ # zh, ch, sh => z, c, s
+    # - derive/^([zcs])([^h])/$1h$2/ # z, c, s => zh, ch, sh
+    # - derive/([aei])n$/$1ng/ # en => eng, in => ing
+    # - derive/([aei])ng$/$1n/ # eng => en, ing => in
+    # - derive/([iu])an$/$lan/ # ian => iang, uan => uang
+    # - derive/([iu])ang$/$lan/ # iang => ian, uang => uan
+    - derive/([aeiou])ng$/$1gn/        # dagn => dang
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/  # zho => zhong|zhou
+    - derive/ong$/on/                  # zhonguo => zhong guo
+    - derive/un$/ong/                  # yuntong = yongtong
+    ## 简拼
+    - derive/^([a-z]).+$/$1/         # 通过正则表达式提取每个拼音的首字母
+    - derive/^([zcs]h).+$/$1/        # 特别处理 zh, ch, sh 的首字母简写
+    - abbrev/^([a-z]).+$/$1/         # 允许使用首字母作为缩写
+    # 简拼: 允许使用前两个字母作为缩写
+    # - abbrev/^([a-z]{2,}).+$/$1/     # zem -> zen me -> 怎么
+     ### 自动纠错
+    # 有些规则对全拼简拼混输有副作用：如「x'ai 喜爱」被纠错为「xia 下」
+    # zh、ch、sh
+    - derive/([zcs])h(a|e|i|u|ai|ei|an|en|ou|uo|ua|un|ui|uan|uai|uang|ang|eng|ong)$/h$1$2/  # hzi → zhi
+    - derive/([zcs])h([aeiu])$/$1$2h/  # zih → zhi
+    # ai
+    - derive/^([wghk])ai$/$1ia/  # wia → wai
+    # ia
+    - derive/([qjx])ia$/$1ai/  # qai → qia
+    # ei
+    - derive/([wtfghkz])ei$/$1ie/
+    # ie
+    - derive/([jqx])ie$/$1ei/
+    # ao
+    - derive/([rtypsdghklzcbnm])ao$/$1oa/
+    # ou
+    - derive/([ypfm])ou$/$1uo/
+    # uo（无）
+    # an
+    - derive/([wrtypsdfghklzcbnm])an$/$1na/
+    # en
+    - derive/([wrpsdfghklzcbnm])en$/$1ne/
+    # ang
+    - derive/([wrtypsdfghklzcbnm])ang$/$1nag/
+    - derive/([wrtypsdfghklzcbnm])ang$/$1agn/
+    # eng
+    - derive/([wrtpsdfghklzcbnm])eng$/$1neg/
+    - derive/([wrtpsdfghklzcbnm])eng$/$1egn/
+    # ing
+    - derive/([qtypdjlxbnm])ing$/$1nig/
+    - derive/([qtypdjlxbnm])ing$/$1ign/
+    # ong
+    - derive/([rtysdghklzcn])ong$/$1nog/
+    - derive/([rtysdghklzcn])ong$/$1ogn/
+    # iao
+    - derive/([qtpdjlxbnm])iao$/$1ioa/
+    - derive/([qtpdjlxbnm])iao$/$1oia/
+    # ui
+    - derive/([rtsghkzc])ui$/$1iu/
+    # iu
+    - derive/([qjlxnm])iu$/$1ui/
+    # ian
+    - derive/([qtpdjlxbnm])ian$/$1ain/
+    # - derive/([qtpdjlxbnm])ian$/$1ina/ # 和「李娜、蒂娜、缉拿」等常用词有冲突
+    # in
+    - derive/([qypjlxbnm])in$/$1ni/
+    # iang
+    - derive/([qjlxn])iang$/$1aing/
+    - derive/([qjlxn])iang$/$1inag/
+    # ua
+    - derive/([g|k|h|zh|sh])ua$/$1au/
+    # uai
+    - derive/([g|h|k|zh|ch|sh])uai$/$1aui/
+    - derive/([g|h|k|zh|ch|sh])uai$/$1uia/
+    # uan
+    - derive/([qrtysdghjklzxcn])uan$/$1aun/
+    # - derive/([qrtysdghjklzxcn])uan$/$1una/ # 和「去哪、露娜」等常用词有冲突
+    # un
+    - derive/([qrtysdghjklzxc])un$/$1nu/
+    # ue
+    - derive/([nlyjqx])ue$/$1eu/
+    # uang
+    - derive/([g|h|k|zh|ch|sh])uang$/$1aung/
+    - derive/([g|h|k|zh|ch|sh])uang$/$1uagn/
+    - derive/([g|h|k|zh|ch|sh])uang$/$1unag/
+    - derive/([g|h|k|zh|ch|sh])uang$/$1augn/
+    # iong
+    - derive/([jqx])iong$/$1inog/
+    - derive/([jqx])iong$/$1oing/
+    - derive/([jqx])iong$/$1iogn/
+    - derive/([jqx])iong$/$1oign/
+    # 其他
+    - derive/([rtsdghkzc])o(u|ng)$/$1o/ # do → dou|dong
+    - derive/ong$/on/ # lon → long
+    - derive/([tl])eng$/$1en/ # ten → teng
+    - derive/([qwrtypsdfghjklzxcbnm])([aeio])ng$/$1ng/ # lng → lang、leng、ling、long
+    - derive/un$/ong/                  # yuntong = yongtong
+
+wubi86_lookup:
+  tag: wubi86
+  dictionary: wubi86
+  enable_user_dict: false
+  enable_completion: true
+  prefix: "`"
+  tips: 〔五笔〕
+
+radical_lookup:
+  tag: radical
+  dictionary: radical_pinyin
+  enable_completion: false
+  enable_sentence: false
+  prefix: 'vv'
+  tips: 〔拆字〕
+
+reverse_lookup:
+  tags: [wubi86,radical]
+  overwrite_comment: true
+  dictionary: zhuyin
+  
+# 标点符号
+# punctuator 下面有三个子项：
+#   full_shape 全角标点映射
+#   half_shape 半角标点映射
+#   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符，自定义的 symbols_v.yaml 修改成了 'v' 开头。
+punctuator:
+  full_shape:
+    __include: default:/punctuator/full_shape  # 从 default.yaml 导入配置
+  half_shape:
+    __include: default:/punctuator/half_shape  # 从 default.yaml 导入配置
+  symbols:
+    __include: symbols:/symbols                # 从 symbols.yaml 导入配置
+
+key_binder:
+  import_preset: default
+  bindings:
+    # 上下翻页 - =
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    
+    # 上下翻页 tab
+    - { when: has_menu, accept: Tab, send: Page_Down }
+    - {send: Escape, accept: space, when: composing}
+    - {send: space, accept: space, when: has_menu}
+    - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
+    - { when: always, toggle: transcription, accept: Control+2}      # 切换简繁
+    - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集
+    - { when: always, toggle: full_shape, accept: Control+4 }        # 切换全半角
+    - { when: always, toggle: ascii_punct, accept: Control+5 }       # 切换中英标点
+
+# 反查映射
+recognizer:
+  import_preset: default
+  patterns:
+    url: "^[a-z]+[.].+$"
+    punct: "^/([0-9]0?|[a-zA-Z]+)$"
+    radical: "vv[a-z]*'?$"
+    wubi86: "^`[a-y]*'?$"
+    number: "^R[0-9]+[.]?[0-9]*"        # 响应 lua_translator@number_translator 脚本将自动获取第 2 个字符作为触发前缀
+    calculator: "^=.*$"                 # 计算器功能引导
+    uppercase: ""                       # 覆写默认的 uppercase 使其可以在输入大写后，输入数字
+

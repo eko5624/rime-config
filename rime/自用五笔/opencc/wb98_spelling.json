@@ -1,0 +1,16 @@
+{
+  "name": "wb98_spelling",
+  "segmentation": {
+    "type": "mmseg",
+    "dict": {
+      "type": "text",
+      "file": "wb98_spelling.txt"
+    }
+  },
+  "conversion_chain": [{
+    "dict": {
+      "type": "text",
+      "file": "wb98_spelling.txt"
+    }
+  }]
+}
