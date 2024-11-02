@@ -68,7 +68,6 @@ engine:
     - reverse_lookup_translator@wubi86_lookup
     - table_translator@custom_phrase
     - script_translator
-    #- script_translator@radical_lookup
   filters:
     - simplifier
     - simplifier@s2hk
