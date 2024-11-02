@@ -15,22 +15,25 @@ switches:
     states: [ 💀, 😄 ]
     reset: 1
   - name: ascii_mode
-    states: [ 中, 英 ]
+    states: [ 中文, 英文 ]
     reset: 0
   - name: transcription
-    states: [ 繁, 简 ]
-    reset: 1
+    states: [ 通用, 繁体 ]
+    reset: 0
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
-    states: [ 常, 扩 ]
+    states: [ 常用, 扩展 ]
     reset: 1
   - name: charset_comment
     states: [码区关, 码区开]
     reset: 1
   - name: full_shape
-    states: [ 半, 全 ]
+    states: [ 半角, 全角 ]
     reset: 0
   - name: ascii_punct  # 中英标点
     states: [ "。，", "．，" ]
+    reset: 0
+  - options: [ std, s2hk, s2twp ]
+    states: [ 通用, 港繁, 台正 ]
     reset: 0
     
 engine:
@@ -68,30 +71,43 @@ engine:
     #- script_translator@radical_lookup
   filters:
     - simplifier
+    - simplifier@s2hk
+    - simplifier@s2tw
     - simplifier@transcription_cc
     - simplifier@emoji                          # Emoji OpenCC
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - uniquifier                                # 去重
 
-# 简入繁出
+# 简繁转换
 transcription_cc:
   option_name: transcription
-  # opencc_config: s2t.json            # 简 -> 繁
-  # opencc_config: s2hk.json           # 繁 -> 香港
-  opencc_config: t2s.json              # 繁 -> 简
-  # opencc_config: t2tw.json           # 繁 -> 台湾
-  # opencc_config: t2hk.json           # 繁 -> 香港
-  # opencc_config: s2tw.json           # 簡 -> 臺灣標準
-  # opencc_config: s2twp.json          # 簡 -> 臺灣片語
-  tips: none                           # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
-  excluded_types: [reverse_lookup]     # 不转换反查（两分拼字）的内容
+  # opencc_config: s2t.json             # 简 -> 繁
+  opencc_config: s2hk.json              # 简 -> 香港
+  # opencc_config: t2s.json             # 繁 -> 简
+  # opencc_config: t2tw.json            # 繁 -> 台湾
+  # opencc_config: t2hk.json            # 繁 -> 香港
+  # opencc_config: s2tw.json            # 簡 -> 臺灣標準
+  # opencc_config: s2twp.json           # 簡 -> 臺灣片語
+  tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
 
-# Emoji
+s2hk:
+  opencc_config: s2hk.json
+  option_name: s2hk
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+  #tips: all
+
+s2tw:
+  opencc_config: s2twp.json
+  option_name: s2twp
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+  #tips: all
+
 emoji:
   option_name: emoji
   opencc_config: emoji.json
-  inherit_comment: false  # 在 corrector.lua 及反查中，emoji 返回空注释
+  inherit_comment: false                # 在 corrector.lua 及反查中，emoji 返回空注释
 
 speller:
   alphabet: 'zyxwvutsrqponmlkjihgfedcba-;/<,>\'
@@ -214,10 +230,7 @@ wubi86_lookup:
   enable_completion: true
   prefix: "`"
   tips: 〔五笔〕
-  preedit_format:
-    - xform/([nljqxy])v/$1ü/
   comment_format:
-    - xform/([nljqxy])v/$1ü/
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
     - xform a1 ā
@@ -255,10 +268,7 @@ radical_lookup:
   enable_sentence: false
   prefix: 'vv'
   tips: 〔拆字〕
-  preedit_format:
-    - xform/([nljqxy])v/$1ü/
   comment_format:
-    - xform/([nljqxy])v/$1ü/
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
     - xform a1 ā

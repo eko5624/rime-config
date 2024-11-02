@@ -25,22 +25,25 @@ switches:
     states: [ 💀, 😄 ]
     reset: 1
   - name: ascii_mode
-    states: [ 中, 英 ]
+    states: [ 中文, 英文 ]
     reset: 0
   - name: transcription
-    states: [ 简, 繁 ]
+    states: [ 通用, 繁体 ]
     reset: 0
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
-    states: [ 常, 扩 ]
+    states: [ 常用, 扩展 ]
     reset: 1
   - name: charset_comment
     states: [码区关, 码区开]
     reset: 1
   - name: full_shape
-    states: [ 半, 全 ]
+    states: [ 半角, 全角 ]
     reset: 0
   - name: ascii_punct  # 中英标点
     states: [ "。，", "．，" ]
+    reset: 0
+  - options: [ std, s2hk, s2twp ]
+    states: [ 通用, 港繁, 台正 ]
     reset: 0
     
 engine:
@@ -73,28 +76,44 @@ engine:
     - lua_translator@*unicode                            # Unicode 
     - reverse_lookup_translator@radical_lookup
     - reverse_lookup_translator@wubi86_lookup
-    # - reverse_lookup_translator                        # 反查模块，多标签情况下去除
-    # - echo_translator                                  # ※ 没有候选词，返回字符
+    - table_translator@custom_phrase
+    - script_translator
+    #- script_translator@radical_lookup
   filters:
     - lua_filter@*corrector_filter                       # 错音错字提示
     - simplifier
-    - simplifier@transcription_cc                        # 简繁切换
+    - simplifier@s2hk
+    - simplifier@s2tw
+    - simplifier@transcription_cc
     - simplifier@emoji                                   # Emoji OpenCC
     - lua_filter@*charset*filter                         # CJK字符集过滤
     - lua_filter@*charset*comment_hint                   # CJK字符集码区提示
     - uniquifier
 
-# 简入繁出
+# 简繁转换
 transcription_cc:
   option_name: transcription
   # opencc_config: s2t.json             # 简 -> 繁
-  opencc_config: s2hk.json              # 繁 -> 香港
+  opencc_config: s2hk.json              # 简 -> 香港
   # opencc_config: t2s.json             # 繁 -> 简
   # opencc_config: t2tw.json            # 繁 -> 台湾
   # opencc_config: t2hk.json            # 繁 -> 香港
   # opencc_config: s2tw.json            # 簡 -> 臺灣標準
   # opencc_config: s2twp.json           # 簡 -> 臺灣片語
   tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+
+s2hk:
+  opencc_config: s2hk.json
+  option_name: s2hk
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+  #tips: all
+
+s2tw:
+  opencc_config: s2twp.json
+  option_name: s2twp
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+  #tips: all
 
 # 最大输入长度
 codeLengthLimit_processor: 25
@@ -103,7 +122,7 @@ codeLengthLimit_processor: 25
 emoji:
   option_name: emoji
   opencc_config: emoji.json
-  inherit_comment: false  # 在 corrector.lua 及反查中，emoji 返回空注释
+  inherit_comment: false                # 在 corrector.lua 及反查中，emoji 返回空注释
 
 # 错音错字提示
 corrector_filter:
