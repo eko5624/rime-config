@@ -19,31 +19,31 @@ switches:
     states: [ 💀, 😄 ]
     reset: 1  
   - name: ascii_mode
-    states: [ 中文, 英文 ]
+    states: [ 中, 英 ]
     reset: 0
   - name: transcription
-    states: [ 通用, 繁体 ]
+    states: [ 通, 繁 ]
     reset: 0
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
-    states: [ 常用, 扩展 ]
-    reset: 0
-  - name: charset_comment
-    states: [码区关, 码区开]
+    states: [ 常, 扩 ]
     reset: 0
   - name: chaifen
-    states: [ 拆隐, 拆显 ]
+    states: [ 隐, 显 ]
     reset: 1 
   - name: single_char
-    states: [词组, 单字]
+    states: [ 词, 单 ]
     reset: 0
   - name: full_shape
-    states: [ 半角, 全角 ]
+    states: [ 半, 全 ]
     reset: 0
-  - name: ascii_punct  # 中英标点
+  - name: ascii_punct
     states: [ "。，", "．，" ]
     reset: 0
   - options: [ std, s2hk, s2twp ]
-    states: [ 通用, 港繁, 台正 ]
+    states: [ 通, 港, 台 ]
+    reset: 0
+  - name: charset_comment
+    states: [ 码区关, 码区开 ]
     reset: 0
 
 engine:
@@ -130,13 +130,13 @@ transcription_cc:
 s2hk:
   opencc_config: s2hk.json
   option_name: s2hk
-  tags: [abc]                           # 限制在对应 tag 只在五笔输入时启用简繁转换
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
   #tips: all
 
 s2tw:
   opencc_config: s2twp.json
   option_name: s2twp
-  tags: [abc]                           # 限制在对应 tag 只在五笔输入时启用简繁转换
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
   #tips: all
 
 emoji:
@@ -361,6 +361,8 @@ key_binder:
     - { when: always, toggle: full_shape, accept: Control+5 }        # 切换全半角
     - { when: always, toggle: ascii_punct, accept: Control+6 }       # 切换中英标点
     - { when: always, toggle: chaifen, accept: Control+7}            # 切换字根拆分显隐
+    - { when: always, set_option: s2twp, accept: Control+8 }         # 切换 通用 -> 台湾片语
+    - { when: always, unset_option: s2twp, accept: Control+9 }       # 切换 台湾片语 -> 通用
 
 # 处理符合特定规则的输入码，如网址、反查
 recognizer:
