@@ -15,30 +15,30 @@ switches:
     states: [ 💀, 😄 ]
     reset: 1
   - name: ascii_mode
-    states: [ 中文, 英文 ]
+    states: [ 中, 英 ]
     reset: 0
   - name: transcription
-    states: [ 通用, 繁体 ]
+    states: [ 通, 繁 ]
     reset: 0
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
-    states: [ 常用, 扩展 ]
+    states: [ 常, 扩 ]
     reset: 1
   - name: charset_comment
-    states: [码区关, 码区开]
+    states: [ 码区关, 码区开 ]
     reset: 1
   - name: full_shape
-    states: [ 半角, 全角 ]
+    states: [ 半, 全 ]
     reset: 0
   - name: ascii_punct  # 中英标点
     states: [ "。，", "．，" ]
     reset: 0
   - options: [ std, s2hk, s2twp ]
-    states: [ 通用, 港繁, 台正 ]
+    states: [ 通, 港, 台 ]
     reset: 0
     
 engine:
   processors:
-    - lua_processor@*pair_symbols        # 成对输入符号并使鼠标居中
+    - lua_processor@*pair_symbols                        # 成对输入符号并使鼠标居中
     - lua_processor@*select_character
     - lua_processor@*codeLengthLimit_processor           # 使用Lua限制输入内容的最大长度(防止过长而卡顿)
     - ascii_composer
