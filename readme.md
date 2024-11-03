@@ -8,6 +8,13 @@
 * 支持emoji输出
 * 支持各种符号输出
 
+## 参考来源
+
+1. [98五笔小组](https://github.com/yanhuacuo/98wubi)
+2. [空山明月五笔](https://github.com/mrshiqiqi/rime-wubi)
+3. [薄荷输入法](https://github.com/Mintimate/oh-my-rime)
+4. [五笔字型超大字符集编码数据库](https://github.com/CNMan/UnicodeCJK-WuBi)
+
 ## Unicode CJK 部分变动历史：
 
 |版本|发布年月|CJK|CJK-A|CJK-B|CJK-C|CJK-D|CJK-E|CJK-F|CJK-G|CJK-H|CJK-I|CJK-CI|CJK-CIS|
