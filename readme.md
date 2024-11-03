@@ -1,5 +1,5 @@
-# 五笔字型 Unicode 15.1.0 CJK 超大字符集
-
+# 自用五笔说明
+* 支持Unicode 15.1.0 CJK 超大字符集
 * 支持86/98五笔码元提示
 * 支持拼音反查五笔，五笔反查拼音
 * 支持计算器，农历，节气
@@ -8,12 +8,25 @@
 * 支持emoji输出
 * 支持各种符号输出
 
+Tips: 要想在正常输入状态下开启码元提示只需修改`wubi86.schema.yaml`如下字段为:
+```  
+chaifen:
+  opencc_config: wb86_spelling.json
+  option_name: chaifen
+  show_in_comment: true 
+  comment_format:     
+    - "xform/&nbsp;/ /"
+  tags: [abc, wubi86_lookup]            # 限制在对应 tag 才有拆分提示
+  tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
+```
+
 ## 参考来源
 
 1. [98五笔小组](https://github.com/yanhuacuo/98wubi)
 2. [空山明月五笔](https://github.com/mrshiqiqi/rime-wubi)
 3. [薄荷输入法](https://github.com/Mintimate/oh-my-rime)
-4. [五笔字型超大字符集编码数据库](https://github.com/CNMan/UnicodeCJK-WuBi)
+4. [Rime 输入法双拼加辅助码方案](https://github.com/boomker/rime-fast-xhup)
+5. [五笔字型超大字符集编码数据库](https://github.com/CNMan/UnicodeCJK-WuBi)
 
 ## Unicode CJK 部分变动历史：
 
