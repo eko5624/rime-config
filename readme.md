@@ -9,7 +9,9 @@
 * 支持各种符号输出
 
 Tips: 要想在正常输入状态下开启码元提示只需修改`wubi86.schema.yaml`如下字段为:
-`  tags: [abc, wubi86_lookup]  # 限制在对应 tag 才有拆分提示`
+```  
+tags: [abc, wubi86_lookup]  # 限制在对应 tag 才有拆分提示
+```
 
 ## 参考来源
 
