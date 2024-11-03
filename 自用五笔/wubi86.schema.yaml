@@ -21,8 +21,8 @@ switches:
   - name: ascii_mode
     states: [ 中, 英 ]
     reset: 0
-  - name: transcription
-    states: [ 通, 繁 ]
+  - options: [ std, s2hk, s2twp ]
+    states: [ 通, 港, 台 ]
     reset: 0
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
@@ -38,9 +38,6 @@ switches:
     reset: 0
   - name: ascii_punct
     states: [ "。，", "．，" ]
-    reset: 0
-  - options: [ std, s2hk, s2twp ]
-    states: [ 通, 港, 台 ]
     reset: 0
   - name: charset_comment
     states: [ 码区关, 码区开 ]
@@ -83,7 +80,7 @@ engine:
     - simplifier@emoji                          # Emoji
     - simplifier@s2hk
     - simplifier@s2tw
-    - simplifier@transcription_cc               # 简繁切换
+    #- simplifier@transcription_cc              # 简繁切换
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@single_char
@@ -115,29 +112,29 @@ translator:
     - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
 
 # 简繁转换
-transcription_cc:
-  option_name: transcription
+# transcription_cc:
+  # option_name: transcription
   # opencc_config: s2t.json             # 简 -> 繁
-  opencc_config: s2hk.json              # 简 -> 香港
+  # opencc_config: s2hk.json              # 简 -> 香港
   # opencc_config: t2s.json             # 繁 -> 简
   # opencc_config: t2tw.json            # 繁 -> 台湾
   # opencc_config: t2hk.json            # 繁 -> 香港
   # opencc_config: s2tw.json            # 簡 -> 臺灣標準
   # opencc_config: s2twp.json           # 簡 -> 臺灣片語
-  tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
-  tags: [abc]                           # 限制在对应 tag 只在五笔输入时启用简繁转换
+  # tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  # tags: [abc]                           # 限制在对应 tag 只在五笔输入时启用简繁转换
 
 s2hk:
   opencc_config: s2hk.json
   option_name: s2hk
   tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
-  #tips: all
+  tips: all
 
 s2tw:
   opencc_config: s2twp.json
   option_name: s2twp
   tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
-  #tips: all
+  tips: all
   
 emoji:
   option_name: emoji
@@ -355,14 +352,14 @@ key_binder:
     - {send: Escape, accept: space, when: composing}
     - {send: space, accept: space, when: has_menu}
     - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
-    - { when: always, toggle: transcription, accept: Control+2}      # 切换简繁
+    - { when: always, set_option: std, accept: Control+2 }           # 重置为通用体
     - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集    
     - { when: always, toggle: single_char, accept: Control+4 }       # 切换词组/单字
     - { when: always, toggle: full_shape, accept: Control+5 }        # 切换全半角
     - { when: always, toggle: ascii_punct, accept: Control+6 }       # 切换中英标点
     - { when: always, toggle: chaifen, accept: Control+7}            # 切换字根拆分显隐
-    - { when: always, set_option: s2twp, accept: Control+8 }         # 切换 通用 -> 台湾片语
-    - { when: always, unset_option: s2twp, accept: Control+9 }       # 切换 台湾片语 -> 通用
+    - { when: always, set_option: s2hk, accept: Control+8 }          # 切换 通用 -> 香港繁体
+    - { when: always, set_option: s2twp, accept: Control+9 }         # 切换 通用 -> 台湾片语
 
 # 处理符合特定规则的输入码，如网址、反查
 recognizer:
