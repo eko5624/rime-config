@@ -16,7 +16,7 @@ chaifen:
   show_in_comment: true 
   comment_format:     
     - "xform/&nbsp;/ /"
-  tags: [abc, wubi86_lookup]                 # 限制在对应 tag 才有拆分提示
+  tags: [abc, wubi86_lookup]            # 限制在对应 tag 才有拆分提示
   tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
 ```
 
