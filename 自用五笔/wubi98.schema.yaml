@@ -293,10 +293,7 @@ radical_reverse_lookup:
   tags: [radical_lookup]
   overwrite_comment: true
   dictionary: zhuyin
-  preedit_format:
-    - xform/([nljqxy])v/$1ü/
   comment_format:
-    - xform/([nljqxy])v/$1ü/
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
     - xform a1 ā
@@ -352,14 +349,14 @@ key_binder:
     - {send: Escape, accept: space, when: composing}
     - {send: space, accept: space, when: has_menu}
     - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
-    - { when: always, toggle: transcription, accept: Control+2}      # 切换简繁
+    - { when: always, set_option: std, accept: Control+2 }           # 重置为通用体
     - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集    
     - { when: always, toggle: single_char, accept: Control+4 }       # 切换词组/单字
     - { when: always, toggle: full_shape, accept: Control+5 }        # 切换全半角
     - { when: always, toggle: ascii_punct, accept: Control+6 }       # 切换中英标点
     - { when: always, toggle: chaifen, accept: Control+7}            # 切换字根拆分显隐
-    - { when: always, set_option: s2twp, accept: Control+8 }         # 切换 通用 -> 台湾片语
-    - { when: always, unset_option: s2twp, accept: Control+9 }       # 切换 台湾片语 -> 通用
+    - { when: always, set_option: s2hk, accept: Control+8 }          # 切换 通用 -> 香港繁体
+    - { when: always, set_option: s2twp, accept: Control+9 }         # 切换 通用 -> 台湾片语
 
 # 处理符合特定规则的输入码，如网址、反查
 recognizer:
