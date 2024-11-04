@@ -22,7 +22,7 @@ chaifen:
 
 ## 参考来源
 
-1. [98五笔小组](https://github.com/yanhuacuo/98wubi)
+1. [五笔小筑](https://github.com/yanhuacuo/98wubi)
 2. [空山明月五笔](https://github.com/mrshiqiqi/rime-wubi)
 3. [薄荷输入法](https://github.com/Mintimate/oh-my-rime)
 4. [Rime 输入法双拼加辅助码方案](https://github.com/boomker/rime-fast-xhup)
