@@ -26,7 +26,7 @@ switches:
     reset: 0
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
-    reset: 0
+    reset: 1
   - name: chaifen
     states: [ 隐, 显 ]
     reset: 1 
@@ -41,7 +41,7 @@ switches:
     reset: 0
   - name: charset_comment
     states: [ 码区关, 码区开 ]
-    reset: 0
+    reset: 1
 
 engine:
   processors:
