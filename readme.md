@@ -20,6 +20,17 @@ chaifen:
   tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
 ```
 
+## 补充资料
+
+### 86 版五笔字根表
+
+![](./wubi86.png)
+
+### 98 版五笔字根表
+
+![](./98五笔码元-全图-青葱.jpg)
+
+
 ## 参考来源
 
 1. [五笔小筑](https://github.com/yanhuacuo/98wubi)
