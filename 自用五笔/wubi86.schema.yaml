@@ -41,7 +41,7 @@ switches:
     reset: 0
   - name: charset_comment
     states: [ 码区关, 码区开 ]
-    reset: 1
+    reset: 0
 
 engine:
   processors:
