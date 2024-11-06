@@ -20,6 +20,11 @@ chaifen:
   tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
 ```
 
+另：为进一步提高开启码元提示时的读写速度，把拆分码元的字表转换为ocd2格式。转换方法如下：
+1. 安装opencc: ```brew install opencc```
+2. 终端输入命令: ```opencc_dict -i /path/wb86_spelling.txt -o /path/wb86_spelling.ocd2 -f text -t ocd2```
+
+
 ## 补充资料
 
 ### 86 版五笔字根表
