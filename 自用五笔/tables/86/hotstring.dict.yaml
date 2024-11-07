@@ -1,0 +1,44 @@
+name: hotstring
+version: "3.1"
+sort: by_weight
+columns:
+  - text
+  - code
+  - weight
+  - stem
+encoder:
+  exclude_patterns:
+    - '^z.*$'
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 32]
+      formula: "AaBaCaZa"
+...
+	az
+	sz
+	dz
+󰀚	fz
+	gz
+	hz
+󰀲	jz
+	kz
+	lz
+	mz
+	qz
+	wz
+	ez
+	rz
+	tz
+	yz
+	uz
+	iz
+	oz
+	pz
+	nz
+	bz
+	vz
+	cz
+󰄱󰁵	xz

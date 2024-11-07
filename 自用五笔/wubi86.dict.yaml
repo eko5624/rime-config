@@ -10,6 +10,7 @@ version: "2.0"
 sort: by_weight
 import_tables:
   - tables/86/wubi
+  - tables/86/hotstring
   - tables/86/cjk_base  
   - tables/86/cjk_a
   - tables/86/cjk_b

@@ -68,7 +68,7 @@ patch:
     # candidate_format: '%c. %@'
 
     # 全局字体及大小
-    font_face: 'PingFangSC'
+    font_face: '黑体字根, PingFangSC'
     font_point: 16
     # 序号字体及大小（建议使用「等宽字体」）
     label_font_face: 'Lucida Grande'
