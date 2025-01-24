@@ -15,8 +15,6 @@ schema:
     - 发明人 王永民
   description: |
     敲 z 键进入拼音反查
-  dependencies:
-    - rime_mint         # 薄荷拼音
 
 switches:
   - name: emoji
@@ -62,7 +60,6 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
-    - affix_segmentor@pinyin
     - affix_segmentor@pinyin_lookup
     - affix_segmentor@wubi98_lookup
     - affix_segmentor@radical_lookup
@@ -75,8 +72,10 @@ engine:
     - lua_translator@time_date
     - lua_translator@*calculator
     - lua_translator@*number                    # 数字金额大写
+    - lua_translator@*force_gc                  # 暴力 GC 降低内存
     - lua_translator@*unicode                   # Unicode
-    - script_translator@pinyin
+    - table_translator@chengyu                  # 简码成语
+    - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
     - script_translator@pinyin_lookup
     - script_translator@wubi98_lookup
     - script_translator@radical_lookup
@@ -113,7 +112,9 @@ translator:
   preedit_format:                       # 上屏码自定义
 #    - xform/.+//
   comment_format:                       # 提示码自定义
-#    - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
+    - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
+  disable_user_dict_for_patterns:       # 不需要录入用户词典的编码
+    - "^z.*$"
 
 # 简繁转换
 # transcription_cc:
@@ -140,6 +141,24 @@ s2tw:
   tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
   tips: all
 
+# 自定义短语
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase  # 需要手动创建 custom_phrase.txt 文件
+  db_class: stabledb
+  enable_completion: false # 补全提示
+  enable_sentence: false   # 禁止造句
+  initial_quality: 99      # custom_phrase 的权重应该比 pinyin 和 melt_eng 大
+
+# 简码词库导入位于jm_dicts得txt文件词库
+chengyu:
+  dictionary: ""
+  user_dict: jm_dicts/chengyu
+  db_class: stabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: 100 #本表词和系统词重码居后
+
 emoji:
   option_name: emoji
   opencc_config: emoji.json
@@ -158,80 +177,10 @@ chaifen:
     - "xform/&nbsp;/ /"
   tags: [pinyin_lookup]                 # 限制在对应 tag 只有在拼音反查五笔时才有拆分提示
   tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
-
-pinyin:                                 # 临时拼音
-  tag: pinyin
-  prefix: "Up"
-  suffix: ;
-  tips: 〔临时拼音〕
-  closing_tips: 〔五笔〕
-  dictionary: zhuyin
-  preedit_format:
-    - xform/([nl])v/$1ü/
-    - xform/([nl])ue/$1üe/
-    - xform/([nl])üen/$1uen/
-    - xform/([jqxy])v/$1u/
-    - xform/eh/ê/
-    - 'xform ([aeiou])(ng?|r)([-;/<,>\\]) $1$3$2'
-    - 'xform ([aeo])([iuo])([-;/<,>\\]) $1$3$2'
-    - 'xform a[-;] ā'
-    - 'xform a/ á'
-    - 'xform a[<,] ǎ'
-    - 'xform a[>\\] à'
-    - 'xform e[-;] ē'
-    - 'xform e/ é'
-    - 'xform e[<,] ě'
-    - 'xform e[>\\] è'
-    - 'xform o[-;] ō'
-    - 'xform o/ ó'
-    - 'xform o[<,] ǒ'
-    - 'xform o[>\\] ò'
-    - 'xform i[-;] ī'
-    - 'xform i/ í'
-    - 'xform i[<,] ǐ'
-    - 'xform i[>\\] ì'
-    - 'xform u[-;] ū'
-    - 'xform u/ ú'
-    - 'xform u[<,] ǔ'
-    - 'xform u[>\\] ù'
-    - 'xform ü[-;] ǖ'
-    - 'xform ü/ ǘ'
-    - 'xform ü[<,] ǚ'
-    - 'xform ü[>\\] ǜ'
-  comment_format:
-    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
-    - xform ([aeo])([iuo])([1234]) $1$3$2
-    - xform a1 ā
-    - xform a2 á
-    - xform a3 ǎ
-    - xform a4 à
-    - xform e1 ē
-    - xform e2 é
-    - xform e3 ě
-    - xform e4 è
-    - xform o1 ō
-    - xform o2 ó
-    - xform o3 ǒ
-    - xform o4 ò
-    - xform i1 ī
-    - xform i2 í
-    - xform i3 ǐ
-    - xform i4 ì
-    - xform u1 ū
-    - xform u2 ú
-    - xform u3 ǔ
-    - xform u4 ù
-    - xform v1 ǖ
-    - xform v2 ǘ
-    - xform v3 ǚ
-    - xform v4 ǜ
-    - xform/([nljqxy])v/$1ü/
-    - xform/eh[0-5]?/ê/
-    - xform/([a-z]+)[0-5]/$1/
-
+  
 pinyin_lookup:                          # 拼音反查五笔
   tag: pinyin_lookup
-  dictionary: zhuyin
+  dictionary: wanxiang
   prefix: "z"
   tips: 〔拼音反查〕
 
@@ -251,38 +200,9 @@ wubi98_lookup:                          # 五笔反查拼音
       
 wubi98_reverse_lookup:                  # 五笔反查拼音
   tags: [wubi98_lookup]
-  dictionary: zhuyin
+  dictionary: wanxiang
+  spelling_hints: 20  # ～字以內候選標註完整帶調拼音
   enable_completion: true
-  comment_format:
-    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
-    - xform ([aeo])([iuo])([1234]) $1$3$2
-    - xform a1 ā
-    - xform a2 á
-    - xform a3 ǎ
-    - xform a4 à
-    - xform e1 ē
-    - xform e2 é
-    - xform e3 ě
-    - xform e4 è
-    - xform o1 ō
-    - xform o2 ó
-    - xform o3 ǒ
-    - xform o4 ò
-    - xform i1 ī
-    - xform i2 í
-    - xform i3 ǐ
-    - xform i4 ì
-    - xform u1 ū
-    - xform u2 ú
-    - xform u3 ǔ
-    - xform u4 ù
-    - xform v1 ǖ
-    - xform v2 ǘ
-    - xform v3 ǚ
-    - xform v4 ǜ
-    - xform/([nljqxy])v/$1ü/
-    - xform/eh[0-5]?/ê/
-    - xform/([a-z]+)[0-5]/$1/
 
 radical_lookup:
   tag: radical_lookup
@@ -296,37 +216,7 @@ radical_lookup:
 radical_reverse_lookup:
   tags: [radical_lookup]
   overwrite_comment: true
-  dictionary: zhuyin
-  comment_format:
-    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
-    - xform ([aeo])([iuo])([1234]) $1$3$2
-    - xform a1 ā
-    - xform a2 á
-    - xform a3 ǎ
-    - xform a4 à
-    - xform e1 ē
-    - xform e2 é
-    - xform e3 ě
-    - xform e4 è
-    - xform o1 ō
-    - xform o2 ó
-    - xform o3 ǒ
-    - xform o4 ò
-    - xform i1 ī
-    - xform i2 í
-    - xform i3 ǐ
-    - xform i4 ì
-    - xform u1 ū
-    - xform u2 ú
-    - xform u3 ǔ
-    - xform u4 ù
-    - xform v1 ǖ
-    - xform v2 ǘ
-    - xform v3 ǚ
-    - xform v4 ǜ
-    - xform/([nljqxy])v/$1ü/
-    - xform/eh[0-5]?/ê/
-    - xform/([a-z]+)[0-5]/$1/
+  dictionary: wanxiang
 
 # 标点符号
 # punctuator 下面有三个子项：
@@ -367,7 +257,6 @@ recognizer:
   import_preset: default  # 从 default.yaml 继承通用的
   patterns:  # 再增加方案专有的：
     punct: '^/([0-9]0?|[A-Za-z]+)$'
-    pinyin: "Up[a-z]*'?$"               # 不能用数字选候选字，只能用鼠标或者箭头键
     pinyin_lookup: "^z[a-z]*'?$"        # 五笔反查拼音
     wubi98_lookup: "`[a-y]*;?$"         # 拼音反查五笔
     radical_lookup: "Uu[a-z]*'?$"       # 拆字反查拼音

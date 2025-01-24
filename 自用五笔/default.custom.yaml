@@ -8,8 +8,8 @@ patch:
   schema_list:
     - schema: wubi86                # 86五笔
     - schema: wubi98                # 98五笔
-    - schema: rime_mint             # 薄荷全拼
-    - schema: zhuyin                # 注音
+    - schema: wanxiang              # 万象拼音
+    - schema: chengyu               # 成语大全
 
   switcher:
     caption: 〈菜单项〉

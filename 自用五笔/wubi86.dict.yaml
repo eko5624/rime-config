@@ -9,23 +9,23 @@ name: wubi86
 version: "2.0"
 sort: by_weight
 import_tables:
-  - tables/86/wubi
-  - tables/86/hotstring
-  - tables/86/cjk_base  
-  - tables/86/cjk_a
-  - tables/86/cjk_b
-  - tables/86/cjk_c
-  - tables/86/cjk_d
-  - tables/86/cjk_e
-  - tables/86/cjk_f
-  - tables/86/cjk_g
-  - tables/86/cjk_h
-  - tables/86/cjk_i
-  - tables/86/cjk_compat
-  - tables/86/cjk_compatsupp 
-  - tables/86/cjk_kangxiradical
-  - tables/86/cjk_radicalsupp
-  - tables/86/cjk_stroke
+  - cn_dicts/86/wubi
+  - cn_dicts/86/hotstring
+  - cn_dicts/86/CJK
+  - cn_dicts/86/CJKExt_A
+  - cn_dicts/86/CJKExt_B
+  - cn_dicts/86/CJKExt_C
+  - cn_dicts/86/CJKExt_D
+  - cn_dicts/86/CJKExt_E
+  - cn_dicts/86/CJKExt_F
+  - cn_dicts/86/CJKExt_G
+  - cn_dicts/86/CJKExt_H
+  - cn_dicts/86/CJKExt_I
+  - cn_dicts/86/CJKCompat
+  - cn_dicts/86/CJKCompatsupp
+  - cn_dicts/86/CJKKangxiradical
+  - cn_dicts/86/CJKRadicalsupp
+  - cn_dicts/86/CJKStroke
 columns:
   - text
   - code

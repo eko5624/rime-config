@@ -1,0 +1,316 @@
+schema:
+  schema_id: wanxiang
+  name: 万象拼音
+  version: "1.0"
+  icon: icons/CN.ico
+  ascii_icon: icons/EN.ico
+  full_icon: icons/full.ico
+  half_icon: icons/half.ico
+  author:
+    - amzxyz
+  description: |
+    基于超大规模语料的RIME带调拼音方案
+  dependencies:
+    - wubi86
+    - radical_pinyin
+
+switches:
+  - name: emoji
+    states: [ 💀, 😄 ]
+    reset: 1
+  - name: ascii_mode
+    states: [ 中, 英 ]
+    reset: 0
+  - options: [ std, s2hk, s2twp ]
+    states: [ 通, 港, 台 ]
+    reset: 0
+  - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
+    states: [ 常, 扩 ]
+    reset: 1
+  - name: charset_comment
+    states: [ 码区关, 码区开 ]
+    reset: 1
+  - name: full_shape
+    states: [ 半, 全 ]
+    reset: 0
+  - name: ascii_punct  # 中英标点
+    states: [ "。，", "．，" ]
+    reset: 0
+    
+engine:
+  processors:
+    - lua_processor@*pair_symbols                        # 成对输入符号并使鼠标居中
+    - lua_processor@*select_character
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@radical_lookup
+    - affix_segmentor@wubi86_lookup
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - history_translator@history
+    - lua_translator@time_date
+    - lua_translator@*calculator
+    - lua_translator@*number                    # 数字金额大写
+    - lua_translator@*force_gc                  # 暴力 GC 降低内存
+    - lua_translator@*unicode                   # Unicode
+    - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
+    - table_translator@chengyu                  # 简码成语
+    - reverse_lookup_translator@radical_lookup
+    - reverse_lookup_translator@wubi86_lookup
+    - script_translator
+  filters:
+    - simplifier
+    - simplifier@s2hk
+    - simplifier@s2tw
+    #- simplifier@transcription_cc
+    - simplifier@emoji                          # Emoji OpenCC
+    - lua_filter@*charset*filter                # CJK字符集过滤
+    - lua_filter@*charset*comment_hint          # CJK字符集码区提示
+    - uniquifier                                # 去重
+
+# 简繁转换
+# transcription_cc:
+  # option_name: transcription
+  # opencc_config: s2t.json             # 简 -> 繁
+  # opencc_config: s2hk.json              # 简 -> 香港
+  # opencc_config: t2s.json             # 繁 -> 简
+  # opencc_config: t2tw.json            # 繁 -> 台湾
+  # opencc_config: t2hk.json            # 繁 -> 香港
+  # opencc_config: s2tw.json            # 簡 -> 臺灣標準
+  # opencc_config: s2twp.json           # 簡 -> 臺灣片語
+  # tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  # tags: [abc]                           # 限制在对应 tag 只在五笔输入时启用简繁转换
+
+s2hk:
+  opencc_config: s2hk.json
+  option_name: s2hk
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+  tips: all
+
+s2tw:
+  opencc_config: s2twp.json
+  option_name: s2twp
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+  tips: all
+
+# 自定义短语
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase  # 需要手动创建 custom_phrase.txt 文件
+  db_class: stabledb
+  enable_completion: false # 补全提示
+  enable_sentence: false   # 禁止造句
+  initial_quality: 99
+
+# 简码词库导入位于jm_dicts得txt文件词库
+chengyu:
+  dictionary: ""
+  user_dict: jm_dicts/chengyu
+  db_class: stabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: 100 #本表词和系统词重码居后
+
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  inherit_comment: false                # 在 corrector.lua 及反查中，emoji 返回空注释
+
+history:
+  input: z
+  size: 1
+  initial_quality: 1
+
+speller:
+  # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
+  alphabet: 'zyxwvutsrqponmlkjihgfedcba-;/<,>\'
+  # initials 定义仅作为始码的按键，排除 ` 让单个的 ` 可以直接上屏
+  initials: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
+  # 拼写匹配
+  algebra:
+    - xform/ń/én/ 
+    - xform/ň/ěn/ 
+    - xform/ǹ/ěn/ 
+    - xform/^n$/eng/   #解决𧗈字拼音n通过双拼en打出来
+    - xform/ńg/éng/
+    - xform/ňg/ěng/
+    - xform/ṅg/èng/
+    - xform/^([a-zA-Z]+)$/$1/
+    - xform/^(.*)ā(.*)$/$1a$2①/
+    - xform/^(.*)á(.*)$/$1a$2②/
+    - xform/^(.*)ǎ(.*)$/$1a$2③/
+    - xform/^(.*)à(.*)$/$1a$2④/
+    - xform/^(.*)ō(.*)$/$1o$2①/
+    - xform/^(.*)ó(.*)$/$1o$2②/
+    - xform/^(.*)ǒ(.*)$/$1o$2③/
+    - xform/^(.*)ò(.*)$/$1o$2④/
+    - xform/^(.*)ē(.*)$/$1e$2①/
+    - xform/^(.*)é(.*)$/$1e$2②/
+    - xform/^(.*)ě(.*)$/$1e$2③/
+    - xform/^(.*)è(.*)$/$1e$2④/
+    - xform/^(.*)ī(.*)$/$1i$2①/
+    - xform/^(.*)í(.*)$/$1i$2②/
+    - xform/^(.*)ǐ(.*)$/$1i$2③/
+    - xform/^(.*)ì(.*)$/$1i$2④/
+    - xform/^(.*)ū(.*)$/$1u$2①/
+    - xform/^(.*)ú(.*)$/$1u$2②/
+    - xform/^(.*)ǔ(.*)$/$1u$2③/
+    - xform/^(.*)ù(.*)$/$1u$2④/
+    - xform/^(.*)ǖ(.*)$/$1v$2①/
+    - xform/^(.*)ǘ(.*)$/$1v$2②/
+    - xform/^(.*)ǚ(.*)$/$1v$2③/
+    - xform/^(.*)ǜ(.*)$/$1v$2④/
+    - xform/^(.*)ü(.*)$/$1v$2/
+    - xlit/①②③④/1234
+    ### 简拼
+    - abbrev/^([a-z]).+$/$1/
+    - abbrev/^([zcs]h).+$/$1/
+    ### 自动纠错
+    - derive/^([nl])ve/$1ue/
+    - derive/^([jqxy])u/$1v/
+    - derive/([dtnlgkhrzcs])un/$1uen/
+    - derive/ui/uei/
+    - derive/iu/iou/
+    - derive/ao/oa/
+    - derive/([aeiou])ng/$1gn/
+    - derive/([iu])a(o|ng?)/a$1$2/
+    - derive/^([a-z]+)[1-4]$/$1/
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/
+    - derive/ong$/on/
+    - 'erase/^.*5$/'
+    - 'xlit 1234 -/<\'
+
+translator:
+  dictionary: wanxiang
+  enable_completion: true                # 启用候选词补全
+  max_candidates: 10                     # 设置最大候选词数量
+  initial_quality: 3
+  spelling_hints: 20                     # ～字以內候選標註完整帶調拼音
+  enable_charset_filter: false           # 开启字符集过滤
+  enable_user_dict: false                # 是否开启自动调频
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ve/$1üe/
+    - xform/([nl])ven/$1uen/
+    - xform/([jqxy])v/$1u/
+    - 'xform ([aeiou])(ng?|r)([-;/<,>\\]) $1$3$2'
+    - 'xform ([aeo])([iuo])([-;/<,>\\]) $1$3$2'
+    - 'xform a[-;] ā'
+    - 'xform a/ á'
+    - 'xform a[<,] ǎ'
+    - 'xform a[>\\] à'
+    - 'xform e[-;] ē'
+    - 'xform e/ é'
+    - 'xform e[<,] ě'
+    - 'xform e[>\\] è'
+    - 'xform o[-;] ō'
+    - 'xform o/ ó'
+    - 'xform o[<,] ǒ'
+    - 'xform o[>\\] ò'
+    - 'xform i[-;] ī'
+    - 'xform i/ í'
+    - 'xform i[<,] ǐ'
+    - 'xform i[>\\] ì'
+    - 'xform u[-;] ū'
+    - 'xform u/ ú'
+    - 'xform u[<,] ǔ'
+    - 'xform u[>\\] ù'
+    - 'xform ü[-;] ǖ'
+    - 'xform ü/ ǘ'
+    - 'xform ü[<,] ǚ'
+    - 'xform ü[>\\] ǜ'
+  comment_format:
+    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
+    - xform ([aeo])([iuo])([1234]) $1$3$2
+    - xform/([nljqxy])v/$1ü/
+
+wubi86_lookup:
+  tag: wubi86
+  dictionary: wubi86
+  enable_user_dict: false
+  enable_completion: true
+  prefix: "`"
+  tips: 〔五笔〕
+
+radical_lookup:
+  tag: radical
+  dictionary: radical_pinyin
+  enable_completion: false
+  enable_sentence: false
+  prefix: 'vv'
+  tips: 〔拆字〕
+
+reverse_lookup:
+  tags: [wubi86,radical]
+  overwrite_comment: true
+  dictionary: wanxiang
+
+# 标点符号
+# punctuator 下面有三个子项：
+#   full_shape 全角标点映射
+#   half_shape 半角标点映射
+#   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符，自定义的 symbols_v.yaml 修改成了 'v' 开头。
+punctuator:
+  full_shape:
+    __include: default:/punctuator/full_shape  # 从 default.yaml 导入配置
+  half_shape:
+    __include: default:/punctuator/half_shape  # 从 default.yaml 导入配置
+  symbols:
+    __include: symbols:/symbols              # 从 symbols_v.yaml 导入配置
+
+key_binder:
+  import_preset: default
+  bindings:
+    # 上下翻页 - =
+    # - { when: has_menu, accept: minus, send: Page_Up }             # 与地球拼音的音调1声 - 冲突，故注释掉
+    # - { when: has_menu, accept: equal, send: Page_Down }           # 与地球拼音的音调1声 - 冲突，故注释掉
+    
+    # 上下翻页 tab
+    - { when: has_menu, accept: Tab, send: Page_Down }
+    - {send: Escape, accept: space, when: composing}
+    - {send: space, accept: space, when: has_menu}
+    - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
+    - { when: always, toggle: transcription, accept: Control+2}      # 切换简繁
+    - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集
+    - { when: always, toggle: full_shape, accept: Control+4 }        # 切换全半角
+    - { when: always, toggle: ascii_punct, accept: Control+5 }       # 切换中英标点
+
+recognizer:
+  import_preset: default
+  patterns:
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+    radical: "vv[a-z]*'?$"
+    wubi86: "^`[a-z]*'?$"
+    unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
+    number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
+    calculator: "^=.*$"                 # 计算器功能引导
+
+#语言模型
+__include: octagram   #启用语言模型
+octagram:
+  __patch:
+    grammar:
+      language: wanxiang-lts-zh-hans
+      collocation_max_length: 8         #命中的最长词组
+      collocation_min_length: 2         #命中的最短词组，搭配词频健全的词库时候应当最小值设为3避开2字高频词
+      collocation_penalty: -12          #默认-12 对常见搭配词组施加的惩罚值。较高的负值会降低这些搭配被选中的概率，防止过于频繁地出现某些固定搭配。
+      non_collocation_penalty: -12      #默认-12 对非搭配词组施加的惩罚值。较高的负值会降低非搭配词组被选中的概率，避免不合逻辑或不常见的词组组合。
+      weak_collocation_penalty: -24     #默认-24 对弱搭配词组施加的惩罚值。保持默认值通常是为了有效过滤掉不太常见但仍然合理的词组组合。
+      rear_penalty: -18                #默认-18 对词组中后续词语的位置施加的惩罚值。较高的负值会降低某些词语在句子后部出现的概率，防止句子结构不自然。
+    translator/contextual_suggestions: false
+    translator/max_homophones: 5
+    translator/max_homographs: 5
+
