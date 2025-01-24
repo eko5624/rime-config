@@ -1,4 +1,4 @@
-# 自用五笔说明
+# 五笔+万象拼音说明
 * 支持Unicode 15.1.0 CJK 超大字符集
 * 支持86/98五笔码元提示
 * 支持拼音反查五笔，五笔反查拼音
@@ -38,11 +38,12 @@ chaifen:
 
 ## 参考来源
 
-1. [五笔小筑](https://github.com/yanhuacuo/98wubi)
-2. [空山明月五笔](https://github.com/mrshiqiqi/rime-wubi)
-3. [薄荷输入法](https://github.com/Mintimate/oh-my-rime)
-4. [Rime 输入法双拼加辅助码方案](https://github.com/boomker/rime-fast-xhup)
-5. [五笔字型超大字符集编码数据库](https://github.com/CNMan/UnicodeCJK-WuBi)
+1. [万象拼音](https://github.com/amzxyz/rime_wanxiang)
+2. [五笔小筑](https://github.com/yanhuacuo/98wubi)
+3. [空山明月五笔](https://github.com/mrshiqiqi/rime-wubi)
+4. [薄荷输入法](https://github.com/Mintimate/oh-my-rime)
+5. [Rime 输入法双拼加辅助码方案](https://github.com/boomker/rime-fast-xhup)
+6. [五笔字型超大字符集编码数据库](https://github.com/CNMan/UnicodeCJK-WuBi)
 
 ## Unicode CJK 部分变动历史：
 
