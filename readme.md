@@ -1,7 +1,7 @@
 # 五笔+万象拼音说明
 * 支持Unicode 15.1.0 CJK 超大字符集
 * 支持86/98五笔拆字提示
-* 支持显示各个键位对应字根(用法示例： az sz dz..)
+* 支持输出各个键位对应字根(用法示例： az sz dz..)
 * 支持拼音反查五笔，五笔反查拼音
 * 支持计算器，农历，节气
 * 支持cjk字符集过滤
@@ -9,15 +9,15 @@
 * 支持emoji输出
 * 支持各种符号输出
 
-Tips: 要想在正常输入状态下开启码元提示只需修改`wubi86.schema.yaml`如下字段为:
+Tips: 要想在正常输入状态下开启码元提示只需修改`wubi86.schema.yaml`或`wubi98.schema.yaml`如下字段为:
 ```  
 chaifen:
-  opencc_config: wb86_spelling.json
+  opencc_config: wb86(98)_spelling.json
   option_name: chaifen
   show_in_comment: true 
   comment_format:     
     - "xform/&nbsp;/ /"
-  tags: [abc, wubi86_lookup]            # 限制在对应 tag 才有拆分提示
+  tags: [abc, pinyin_lookup]            # 限制在对应 tag 才有拆分提示
   tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
 ```
 
