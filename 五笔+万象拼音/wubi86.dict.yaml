@@ -9,7 +9,9 @@ name: wubi86
 version: "2.0"
 sort: by_weight
 import_tables:
-  - cn_dicts/86/wubi
+  - cn_dicts/86/wubi86_base
+  - cn_dicts/86/wubi86_district
+  - cn_dicts/86/wubi86_extra
   - cn_dicts/86/hotstring
   - cn_dicts/86/CJK
   - cn_dicts/86/CJKExt_A
