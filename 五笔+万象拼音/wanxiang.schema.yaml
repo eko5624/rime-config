@@ -144,7 +144,7 @@ speller:
     - xform/ń/én/ 
     - xform/ň/ěn/ 
     - xform/ǹ/ěn/ 
-    - xform/^n$/eng/   #解决𧗈字拼音n通过双拼en打出来
+    - xform/^ng$/eng/
     - xform/ńg/éng/
     - xform/ňg/ěng/
     - xform/ṅg/èng/

@@ -105,10 +105,14 @@ speller:
   delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
   # 拼写匹配
   algebra:
-    - xform/ń|ň|ǹ/en/   #先处理一些特殊音节
-    - xform/^n$/en/   #解决𧗈字拼音n通过双拼en打出来
-    - xform/ńg|ňg|ǹg/en/
-    - xform/^([a-zA-Z]+)$/$1①/
+    - xform/ń/én/ 
+    - xform/ň/ěn/ 
+    - xform/ǹ/ěn/ 
+    - xform/^ng$/eng/
+    - xform/ńg/éng/
+    - xform/ňg/ěng/
+    - xform/ṅg/èng/
+    - xform/^([a-zA-Z]+)$/$1
     - xform/^(.*)ā(.*)$/$1a$2①/
     - xform/^(.*)á(.*)$/$1a$2②/
     - xform/^(.*)ǎ(.*)$/$1a$2③/
