@@ -182,6 +182,7 @@ chaifen:
 pinyin_lookup:                          # 拼音反查五笔
   tag: pinyin_lookup
   dictionary: wanxiang
+  enable_user_dict: false               # 是否开启自动调频
   prefix: "Z"
   tips: 〔拼音反查〕
 
