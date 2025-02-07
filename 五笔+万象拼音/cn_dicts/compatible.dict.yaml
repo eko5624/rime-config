@@ -4,11 +4,29 @@
 #兼容词库，对于多字词汇两种读音的场景，手动维护到本表以及一些其他的杂项
 ---
 name: compatible
-version: "2024-11-11"
+version: "2025-02-07 00:32"
 sort: by_weight
 ...
+朝阳	zhāo yáng	660
+朝阳	cháo yáng	660
+单行	dān xíng	504
+单行	dān háng	602
+串行	chuàn xíng	443
+串行	chuàn háng	543
 同行	tóng háng	714
 同行	tóng xíng	601
+多行	duō xíng	355
+多行	duō háng	491
+不了了	bù liǎo liǎo	542
+不了了	bù liǎo le	413
+肚子	dù zi	695
+肚子	dǔ zi	312
+迫降	pò xiáng	120
+迫降	pò jiàng	523
+浅浅	jiān jiān	471
+浅浅	qiǎn qiǎn	671
+不了	bù liǎo	892
+不了	bù le	849
 着人	zhuó rén	390
 闲着	xián zhāo	367
 闲着	xián zhe	567
