@@ -14,7 +14,7 @@ schema:
   author:
     - 发明人 王永民
   description: |
-    敲 z 键进入拼音反查
+    敲 Z 键进入拼音反查
 
 switches:
   - name: emoji
@@ -182,7 +182,7 @@ chaifen:
 pinyin_lookup:                          # 拼音反查五笔
   tag: pinyin_lookup
   dictionary: wanxiang
-  prefix: "z"
+  prefix: "Z"
   tips: 〔拼音反查〕
 
 pinyin_reverse_lookup:                  # 拼音反查五笔
@@ -202,8 +202,6 @@ wubi86_lookup:                          # 五笔反查拼音
 wubi86_reverse_lookup:                  # 五笔反查拼音
   tags: [wubi86_lookup]
   dictionary: wanxiang
-  spelling_hints: 20  # ～字以內候選標註完整帶調拼音
-  enable_completion: true
 
 radical_lookup:
   tag: radical_lookup
@@ -260,8 +258,8 @@ recognizer:
   import_preset: default  # 从 default.yaml 继承通用的
   patterns:  # 再增加方案专有的：
     punct: '^/([0-9]0?|[A-Za-z]+)$'
-    pinyin_lookup: "^z[a-z]*'?$"        # 五笔反查拼音
-    wubi86_lookup: "`[a-y]*;?$"         # 拼音反查五笔
+    pinyin_lookup: "^Z[a-z]*'?$"        # 拼音反查五笔
+    wubi86_lookup: "`[a-y]*;?$"         # 五笔反查拼音
     radical_lookup: "Uu[a-z]*'?$"       # 拆字反查拼音
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
     number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
