@@ -22,6 +22,7 @@ Rime	rime	3
 
 Android	android
 Apple	apple
+AppleCare	ac
 Apple ID	appleid
 Clash	clash
 Cloudflare	cloudflare
