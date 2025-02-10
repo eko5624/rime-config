@@ -39,7 +39,6 @@ iCloud	icloud
 iMac	imac
 iOS	ios
 iPad	ipad
-iPad	ipad
 iPhone	iphone
 iPhone Xʀ	iphonexr
 iPod	ipod
