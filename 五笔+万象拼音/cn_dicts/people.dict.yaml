@@ -5,7 +5,7 @@
 #^(?!.*阿姨|.*爸爸|.*伯伯|.*老师|.*村|.*乡|.*镇|.*老|.*宅|.*店|.*家|.*爷爷|.*奶奶|.*大人|.*先生|.*女士)[夏|宋|徐|丁|崔|白|梁|岳|段|赵|钱|孙|李|周|吴|郑|王|冯|秦|陈|杜|褚|卫|蒋|沈|韩|杨|朱|尤|许|何|吕|张|孔|曹|严|华|金|魏|陶|江|姜|苏|鲁|罗|雷|黄|马|叶]..\t.*\t[1-9][0-3][0-9]{2}$\n
 ---
 name: people
-version: "2025-02-07 00:32"
+version: "2025-02-18 23:03"
 sort: by_weight
 ...
 白波	bái bō	375
@@ -7859,7 +7859,6 @@ sort: by_weight
 段智兴	duàn zhì xīng	358
 段志玄	duàn zhì xuán	277
 段子璋	duàn zǐ zhāng	208
-段子中	duàn zǐ zhōng	326
 冯安邦	féng ān bāng	215
 冯柏源	féng bǎi yuán	52
 冯宝华	féng bǎo huá	221
@@ -21784,6 +21783,19 @@ sort: by_weight
 陶醉着	táo zuì zhe	251
 陶醉中	táo zuì zhōng	295
 陶作坊	táo zuō fang	213
+藤邑子	téng yì zǐ	1
+藤佑圭	téng yòu guī	1
+藤优里	téng yōu lǐ	248
+藤原浩	téng yuán hào	315
+藤原家	téng yuán jiā	242
+藤原京	téng yuán jīng	251
+藤原氏	téng yuán shì	395
+藤原瞳	téng yuán tóng	185
+藤原薰	téng yuán xūn	113
+藤真拓	téng zhēn tuò	1
+藤真希	téng zhēn xī	29
+藤真彦	téng zhēn yàn	1
+藤正臣	téng zhèng chén	169
 王阿婆	wáng ā pó	228
 王爱爱	wáng ài ài	103
 王爱忱	wáng ài chén	181
@@ -39593,6 +39605,24 @@ sort: by_weight
 曽我町子	cēng wǒ tīng zǐ	156
 曾我町子	céng wǒ tīng zǐ	116
 曾我萧白	céng wǒ xiāo bái	191
+川岛爱华	chuān dǎo ài huá	1
+川岛得爱	chuān dǎo dé ài	284
+川岛芳子	chuān dǎo fāng zǐ	527
+川岛海荷	chuān dǎo hǎi hé	296
+川岛泓野	chuān dǎo hóng yě	315
+川岛浪速	chuān dǎo làng sù	347
+川岛梨乃	chuān dǎo lí nǎi	269
+川岛令美	chuān dǎo lìng měi	1
+川岛美希	chuān dǎo měi xī	1
+川岛奈奈	chuān dǎo nài nài	1
+川岛千寻	chuān dǎo qiān xún	315
+川岛武宜	chuān dǎo wǔ yí	77
+川岛秀明	chuān dǎo xiù míng	1
+川岛亚美	chuān dǎo yà měi	125
+川岛永嗣	chuān dǎo yǒng sì	294
+川岛悠美	chuān dǎo yōu měi	92
+川岛章吾	chuān dǎo zhāng wú	1
+川岛直美	chuān dǎo zhí měi	230
 春藤佳奈	chūn téng jiā nài	35
 村上国清	cūn shàng guó qīng	69
 村上和也	cūn shàng hé yě	103
@@ -39870,6 +39900,7 @@ sort: by_weight
 色彩调配	sè cǎi tiáo pèi	233
 森泽佳奈	sēn zé jiā nài	77
 杉浦加奈	shān pǔ jiā nài	1
+上下川岛	shàng xià chuān dǎo	262
 室加奈子	shì jiā nài zǐ	219
 矢口高雄	shǐ kǒu gāo xióng	178
 矢口狡赖	shǐ kǒu jiǎo lài	1
@@ -40225,7 +40256,8 @@ sort: by_weight
 原田亚希	yuán tián yà xī	1
 猿田彦命	yuán tián yàn mìng	134
 猿田彦神	yuán tián yàn shén	142
-猿田彦为	yuán tián yàn wéi	1原田夜舞	yuán tián yè wǔ	1
+猿田彦为	yuán tián yàn wéi	1
+原田夜舞	yuán tián yè wǔ	1
 原田樱怜	yuán tián yīng lián	1
 苑田勇一	yuàn tián yǒng yī	125
 原田友贵	yuán tián yǒu guì	162

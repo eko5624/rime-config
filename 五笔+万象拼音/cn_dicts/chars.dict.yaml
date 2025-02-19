@@ -3,7 +3,7 @@
 #https://github.com/amzxyz/RIME-LMDG
 ---
 name: chars
-version: "2025-02-07 00:32"
+version: "2025-02-18 23:03"
 sort: by_weight
 ...
 啊	a	915
@@ -15,15 +15,15 @@ sort: by_weight
 腌	ā	268
 吖	ā	250
 啊	à	146
-啊	ǎ	1
+啊	ǎ	19
 呵	a	1
 錒	ā	1
 𠼞	ā	1
 𥥩	ā	1
 𨉚	ā	1
-哎	āi	799
-唉	āi	723
-爱	ài	701
+哎	āi	820
+唉	āi	816
+爱	ài	813
 癌	ái	669
 埃	āi	667
 艾	ài	666
@@ -312,6 +312,7 @@ sort: by_weight
 𪒠	àn	1
 𪒠	ǎn	1
 𪘒	ān	1
+垵	ān	1
 昂	áng	628
 盎	àng	546
 肮	āng	467
@@ -495,7 +496,7 @@ sort: by_weight
 𪃨	āo	1
 𪓴	áo	1
 𪓾	áo	1
-吧	b	999
+薁	ào	1
 把	bǎ	925
 吧	bā	910
 爸	bà	834
@@ -701,6 +702,7 @@ sort: by_weight
 𩏞	bài	1
 𩑢	bāi	1
 𪡈	bái	1
+拜	bái	1
 办	bàn	772
 般	bān	771
 版	bǎn	765
@@ -1981,6 +1983,7 @@ sort: by_weight
 𩪊	biāo	1
 𩴩	biāo	1
 𩽁	biāo	1
+脿	biǎo	1
 别	bié	819
 憋	biē	552
 别	biè	508
@@ -2055,6 +2058,7 @@ sort: by_weight
 𩸁	biē	1
 𪂟	biē	1
 𪐆	bié	1
+癿	bié	1
 宾	bīn	673
 滨	bīn	646
 斌	bīn	585
@@ -2233,9 +2237,10 @@ sort: by_weight
 𪑰	bīng	1
 𪮤	bīng	1
 𫖓	bǐng	1
+蛃	bǐng	1
+播	bō	763
 博	bó	754
 波	bō	736
-播	bō	733
 伯	bó	683
 玻	bō	644
 卜	bo	638
@@ -2514,6 +2519,8 @@ sort: by_weight
 𫂀	bō	1
 𫗈	bó	1
 𫝼	bō	1
+艴	bó	1
+蕃	bō	1
 不	bù	900
 部	bù	836
 布	bù	786
@@ -3201,6 +3208,8 @@ sort: by_weight
 𪒼	chá	1
 𪘾	chā	1
 𫟿	chā	1
+叉	chà	1
+衩	chǎ	1
 拆	chāi	654
 柴	chái	619
 差	chāi	589
@@ -3509,9 +3518,10 @@ sort: by_weight
 𫞣	chǎn	1
 𬘉	chán	1
 𬳲	chǎn	1
-场	chǎng	831
+镡	chán	1
 常	cháng	829
 长	cháng	790
+场	chǎng	766
 尝	cháng	709
 唱	chàng	706
 厂	chǎng	705
@@ -4169,7 +4179,7 @@ sort: by_weight
 𫄺	chéng	1
 𫔘	chēng	1
 𬲜	chēng	1
-吃	chī	830
+吃	chī	871
 持	chí	803
 池	chí	688
 尺	chǐ	658
@@ -4509,6 +4519,7 @@ sort: by_weight
 𪗪	chī	1
 𫎛	chí	1
 𫖞	chì	1
+痓	chì	1
 重	chóng	749
 充	chōng	749
 冲	chōng	720
@@ -5272,6 +5283,7 @@ sort: by_weight
 𨿡	chún	1
 𩨁	chǔn	1
 𪂹	chūn	1
+堾	chūn	1
 戳	chuō	584
 绰	chuò	527
 辍	chuò	487
@@ -5500,7 +5512,8 @@ sort: by_weight
 𪙉	cī	1
 𪾪	cì	1
 𫃕	cí	1
-从	cóng	821
+茈	cí	1
+从	cóng	833
 葱	cōng	650
 聪	cōng	635
 丛	cóng	587
@@ -6008,7 +6021,7 @@ sort: by_weight
 𪉤	cuó	1
 𪒙	cuō	1
 𪘓	cuó	1
-的	d	1000
+棤	cuò	1
 大	dà	900
 打	dǎ	804
 达	dá	788
@@ -6133,6 +6146,8 @@ sort: by_weight
 𩭣	dá	1
 𩺗	dá	1
 𪾾	dá	1
+垯	da	1
+跶	da	1
 带	dài	899
 代	dài	809
 待	dài	746
@@ -6238,6 +6253,7 @@ sort: by_weight
 𩃷	dài	1
 𪐝	dài	1
 𪒡	dài	1
+骀	dài	1
 但	dàn	842
 单	dān	805
 蛋	dàn	737
@@ -6677,6 +6693,7 @@ sort: by_weight
 𪠤	dāo	1
 𪥂	dāo	1
 𫄝	dào	1
+叨	dáo	1
 的	de	999
 得	dé	821
 得	de	819
@@ -7055,6 +7072,8 @@ sort: by_weight
 𪪶	dì	1
 𪯐	dì	1
 𪯙	dí	1
+茋	dǐ	1
+镝	dī	1
 嗲	diǎ	329
 𪦕	diǎ	1
 点	diǎn	858
@@ -7202,8 +7221,8 @@ sort: by_weight
 𪓼	diān	1
 𪖚	diān	1
 𫁥	diàn	1
-调	diào	751
-掉	diào	718
+掉	diào	758
+调	diào	743
 雕	diāo	633
 吊	diào	619
 钓	diào	607
@@ -8018,7 +8037,7 @@ sort: by_weight
 𫞌	duàn	1
 𫟁	duàn	1
 叾	dug	1
-对	duì	870
+对	duì	901
 队	duì	783
 堆	duī	654
 兑	duì	619
@@ -8203,6 +8222,7 @@ sort: by_weight
 𪥈	dūn	1
 𫓕	dūn	1
 𫓜	dūn	1
+镦	dūn	1
 多	duō	877
 夺	duó	658
 朵	duǒ	633
@@ -8385,6 +8405,7 @@ sort: by_weight
 𫒷	duó	1
 𫖰	duǒ	1
 𫝡	duò	1
+驮	duò	1
 额	é	741
 俄	é	688
 恶	è	686
@@ -8653,6 +8674,7 @@ sort: by_weight
 𪘐	è	1
 𪙯	è	1
 𫫇	è	1
+呃	e	1
 诶	éi	534
 誒	éi	281
 壘	éi	1
@@ -8685,10 +8707,10 @@ sort: by_weight
 𤫹	ēn	1
 鞥	ēng	236
 而	ér	848
+儿	ér	813
 二	èr	807
 贰	èr	800
 尔	ěr	789
-儿	ér	779
 耳	ěr	697
 洱	ěr	537
 饵	ěr	522
@@ -9033,6 +9055,7 @@ sort: by_weight
 𫄩	fán	1
 𫖺	fán	1
 𬸪	fán	1
+氾	fán	1
 放	fàng	862
 方	fāng	797
 房	fáng	781
@@ -10187,6 +10210,7 @@ sort: by_weight
 𡼛	gá	1
 𣬫	gà	1
 𪜃	gā	1
+戛	gā	1
 该	gāi	808
 改	gǎi	788
 概	gài	729
@@ -10399,6 +10423,7 @@ sort: by_weight
 𪔆	gān	1
 𪚬	gàn	1
 𪟲	gǎn	1
+虷	gān	1
 刚	gāng	747
 港	gǎng	741
 钢	gāng	681
@@ -10772,8 +10797,8 @@ sort: by_weight
 𫠅	gé	1
 给	gěi	808
 給	gěi	490
+跟	gēn	793
 根	gēn	781
-跟	gēn	763
 亘	gèn	454
 哏	gén	431
 亙	gèn	421
@@ -10793,6 +10818,7 @@ sort: by_weight
 𩑡	gěn	1
 𩒝	gěn	1
 𩓓	gěn	1
+艮	gěn	1
 更	gèng	826
 更	gēng	729
 耕	gēng	589
@@ -10875,6 +10901,8 @@ sort: by_weight
 𩱧	gēng	1
 𪯍	gěng	1
 𬒔	gèng	1
+暅	gèng	1
+𬒔	gěng	1
 怾	gi	1
 公	gōng	853
 工	gōng	842
@@ -11015,6 +11043,7 @@ sort: by_weight
 𫋐	gǒng	1
 𫏇	gòng	1
 𫝪	gòng	1
+硔	gǒng	1
 够	gòu	773
 购	gòu	769
 构	gòu	767
@@ -11123,6 +11152,7 @@ sort: by_weight
 𪚭	gōu	1
 𪜩	gōu	1
 𫎧	gòu	1
+枸	gōu	1
 股	gǔ	790
 故	gù	754
 古	gǔ	752
@@ -11326,6 +11356,8 @@ sort: by_weight
 𪔐	gǔ	1
 𪕷	gǔ	1
 𫞆	gǔ	1
+蛄	gǔ	1
+鹄	gǔ	1
 挂	guà	688
 瓜	guā	684
 刮	guā	595
@@ -12438,6 +12470,7 @@ sort: by_weight
 𪒠	hān	1
 𫒶	hán	1
 𫟓	hàn	1
+蔊	hǎn	1
 行	háng	786
 航	háng	729
 杭	háng	655
@@ -12496,7 +12529,7 @@ sort: by_weight
 𪐦	hāng	1
 𪕇	hāng	1
 𪗜	háng	1
-好	hǎo	880
+好	hǎo	983
 号	hào	791
 好	hào	696
 豪	háo	685
@@ -12637,7 +12670,7 @@ sort: by_weight
 𩫚	háo	1
 𩮘	hāo	1
 𩲊	hào	1
-和	hé	905
+和	hé	985
 合	hé	839
 何	hé	804
 河	hé	742
@@ -12978,8 +13011,8 @@ sort: by_weight
 𩙯	héng	1
 𪏓	héng	1
 𫰟	héng	1
-哼	hng	1
-乥	hol	1
+堼	hèng	1
+行	héng	1
 红	hóng	769
 洪	hóng	655
 宏	hóng	654
@@ -13177,6 +13210,7 @@ sort: by_weight
 𩶥	hóng	1
 𪈘	hōng	1
 𪪺	hóng	1
+蕻	hóng	1
 后	hòu	869
 厚	hòu	844
 候	hòu	800
@@ -14532,6 +14566,7 @@ sort: by_weight
 𫖐	huī	1
 𫝨	huī	1
 𬭬	huì	1
+㧑	huī	1
 婚	hūn	734
 混	hùn	700
 魂	hún	640
@@ -14635,6 +14670,7 @@ sort: by_weight
 𪑕	hǔn	1
 𫖲	hùn	1
 𫝈	hún	1
+碈	hūn	1
 或	huò	821
 活	huó	811
 火	huǒ	765
@@ -14673,6 +14709,7 @@ sort: by_weight
 咟	huò	150
 靃	huò	130
 騞	huō	124
+和	huo	111
 俰	huò	105
 奯	huò	105
 謋	huò	105
@@ -14810,6 +14847,8 @@ sort: by_weight
 𫉬	huò	1
 𫔓	huò	1
 𫙇	huò	1
+嚄	huō	1
+锪	huō	1
 即	jí	895
 及	jí	874
 计	jì	862
@@ -15552,6 +15591,8 @@ sort: by_weight
 𫅅	jǐ	1
 𫒊	jǐ	1
 𫞴	jì	1
+㴔	jí	1
+嵴	jí	1
 加	jiā	898
 家	jiā	871
 价	jià	824
@@ -15744,6 +15785,7 @@ sort: by_weight
 𪔟	jiā	1
 𪙏	jiá	1
 𪢋	jià	1
+茄	jiā	1
 见	jiàn	887
 间	jiān	836
 建	jiàn	818
@@ -16332,6 +16374,7 @@ sort: by_weight
 𪵹	jiāng	1
 𫕘	jiāng	1
 𫮬	jiàng	1
+虹	jiàng	1
 交	jiāo	815
 教	jiào	807
 较	jiào	804
@@ -17398,6 +17441,7 @@ sort: by_weight
 𪂴	jīng	1
 𪇒	jīng	1
 𫞬	jìng	1
+经	jìng	1
 囧	jiǒng	543
 窘	jiǒng	495
 迥	jiǒng	478
@@ -17462,7 +17506,7 @@ sort: by_weight
 𩚱	jiǒng	1
 𪔃	jiōng	1
 𪕍	jiōng	1
-就	jiù	882
+就	jiù	899
 九	jiǔ	783
 玖	jiǔ	775
 舅	jiù	766
@@ -18012,6 +18056,8 @@ sort: by_weight
 𪧘	jù	1
 𫀸	jú	1
 𫈹	jú	1
+俱	jū	1
+锔	jú	1
 卷	juǎn	689
 卷	juàn	633
 捐	juān	621
@@ -18519,6 +18565,7 @@ sort: by_weight
 𨶊	jùn	1
 𪍁	jùn	1
 𪕞	jùn	1
+䐃	jùn	1
 卡	kǎ	763
 咖	kā	682
 喀	kā	570
@@ -18531,6 +18578,7 @@ sort: by_weight
 裃	kǎ	127
 㮟	kā	1
 䘔	kā	1
+咔	kā	1
 开	kāi	847
 凯	kǎi	664
 慨	kǎi	578
@@ -18986,6 +19034,7 @@ sort: by_weight
 𪧒	kè	1
 𪽇	kē	1
 𫟭	kè	1
+颏	ké	1
 剋	kēi	1
 尅	kēi	1
 肯	kěn	715
@@ -19113,6 +19162,7 @@ sort: by_weight
 𪔣	kōng	1
 𪫠	kǒng	1
 𫞹	kōng	1
+硿	kòng	1
 口	kǒu	811
 扣	kòu	670
 抠	kōu	531
@@ -19831,7 +19881,6 @@ sort: by_weight
 𨶐	kuò	1
 𩋻	kuò	1
 𪗽	kuò	1
-了	l	999
 啦	la	793
 拉	lā	778
 辣	là	717
@@ -20307,6 +20356,7 @@ sort: by_weight
 𪁜	láng	1
 𪮡	lǎng	1
 𫗨	láng	1
+崀	làng	1
 老	lǎo	812
 劳	láo	702
 牢	láo	615
@@ -21313,6 +21363,8 @@ sort: by_weight
 𫟫	lì	1
 𫵷	lì	1
 𭀖	lí	1
+蜊	lí	1
+蠡	lí	1
 俩	liǎ	637
 倆	liǎ	334
 联	lián	795
@@ -21522,6 +21574,7 @@ sort: by_weight
 𪛒	lián	1
 𪜆	liǎn	1
 𬶠	liàn	1
+浰	liàn	1
 两	liǎng	829
 量	liàng	814
 良	liáng	728
@@ -21906,6 +21959,7 @@ sort: by_weight
 𩨐	liè	1
 𩭌	liè	1
 𩼭	liè	1
+峛	liè	1
 林	lín	763
 临	lín	720
 邻	lín	642
@@ -22293,6 +22347,7 @@ sort: by_weight
 𫞠	líng	1
 𫟀	líng	1
 𫟑	líng	1
+呤	lìng	1
 六	liù	871
 陆	liù	833
 刘	liú	815
@@ -22484,6 +22539,7 @@ sort: by_weight
 𪎣	liú	1
 𪕚	liú	1
 𫞉	liǔ	1
+镏	liù	1
 咯	lo	1
 龙	lóng	745
 隆	lóng	667
@@ -22756,6 +22812,7 @@ sort: by_weight
 𪍣	lǒu	1
 𪮪	lòu	1
 𫠥	lòu	1
+𦝼	lóu	1
 路	lù	809
 录	lù	744
 陆	lù	715
@@ -23057,6 +23114,8 @@ sort: by_weight
 𪖌	lú	1
 𪯖	lù	1
 𫠋	lù	1
+氇	lu	1
+芦	lǔ	1
 乱	luàn	699
 卵	luǎn	622
 挛	luán	499
@@ -23543,8 +23602,7 @@ sort: by_weight
 𧑀	lüè	1
 𧕌	lüè	1
 𪅅	lüè	1
-吗	m	999
-吗	ma	787
+吗	ma	866
 马	mǎ	769
 码	mǎ	744
 妈	mā	730
@@ -23831,6 +23889,9 @@ sort: by_weight
 𪑪	mán	1
 𪮳	mán	1
 𫞜	mǎn	1
+嫚	mān	1
+蔓	mán	1
+谩	màn	1
 忙	máng	686
 芒	máng	624
 盲	máng	623
@@ -24283,6 +24344,7 @@ sort: by_weight
 𩔉	mén	1
 𪮰	mèn	1
 𫃐	mèn	1
+呇	mèn	1
 梦	mèng	712
 盟	méng	694
 蒙	méng	691
@@ -24464,6 +24526,7 @@ sort: by_weight
 𪈆	mèng	1
 𪭓	méng	1
 𫎇	mēng	1
+獴	měng	1
 米	mǐ	775
 密	mì	738
 迷	mí	704
@@ -24712,6 +24775,9 @@ sort: by_weight
 𪕈	mí	1
 𪧝	mì	1
 𫗗	mì	1
+咪	mǐ	1
+蓂	mì	1
+靡	mǐ	1
 面	miàn	857
 免	miǎn	758
 眠	mián	670
@@ -24827,6 +24893,7 @@ sort: by_weight
 𩮉	mián	1
 𪁼	mián	1
 𪏊	miǎn	1
+眄	miàn	1
 描	miáo	700
 秒	miǎo	667
 苗	miáo	661
@@ -25352,6 +25419,7 @@ sort: by_weight
 𪒂	mò	1
 𪒇	mò	1
 𫜞	mò	1
+无	mó	1
 某	mǒu	749
 谋	móu	648
 牟	móu	519
@@ -25521,6 +25589,7 @@ sort: by_weight
 𫠏	mù	1
 𬭁	mǔ	1
 𬰃	mù	1
+呣	m̀	1
 嗯	ǹ	898
 嗯	ń	13
 嗯	ň	1
@@ -25705,7 +25774,7 @@ sort: by_weight
 𪌞	nái	1
 𪹅	nài	1
 𪺫	nǎi	1
-难	nán	973
+难	nán	903
 南	nán	795
 男	nán	778
 难	nàn	644
@@ -25778,6 +25847,7 @@ sort: by_weight
 𩹞	nán	1
 𪅀	nán	1
 𪚮	nán	1
+萳	nán	1
 囊	náng	625
 馕	náng	460
 囊	nāng	433
@@ -26014,7 +26084,7 @@ sort: by_weight
 嗯	ńg	332
 嗯	ňg	1
 㕶	ňg	1
-你	nǐ	861
+你	nǐ	911
 尼	ní	740
 拟	nǐ	696
 腻	nì	663
@@ -26203,6 +26273,7 @@ sort: by_weight
 𪡇	nǐ	1
 𪱞	nì	1
 𫠜	ní	1
+伲	ní	1
 年	nián	888
 念	niàn	740
 粘	nián	590
@@ -26866,8 +26937,8 @@ sort: by_weight
 𨵫	nüè	1
 𩁿	nüè	1
 𫊝	nüè	1
-哦	ó	709
-噢	ō	561
+哦	ó	745
+噢	ō	733
 喔	ō	547
 哦	ò	299
 嚄	ǒ	1
@@ -27227,6 +27298,7 @@ sort: by_weight
 𪔔	pāng	1
 𪶜	pāng	1
 𫟐	páng	1
+膀	pāng	1
 跑	pǎo	723
 泡	pào	694
 炮	pào	651
@@ -27980,6 +28052,8 @@ sort: by_weight
 𪅃	piǎo	1
 𪋖	piāo	1
 𪏫	piào	1
+嘌	piào	1
+蔈	piào	1
 撇	piē	512
 瞥	piē	459
 撇	piě	446
@@ -28303,6 +28377,7 @@ sort: by_weight
 𩸿	pō	1
 𪴪	pǒ	1
 𫾀	pó	1
+桲	po	1
 剖	pōu	579
 抔	póu	292
 裒	póu	283
@@ -28458,6 +28533,7 @@ sort: by_weight
 𪋡	pú	1
 𪒢	pū	1
 𪔿	pū	1
+脯	pú	1
 其	qí	911
 七	qī	892
 柒	qī	883
@@ -29073,6 +29149,7 @@ sort: by_weight
 𩷻	qià	1
 𪘺	qià	1
 𫈰	qià	1
+拤	qiá	1
 前	qián	846
 千	qiān	790
 仟	qiān	782
@@ -29395,7 +29472,8 @@ sort: by_weight
 𪠧	qiān	1
 𫑍	qiǎn	1
 𫝐	qián	1
-强	qiáng	796
+靬	qián	1
+强	qiáng	874
 枪	qiāng	676
 抢	qiǎng	676
 墙	qiáng	675
@@ -29522,6 +29600,7 @@ sort: by_weight
 𪙎	qiāng	1
 𪪺	qiáng	1
 𫗳	qiǎng	1
+镪	qiāng	1
 巧	qiǎo	706
 桥	qiáo	700
 乔	qiáo	650
@@ -29994,6 +30073,7 @@ sort: by_weight
 𪒯	qín	1
 𪙟	qǐn	1
 𪧭	qīn	1
+梣	qín	1
 请	qǐng	864
 情	qíng	791
 清	qīng	790
@@ -30390,7 +30470,7 @@ sort: by_weight
 𪓰	qiū	1
 𪖛	qiù	1
 𫠑	qiū	1
-去	qù	845
+去	qù	893
 区	qū	825
 取	qǔ	785
 趣	qù	730
@@ -30665,6 +30745,9 @@ sort: by_weight
 𪪕	qū	1
 𪳐	qú	1
 𫐻	qū	1
+岨	qū	1
+戌	qu	1
+𫭟	qū	1
 全	quán	837
 权	quán	769
 券	quàn	727
@@ -30948,7 +31031,7 @@ sort: by_weight
 𨞗	qún	1
 𩎗	qūn	1
 𩤁	qūn	1
-然	rán	840
+然	rán	828
 染	rǎn	709
 燃	rán	665
 冉	rǎn	514
@@ -31024,7 +31107,7 @@ sort: by_weight
 𪓚	rán	1
 𪚮	rán	1
 𪹠	rán	1
-让	ràng	811
+让	ràng	863
 壤	rǎng	610
 攘	rǎng	494
 讓	ràng	480
@@ -31061,6 +31144,7 @@ sort: by_weight
 𨟚	ráng	1
 𩆶	ráng	1
 𫟝	ràng	1
+瀼	ràng	1
 绕	rào	657
 扰	rǎo	652
 饶	ráo	558
@@ -31090,7 +31174,7 @@ sort: by_weight
 𦪛	ráo	1
 𧳨	rǎo	1
 𨇄	rǎo	1
-热	rè	776
+热	rè	840
 惹	rě	582
 若	rě	461
 熱	rè	447
@@ -31206,6 +31290,7 @@ sort: by_weight
 𩠈	rěn	1
 𩵕	rèn	1
 𪔺	rèn	1
+葚	rèn	1
 仍	réng	714
 扔	rēng	607
 礽	réng	341
@@ -31789,6 +31874,7 @@ sort: by_weight
 𩣞	sà	1
 𩨞	sǎ	1
 𫂿	sà	1
+挲	sā	1
 栍	saeng	1
 赛	sài	779
 塞	sāi	685
@@ -32257,6 +32343,7 @@ sort: by_weight
 𩂃	shài	1
 𩂝	shài	1
 𩴇	shài	1
+色	shǎi	1
 山	shān	791
 善	shàn	728
 删	shān	657
@@ -32467,6 +32554,7 @@ sort: by_weight
 𪑃	shān	1
 𫅓	shān	1
 𫟶	shàn	1
+烻	shān	1
 上	shàng	890
 商	shāng	800
 伤	shāng	735
@@ -33483,6 +33571,7 @@ sort: by_weight
 𫗤	shì	1
 𫝑	shì	1
 𫞕	shì	1
+媞	shì	1
 手	shǒu	827
 收	shōu	803
 受	shòu	802
@@ -33817,6 +33906,7 @@ sort: by_weight
 𫌋	shù	1
 𫝋	shù	1
 𫝧	shù	1
+婌	shú	1
 刷	shuā	704
 耍	shuǎ	597
 唰	shuā	415
@@ -33933,6 +34023,7 @@ sort: by_weight
 𩦌	shuāng	1
 𩽧	shuāng	1
 𫎿	shuǎng	1
+漴	shuāng	1
 谁	shuí	821
 水	shuǐ	722
 睡	shuì	718
@@ -34260,7 +34351,7 @@ sort: by_weight
 𪕳	sī	1
 𪖉	sī	1
 𪱫	sì	1
-送	sòng	751
+送	sòng	840
 松	sōng	732
 宋	sòng	667
 讼	sòng	589
@@ -34639,7 +34730,7 @@ sort: by_weight
 𪰸	sù	1
 𪳚	sù	1
 𫂙	sù	1
-算	suàn	804
+算	suàn	840
 酸	suān	720
 蒜	suàn	634
 狻	suān	332
@@ -35001,7 +35092,9 @@ sort: by_weight
 𫝂	suǒ	1
 𫞽	suō	1
 𫟿	suǒ	1
-他	tā	865
+溹	suǒ	1
+葰	suǒ	1
+他	tā	882
 她	tā	797
 它	tā	785
 塔	tǎ	703
@@ -35168,8 +35261,10 @@ sort: by_weight
 𪯎	tà	1
 𪹹	tà	1
 𫉨	tà	1
+踏	tā	1
+遢	tā	1
 襨	tae	1
-太	tài	805
+太	tài	855
 台	tái	801
 态	tài	769
 泰	tài	702
@@ -35448,6 +35543,8 @@ sort: by_weight
 𫞍	tán	1
 𫟛	tán	1
 𫟢	tán	1
+磹	tán	1
+镡	tán	1
 汤	tāng	729
 堂	táng	715
 糖	táng	708
@@ -35578,6 +35675,8 @@ sort: by_weight
 𪕹	táng	1
 𪳯	táng	1
 𫑲	táng	1
+埫	tǎng	1
+耥	tāng	1
 套	tào	739
 讨	tǎo	707
 淘	táo	668
@@ -35702,6 +35801,7 @@ sort: by_weight
 𪵁	tāo	1
 𫍈	tāo	1
 𫑜	táo	1
+焘	tāo	1
 特	tè	826
 忒	tè	498
 忑	tè	481
@@ -36001,12 +36101,12 @@ sort: by_weight
 𪖦	tī	1
 𫛸	tí	1
 𠥶	tī	1
-天	tiān	850
+填	tián	766
+舔	tiǎn	746
+天	tiān	733
 田	tián	717
 甜	tián	711
 添	tiān	679
-填	tián	663
-舔	tiǎn	532
 恬	tián	497
 腆	tiǎn	455
 畑	tián	451
@@ -36542,7 +36642,9 @@ sort: by_weight
 𪀭	tóng	1
 𪌢	tǒng	1
 𪟍	tǒng	1
-头	tóu	999
+洞	tóng	1
+通	tòng	1
+头	tóu	870
 投	tóu	799
 透	tòu	710
 偷	tōu	678
@@ -36750,6 +36852,7 @@ sort: by_weight
 𪉍	tū	1
 𪑏	tú	1
 𫟏	tù	1
+㻬	tū	1
 团	tuán	768
 湍	tuān	446
 団	tuán	426
@@ -37265,6 +37368,7 @@ sort: by_weight
 𩨾	wá	1
 𩩤	wā	1
 𩿺	wā	1
+坬	wā	1
 外	wài	828
 歪	wāi	582
 崴	wǎi	450
@@ -39311,6 +39415,7 @@ sort: by_weight
 𪺕	xì	1
 𫘬	xí	1
 𫠃	xí	1
+咥	xì	1
 下	xià	870
 夏	xià	717
 虾	xiā	680
@@ -39492,7 +39597,7 @@ sort: by_weight
 𪡛	xià	1
 𪡛	xiā	1
 𪾌	xiǎ	1
-先	xiān	866
+先	xiān	879
 现	xiàn	857
 线	xiàn	804
 显	xiǎn	765
@@ -40879,6 +40984,7 @@ sort: by_weight
 𪀽	xīn	1
 𫠇	xín	1
 𬒘	xìn	1
+炘	xīn	1
 行	xíng	862
 性	xìng	840
 型	xíng	812
@@ -41495,6 +41601,8 @@ sort: by_weight
 𪽰	xǔ	1
 𫀉	xù	1
 𫕃	xù	1
+冔	xǔ	1
+湑	xù	1
 选	xuǎn	810
 宣	xuān	723
 旋	xuán	652
@@ -41723,6 +41831,7 @@ sort: by_weight
 𪍧	xuàn	1
 𫅈	xuán	1
 𫠊	xuán	1
+晅	xuǎn	1
 学	xué	874
 血	xuè	743
 雪	xuě	702
@@ -42233,6 +42342,8 @@ sort: by_weight
 𪘬	yá	1
 𪘲	yà	1
 𪘲	yá	1
+呀	ya	1
+玡	yá	1
 言	yán	784
 研	yán	776
 验	yàn	774
@@ -42772,6 +42883,7 @@ sort: by_weight
 𫝝	yán	1
 𫝸	yàn	1
 𫞱	yán	1
+墕	yān	1
 样	yàng	830
 养	yǎng	759
 阳	yáng	750
@@ -42965,6 +43077,7 @@ sort: by_weight
 𫑩	yǎng	1
 𫕿	yáng	1
 𫝥	yǎng	1
+咉	yāng	1
 要	yào	884
 药	yào	746
 要	yāo	736
@@ -43262,6 +43375,7 @@ sort: by_weight
 𪴴	yáo	1
 𫝔	yáo	1
 𫞂	yào	1
+崾	yào	1
 也	yě	875
 业	yè	858
 夜	yè	721
@@ -44368,6 +44482,7 @@ sort: by_weight
 𫞫	yī	1
 𫟌	yì	1
 𰁜	yì	1
+踦	yǐ	1
 因	yīn	835
 音	yīn	785
 引	yǐn	770
@@ -44689,6 +44804,7 @@ sort: by_weight
 𪱛	yǐn	1
 𫂾	yīn	1
 𫡑	yīn	1
+硍	yín	1
 影	yǐng	810
 应	yìng	793
 应	yīng	789
@@ -45420,16 +45536,18 @@ sort: by_weight
 𫚸	yǒu	1
 𫝁	yǒu	1
 𫠘	yòu	1
+浟	yóu	1
+蝤	yóu	1
 与	yǔ	868
 于	yú	827
 语	yǔ	808
 预	yù	778
+雨	yǔ	776
 育	yù	774
 域	yù	757
 鱼	yú	756
 遇	yù	730
 余	yú	720
-雨	yǔ	711
 与	yù	700
 玉	yù	700
 娱	yú	687
@@ -46088,6 +46206,10 @@ sort: by_weight
 𫙐	yú	1
 𫝌	yǔ	1
 𫟋	yǔ	1
+吁	yū	1
+喁	yú	1
+於	yū	1
+蔚	yù	1
 原	yuán	818
 缘	yuán	810
 元	yuán	806
@@ -46494,6 +46616,7 @@ sort: by_weight
 𪘳	yuē	1
 𫑛	yuè	1
 𫖵	yuè	1
+彟	yuē	1
 运	yùn	795
 云	yún	738
 孕	yùn	677
@@ -47267,6 +47390,10 @@ sort: by_weight
 樝	zhā	38
 厏	zhǎ	23
 偧	zhā	23
+䃎	zhà	1
+奓	zhā	1
+霅	zhà	1
+馇	zha	1
 觰	zhā	1
 耫	zhá	1
 查	zhā	1
@@ -47421,6 +47548,7 @@ sort: by_weight
 夈	zhāi	113
 捚	zhāi	75
 榸	zhāi	50
+豸	zhài	1
 擿	zhāi	1
 䍉	zhǎi	1
 亝	zhāi	1
@@ -48671,6 +48799,7 @@ sort: by_weight
 旘	zhì	23
 劕	zhì	23
 櫍	zhì	23
+禔	zhī	1
 聀	zhí	1
 覟	zhì	1
 垁	zhì	1
@@ -49727,6 +49856,8 @@ sort: by_weight
 腞	zhuàn	75
 蒃	zhuàn	68
 瑼	zhuān	68
+䏝	zhuān	1
+沌	zhuàn	1
 竱	zhuǎn	1
 諯	zhuān	1
 鄟	zhuān	1
@@ -50206,6 +50337,7 @@ sort: by_weight
 璾	zī	60
 赼	zī	38
 鰦	zī	38
+訾	zǐ	1
 茊	zī	1
 湽	zī	1
 紎	zī	1
@@ -50768,6 +50900,7 @@ sort: by_weight
 昨	zuó	699
 佐	zuǒ	627
 琢	zuó	539
+作	zuō	521
 咗	zuo	496
 唑	zuò	490
 祚	zuò	444
@@ -50867,6 +51000,9 @@ sort: by_weight
 𪱢	zuò	1
 𫝶	zuò	1
 𫝷	zuò	1
+呒	ḿ	1
+呣	ḿ	1
+乥	无	1
 夞	无	1
 𥩟	无	1
 𪸩	无	1
