@@ -105,9 +105,9 @@ translator:
   initial_quality: 100000
   enable_charset_filter: false
   enable_sentence: false                # 开启句子输入模式
-  enable_user_dict: true                # 开启用户词典
-  enable_encoder: true                  # 开启自动造词
-  encode_commit_history: true           # 是否对已上屏词自动成词（仅 table_translator 有效）
+  enable_user_dict: false               # 开启用户词典
+  enable_encoder: false                 # 开启自动造词
+  encode_commit_history: false          # 是否对已上屏词自动成词（仅 table_translator 有效）
   max_phrase_length: 10                 # 设置候选词的最大长度
   enable_completion: false              # 是否显示编码未输入完整的词条
   preedit_format:                       # 上屏码自定义
