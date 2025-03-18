@@ -3,7 +3,7 @@
 #https://github.com/amzxyz/RIME-LMDG
 ---
 name: chars
-version: "2025-02-18 23:03"
+version: "2025-03-17 18:36"
 sort: by_weight
 ...
 啊	a	915
@@ -5189,11 +5189,11 @@ sort: by_weight
 𩗰	chuí	1
 𩭦	chuí	1
 𪯌	chuí	1
-春	chūn	730
-纯	chún	698
+纯	chún	730
+蠢	chǔn	725
+春	chūn	698
 醇	chún	617
 唇	chún	611
-蠢	chǔn	579
 淳	chún	553
 椿	chūn	493
 鹑	chún	486
@@ -11611,8 +11611,8 @@ sort: by_weight
 𫟜	guàn	1
 𫟜	guān	1
 𫩙	guàn	1
+光	guāng	789
 广	guǎng	784
-光	guāng	782
 逛	guàng	659
 胱	guāng	512
 犷	guǎng	459
@@ -17696,6 +17696,7 @@ sort: by_weight
 桔	jú	523
 沮	jǔ	519
 驹	jū	517
+車	jū	510
 炬	jù	505
 钜	jù	495
 踞	jù	458
@@ -17869,7 +17870,6 @@ sort: by_weight
 跙	jū	1
 蹻	jú	1
 躹	jū	1
-車	jū	1
 鋦	jú	1
 鋸	jū	1
 驕	jū	1
@@ -18801,8 +18801,8 @@ sort: by_weight
 𨝎	kāng	1
 𨻷	kāng	1
 𪎵	kàng	1
-考	kǎo	812
-靠	kào	726
+靠	kào	812
+考	kǎo	726
 烤	kǎo	712
 拷	kǎo	518
 铐	kào	443
@@ -18845,17 +18845,17 @@ sort: by_weight
 𩩾	kāo	1
 𫝲	kāo	1
 可	kě	889
+棵	kē	856
+颗	kē	833
+克	kè	812
 科	kē	804
 客	kè	786
-克	kè	782
 课	kè	737
 刻	kè	719
-颗	kē	660
 壳	ké	633
 柯	kē	618
 渴	kě	608
 咳	ké	598
-棵	kē	563
 磕	kē	545
 苛	kē	544
 坷	kě	498
@@ -19463,10 +19463,10 @@ sort: by_weight
 𥟓	kuǎn	1
 𥦀	kuān	1
 𫎉	kuǎn	1
-况	kuàng	774
+框	kuàng	698
+况	kuàng	679
 狂	kuáng	676
 矿	kuàng	658
-框	kuàng	627
 旷	kuàng	537
 匡	kuāng	508
 眶	kuàng	504
@@ -21367,9 +21367,9 @@ sort: by_weight
 蠡	lí	1
 俩	liǎ	637
 倆	liǎ	334
-联	lián	795
 连	lián	766
 练	liàn	761
+联	lián	755
 脸	liǎn	719
 链	liàn	716
 恋	liàn	699
@@ -23784,7 +23784,7 @@ sort: by_weight
 蠻	mán	428
 缦	màn	392
 満	mǎn	391
-谩	mán	323
+谩	màn	323
 鬘	mán	321
 鰻	mán	301
 謾	mán	293
@@ -23814,6 +23814,7 @@ sort: by_weight
 鏝	màn	50
 澷	màn	38
 鬗	mán	23
+谩	mán	1
 㵘	màn	1
 㬅	màn	1
 㒼	mán	1
@@ -23891,7 +23892,6 @@ sort: by_weight
 𫞜	mǎn	1
 嫚	mān	1
 蔓	mán	1
-谩	màn	1
 忙	máng	686
 芒	máng	624
 盲	máng	623
@@ -27976,9 +27976,9 @@ sort: by_weight
 𨸇	pián	1
 𪘀	pián	1
 𪚏	pián	1
-票	piào	761
+飘	piāo	761
 漂	piào	660
-飘	piāo	620
+票	piào	620
 漂	piāo	599
 朴	piáo	543
 嫖	piáo	516
@@ -31876,8 +31876,8 @@ sort: by_weight
 𫂿	sà	1
 挲	sā	1
 栍	saeng	1
-赛	sài	779
-塞	sāi	685
+塞	sāi	779
+赛	sài	685
 塞	sài	532
 腮	sāi	511
 鳃	sāi	460
@@ -37273,11 +37273,11 @@ sort: by_weight
 𪘗	tuó	1
 𫜒	tuō	1
 𫟤	tuó	1
-瓦	wǎ	684
+哇	wa	690
+瓦	wǎ	664
 挖	wā	658
 娃	wá	640
 蛙	wā	597
-哇	wa	590
 袜	wà	571
 哇	wā	528
 洼	wā	525
@@ -43596,6 +43596,8 @@ sort: by_weight
 以	yǐ	901
 一	yī	848
 壹	yī	840
+乙	yǐ	836
+姨	yí	833
 意	yì	831
 已	yǐ	806
 宜	yí	800
@@ -43622,8 +43624,6 @@ sort: by_weight
 役	yì	651
 椅	yǐ	646
 翼	yì	640
-乙	yǐ	636
-姨	yí	618
 逸	yì	609
 毅	yì	606
 溢	yì	600
@@ -45099,11 +45099,11 @@ sort: by_weight
 拥	yōng	718
 永	yǒng	711
 勇	yǒng	672
+咏	yǒng	655
 泳	yǒng	643
 涌	yǒng	611
 庸	yōng	603
 雍	yōng	551
-咏	yǒng	547
 佣	yōng	547
 佣	yòng	537
 俑	yǒng	500
@@ -45244,11 +45244,12 @@ sort: by_weight
 有	yǒu	926
 又	yòu	819
 由	yóu	809
+右	yòu	807
+呦	yōu	802
 游	yóu	801
 友	yǒu	799
+油	yóu	790
 优	yōu	785
-油	yóu	774
-右	yòu	733
 尤	yóu	704
 邮	yóu	691
 幼	yòu	667
@@ -45261,7 +45262,6 @@ sort: by_weight
 佑	yòu	559
 柚	yòu	555
 釉	yòu	530
-呦	yōu	528
 酉	yǒu	525
 祐	yòu	510
 疣	yóu	504
@@ -46617,8 +46617,8 @@ sort: by_weight
 𫑛	yuè	1
 𫖵	yuè	1
 彟	yuē	1
-运	yùn	795
-云	yún	738
+云	yún	798
+运	yùn	735
 孕	yùn	677
 允	yǔn	655
 匀	yún	634
@@ -47154,8 +47154,8 @@ sort: by_weight
 𫁘	zào	1
 𫓇	zào	1
 𫝰	zào	1
+则	zé	779
 择	zé	774
-则	zé	771
 责	zé	744
 泽	zé	671
 啧	zé	514
@@ -47910,9 +47910,9 @@ sort: by_weight
 𫜂	zhāng	1
 找	zhǎo	771
 照	zhào	767
+赵	zhào	762
 招	zhāo	734
 召	zhào	676
-赵	zhào	672
 着	zháo	629
 罩	zhào	614
 昭	zhāo	612
@@ -48571,10 +48571,11 @@ sort: by_weight
 𪎻	zhèng	1
 𪨘	zhēng	1
 𫖖	zhèng	1
-之	zhī	848
+支	zhī	855
+只	zhǐ	848
 值	zhí	838
 知	zhī	820
-只	zhǐ	817
+之	zhī	817
 直	zhí	802
 质	zhì	802
 制	zhì	800
@@ -48582,7 +48583,6 @@ sort: by_weight
 指	zhǐ	789
 智	zhì	779
 治	zhì	778
-支	zhī	777
 致	zhì	767
 置	zhì	763
 职	zhí	759
@@ -49389,6 +49389,7 @@ sort: by_weight
 譸	zhōu	50
 霌	zhōu	38
 炿	zhōu	38
+㨄	zhōu	32
 葤	zhòu	23
 駎	zhòu	23
 碡	zhóu	1
@@ -49923,12 +49924,12 @@ sort: by_weight
 𬤥	zhuàn	1
 装	zhuāng	784
 状	zhuàng	752
+幢	zhuàng	699
 庄	zhuāng	681
 妆	zhuāng	668
 撞	zhuàng	654
 壮	zhuàng	648
 桩	zhuāng	560
-幢	zhuàng	521
 裝	zhuāng	465
 狀	zhuàng	411
 莊	zhuāng	342
