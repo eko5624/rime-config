@@ -80,6 +80,16 @@ engine:
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - uniquifier                                # 去重
 
+predictor:
+  db: wanxiang-lts-zh-predict.db
+# 每次最大预测候选数
+# 默认为 0，表示显示所有候选数
+# 您可以将其设置为与 page_size 相同，这样 period 就不会触发下一页
+  max_candidates: 8
+# 最大连续预测次数
+# 默认为 0，表示无限制
+  max_iterations: 1
+
 # 简繁转换
 # transcription_cc:
   # option_name: transcription

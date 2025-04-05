@@ -4,7 +4,7 @@
 #------行政区划------
 ---
 name: place
-version: "2025-03-17 18:36"
+version: "2025-04-05 16:00"
 sort: by_weight
 ...
 阿坝	ā bà	601
@@ -3508,6 +3508,7 @@ sort: by_weight
 常德市	cháng dé shì	511
 昌都市	chāng dū shì	1
 长丰县	cháng fēng xiàn	458
+长葛市	cháng gé shì	385
 长海县	cháng hǎi xiàn	429
 昌吉市	chāng jí shì	416
 昌江区	chāng jiāng qū	272
@@ -9775,7 +9776,6 @@ sort: by_weight
 张港镇	zhāng gǎng zhèn	181
 张高村	zhāng gāo cūn	1
 张阁村	zhāng gé cūn	1
-长葛市	zhǎng gé shì	385
 张阁镇	zhāng gé zhèn	159
 张各庄	zhāng gè zhuāng	312
 张戈庄	zhāng gē zhuāng	150
@@ -31873,7 +31873,7 @@ sort: by_weight
 省安水县	shěng ān shuǐ xiàn	1
 盛岸新村	shèng àn xīn cūn	1
 省巴森县	shěng bā sēn xiàn	1
-圣彼得堡	shèng bǐ de bǎo	717
+圣彼得堡	shèng bǐ dé bǎo	717
 圣彼德堡	shèng bǐ dé bǎo	382
 生比奈村	shēng bǐ nài cūn	1
 圣比萨堡	shèng bǐ sà bǎo	35
@@ -42802,6 +42802,7 @@ sort: by_weight
 张家产村	zhāng jiā chǎn cūn	1
 张家产镇	zhāng jiā chǎn zhèn	207
 张家场村	zhāng jiā chǎng cūn	77
+张家长村	zhāng jiā cháng cūn	1
 张家场乡	zhāng jiā chǎng xiāng	168
 张家城村	zhāng jiā chéng cūn	1
 张家冲村	zhāng jiā chōng cūn	35
@@ -42927,7 +42928,6 @@ sort: by_weight
 张家宅村	zhāng jiā zhái cūn	1
 张家寨镇	zhāng jiā zhài zhèn	105
 张家寨庄	zhāng jiā zhài zhuāng	1
-张家长村	zhāng jiā zhǎng cūn	1
 张家竹村	zhāng jiā zhú cūn	1
 张家庄村	zhāng jiā zhuāng cūn	281
 张家庄乡	zhāng jiā zhuāng xiāng	195
