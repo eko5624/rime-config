@@ -31,7 +31,10 @@ switches:
     reset: 0
   - name: chaifen
     states: [ 隐, 显 ]
-    reset: 1 
+    reset: 1
+  - name: pinyin_hint
+    states: [ 形, 音 ]
+    reset: 1
   - name: single_char
     states: [ 词, 单 ]
     reset: 0
@@ -89,10 +92,10 @@ engine:
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@single_char
     - reverse_lookup_filter@pinyin_reverse_lookup
-    - reverse_lookup_filter@wubi86_reverse_lookup
     - reverse_lookup_filter@radical_reverse_lookup
     - uniquifier
     - simplifier@chaifen                        # 五笔字根拆分滤镜
+    - simplifier@pinyin_hint                    # 以形查音滤镜
 
 speller:
   #max_code_length: 10                  # 设置输入码的最大长度
@@ -179,6 +182,15 @@ chaifen:
   tags: [pinyin_lookup]                 # 限制在对应 tag 只有在拼音反查五笔时才有拆分提示
   tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
 
+pinyin_hint:
+  opencc_config: pinyin.json
+  option_name: pinyin_hint
+  show_in_comment: true 
+  comment_format:     
+    - "xform/&nbsp;/ /"
+  tags: [wubi86_lookup]                 # 限制在对应 tag
+  tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
+
 pinyin_lookup:                          # 拼音反查五笔
   tag: pinyin_lookup
   dictionary: wanxiang
@@ -199,10 +211,6 @@ wubi86_lookup:                          # 五笔反查拼音
   tips: 〔以形查音〕
   closing_tips: 〔五笔〕
   initial_quality: 1
-      
-wubi86_reverse_lookup:                  # 五笔反查拼音
-  tags: [wubi86_lookup]
-  dictionary: wanxiang
 
 radical_lookup:
   tag: radical_lookup
