@@ -187,7 +187,7 @@ pinyin_hint:
   show_in_comment: true 
   comment_format:     
     - "xform/&nbsp;/ /"
-  tags: [wubi86_lookup]                 # 限制在对应 tag
+  tags: [wubi98_lookup]                 # 限制在对应 tag
   tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
   
 pinyin_lookup:                          # 拼音反查五笔
