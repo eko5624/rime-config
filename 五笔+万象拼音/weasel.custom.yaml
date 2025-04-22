@@ -15,6 +15,12 @@ patch:
       inline_preedit: true # 兼容 IE
     browser.exe:
       inline_preedit: true # 兼容 Yandex
+    msedge.exe: # Edge浏览器
+      ascii_mode: true  
+    chrome.exe: # chrome浏览器
+      ascii_mode: true
+    Photoshop.exe: # Photoshop
+      ascii_mode: true
 
   # [global settings]
   show_notifications: true                   # 是否显示状态变化的通知：true；false；option_list（方案内的开头 option）
