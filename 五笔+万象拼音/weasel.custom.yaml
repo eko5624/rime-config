@@ -21,6 +21,10 @@ patch:
       ascii_mode: true
     Photoshop.exe: # Photoshop
       ascii_mode: true
+    notepad++.exe: # Notepad++
+      ascii_mode: true
+    sublime_text.exe: # Sublime
+      ascii_mode: true
 
   # [global settings]
   show_notifications: true                   # 是否显示状态变化的通知：true；false；option_list（方案内的开头 option）
@@ -31,8 +35,8 @@ patch:
   # [style]
   # 字体；候选项、候选窗口的行为、布局及样式
   style:
-    color_scheme: mint_light_blue             # 默认配色方案
-    color_scheme_dark: mint_dark_blue         # 深色模式下，Weasel 的配色方案，Windows 10 1809+ 可用
+    color_scheme: mint_light_green             # 默认配色方案
+    color_scheme_dark: mint_dark_green         # 深色模式下，Weasel 的配色方案，Windows 10 1809+ 可用
 
     # 全局字体
     # 格式：字体1:起始码位:结束码位:字重:字形,字体2……，字体会依次 fallback
