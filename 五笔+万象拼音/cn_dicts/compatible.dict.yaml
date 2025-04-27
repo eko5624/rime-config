@@ -4,7 +4,7 @@
 #兼容词库，对于多字词汇两种读音的场景，手动维护到本表以及一些其他的杂项
 ---
 name: compatible
-version: "2025-04-05 16:00"
+version: "2025-04-27 13:21"
 sort: by_weight
 ...
 攒个	cuán gè	391
@@ -18,10 +18,13 @@ sort: by_weight
 调回来	tiáo huí lái	187
 调回了	tiáo huí le	151
 调回去	tiáo huí qù	137
+炸锅	zhá guō	465
 调回	tiáo huí	513
 掉色	diào sè	552
 掉色	diào shǎi	552
 大方	dà fang	676
+落魄	luò tuò	533
+落魄	luò bó	533
 沉甸甸	chén diān diān	380
 沉甸甸	chén diàn diàn	380
 热腾腾	rè téng téng	447
@@ -56,7 +59,7 @@ sort: by_weight
 闲着	xián zhāo	367
 闲着	xián zhe	567
 琢磨	zuó mo	619
-琢磨	zhuó mó	433
+琢磨	zhuó mó	460
 线长	xiàn zhǎng	463
 看好	kàn hǎo	706
 看好	kān hǎo	606
@@ -2141,6 +2144,572 @@ sort: by_weight
 做这事	zuò zhèi shì	379
 做这些	zuò zhèi xiē	540
 做这种	zuò zhèi zhǒng	520
+谙熟	ān shóu	372
+半熟	bàn shóu	491
+保熟	bǎo shóu	406
+背熟	bèi shóu	461
+变熟	biàn shóu	374
+不熟	bù shóu	576
+常熟	cháng shóu	533
+炒熟	chǎo shóu	571
+成熟	chéng shóu	740
+初熟	chū shóu	248
+纯熟	chún shóu	493
+醇熟	chún shóu	360
+催熟	cuī shóu	479
+大熟	dà shóu	264
+蛋熟	dàn shóu	375
+读熟	dú shóu	359
+炖熟	dùn shóu	442
+耳熟	ěr shóu	424
+腐熟	fǔ shóu	430
+刚熟	gāng shóu	358
+搞熟	gǎo shóu	227
+瓜熟	guā shóu	291
+过熟	guò shóu	443
+果熟	guǒ shóu	322
+很熟	hěn shóu	552
+湖熟	hú shóu	384
+混熟	hùn shóu	457
+记熟	jì shóu	395
+即熟	jí shóu	391
+较熟	jiào shóu	295
+精熟	jīng shóu	365
+烤熟	kǎo shóu	557
+快熟	kuài shóu	397
+烂熟	làn shóu	494
+老熟	lǎo shóu	361
+脸熟	liǎn shóu	454
+练熟	liàn shóu	395
+两熟	liǎng shóu	302
+蛮熟	mán shóu	294
+没熟	méi shóu	490
+面熟	miàn shóu	400
+摸熟	mō shóu	312
+轻熟	qīng shóu	419
+全熟	quán shóu	525
+稔熟	rěn shóu	257
+软熟	ruǎn shóu	380
+杀熟	shā shóu	414
+烧熟	shāo shóu	450
+生熟	shēng shóu	475
+手熟	shǒu shóu	413
+熟啊	shóu a	460
+熟谙	shóu ān	380
+熟背	shóu bèi	377
+熟菜	shóu cài	471
+熟茶	shóu chá	501
+熟成	shóu chéng	459
+熟词	shóu cí	375
+熟的	shóu de	640
+熟得	shóu de	373
+熟地	shóu dì	483
+熟点	shóu diǎn	277
+熟读	shóu dú	524
+熟度	shóu dù	476
+熟饭	shóu fàn	335
+熟果	shóu guǒ	332
+熟后	shóu hòu	526
+熟化	shóu huà	399
+熟记	shóu jì	721
+熟筋	shóu jīn	341
+熟客	shóu kè	533
+熟烂	shóu làn	480
+熟了	shóu le	597
+熟练	shóu liàn	679
+熟脸	shóu liǎn	359
+熟料	shóu liào	454
+熟路	shóu lù	317
+熟络	shóu luò	477
+熟虑	shóu lǜ	316
+熟女	shóu nǚ	515
+熟皮	shóu pí	219
+熟普	shóu pǔ	369
+熟人	shóu rén	640
+熟稔	shóu rěn	436
+熟肉	shóu ròu	450
+熟食	shóu shí	590
+熟识	shóu shí	527
+熟时	shóu shí	455
+熟手	shóu shǒu	440
+熟睡	shóu shuì	504
+熟水	shóu shuǐ	281
+熟铁	shóu tiě	373
+熟透	shóu tòu	602
+熟悉	shóu xī	731
+熟习	shóu xí	381
+熟虾	shóu xiā	328
+熟用	shóu yòng	353
+熟油	shóu yóu	389
+熟语	shóu yǔ	387
+熟知	shóu zhī	573
+熟制	shóu zhì	349
+睡熟	shuì shóu	372
+太熟	tài shóu	429
+挺熟	tǐng shóu	365
+晚熟	wǎn shóu	412
+玩熟	wán shóu	333
+完熟	wán shóu	269
+未熟	wèi shóu	433
+我熟	wǒ shóu	337
+娴熟	xián shóu	561
+相熟	xiāng shóu	481
+眼熟	yǎn shóu	533
+一熟	yì shóu	316
+用熟	yòng shóu	354
+圆熟	yuán shóu	329
+再熟	zài shóu	329
+早熟	zǎo shóu	514
+炸熟	zhà shóu	452
+蒸熟	zhēng shóu	555
+至熟	zhì shóu	519
+煮熟	zhǔ shóu	683
+最熟	zuì shóu	274
+八成熟	bā chéng shóu	226
+八分熟	bā fēn shóu	270
+把熟睡	bǎ shóu shuì	101
+把蒸熟	bǎ zhēng shóu	100
+把煮熟	bǎ zhǔ shóu	135
+半成熟	bàn chéng shóu	134
+扮成熟	bàn chéng shóu	102
+半生熟	bàn shēng shóu	166
+半熟蛋	bàn shóu dàn	179
+半熟的	bàn shóu de	212
+半熟练	bàn shóu liàn	117
+半熟人	bàn shóu rén	147
+半熟时	bàn shóu shí	53
+被催熟	bèi cuī shóu	125
+被烤熟	bèi kǎo shóu	136
+背熟了	bèi shóu le	167
+被煮熟	bèi zhǔ shóu	120
+比较熟	bǐ jiào shóu	8
+变成熟	biàn chéng shóu	192
+并不熟	bìng bù shóu	162
+不成熟	bù chéng shóu	309
+不催熟	bù cuī shóu	79
+不熟啊	bù shóu a	133
+不熟吧	bù shóu ba	162
+不熟练	bù shóu liàn	248
+不熟悉	bù shóu xī	316
+不太熟	bú tài shóu	234
+不娴熟	bù xián shóu	148
+不眼熟	bù yǎn shóu	88
+菜熟了	cài shóu le	100
+常熟的	cháng shóu de	188
+常熟话	cháng shóu huà	95
+常熟路	cháng shóu lù	190
+常熟人	cháng shóu rén	168
+常熟市	cháng shóu shì	302
+常熟县	cháng shóu xiàn	182
+常熟有	cháng shóu yǒu	56
+常熟站	cháng shóu zhàn	82
+炒不熟	chǎo bù shóu	127
+炒熟后	chǎo shóu hòu	222
+炒熟了	chǎo shóu le	158
+成熟啊	chéng shóu a	148
+成熟吧	chéng shóu ba	149
+成熟的	chéng shóu de	418
+成熟点	chéng shóu diǎn	186
+成熟度	chéng shóu dù	280
+成熟范	chéng shóu fàn	49
+成熟风	chéng shóu fēng	136
+成熟感	chéng shóu gǎn	171
+成熟好	chéng shóu hǎo	71
+成熟很	chéng shóu hěn	120
+成熟后	chéng shóu hòu	258
+成熟化	chéng shóu huà	178
+成熟季	chéng shóu jì	122
+成熟了	chéng shóu le	340
+成熟脸	chéng shóu liǎn	56
+成熟林	chéng shóu lín	71
+成熟美	chéng shóu měi	144
+成熟蜜	chéng shóu mì	148
+成熟男	chéng shóu nán	172
+成熟女	chéng shóu nǚ	146
+成熟期	chéng shóu qí	264
+成熟前	chéng shóu qián	156
+成熟区	chéng shóu qū	100
+成熟人	chéng shóu rén	118
+成熟乳	chéng shóu rǔ	120
+成熟时	chéng shóu shí	258
+成熟体	chéng shóu tǐ	94
+成熟些	chéng shóu xiē	167
+成熟性	chéng shóu xìng	235
+成熟型	chéng shóu xíng	185
+成熟早	chéng shóu zǎo	126
+成熟中	chéng shóu zhōng	153
+吃熟食	chī shóu shí	168
+初熟的	chū shóu de	89
+从熟睡	cóng shóu shuì	45
+从熟悉	cóng shóu xī	25
+催熟剂	cuī shóu jì	186
+大家熟	dà jiā shóu	88
+到常熟	dào cháng shóu	239
+的熟了	de shóu le	168
+等熟了	děng shóu le	188
+地不熟	dì bù shóu	479
+东京熟	dōng jīng shóu	50
+都不熟	dōu bù shóu	242
+都成熟	dōu chéng shóu	148
+都熟了	dōu shóu le	85
+都熟悉	dōu shóu xī	212
+都早熟	dōu zǎo shóu	79
+多熟了	duō shóu le	175
+多熟期	duō shóu qī	229
+多熟悉	duō shóu xī	172
+二回熟	èr huí shóu	164
+耳熟啊	ěr shóu a	139
+耳熟吧	ěr shóu ba	174
+耳熟了	ěr shóu le	137
+非常熟	fēi cháng shóu	160
+分熟吧	fēn shóu ba	163
+分熟了	fēn shóu le	158
+干熟么	gàn shóu me	78
+搞熟了	gǎo shóu le	79
+更成熟	gèng chéng shóu	244
+更熟练	gèng shóu liàn	165
+更熟悉	gèng shóu xī	222
+够成熟	gòu chéng shóu	128
+过熟的	guò shóu de	142
+过熟了	guò shóu le	166
+果熟期	guǒ shóu qī	124
+过熟期	guò shóu qī	84
+还不熟	hái bù shóu	182
+还算熟	hái suàn shóu	102
+好成熟	hǎo chéng shóu	73
+好耳熟	hǎo ěr shóu	119
+好面熟	hǎo miàn shóu	135
+好熟悉	hǎo shóu xī	186
+好眼熟	hǎo yǎn shóu	186
+很成熟	hěn chéng shóu	254
+很纯熟	hěn chún shóu	234
+很耳熟	hěn ěr shóu	190
+很面熟	hěn miàn shóu	151
+很熟啊	hěn shóu a	144
+很熟吧	hěn shóu ba	130
+很熟但	hěn shóu dàn	302
+很熟很	hěn shóu hěn	352
+很熟了	hěn shóu le	242
+很熟练	hěn shóu liàn	236
+很熟络	hěn shóu luò	297
+很熟稔	hěn shóu rěn	344
+很熟识	hěn shóu shí	224
+很熟悉	hěn shóu xī	294
+很娴熟	hěn xián shóu	320
+很眼熟	hěn yǎn shóu	80
+很早熟	hěn zǎo shóu	178
+后熟期	hòu shóu qī	81
+回常熟	huí cháng shóu	239
+会熟练	huì shóu liàn	200
+混脸熟	hùn liǎn shóu	172
+混熟吧	hùn shóu ba	184
+混熟了	hùn shóu le	168
+混眼熟	hùn yǎn shóu	102
+几成熟	jǐ chéng shóu	192
+几分熟	jǐ fēn shóu	258
+记熟了	jì shóu le	162
+将熟时	jiāng shóu shí	268
+将熟睡	jiāng shóu shuì	241
+将蒸熟	jiāng zhēng shóu	277
+将煮熟	jiāng zhǔ shóu	128
+较成熟	jiào chéng shóu	184
+九成熟	jiǔ chéng shóu	174
+九分熟	jiǔ fēn shóu	132
+就熟了	jiù shóu le	156
+就熟时	jiù shóu shí	312
+就熟悉	jiù shóu xī	152
+看熟了	kàn shóu le	177
+烤熟后	kǎo shóu hòu	200
+烤熟了	kǎo shóu le	160
+可成熟	kě chéng shóu	126
+可熟了	kě shóu le	87
+可熟悉	kě shóu xī	134
+快熟了	kuài shóu le	144
+快熟面	kuài shóu miàn	102
+快熟时	kuài shóu shí	118
+来常熟	lái cháng shóu	239
+来熟了	lái shóu le	168
+烂熟时	làn shóu shí	482
+老熟客	lǎo shóu kè	140
+老熟人	lǎo shóu rén	209
+脸熟吧	liǎn shóu ba	187
+脸熟了	liǎn shóu le	172
+练熟了	liàn shóu le	162
+两次熟	liǎng cì shóu	50
+六分熟	liù fēn shóu	158
+路不熟	lù bù shóu	159
+卖熟食	mài shóu shí	174
+没炒熟	méi chǎo shóu	94
+没成熟	méi chéng shóu	133
+没烤熟	méi kǎo shóu	444
+没烧熟	méi shāo shóu	65
+没熟吧	méi shóu ba	81
+没熟就	méi shóu jiù	50
+美熟女	měi shóu nǚ	183
+没熟人	méi shóu rén	498
+没熟似	méi shóu sì	226
+没熟透	méi shóu tòu	57
+没有熟	méi yǒu shóu	388
+没蒸熟	méi zhēng shóu	116
+没煮熟	méi zhǔ shóu	114
+面熟吧	miàn shóu ba	189
+摸熟了	mō shóu le	165
+能成熟	néng chéng shóu	116
+能熟练	néng shóu liàn	244
+你不熟	nǐ bù shóu	100
+你成熟	nǐ chéng shóu	143
+你很熟	nǐ hěn shóu	302
+你熟练	nǐ shóu liàn	134
+你熟人	nǐ shóu rén	104
+你熟睡	nǐ shóu shuì	160
+你熟悉	nǐ shóu xī	202
+你熟知	nǐ shóu zhī	86
+你眼熟	nǐ yǎn shóu	178
+你最熟	nǐ zuì shóu	108
+您熟悉	nín shóu xī	165
+弄熟了	nòng shóu le	174
+偏成熟	piān chéng shóu	170
+七成熟	qī chéng shóu	150
+七分熟	qī fēn shóu	50
+情况熟	qíng kuàng shóu	92
+轻熟风	qīng shóu fēng	154
+轻熟感	qīng shóu gǎn	82
+轻熟龄	qīng shóu líng	142
+轻熟男	qīng shóu nán	130
+轻熟女	qīng shóu nǚ	218
+去常熟	qù cháng shóu	239
+去熟悉	qù shóu xī	176
+全熟吧	quán shóu ba	176
+全熟了	quán shóu le	170
+人不熟	rén bù shóu	102
+人熟人	rén shóu rén	39
+容易熟	róng yì shóu	188
+三分熟	sān fēn shóu	190
+烧熟了	shāo shóu le	160
+生变熟	shēng biàn shóu	90
+生吃熟	shēng chī shóu	164
+生熟地	shēng shóu dì	160
+是常熟	shì cháng shóu	130
+十成熟	shí chéng shóu	132
+十分熟	shí fēn shóu	126
+是熟么	shì shóu me	102
+熟不熟	shóu bù shóu	176
+熟菜油	shóu cài yóu	151
+熟吃好	shóu chī hǎo	128
+熟大黄	shóu dài huáng	71
+熟蛋黄	shóu dàn huáng	154
+熟当时	shóu dāng shí	100
+熟的吧	shóu de ba	156
+熟得快	shóu de kuài	166
+熟的了	shóu de le	135
+熟地黄	shóu dì huáng	214
+熟读了	shóu dú le	150
+熟归熟	shóu guī shóu	110
+熟过头	shóu guò tóu	152
+熟花生	shóu huā shēng	174
+熟火腿	shóu huǒ tuǐ	168
+熟鸡蛋	shóu jī dàn	212
+熟客吧	shóu kè ba	167
+熟烂时	shóu làn shí	67
+熟了吧	shóu le ba	232
+熟了后	shóu le hòu	166
+熟了吗	shóu le ma	102
+熟了么	shóu le me	76
+熟了没	shóu le méi	113
+熟梨糕	shóu lí gāo	119
+熟练啊	shóu liàn a	142
+熟练吧	shóu liàn ba	149
+熟练地	shóu liàn de	338
+熟练的	shóu liàn de	288
+熟练度	shóu liàn dù	258
+熟练工	shóu liàn gōng	212
+熟练后	shóu liàn hòu	206
+熟练活	shóu liàn huó	13
+熟练了	shóu liàn le	152
+熟练那	shóu liàn nà	63
+熟练时	shóu liàn shí	172
+熟练性	shóu liàn xìng	112
+熟练于	shóu liàn yú	90
+熟练者	shóu liàn zhě	137
+熟龄肌	shóu líng jī	125
+熟络了	shóu luò le	147
+熟没熟	shóu méi shóu	123
+熟米饭	shóu mǐ fàn	177
+熟面孔	shóu miàn kǒng	199
+熟牛排	shóu niú pái	161
+熟牛肉	shóu niú ròu	191
+熟女网	shóu nǚ wǎng	174
+熟女系	shóu nǚ xì	127
+熟螃蟹	shóu páng xiè	100
+熟朋友	shóu péng yǒu	107
+熟苹果	shóu píng guǒ	146
+熟起来	shóu qǐ lái	170
+熟人啊	shóu rén a	129
+熟人吧	shóu rén ba	158
+熟人带	shóu rén dài	150
+熟人多	shóu rén duō	140
+熟人间	shóu rén jiān	185
+熟稔了	shóu rěn le	142
+熟人了	shóu rén le	141
+熟人们	shóu rén men	102
+熟人圈	shóu rén quān	160
+熟三七	shóu sān qī	95
+树上熟	shù shàng shóu	79
+熟食吧	shóu shí ba	172
+熟食店	shóu shí diàn	280
+熟石膏	shóu shí gāo	126
+熟食柜	shóu shí guì	82
+熟石灰	shóu shí huī	167
+熟识了	shóu shí le	147
+熟食类	shóu shí lèi	151
+熟食品	shóu shí pǐn	168
+熟食区	shóu shí qū	182
+熟熟的	shóu shóu de	98
+熟睡的	shóu shuì de	293
+熟睡了	shóu shuì le	147
+熟睡时	shóu shuì shí	84
+熟睡中	shóu shuì zhōng	221
+熟铜棍	shóu tóng gùn	70
+熟桐油	shóu tóng yóu	82
+熟透后	shóu tòu hòu	193
+熟透了	shóu tòu le	214
+熟透时	shóu tòu shí	245
+熟悉啊	shóu xī a	178
+熟悉吧	shóu xī ba	117
+熟悉不	shóu xī bù	166
+熟悉的	shóu xī de	367
+熟悉度	shóu xī dù	209
+熟悉感	shóu xī gǎn	213
+熟悉很	shóu xī hěn	81
+熟悉后	shóu xī hòu	200
+熟悉了	shóu xī le	341
+熟悉吗	shóu xī ma	180
+熟悉你	shóu xī nǐ	168
+熟悉人	shóu xī rén	123
+熟悉时	shóu xī shí	119
+熟悉他	shóu xī tā	172
+熟悉下	shóu xī xià	181
+熟一个	shóu yí gè	90
+熟一些	shóu yì xiē	12
+熟语料	shóu yǔ liào	764
+熟玉米	shóu yù mǐ	111
+熟知的	shóu zhī de	308
+熟芝麻	shóu zhī má	206
+熟制品	shóu zhì pǐn	105
+熟猪油	shóu zhū yóu	212
+睡不熟	shuì bù shóu	98
+睡熟了	shuì shóu le	161
+四书熟	sì shū shóu	16
+所熟悉	suǒ shóu xī	218
+所熟知	suǒ shóu zhī	288
+他不熟	tā bù shóu	114
+他成熟	tā chéng shóu	204
+他很熟	tā hěn shóu	67
+他混熟	tā hùn shóu	78
+他熟读	tā shóu dú	166
+他熟练	tā shóu liàn	188
+他熟络	tā shóu luò	94
+他熟稔	tā shóu rěn	101
+他熟识	tā shóu shí	66
+他熟睡	tā shóu shuì	160
+他熟悉	tā shóu xī	120
+他熟知	tā shóu zhī	72
+他睡熟	tā shuì shóu	253
+他太熟	tā tài shóu	160
+他娴熟	tā xián shóu	118
+他相熟	tā xiāng shóu	71
+他眼熟	tā yǎn shóu	118
+他早熟	tā zǎo shóu	150
+太成熟	tài chéng shóu	198
+太熟了	tài shóu le	204
+太熟练	tài shóu liàn	151
+太熟悉	tài shóu xī	252
+太早熟	tài zǎo shóu	112
+烫熟后	tàng shóu hòu	170
+烫熟了	tàng shóu le	126
+特眼熟	tè yǎn shóu	84
+挺成熟	tǐng chéng shóu	136
+托熟人	tuō shóu rén	158
+晚熟的	wǎn shóu de	148
+玩熟了	wán shóu le	183
+晚熟期	wǎn shóu qī	229
+喂不熟	wèi bù shóu	117
+未成熟	wèi chéng shóu	220
+未熟的	wèi shóu de	172
+未熟透	wèi shóu tòu	170
+未煮熟	wèi zhǔ shóu	210
+我不熟	wǒ bù shóu	170
+我成熟	wǒ chéng shóu	146
+我都熟	wǒ dōu shóu	202
+我很熟	wǒ hěn shóu	87
+我们熟	wǒ men shóu	175
+我熟得	wǒ shóu de	82
+我熟的	wǒ shóu de	66
+我熟练	wǒ shóu liàn	122
+我熟识	wǒ shóu shí	124
+我熟睡	wǒ shóu shuì	112
+我熟悉	wǒ shóu xī	128
+我熟知	wǒ shóu zhī	132
+我睡熟	wǒ shuì shóu	85
+我相熟	wǒ xiāng shóu	52
+我眼熟	wǒ yǎn shóu	108
+我早熟	wǒ zǎo shóu	144
+五成熟	wǔ chéng shóu	195
+五分熟	wǔ fēn shóu	222
+显成熟	xiǎn chéng shóu	148
+娴熟地	xián shóu dì	200
+娴熟了	xián shóu le	138
+先熟悉	xiān shóu xī	203
+相熟了	xiāng shóu le	138
+小成熟	xiǎo chéng shóu	92
+性成熟	xìng chéng shóu	233
+性早熟	xìng zǎo shóu	248
+眼熟啊	yǎn shóu a	141
+眼熟吧	yǎn shóu ba	170
+眼熟了	yǎn shóu le	135
+眼熟吗	yǎn shóu ma	168
+养不熟	yǎng bù shóu	139
+也不熟	yě bù shóu	234
+也熟了	yě shóu le	83
+也熟悉	yě shóu xī	164
+已成熟	yǐ chéng shóu	194
+一锅熟	yì guō shóu	102
+异熟果	yì shóu guǒ	134
+异熟识	yì shóu shí	104
+用熟了	yòng shóu le	175
+又不熟	yòu bù shóu	162
+有熟人	yǒu shóu rén	231
+园梅熟	yuán méi shóu	4
+在常熟	zài cháng shóu	239
+在成熟	zài chéng shóu	250
+再成熟	zài chéng shóu	153
+再熟了	zài shóu le	172
+再熟悉	zài shóu xī	246
+早成熟	zǎo chéng shóu	100
+早熟吧	zǎo shóu ba	185
+早熟的	zǎo shóu de	219
+早熟禾	zǎo shóu hé	196
+早熟梨	zǎo shóu lí	102
+早熟性	zǎo shóu xìng	112
+这么熟	zhè me shóu	166
+真不熟	zhēn bù shóu	92
+蒸不熟	zhēng bù shóu	123
+蒸熟的	zhēng shóu de	236
+蒸熟后	zhēng shóu hòu	234
+蒸熟了	zhēng shóu le	160
+中晚熟	zhōng wǎn shóu	110
+中早熟	zhōng zǎo shóu	50
+煮不熟	zhǔ bù shóu	206
+煮熟后	zhǔ shóu hòu	287
+煮熟了	zhǔ shóu le	235
+煮熟时	zhǔ shóu shí	82
+装成熟	zhuāng chéng shóu	137
+自来熟	zì lái shóu	206
+自然熟	zì rán shóu	129
+最成熟	zuì chéng shóu	39
+最熟的	zuì shóu de	156
+最熟悉	zuì shóu xī	228
+做熟了	zuò shóu le	102
 爱谁	ài shéi	423
 把谁	bǎ shéi	382
 帮谁	bāng shéi	335

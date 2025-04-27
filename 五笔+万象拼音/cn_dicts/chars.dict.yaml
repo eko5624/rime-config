@@ -3,7 +3,7 @@
 #https://github.com/amzxyz/RIME-LMDG
 ---
 name: chars
-version: "2025-04-05 16:00"
+version: "2025-04-27 13:21"
 sort: by_weight
 ...
 啊	a	915
@@ -6021,8 +6021,8 @@ sort: by_weight
 𪒙	cuō	1
 𪘓	cuó	1
 棤	cuò	1
-大	dà	900
-打	dǎ	804
+打	dǎ	904
+大	dà	800
 达	dá	788
 答	dá	774
 搭	dā	710
@@ -10591,11 +10591,11 @@ sort: by_weight
 𪔘	gāo	1
 𫌲	gào	1
 个	gè	896
+哥	gē	826
 格	gé	810
 各	gè	796
 歌	gē	746
 革	gé	717
-哥	gē	716
 隔	gé	685
 割	gē	658
 阁	gé	620
@@ -16373,11 +16373,11 @@ sort: by_weight
 𫕘	jiāng	1
 𫮬	jiàng	1
 虹	jiàng	1
+叫	jiào	834
 交	jiāo	815
 教	jiào	807
 较	jiào	804
 角	jiǎo	735
-叫	jiào	734
 脚	jiǎo	705
 焦	jiāo	682
 椒	jiāo	677
@@ -31808,6 +31808,7 @@ sort: by_weight
 脎	sà	162
 钑	sà	124
 摋	sà	97
+糁	sá	88
 泧	sà	87
 鈒	sà	82
 躠	sǎ	60
@@ -35819,6 +35820,7 @@ sort: by_weight
 𥌩	tè	1
 𦗟	tè	1
 𧎢	tè	1
+忒	tēi	198
 腾	téng	672
 疼	téng	665
 藤	téng	621
@@ -36931,6 +36933,7 @@ sort: by_weight
 頺	tuí	105
 侻	tuì	101
 娧	tuì	92
+忒	tuī	92
 骽	tuǐ	82
 駾	tuì	60
 蘈	tuí	60
@@ -36943,7 +36946,6 @@ sort: by_weight
 僓	tuí	1
 墤	tuí	1
 弟	tuí	1
-忒	tuī	1
 橔	tuí	1
 聉	tuǐ	1
 螁	tuì	1
@@ -43596,8 +43598,10 @@ sort: by_weight
 意	yì	831
 已	yǐ	806
 宜	yí	800
+一	yí	793
 亦	yì	792
 易	yì	788
+一	yì	785
 议	yì	784
 医	yī	784
 义	yì	767
