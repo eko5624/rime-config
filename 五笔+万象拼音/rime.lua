@@ -150,6 +150,7 @@ local function QueryLunarInfo(date)
 	date=tostring(date)
 	result={}
 	str = date:gsub("^(%u+)","") -- 移除开头的大写字母
+	-- 仅处理 19/20 开头的年份（如 19xx 或 20xx）
 	if string.match(str,"^(20)%d%d+$")~=nil or string.match(str,"^(19)%d%d+$")~=nil then
 		-- 补全日期（原逻辑
 		if string.len(str)==4 then str=str..string.sub(os.date("%m%d%H"),1)
