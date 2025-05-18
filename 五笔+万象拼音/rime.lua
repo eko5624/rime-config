@@ -116,47 +116,88 @@ end
 function lunar_translator(input, seg)
 	local keyword = rv_var["nl_var"]
 	if (input == keyword) then
+        -- 1. 先获取公历转农历的结果表（包含多个农历日期格式的字段）
+        local todayLunar = Date2LunarDate(os.date("%Y%m%d"))
+        -- 2. 从表中提取需要的农历日期字符串（例如 lunarDate_1: "癸卯年四月十一"）
+        --    如果表为空或字段不存在，使用默认值 "未知农历日期"
+        local lunarStr = todayLunar and todayLunar.lunarDate_1 or "未知农历日期"
+
+        -- 3. 用提取的字符串（lunarStr）替代原表进行拼接
 		local lunar = {
-				{Date2LunarDate(os.date("%Y%m%d")) .. JQtest(os.date("%Y%m%d")),"〈公历⇉农历〉"}
-				,{Date2LunarDate(os.date("%Y%m%d")) .. GetLunarSichen(os.date("%H"),1),"〈公历⇉农历〉"}
-				,{lunarJzl(os.date("%Y%m%d%H")),"〈公历⇉干支〉"}
-				,{LunarDate2Date(os.date("%Y%m%d"),0),"〈农历⇉公历〉"}
-			}
+			{lunarStr .. JQtest(os.date("%Y%m%d")),"〈公历⇉农历〉"},
+			{lunarStr .. GetLunarSichen(os.date("%H"),1),"〈公历⇉农历〉"},
+			{lunarJzl(os.date("%Y%m%d%H")),"〈公历⇉干支〉"},
+			{LunarDate2Date(os.date("%Y%m%d"),0),"〈农历⇉公历〉"}
+		}
+		-- 处理闰月情况（确保 LunarDate2Date 返回字符串）
 		local leapDate={LunarDate2Date(os.date("%Y%m%d"),1).."（闰）","〈农历⇉公历〉"}
-		if string.match(leapDate[1],"^(%d+)")~=nil then table.insert(lunar,leapDate) end
+		if string.match(leapDate[1],"^(%d+)")~=nil then -- 检查是否为有效日期字符串
+			table.insert(lunar,leapDate)
+		end
+		
+        -- 生成候选词
 		for i =1,#lunar do
 			local lunar_ymd = (Candidate(keyword, seg.start, seg._end, lunar[i][1], lunar[i][2]))
 			lunar_ymd.quality = 99999
 			yield(lunar_ymd)
 		end
-		lunar = nil
+		lunar = nil -- 释放内存
 	end
 end
 
 local function QueryLunarInfo(date)
 	local str,LunarDate,LunarGz,result,DateTime
-	date=tostring(date) result={}
-	str = date:gsub("^(%u+)","")
+	date=tostring(date)
+	result={}
+	str = date:gsub("^(%u+)","") -- 移除开头的大写字母
 	if string.match(str,"^(20)%d%d+$")~=nil or string.match(str,"^(19)%d%d+$")~=nil then
-		if string.len(str)==4 then str=str..string.sub(os.date("%m%d%H"),1) elseif string.len(str)==5 then str=str..string.sub(os.date("%m%d%H"),2) elseif string.len(str)==6 then str=str..string.sub(os.date("%m%d%H"),3) elseif string.len(str)==7 then str=str..string.sub(os.date("%m%d%H"),4)
-		elseif string.len(str)==8 then str=str..string.sub(os.date("%m%d%H"),5) elseif string.len(str)==9 then str=str..string.sub(os.date("%m%d%H"),6) else str=string.sub(str,1,10) end
-		if tonumber(string.sub(str,5,6))>12 or tonumber(string.sub(str,5,6))<1 or tonumber(string.sub(str,7,8))>31 or tonumber(string.sub(str,7,8))<1 or tonumber(string.sub(str,9,10))>24 then return result end
-		LunarDate=Date2LunarDate(str)  LunarGz=lunarJzl(str)  DateTime=LunarDate2Date(str,0)
-		if LunarGz~=nil then
-			result={
-				{CnDate_translator(string.sub(str,1,8)),"〈中文日期〉"}
-				,{LunarDate,"〈公历⇉农历〉"}
-				,{LunarGz,"〈公历⇉干支〉"}
-			}
-			if tonumber(string.sub(str,7,8))<31 then
-				table.insert(result,{DateTime,"〈农历⇉公历〉"})
-				local leapDate={LunarDate2Date(str,1).."（闰）","〈农历⇉公历〉"}
-				if string.match(leapDate[1],"^(%d+)")~=nil then table.insert(result,leapDate) end
-			end
-		end
-	end
+		-- 补全日期（原逻辑
+		if string.len(str)==4 then str=str..string.sub(os.date("%m%d%H"),1)
+		elseif string.len(str)==5 then str=str..string.sub(os.date("%m%d%H"),2)
+		elseif string.len(str)==6 then str=str..string.sub(os.date("%m%d%H"),3)
+		elseif string.len(str)==7 then str=str..string.sub(os.date("%m%d%H"),4)
+		elseif string.len(str)==8 then str=str..string.sub(os.date("%m%d%H"),5)
+		elseif string.len(str)==9 then str=str..string.sub(os.date("%m%d%H"),6)
+		else str=string.sub(str,1,10) end
 
-	return result
+        -- 新增：校验月份（01-12）和日期（01-31）
+        local year = tonumber(string.sub(str,1,4))
+        local month = tonumber(string.sub(str,5,6)) or 0
+        local day = tonumber(string.sub(str,7,8)) or 0
+        if month < 1 or month > 12 or day < 1 or day > 31 then
+            return result  -- 无效日期，直接返回空结果
+        end
+
+        -- 原逻辑：继续处理有效日期
+        LunarDate = Date2LunarDate(str)
+        LunarGz = lunarJzl(str)  -- 假设 lunarJzl 需要公历日期的 YYYYMMDD 格式
+        DateTime = LunarDate2Date(str, 0)
+
+        if LunarGz ~= nil and LunarDate ~= nil then
+            -- 确保 LunarDate 包含必要字段（如 month、day）
+            if not LunarDate.month or not LunarDate.day then
+                return result  -- 字段缺失，返回空结果
+            end
+
+            -- 提取农历日期字符串（确保非 nil）
+            local lunarStr = LunarDate.lunarDate_1 or "未知农历日期"
+            result = {
+                {CnDate_translator(string.sub(str,1,8)),"〈中文日期〉"},
+                {lunarStr,"〈公历⇉农历〉"},  -- 确保是字符串
+                {LunarGz,"〈公历⇉干支〉"}
+            }
+
+            -- 农历转公历和闰月处理（原逻辑）
+            if day < 31 then  -- 原逻辑：日期小于31才处理
+                table.insert(result, {DateTime, "〈农历⇉公历〉"})
+                local leapDate = {LunarDate2Date(str,1) .. "（闰）","〈农历⇉公历〉"}
+                if string.match(leapDate[1], "^(%d+)")~=nil then  -- 校验闰日期有效性
+                    table.insert(result, leapDate)
+                end
+            end
+        end
+    end
+    return result
 end
 
 -- 农历查询
