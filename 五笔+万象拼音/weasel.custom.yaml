@@ -12,25 +12,36 @@ patch:
     firefox.exe:
       inline_preedit: true # 行内显示预编辑区：规避 <https://github.com/rime/weasel/issues/946>
     iexplore.exe:
-      inline_preedit: true # 兼容 IE
+      inline_preedit: true
     browser.exe:
-      inline_preedit: true # 兼容 Yandex
+      inline_preedit: true
     msedge.exe: # Edge浏览器
-      ascii_mode: true  
+      ascii_mode: true
+      inline_preedit: true
     chrome.exe: # chrome浏览器
       ascii_mode: true
+      inline_preedit: true
     Photoshop.exe: # Photoshop
       ascii_mode: true
     notepad++.exe: # Notepad++
       ascii_mode: true
     sublime_text.exe: # Sublime
       ascii_mode: true
+    cmd.exe:
+      ascii_mode: true
+    windowsterminal.exe:
+      ascii_mode: true
+    pwsh.exe:
+      ascii_mode: true
+    powershell.exe:
+      ascii_mode: true
+    mintty.exe:
+     ascii_mode: true
 
   # [global settings]
   show_notifications: true                   # 是否显示状态变化的通知：true；false；option_list（方案内的开头 option）
   show_notifications_time: 1200              # 通知显示的时间，单位 ms
   global_ascii: false                        # 切换为 ascii 模式时，是否影响所有窗口：true；false
-  # [End of <global settings>]
 
   # [style]
   # 字体；候选项、候选窗口的行为、布局及样式
@@ -48,7 +59,7 @@ patch:
     label_font_point: 12                     # 标签字体字号，不设定 fallback 到 font_point
     comment_font_point: 10                   # 注释字体字号，不设定 fallback 到 font_point
 
-    inline_preedit: false                     # 行内显示预编辑区：true；false
+    inline_preedit: true                     # 行内显示预编辑区：true；false
     preedit_type: composition                # 预编辑区内容：composition（编码）； preview（选中的候选）；preview_all（全部候选）
     
     fullscreen: false                        # 候选窗口全屏显示：true；false
