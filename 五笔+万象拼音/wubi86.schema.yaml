@@ -50,7 +50,6 @@ switches:
 
 engine:
   processors:
-    - lua_processor@*pair_symbols        # 成对输入符号并使鼠标居中
     - ascii_composer
     - recognizer
     - key_binder

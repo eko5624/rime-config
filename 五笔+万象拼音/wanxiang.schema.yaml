@@ -39,7 +39,6 @@ switches:
     
 engine:
   processors:
-    - lua_processor@*pair_symbols                        # 成对输入符号并使鼠标居中
     - lua_processor@*select_character
     - ascii_composer
     - recognizer
