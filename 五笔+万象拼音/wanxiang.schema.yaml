@@ -205,11 +205,14 @@ speller:
 translator:
   dictionary: wanxiang
   enable_completion: true                # 启用候选词补全
+  db_class: tabledb
   max_candidates: 10                     # 设置最大候选词数量
   initial_quality: 3
   spelling_hints: 20                     # ～字以內候選標註完整帶調拼音
   enable_charset_filter: false           # 开启字符集过滤
-  enable_user_dict: false                # 是否开启自动调频
+  enable_user_dict: true                 # 开启用户词典
+  enable_encoder: true                   # 开启自动造词
+  encode_commit_history: true            # 是否对已上屏词自动成词（仅 table_translator 有效）
   preedit_format:
     - xform/([nl])v/$1ü/
     - xform/([nl])ve/$1üe/
