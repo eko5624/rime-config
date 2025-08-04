@@ -120,7 +120,7 @@ function lunar_translator(input, seg)
         local todayLunar = Date2LunarDate(os.date("%Y%m%d"))
         -- 2. 从表中提取需要的农历日期字符串（例如 lunarDate_1: "癸卯年四月十一"）
         --    如果表为空或字段不存在，使用默认值 "未知农历日期"
-        local lunarStr = todayLunar and todayLunar.lunarDate_1 or "未知农历日期"
+        local lunarStr = todayLunar and todayLunar.lunarDate_4 or "未知农历日期"
 
         -- 3. 用提取的字符串（lunarStr）替代原表进行拼接
 		local lunar = {
@@ -181,7 +181,7 @@ local function QueryLunarInfo(date)
             end
 
             -- 提取农历日期字符串（确保非 nil）
-            local lunarStr = LunarDate.lunarDate_1 or "未知农历日期"
+            local lunarStr = LunarDate.lunarDate_4 or "未知农历日期"
             result = {
                 {CnDate_translator(string.sub(str,1,8)),"〈中文日期〉"},
                 {lunarStr,"〈公历⇉农历〉"},  -- 确保是字符串
