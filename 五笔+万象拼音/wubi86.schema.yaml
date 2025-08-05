@@ -71,8 +71,8 @@ engine:
     - punct_translator
     - table_translator
     - history_translator@history
-    - lua_translator@time_date
-    - lua_translator@*calculator
+    - lua_translator@time_date                  # 农历、日期、节气、节日、时间、周
+    - lua_translator@*calculator                # 计算器
     - lua_translator@*number                    # 数字金额大写
     - lua_translator@*force_gc                  # 暴力 GC 降低内存
     - lua_translator@*unicode                   # Unicode
