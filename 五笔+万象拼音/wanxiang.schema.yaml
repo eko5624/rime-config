@@ -150,14 +150,7 @@ speller:
   delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
   # 拼写匹配
   algebra:
-    - xform/ń/én/ 
-    - xform/ň/ěn/ 
-    - xform/ǹ/ěn/ 
-    - xform/^ng$/eng/
-    - xform/ńg/éng/
-    - xform/ňg/ěng/
-    - xform/ṅg/èng/
-    - xform/^([a-zA-Z]+)$/$1/
+    - xform/^([a-z]+)$/$1④/
     - xform/^(.*)ā(.*)$/$1a$2①/
     - xform/^(.*)á(.*)$/$1a$2②/
     - xform/^(.*)ǎ(.*)$/$1a$2③/
@@ -183,24 +176,28 @@ speller:
     - xform/^(.*)ǚ(.*)$/$1v$2③/
     - xform/^(.*)ǜ(.*)$/$1v$2④/
     - xform/^(.*)ü(.*)$/$1v$2/
-    - xlit/①②③④/1234
+    - xform/^(.*)ń(.*)$/$1n$2②/
+    - xform/^(.*)ň(.*)$/$1n$2③/
+    - xform/^(.*)ǹ(.*)$/$1n$2④/
+    - xlit/①②③④/7890
     ### 简拼
-    - abbrev/^([a-z]).+$/$1/
-    - abbrev/^([zcs]h).+$/$1/
+    - abbrev/^([zcs]h).+$/$1/                        #zh ch sh作为整体
+    - abbrev/^([zcs]h).+(\d)$/$1$2/                  #zh ch sh作为整体
     ### 自动纠错
-    - derive/^([nl])ve/$1ue/
-    - derive/^([jqxy])u/$1v/
-    - derive/([dtnlgkhrzcs])un/$1uen/
-    - derive/ui/uei/
-    - derive/iu/iou/
-    - derive/ao/oa/
-    - derive/([aeiou])ng/$1gn/
-    - derive/([iu])a(o|ng?)/a$1$2/
-    - derive/^([a-z]+)[1-4]$/$1/
-    - derive/([dtngkhrzcs])o(u|ng)$/$1o/
-    - derive/ong$/on/
+    - derive/^ng(\d)$/eng$1/
+    - xform/^n(\d)/en$1/
+    - derive/([nl])ve(\d)/$1ue$2/                    #让üè兼容ue
+    - derive/^([jqx])v(\d)$/$1u$2/
+    - abbrev/^([zcs]h).+(\d)$/$1$2/                  #zh ch sh作为整体
+    - abbrev/^([qwrtypsdfghjklzxcbnm]).+$/$1/        #不携带元音的声母派生出首字母简码来
+    - abbrev/^([qwrtypsdfghjklzxcbnm]).+(\d)$/$1$2/  #不携带元音的声母派生出首字母简码来+数字声调
+    - abbrev/^([aoe])([ioun])(\d)$/$1/               #携带两个字符的元音首字母派生出简码来
+    - abbrev/^([aoe])([ioun])(\d)$/$1$3/             #携带两个字符的元音首字母派生出简码来+数字声调
+    - derive/(.+)(\d)/$1/
+    - derive/(.+)ong$/$1on/   # lon → long
+    - derive/([tl])eng$/$1en/ # ten → teng
     - 'erase/^.*5$/'
-    - 'xlit 1234 -/<\'
+    - 'xlit 7890 -/<\'
 
 translator:
   dictionary: wanxiang
@@ -210,9 +207,9 @@ translator:
   initial_quality: 3
   spelling_hints: 20                     # ～字以內候選標註完整帶調拼音
   enable_charset_filter: false           # 开启字符集过滤
-  enable_user_dict: true                 # 开启用户词典
-  enable_encoder: true                   # 开启自动造词
-  encode_commit_history: true            # 是否对已上屏词自动成词（仅 table_translator 有效）
+  enable_user_dict: true               # 开启用户词典
+  enable_encoder: true                 # 开启自动造词
+  encode_commit_history: true          # 是否对已上屏词自动成词（仅 table_translator 有效）
   preedit_format:
     - xform/([nl])v/$1ü/
     - xform/([nl])ve/$1üe/
