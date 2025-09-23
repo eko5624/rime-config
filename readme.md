@@ -1,3 +1,17 @@
+
+本地rime配置文件默认地址，如下
+
+- Windows
+  - Weasel: `%APPDATA%\Rime`
+- Mac OS X
+  - Squirrel: `~/Library/Rime`
+  - Fcitx5 macOS: `~/.local/share/fcitx5/rime`
+- Linux
+  - iBus:`~/.config/ibus/rime`
+  - Fcitx5: `~/.local/share/fcitx5/rime`
+- Fctix5 Android(小企鹅入法): `/storage/emulated/0/Android/data/org.fcitx.fcitx5.android/files/data/rime/
+
+
 # 五笔+万象拼音说明
 
 * 支持Unicode 15.1.0 CJK 超大字符集
