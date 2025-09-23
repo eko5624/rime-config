@@ -1,5 +1,5 @@
 
-# 本地rime配置文件默认地址，如下
+# 本地rime配置文件默认地址
 
 - Windows
   - Weasel: `%APPDATA%\Rime`
