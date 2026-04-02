@@ -1,0 +1,58 @@
+# Rime dictionary: CJK-KangxiRadicals字集
+# encoding: utf-8
+# 86版五笔编码
+---
+name: CJKKangxiradical
+version: "0.1"
+sort: original
+columns:
+  - text
+  - code
+  - stem
+encoder:
+  exclude_patterns:
+    - '^z.*$'
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 10]
+      formula: "AaBaCaZa"
+...
+
+⼁	hhll
+⼂	yyll
+⼃	ttll
+⼄	nnll
+⼅	hhll
+⼘	hhy
+⼡	ttny
+⼢	ttny
+⼣	qtny
+⼤	dgty
+⼵	pny
+⼹	vngg
+⼾	rnd
+⽁	hcu
+⽏	xfk
+⽡	gnyn
+⽦	nhi
+⽰	fiu
+⽱	mhgy
+⽵	ttgh
+⾅	vthg
+⾇	qahh
+⾌	hav
+⾑	gmbd
+⾓	qed
+⾱	nhkh
+⾻	mef
+⿁	rqci
+⿄	hlqo
+⿇	yfjq
+⿉	twiu
+⿋	ogwi
+⿌	xhng
+⿑	yjf
+⿔	qxf
