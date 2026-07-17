@@ -9,25 +9,11 @@ name: wubi86
 version: "2.0"
 sort: by_weight
 import_tables:
-  - dicts/86/wubi86_base
+  - dicts/86/wubi86_ci
   - dicts/86/wubi86_district
   - dicts/86/wubi86_extra
   - dicts/86/hotstring
-  - dicts/86/CJK
-  - dicts/86/CJKExt_A
-  - dicts/86/CJKExt_B
-  - dicts/86/CJKExt_C
-  - dicts/86/CJKExt_D
-  - dicts/86/CJKExt_E
-  - dicts/86/CJKExt_F
-  - dicts/86/CJKExt_G
-  - dicts/86/CJKExt_H
-  - dicts/86/CJKExt_I
-  - dicts/86/CJKCompat
-  - dicts/86/CJKCompatsupp
-  - dicts/86/CJKKangxiradical
-  - dicts/86/CJKRadicalsupp
-  - dicts/86/CJKStroke
+  - dicts/86/wubi86_zi
 columns:
   - text
   - code
