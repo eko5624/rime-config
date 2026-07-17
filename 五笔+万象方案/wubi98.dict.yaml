@@ -10,8 +10,9 @@ version: "2.0"
 sort: by_weight
 import_tables:
   - dicts/98/wubi98_ci
+  - dicts/98/wubi98_emoji
   - dicts/98/hotstring
-  - dicts/98/wubi98_U
+  - dicts/98/wubi98_zi
 columns:
   - text
   - code
