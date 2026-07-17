@@ -24,7 +24,7 @@ switches:
     states: [ 中, 英 ]
     reset: 0
   - options: [ std, s2hk, s2twp ]
-    states: [ 通, 港, 台 ]
+    states: [ 简中, 港繁, 台繁 ]
     reset: 0
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
