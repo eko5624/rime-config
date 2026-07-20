@@ -30,6 +30,8 @@ switches:
     reset: 0
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
+  - name: chinese_english
+    states: [ 翻译关, 翻译开 ]
     reset: 0
   - name: chaifen
     states: [ 隐, 显 ]
@@ -80,7 +82,7 @@ engine:
     - lua_translator@*number                    # 数字金额大写
     - lua_translator@*force_gc                  # 暴力 GC 降低内存
     - lua_translator@*unicode                   # Unicode
-    - lua_translator@alphabet_mode_translator   # 临时字母模式
+    - lua_translator@alphabet_mode_translator
     - table_translator@chengyu                  # 简码成语
     - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
     - script_translator@pinyin_lookup
@@ -99,7 +101,8 @@ engine:
     - reverse_lookup_filter@radical_reverse_lookup
     - simplifier@chaifen                        # 五笔字根拆分滤镜
     - simplifier@pinyin_hint                    # 以形查音滤镜
-    - uniquifier
+    - simplifier@chinese_english                # 英汉互译
+    - uniquifier                                # 去重
 
 speller:
   #max_code_length: 10                  # 设置输入码的最大长度
@@ -194,6 +197,15 @@ pinyin_hint:
     - "xform/&nbsp;/ /"
   tags: [wubi86_lookup]                 # 限制在对应 tag
   tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
+
+#汉译英
+chinese_english:
+  option_name: chinese_english
+  opencc_config: chinese_english.json
+  tags: [abc]
+  tips: all
+  comment_format:
+    - "xform/-/ /"
 
 pinyin_lookup:                          # 拼音反查五笔
   tag: pinyin_lookup
