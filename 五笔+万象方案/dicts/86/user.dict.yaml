@@ -1,13 +1,15 @@
 ---
 name: user
 note: "用户词库"
-version: "2026-07-17"
-last_edit_time: "2026-07-17"
-dict_grouped: true # 词库管理应用识别：标记该码表为分组模式
-sort: original
+version: "2026-07-19"
+sort: by_weight
+columns:
+  - text
+  - code
+  - weight
 ...
 ## 可自行添加自己所需的词库
-## 注意词条与编辑之间用tab缩进
-## 示例： xxxx	aaaa
+## 注意词条与编码之间用tab缩进
+## 示例： xxxx	aaaa	30
 
 
