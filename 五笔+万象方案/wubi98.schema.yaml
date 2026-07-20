@@ -14,7 +14,9 @@ schema:
   author:
     - 发明人 王永民
   description: |
-    敲 ` 键进入拼音反查
+    敲 z 键进入拼音反查
+  dependencies:
+    - wanxiang        # 万象拼音，反查时用
 
 switches:
   - name: emoji
@@ -51,9 +53,11 @@ switches:
 engine:
   processors:
     - ascii_composer
+    - lua_processor@alphabet_mode_processor
     - recognizer
     - key_binder
     - speller
+    - lua_processor@alphabet_mode_post_speller_processor
     - punctuator
     - selector
     - navigator
@@ -76,6 +80,7 @@ engine:
     - lua_translator@*number                    # 数字金额大写
     - lua_translator@*force_gc                  # 暴力 GC 降低内存
     - lua_translator@*unicode                   # Unicode
+    - lua_translator@alphabet_mode_translator   # 临时字母模式
     - table_translator@chengyu                  # 简码成语
     - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
     - script_translator@pinyin_lookup
@@ -270,3 +275,4 @@ recognizer:
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
     number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
     calculator: "^=.*$"                 # 计算器功能引导
+    alphabet_mode: '^[;A-Z].*$'
