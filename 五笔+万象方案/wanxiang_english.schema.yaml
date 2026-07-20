@@ -14,6 +14,8 @@ switches:
   - name: ascii_mode
     reset: 0
     states: [整句, 字母]
+  - name: chinese_english
+    states: [ 翻译关, 翻译开 ]
 
 engine:
   processors:
@@ -36,6 +38,7 @@ engine:
     - punct_translator
   filters:
     - lua_filter@*super_english
+    - simplifier@chinese_english                # 英译汉
     - uniquifier
 
 speller:
@@ -94,6 +97,16 @@ translator:
   initial_quality: 2
   comment_format:
     - xform/^~.+$//
+
+#英译汉
+chinese_english:
+  option_name: chinese_english
+  opencc_config: chinese_english.json
+  tags: [abc]
+  tips: all
+  comment_format:
+    - "xform/-/ /"
+
 key_binder:
   import_preset: default
   bindings:
