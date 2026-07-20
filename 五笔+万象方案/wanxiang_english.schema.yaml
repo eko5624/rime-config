@@ -16,7 +16,7 @@ switches:
     states: [整句, 字母]
   - name: chinese_english
     states: [ 翻译关, 翻译开 ]
-    reset: 0
+    reset: 1
 
 engine:
   processors:
