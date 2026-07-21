@@ -12,7 +12,7 @@ import_tables:
   - dicts/86/wubi86_ci
   - dicts/86/wubi86_district
   - dicts/86/wubi86_extra
-  - dicts/86/user
+  - user
   - dicts/86/hotstring
   - dicts/86/wubi86_zi
 columns:
