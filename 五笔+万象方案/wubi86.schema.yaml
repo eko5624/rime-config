@@ -30,6 +30,7 @@ switches:
     reset: 0
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
+    reset: 0
   - name: chinese_english
     states: [ 翻译关, 翻译开 ]
     reset: 0
