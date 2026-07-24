@@ -124,7 +124,7 @@ chengyu:
   db_class: stabledb
   enable_sentence: false
   enable_completion: false
-  initial_quality: 100 #本表词和系统词重码居后
+  initial_quality: 0.7 #本表词和系统词重码居后
 
 emoji:
   option_name: emoji
@@ -156,7 +156,7 @@ translator:
   max_word_length: 7  # >0 启用，过长短语不记整词，只加元素权重
   contextual_suggestions: false  #模型用来开启词组权重预测，效果一般关闭
   max_homophones: 8
-  initial_quality: 3  #初始质量拼音的权重应该比英文大
+  initial_quality: 1.2  #初始质量拼音的权重应该比英文大
   spelling_hints: 30  #将注释以词典code字符串形式完全暴露，通过super_comment.lua完全接管，灵活配置。
   always_show_comments: true  # Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供super_comment_preedit.lua做判断用。
   comment_format:  #将注释以词典字符串形式完全暴露，通过super_preedit.lua完全接管，灵活配置。
