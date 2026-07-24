@@ -31,7 +31,8 @@ CSS	css
 Dropbox	dropbox
 Docker	docker
 GBK	gbk
-GitHub	github
+GitHub	github	1
+https://github.com/	github	2
 Google	google
 Linux linux
 HTML	html
