@@ -1,4 +1,4 @@
---- pattern: ^[;A-Z]
+--- pattern: ^[;]
 function check_alphabet_mode(env)
     local context = env.engine.context
     local input = context.input
@@ -7,7 +7,7 @@ function check_alphabet_mode(env)
         return false
     end
     candidate = candidate.text
-    if (candidate == input and input:match('^[A-Z].*$')) or (';' .. candidate) == input then
+    if input:match('^;') and cand_text == input:sub(2) then
         return true
     end
     return false
@@ -16,23 +16,10 @@ end
 local function processor(key, env)
     local engine = env.engine
     local context = engine.context
-
     local repr = key:repr()
-    if string.sub(repr, 1, 6) == 'Shift+'
-            and string.sub(repr, 7):match('^[A-Z]$')
-            and not check_alphabet_mode(env)
-            and string.sub(context.input, 1, 1) ~= '/'
-    then
-        if context:is_composing() and not context:has_menu() then
-            context.input = ''
-        end
-        if context:is_composing() and context:has_menu() then
-            context:commit()
-        end
-    end
 
-    if (repr == 'space' or repr == 'Shift+space') and check_alphabet_mode(env) then
-        context.input = context.input .. ''
+    if (repr == 'space' or repr == 'Return') and check_alphabet_mode(env) then
+        context:commit()
         return Accepted
     end
 
@@ -50,16 +37,11 @@ local function post_processor(key, env)
 end
 
 local function translator(input, seg)
-    if not input:match('^[;A-Z]') then
+    if not input:match('^[;]') then
         return
     end
-    local first = string.sub(input, 1, 1)
-    local text = ''
-    if first == ';' then
-        text = string.sub(input, 2)
-    else
-        text = input
-    end
+
+    local text = input:sub(2)
     if text ~= '' then
         yield(Candidate('', seg.start, seg._end, text, ''))
     end
