@@ -24,9 +24,9 @@ switches:
   - options: [ std, s2hk, s2twp ]
     states: [ 简体, 港繁, 台繁 ]
     reset: 0
-  - options: [raw_input, tone_display, full_pinyin]  #开启后在输入编码的位置实时转换为带声调全拼或者不带声调全拼，不开启则采用系统配置原始编码，影响的是preedit_format
-    states: [原编码, 有声调, 无声调]
-    reset: 1     #对于开关组从0开始数，第几个就reset几可设为默认
+  - name: tone_display      #开启后在输入编码的位置实时转换为带声调全拼，不开启则采用系统配置，影响的是preedit_format,归属：super_preedit.lua
+    states: [ 声调关, 声调开 ]
+    reset: 1
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 1
@@ -80,7 +80,7 @@ engine:
     - simplifier@emoji                          # Emoji OpenCC
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
-    - lua_filter@*super_comment_preedit         # 放其他需要注释处理器后面,会有清空注释的操作,超级注释模块，部件组字读音注释，
+    - lua_filter@*super_preedit                 # 为preedit添加声调
     - uniquifier                                # 去重
 
 # 简繁转换
@@ -201,6 +201,7 @@ speller:
   initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   delimiter: " '"  # 系统配置，第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
   visual_delimiter: " "  # super_preedit.lua配置：是否让分隔符号跟着一起转换，例如nǐ'hǎo 在实际使用中表现出视觉拥挤，我们可以让delimiter平时是'转换为拼音的时候使用空格nǐ hǎo，更符合实际。
+  tone_isolate: true  # super_preedit.lua配置：是否将数字声调从转换后拼音中隔离出来（true=隔离， false 直接参与转换）例如：nǐ3
   # 拼写匹配
   algebra:
     - xform/^([a-z]+)$/$1④/
