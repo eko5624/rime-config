@@ -90,6 +90,7 @@ local function modify_preedit_filter(input, env)
             end
         end
         genuine_cand.preedit = table.concat(input_parts)
+        genuine_cand.comment = ""
         yield(genuine_cand)
         ::continue::
     end
