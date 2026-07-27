@@ -81,6 +81,7 @@ engine:
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@*super_preedit                 # 为preedit添加声调
+    - lua_filter@*multi_line                    # 支持词条多行输出
     - uniquifier                                # 去重
 
 # 简繁转换
