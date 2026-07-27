@@ -17,12 +17,21 @@ local function modify_preedit_filter(input, env)
     local is_tone_display = env.settings.tone_display
     local context = env.engine.context
 
+    -- 以 `tag` 方式检测是否处于反查模式
     local seg = context.composition:back()
+    env.is_special_tag_mode = seg and (
+        seg:has_tag("wubi86")
+    ) or false
 
     for cand in input:iter() do
         local genuine_cand = cand:get_genuine()
         local preedit = genuine_cand.preedit or ""
         local comment = genuine_cand.comment or ""
+
+        if env.is_special_tag_mode then
+            yield(cand)
+            goto continue
+        end
 
         if not comment or comment == "" or not is_tone_display then
             yield(cand)
