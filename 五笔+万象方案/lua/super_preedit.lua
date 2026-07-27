@@ -22,8 +22,7 @@ local function modify_preedit_filter(input, env)
     for cand in input:iter() do
         local genuine_cand = cand:get_genuine()
         local preedit = genuine_cand.preedit or ""
-        local comment = genuine_cand.comment
-        genuine_cand.comment = ""
+        local comment = genuine_cand.comment or ""
 
         if not comment or comment == "" or not is_tone_display then
             yield(cand)
