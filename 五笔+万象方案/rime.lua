@@ -345,16 +345,12 @@ end
 -- 时期类字符串集
 -- author: 空山明月
 str_date_time={ 
-	today="wygd",
 	next_day="jegd",
 	after_next_day = "rggd",
 	lastday = "jtgd",
 	before_lastday = "uegd",
-	time = "jfuj",
-	this_week = "sgmf",
 	last_week = "hhmf",
 	next_week = "ghmf",
-	this_month = "sgee",
 	last_month = "hhee",
 	next_month = "ghee",
 	}
@@ -362,11 +358,6 @@ str_date_time={
 -- 时间字符串转译成时间
 -- author: 空山明月
 function str2datetime_translator(input, seg)
-
-	-- 输出今天的日期
-	if (input == str_date_time["today"]) then
-		date_translator("date", seg)
-	end
 
 	-- 输出明天的日期
 	if (input == str_date_time["next_day"]) then
@@ -388,16 +379,6 @@ function str2datetime_translator(input, seg)
 		somedate_translator("date", seg, -2)
 	end
 
-	-- 输出当前时间
-	if (input == str_date_time["time"]) then
-		time_translator("time", seg)
-	end
-
-	-- 输出本周时间：表示本周的当天时间
-	if (input == str_date_time["this_week"]) then
-		date_translator("date", seg)
-	end
-
 	-- 输出上周时间：表示上周对应星期时间
 	-- 比如今天是周三，则此函数返回上周周三对应的日期
 	if (input == str_date_time["last_week"]) then
@@ -408,11 +389,6 @@ function str2datetime_translator(input, seg)
 	-- 比如今天是周三，则此函数返回下周周三对应的日期
 	if (input == str_date_time["next_week"]) then
 		somedate_translator("date", seg, 7)
-	end
-
-	-- 输出本月日期，默认是本月当天日期
-	if (input == str_date_time["this_month"]) then
-		date_translator("date", seg)
 	end
 
 	-- 输出上月与当天天数相同的日期，有末则按最后一天计算
