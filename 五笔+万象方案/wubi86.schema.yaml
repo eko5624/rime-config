@@ -97,7 +97,8 @@ engine:
     #- simplifier@transcription_cc              # 简繁切换
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
-    - lua_filter@single_char
+    - lua_filter@single_char                    # 单字输入模式
+    - lua_filter@*multi_line                    # 支持词条多行输出
     - reverse_lookup_filter@pinyin_reverse_lookup
     - reverse_lookup_filter@radical_reverse_lookup
     - simplifier@chaifen                        # 五笔字根拆分滤镜
