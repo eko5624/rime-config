@@ -84,7 +84,6 @@ engine:
     - lua_translator@*force_gc                  # 暴力 GC 降低内存
     - lua_translator@*unicode                   # Unicode
     - lua_translator@alphabet_mode_translator
-    - table_translator@chengyu                  # 简码成语
     - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
     - script_translator@pinyin_lookup
     - script_translator@wubi86_lookup
@@ -162,15 +161,6 @@ custom_phrase:
   enable_completion: false # 补全提示
   enable_sentence: false   # 禁止造句
   initial_quality: 99      # custom_phrase 的权重应该比 pinyin 和 melt_eng 大
-
-# 简码词库导入位于jm_dicts得txt文件词库
-chengyu:
-  dictionary: ""
-  user_dict: jm_dicts/chengyu
-  db_class: stabledb
-  enable_sentence: false
-  enable_completion: false
-  initial_quality: 0.7 #本表词和系统词重码居后
 
 emoji:
   option_name: emoji
