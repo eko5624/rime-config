@@ -20,12 +20,14 @@ local find = string.find
 local gsub = string.gsub
 
 -- 转义映射
+local zwsp = "\226\128\139" --定义零宽空格
+
 local escape_map = {
-    ["\\n"] = "\n",
+    ["\\n"] = zwsp .. "\n",  --\n换行符前面加零宽空格用来应对electron开发的软件行尾字符被转移到内容最后一行的问题
     ["\\r"] = "\r",
     ["\\t"] = "\t",
     ["\\s"] = " ",
-    ["\\z"] = "\226\128\139",
+    ["\\z"] = zwsp,
 }
 local utf8_char_pattern = "[%z\1-\127\194-\244][\128-\191]*"
 
