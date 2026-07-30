@@ -29,6 +29,7 @@ local escape_map = {
     ["\\s"] = " ",
     ["\\z"] = zwsp,
 }
+
 local utf8_char_pattern = "[%z\1-\127\194-\244][\128-\191]*"
 
 -- 核心转义处理
