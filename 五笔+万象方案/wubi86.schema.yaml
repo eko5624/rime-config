@@ -113,7 +113,7 @@ speller:
 translator:
   dictionary: wubi86
   db_class: tabledb
-  initial_quality: 1.2
+  initial_quality: 1.5
   enable_charset_filter: false
   enable_sentence: false                # 开启句子输入模式
   enable_user_dict: false               # 开启用户词典
