@@ -95,10 +95,17 @@ local function normalized_limit(value)
 end
 
 local T = {}
+local function release_eng_translator(env)
+    local translator = env.eng_translator
+    if not translator then return end
+
+    translator:disconnect()
+    env.eng_translator = nil
+end
 
 function T.init(env)
+    release_eng_translator(env)
     env.max_candidates = DEFAULT_MAX_CANDIDATES
-    env.eng_translator = nil
 
     local config = env.engine and env.engine.schema and env.engine.schema.config
 
@@ -248,7 +255,7 @@ function T.func(input, seg, env)
 end
 
 function T.fini(env)
-    env.eng_translator = nil
+    release_eng_translator(env)
 end
 
 local function get_now()
@@ -262,7 +269,18 @@ local function pure(s)
     return gsub(s, "[^a-zA-Z]", ""):lower()
 end
 
+local function is_ascii_space(code)
+    return code == 32 or (code >= 9 and code <= 13)
+end
+
 local function trim_spaces(text)
+    if not text or text == "" then return "" end
+
+    local first = byte(text, 1)
+    local last = byte(text, #text)
+
+    if not is_ascii_space(first) and not is_ascii_space(last) then return text end
+
     text = gsub(text, "^%s+", "")
     return gsub(text, "%s+$", "")
 end
@@ -446,12 +464,8 @@ local function restore_sentence_spacing(cand, split_pattern, check_pattern)
     return nc
 end
 
-local NBSP = string.char(0xC2, 0xA0)
-
-local function apply_segment_formatting(text, input_code)
-    if not input_code or input_code == "" or not find(input_code, "%u") then
-        return text
-    end
+local function apply_segment_formatting(text, input_code, input_has_upper)
+    if not input_code or input_code == "" or not input_has_upper then return text end
     local parts = {}
     local p_code = 1
     for word in gmatch(text, "%S+") do
@@ -494,14 +508,9 @@ local function apply_formatting(cand, code_ctx, preserve_letter_case)
 
     local changed = false
 
-    if find(text, NBSP, 1, true) then
-        text = gsub(text, NBSP, " ")
-        changed = true
-    end
-
     if is_ascii_phrase_fast(text) then
-        if code_ctx.raw_input and not preserve_letter_case then
-            local new_text = apply_segment_formatting(text, code_ctx.raw_input)
+        if code_ctx.input_has_upper and not preserve_letter_case then
+            local new_text = apply_segment_formatting(text, code_ctx.raw_input, code_ctx.input_has_upper)
 
             if new_text ~= text then
                 text = new_text
@@ -605,8 +614,8 @@ local F = {}
 
 function F.init(env)
     local cfg = env.engine.schema.config
-    env.memory = {}
     env.schema_id = env.engine.schema.schema_id
+    env.memory = env.schema_id == "wanxiang_english" and {} or nil
     env.english_spacing_mode = "off"
     env.spacing_timeout = 0
     env.lookup_key = "`"
@@ -654,7 +663,7 @@ function F.init(env)
 
             if curr_input == "" then
                 env.comp_start_time = nil
-                env.memory = {}
+                if env.memory then env.memory = {} end
             elseif env.comp_start_time == nil then
                 env.comp_start_time = get_now()
             end
@@ -714,6 +723,7 @@ function F.func(input, env)
     local has_valid_candidate = false
     local best_candidate_saved = false
     local code_len = #curr_input
+    local input_has_upper = find(curr_input, "%u") ~= nil
     local single_letter_input = code_len == 1 and is_single_ascii_letter(curr_input)
     local input_lower = single_letter_input and lower(curr_input) or nil
 
@@ -747,12 +757,17 @@ function F.func(input, env)
 
     local code_ctx = {
         raw_input = curr_input,
+        input_has_upper = input_has_upper,
         spacing_mode = env.english_spacing_mode,
         prev_is_eng = effective_prev_is_eng,
     }
 
     for cand in input:iter() do
-        local good_cand = restore_sentence_spacing(cand, env.split_pattern, env.delim_check_pattern)
+        local good_cand = cand
+
+        if env.schema_id == "wanxiang_english" then
+            good_cand = restore_sentence_spacing(cand, env.split_pattern, env.delim_check_pattern)
+        end
 
         local preserve_single_letter_case = single_letter_input
             and is_single_ascii_letter(good_cand.text)
@@ -762,7 +777,6 @@ function F.func(input, env)
 
         if env.schema_id == "wanxiang_english" and fmt_cand.comment and find(fmt_cand.comment, "\226\152\175") then
             local original_quality = fmt_cand.quality
-
             local nc = Candidate(fmt_cand.type, fmt_cand.start, fmt_cand._end, fmt_cand.text, "")
 
             nc.preedit = fmt_cand.preedit
@@ -772,11 +786,8 @@ function F.func(input, env)
 
         has_valid_candidate = true
 
-        if not best_candidate_saved and fmt_cand.comment ~= "~" and not env.block_derivation then
-            env.memory[curr_input] = {
-                text = fmt_cand.text,
-            }
-
+        if env.memory and not best_candidate_saved and fmt_cand.comment ~= "~" and not env.block_derivation then
+            env.memory[curr_input] = fmt_cand.text
             best_candidate_saved = true
         end
 
@@ -789,34 +800,35 @@ function F.func(input, env)
             return
         end
         if env.schema_id == "wanxiang_english" then
-            local anchor = nil
+            local anchor_text = nil
             local diff = ""
+
             for i = #curr_input - 1, 1, -1 do
                 local prefix = sub(curr_input, 1, i)
-                if env.memory[prefix] then
-                    anchor = env.memory[prefix]
+                local saved_text = env.memory[prefix]
+
+                if saved_text then
+                    anchor_text = saved_text
                     diff = sub(curr_input, i + 1)
                     break
                 end
             end
 
-            if anchor and diff ~= "" then
-                local has_spacing = find(anchor.text, " ")
-                local last_word = match(anchor.text, "(%S+)%s*$") or ""
+            if anchor_text and diff ~= "" then
+                local has_spacing = find(anchor_text, " ")
+                local last_word = match(anchor_text, "(%S+)%s*$") or ""
                 local last_len = #last_word
-                local spacer = " "
-                if sub(anchor.text, -1) == " " then
-                    spacer = ""
-                end
+                local spacer = sub(anchor_text, -1) == " " and "" or " "
 
-                local output_text = ""
+                local output_text
+
                 if has_spacing or last_len > 3 then
-                    output_text = anchor.text .. spacer .. diff
+                    output_text = anchor_text .. spacer .. diff
                 else
                     output_text = curr_input
                 end
 
-                output_text = apply_segment_formatting(output_text, curr_input)
+                output_text = apply_segment_formatting(output_text, curr_input, input_has_upper)
                 local cand = Candidate("fallback", 0, #curr_input, output_text, "~")
                 cand.preedit = output_text
                 cand.quality = 999
@@ -826,8 +838,4 @@ function F.func(input, env)
     end
 end
 
-return {
-    T = T,
-    F = F,
-    P = P,
-}
+return {T = T, F = F, P = P}
