@@ -187,6 +187,7 @@ sort: by_weight
 冯仑	féng lún	332
 冯唐	féng táng	966
 顾城	gù chéng	671
+顾诚	gù chéng	603
 顾况	gù kuàng	522
 关羽	guān yǔ	21571
 郭川	guō chuān	1146
@@ -318,6 +319,7 @@ sort: by_weight
 李肃	lǐ sù	109
 厉王	lì wáng	872
 李卫	lǐ wèi	32
+李熙	lǐ xī	290
 李想	lǐ xiǎng	361
 李严	lǐ yán	1067
 李由	lǐ yóu	134
@@ -369,6 +371,7 @@ sort: by_weight
 刘邦	liú bāng	30744
 刘备	liú bèi	32311
 刘濞	liú bì	251
+刘辩	liú biàn	54
 刘表	liú biǎo	1700
 刘彻	liú chè	361
 刘德	liú dé	100
@@ -531,6 +534,7 @@ sort: by_weight
 裴谞	péi xū	207
 裴炎	péi yán	33
 裴贽	péi zhì	163
+彭湃	péng pài	702
 齐妃	qí fēi	326
 齐浣	qí huàn	168
 戚姬	qī jī	9
@@ -613,6 +617,7 @@ sort: by_weight
 孙吴	sūn wú	1450
 孙休	sūn xiū	684
 孙瑜	sūn yú	60
+滕飞	téng fēi	594
 王贲	wáng bēn	163
 王弼	wáng bì	308
 王勃	wáng bó	178
@@ -639,7 +644,6 @@ sort: by_weight
 王离	wáng lí	54
 汪伦	wāng lún	405
 王伦	wáng lún	307
-汪伦	wāng lún	148
 王莽	wáng mǎng	2926
 王猛	wáng měng	314
 王冕	wáng miǎn	850
@@ -904,6 +908,7 @@ sort: by_weight
 袁郊	yuán jiāo	24
 袁珂	yuán kē	74
 袁朗	yuán lǎng	262
+元凛	yuán lǐn	77
 袁枚	yuán méi	486
 袁敏	yuán mǐn	450
 袁尚	yuán shàng	1292
@@ -1971,6 +1976,8 @@ sort: by_weight
 何振梁	hé zhèn liáng	495
 何志平	hé zhì píng	464
 何柱国	hé zhù guó	16
+洪汛涛	hóng xùn tāo	274
+洪逊欣	hóng xùn xīn	125
 胡燕青	hú yàn qīng	297
 华天龙	huà tiān lóng	279
 华文漪	huà wén yī	284
@@ -2044,7 +2051,6 @@ sort: by_weight
 黄火青	huáng huǒ qīng	441
 黄火星	huáng huǒ xīng	338
 黄几复	huáng jǐ fù	369
-黄几复	huáng jǐ fù	351
 黄继光	huáng jì guāng	232
 黄季陆	huáng jì lù	3
 黄汲清	huáng jí qīng	369
@@ -2455,6 +2461,7 @@ sort: by_weight
 江兆申	jiāng zhào shēn	306
 蒋正华	jiǎng zhèng huá	418
 江志强	jiāng zhì qiáng	536
+蒋志清	jiǎng zhì qīng	15
 江直树	jiāng zhí shù	418
 江忠源	jiāng zhōng yuán	365
 蒋中正	jiǎng zhōng zhèng	157
@@ -3519,6 +3526,7 @@ sort: by_weight
 钱逢胜	qián féng shèng	176
 钱国宾	qián guó bīn	4
 钱国伟	qián guó wěi	446
+钱海岳	qián hǎi yuè	52
 钱经纶	qián jīng lún	45
 钱均夫	qián jūn fū	346
 钱君陶	qián jūn táo	220
@@ -3708,6 +3716,7 @@ sort: by_weight
 阮小七	ruǎn xiǎo qī	60
 阮小五	ruǎn xiǎo wǔ	28
 阮宗泽	ruǎn zōng zé	526
+赛典赤	sài diǎn chì	454
 赛尚阿	sài shàng ā	40
 邵大箴	shào dà zhēn	450
 邵华泽	shào huá zé	315
@@ -4284,7 +4293,6 @@ sort: by_weight
 夏冬青	xià dōng qīng	410
 夏斗寅	xià dòu yín	13
 夏尔丹	xià ěr dān	19
-夏丐尊	xià gài zūn	396
 夏孤临	xià gū lín	117
 夏海钧	xià hǎi jūn	13
 夏红民	xià hóng mín	378
@@ -5818,6 +5826,7 @@ sort: by_weight
 桥本左内	qiáo běn zuǒ nèi	243
 施特劳斯	shī tè láo sī	1438
 星野道夫	xīng yě dào fū	369
+亚米契斯	yà mǐ qì sī	54
 宇文昌龄	yǔ wén chāng líng	220
 宇文成都	yǔ wén chéng dū	69
 宇文成龙	yǔ wén chéng lóng	76
@@ -5840,6 +5849,7 @@ sort: by_weight
 中岛一贵	zhōng dǎo yí guì	279
 中岛英树	zhōng dǎo yīng shù	180
 中岛哲也	zhōng dǎo zhé yě	500
+安倍晋太郎	ān bèi jìn tài láng	10
 梅德韦杰夫	méi dé wéi jié fū	10
 斯特里克兰德	sī tè lǐ kè lán dé	10
 香宗我部亲泰	xiāng zōng wǒ bù qīn tài	10
