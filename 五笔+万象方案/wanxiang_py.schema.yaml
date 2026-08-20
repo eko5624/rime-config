@@ -336,6 +336,8 @@ wubi86_lookup:
   enable_completion: true
   prefix: "`"
   tips: 〔五笔〕
+  comment_format:
+    - xform/;([a-z]{2})// # 删除注释里的五笔首二辅助码
 
 radical_lookup:
   tag: radical
