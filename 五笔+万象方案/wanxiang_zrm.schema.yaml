@@ -151,7 +151,7 @@ translator:
   dictionary: wanxiang_pro     # 挂载主词库
   prism: wanxiang_zrm
   enable_completion: true      # 启用候选词补全
-  enable_user_dict: true      # 不开启自动调频，即开启用户词典
+  enable_user_dict: false      # 不开启自动调频，即开启用户词典
   #  enable_sentence: false       #是否开启自动造句
   #  enable_correction: false     #是否开启自动纠错
   #  encode_commit_history: true  # 预留历史上屏自动编码成词
