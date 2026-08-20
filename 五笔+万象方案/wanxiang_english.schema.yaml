@@ -20,7 +20,7 @@ switches:
 
 engine:
   processors:
-    - lua_processor@*wanxiang.super_english*P
+    - lua_processor@*super_english*P
     - ascii_composer
     - key_binder
     - speller
@@ -36,10 +36,10 @@ engine:
     - fallback_segmentor
   translators:
     - table_translator
-    - lua_translator@*wanxiang.super_english*T
+    - lua_translator@*super_english*T
     - punct_translator
   filters:
-    - lua_filter@*wanxiang.super_english*F
+    - lua_filter@*super_english*F
     - simplifier@chinese_english                # 英译汉
     - uniquifier
 
