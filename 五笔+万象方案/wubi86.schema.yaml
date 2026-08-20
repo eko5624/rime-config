@@ -228,6 +228,8 @@ radical_lookup:
   dictionary: radical_pinyin
   tips: 〔拆字查音〕
   closing_tips: 〔五笔〕
+  comment_format:
+    - xform/;([a-z]{2})// # 删除注释里的五笔首二辅助码
 
 radical_reverse_lookup:
   tags: [radical_lookup]
