@@ -16,7 +16,7 @@ schema:
   description: |
     敲 z 键进入拼音反查
   dependencies:
-    - wanxiang        # 万象拼音，反查时用
+    - wanxiang_py        # 万象拼音，反查时用
 
 switches:
   - name: emoji
@@ -199,7 +199,7 @@ chinese_english:
       
 pinyin_lookup:                          # 拼音反查五笔
   tag: pinyin_lookup
-  dictionary: wanxiang
+  dictionary: wanxiang_pro
   prefix: "z"
   tips: 〔拼音反查〕
 
@@ -229,7 +229,7 @@ radical_lookup:
 radical_reverse_lookup:
   tags: [radical_lookup]
   overwrite_comment: true
-  dictionary: wanxiang
+  dictionary: wanxiang_pro
 
 # 标点符号
 # punctuator 下面有三个子项：
