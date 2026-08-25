@@ -2,8 +2,8 @@
 # encoding: utf-8
 # 方案说明
 schema:
-  schema_id: wanxiang_py
-  name: 万象·全拼
+  schema_id: wanxiang_pinyin
+  name: 万象·拼音
   version: "LTS"
   icon: icons/zh.ico
   ascii_icon: icons/en.ico

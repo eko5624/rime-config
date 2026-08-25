@@ -8,8 +8,9 @@ patch:
   schema_list:
     - schema: wubi86                # 86五笔
     - schema: wanxiang_zrm          # 万象自然码
-    - schema: wanxiang_py           # 万象全拼
+    - schema: wanxiang_pinyin       # 万象拼音
     - schema: wanxiang_english      # 万象英文
+    - schema: radical_pinyin        # 拆字反查
     - schema: chengyu               # 成语大全
 
   switcher:
