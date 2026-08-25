@@ -269,7 +269,9 @@ wubi86_lookup:
   enable_user_dict: false
   enable_completion: true
   prefix: "`"
-  tips: 〔五笔〕  
+  tips: 〔五笔〕
+  comment_format:
+    - xform/;([a-z]{2})// # 删除注释里的五笔首二辅助码
 
 radical_lookup:
   tag: radical
@@ -278,6 +280,8 @@ radical_lookup:
   enable_sentence: false
   prefix: 'Uu'
   tips: 〔拆字〕
+  comment_format:
+    - xform/;([a-z]{2})// # 删除注释里的五笔首二辅助码
 
 reverse_lookup:
   tags: [wubi86,radical]
