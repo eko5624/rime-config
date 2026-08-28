@@ -2,7 +2,7 @@
 # encoding: utf-8
 schema:
   schema_id: wanxiang_english
-  name: 万象英文
+  name: 万象·英文
   version: "lts"
   icon: icons/ju.ico
   ascii_icon: icons/en.ico

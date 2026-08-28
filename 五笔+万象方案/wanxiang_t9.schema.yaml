@@ -1,0 +1,243 @@
+schema:
+  schema_id: wanxiang_t9
+  name: 万象·九键
+  version: "LTS"
+  author:
+    - amzxyz
+  description: |
+    万象拼音九宫格公共方案
+  dependencies:
+
+switches:
+  - name: emoji
+    states: [ 💀, 😄 ]
+    reset: 1
+  - name: ascii_mode
+    states: [ 中, 英 ]
+    reset: 0
+  - options: [ std, s2hk, s2twp ]
+    states: [ 简体, 港繁, 台繁 ]
+    reset: 0
+  - options: [ tone_hint ]  #开启后在输入编码的位置实时转换为带声调全拼或者不带声调全拼，不开启则采用系统配置原始编码，影响的是preedit_format,归属：super_preedit.lua
+    states: [ 无声调, 有声调 ]
+    reset: 1  #对于开关组从0开始数，第几个就reset几可设为默认
+  - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
+    states: [ 常, 扩 ]
+    reset: 1
+  - name: charset_comment
+    states: [ 码区关, 码区开 ]
+    reset: 1
+  - name: full_shape
+    states: [ 半, 全 ]
+    reset: 0
+  - name: ascii_punct  # 中英标点
+    states: [ "。，", "．，" ]
+    reset: 0
+    
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@radical_lookup
+    - affix_segmentor@wubi86_lookup
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - history_translator@history
+    - lua_translator@time_date
+    - lua_translator@*calculator
+    - lua_translator@*number                    # 数字金额大写
+    - lua_translator@*force_gc                  # 暴力 GC 降低内存
+    - lua_translator@*unicode                   # Unicode
+    - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
+    - table_translator@chengyu                  # 简码成语
+    - reverse_lookup_translator@radical_lookup
+    - reverse_lookup_translator@wubi86_lookup
+    - script_translator
+  filters:
+    - simplifier
+    - simplifier@s2hk
+    - simplifier@s2tw
+    #- simplifier@transcription_cc
+    - simplifier@emoji                          # Emoji OpenCC
+    - lua_filter@*charset*filter                # CJK字符集过滤
+    - lua_filter@*charset*comment_hint          # CJK字符集码区提示
+    - lua_filter@*t9_preedit                 # preedit带调显示
+    - lua_filter@*multi_line                    # 支持词条多行输出
+    - uniquifier                                # 去重
+
+# 简繁转换
+# transcription_cc:
+  # option_name: transcription
+  # opencc_config: s2t.json             # 简 -> 繁
+  # opencc_config: s2hk.json              # 简 -> 香港
+  # opencc_config: t2s.json             # 繁 -> 简
+  # opencc_config: t2tw.json            # 繁 -> 台湾
+  # opencc_config: t2hk.json            # 繁 -> 香港
+  # opencc_config: s2tw.json            # 簡 -> 臺灣標準
+  # opencc_config: s2twp.json           # 簡 -> 臺灣片語
+  # tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  # tags: [abc]                           # 限制在对应 tag 只在五笔输入时启用简繁转换
+
+s2hk:
+  opencc_config: s2hk.json
+  option_name: s2hk
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+  tips: all
+
+s2tw:
+  opencc_config: s2twp.json
+  option_name: s2twp
+  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
+  tips: all
+
+# 自定义短语
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase  # 需要手动创建 custom_phrase.txt 文件
+  db_class: stabledb
+  enable_completion: false # 补全提示
+  enable_sentence: false   # 禁止造句
+  initial_quality: 99
+
+# 简码词库导入位于jm_dicts得txt文件词库
+chengyu:
+  dictionary: ""
+  user_dict: jm_dicts/chengyu
+  db_class: stabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: 0.7 #本表词和系统词重码居后
+
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  inherit_comment: false                # 在 corrector.lua 及反查中，emoji 返回空注释
+
+history:
+  input: z
+  size: 1
+  initial_quality: 1
+
+grammar:
+  language: wanxiang-lts-zh-hans
+  collocation_max_length: 6
+  collocation_min_length: 2
+  collocation_penalty: -14
+  non_collocation_penalty: -6
+  weak_collocation_penalty: -100
+  rear_penalty: -18
+
+translator:
+  dictionary: wanxiang_pro         # 挂载主词库
+  prism: wanxiang_t9  # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
+  enable_completion: true  # 启用候选词补全
+  #  user_dict: zrm.userdb       # 用户词典的文件名称
+  #  db_class: tabledb           #开启后就不会产生wanxiang.userdb这样的文件夹，会直接输出文本wanxiang.txt同时无法使用同步能力，可设 tabledb〔文本〕或 userdb〔二进制〕
+  enable_user_dict: true  # 是否开启自动调频，即开启用户词典
+  enable_sentence: false  #是否开启自动造句
+  enable_correction: false  #是否开启自动纠错
+  encode_commit_history: true  # 预留历史上屏自动编码成词
+  contextual_suggestions: false  #模型预测，假设模型里面有的四个字的词汇 现在智能 而首选组合 现在只能 当你输入 现在 上屏后下一次输入zhi neng就会输出，智能前提是没有权重更高的了，很明显这与你的预期“现在只能”不符。很明显实际上又要预测又要连续句子，放一起是很难优雅的。
+  max_homophones: 8
+  core_word_length: 4  # >0 启用，按段学词 + 相邻段拼接
+  max_word_length: 7  # >0 启用，过长短语不记整词，只加元素权重
+  initial_quality: 3  #初始质量拼音的权重应该比英文大
+  spelling_hints: 50  #将注释以词典code字符串形式完全暴露，通过super_comment.lua完全接管，灵活配置。
+  always_show_comments: true  # Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供super_comment.lua做判断用。
+  comment_format:
+  #disable_user_dict_for_patterns:  #如果你开启调频，需要一并考虑这个配置是否需要，基本的6码3字不调频，你可以自定义，目前的逻辑是依然记录用户词但满足规则的不输出不被使用
+  #  - "^[a-z]{1,6}"
+
+# 拼写设定
+speller:
+  # table_translator翻译器，支持自动上屏。例如 “zmhu”可以自动上屏“怎么回事”
+  #  auto_select: true
+  #  auto_select_pattern: ^[a-z]+/|^[a-df-zA-DF-Z]\w{3}|^e\w{4}
+  # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射，alphabet就是将字符纳入输入编码的范畴
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA9876543210`/\›
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA9876543210/›
+  delimiter: " '"  # 系统配置，第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
+  # 拼写匹配
+  algebra:
+    - xform/^(.*);.*$/$1/
+    - xform/;([a-z]{2})//
+    - xlit/āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜüńňǹ/aaaaooooeeeeiiiiuuuuvvvvvnnn/
+    - xform/ḿ/me/
+    - xform/m̀/me/
+    - derive/^ng$/eng/
+    - xform/^n$/en/
+    - derive/^(.*)$/\U$1/
+    - derive/^([nl])ve$/$1ue/
+    - derive/^([NL])VE$/$1UE/
+    - derive/ong$/on/
+    - derive/iong$/ion/
+    - derive/eng$/en/
+    - derive/ONG$/ON/
+    - derive/IONG$/ION/
+    - derive/ENG$/EN/
+    - derive/^([jqxy])u/$1v/
+    - derive/^([JQXY])U/$1V/
+    - xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/22233344455566677778889999/
+
+# 标点符号
+# punctuator 下面有三个子项：
+#   full_shape 全角标点映射
+#   half_shape 半角标点映射
+#   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符，自定义的 symbols_v.yaml 修改成了 'v' 开头。
+punctuator:
+  full_shape:
+    __include: default:/punctuator/full_shape  # 从 default.yaml 导入配置
+  half_shape:
+    __include: default:/punctuator/half_shape  # 从 default.yaml 导入配置
+  digit_separators:
+    __include: default:/punctuator/digit_separators # 从 default.yaml 导入配置
+  symbols:
+    __include: symbols:/symbols              # 从 symbols.yaml 导入配置
+
+key_binder:
+  import_preset: default
+  bindings:
+    # 上下翻页 - =
+    # - { when: has_menu, accept: minus, send: Page_Up }             # 与地球拼音的音调1声 - 冲突，故注释掉
+    # - { when: has_menu, accept: equal, send: Page_Down }           # 与地球拼音的音调1声 - 冲突，故注释掉
+    
+    # 上下翻页 tab
+    - { when: has_menu, accept: Tab, send: Page_Down }
+    - {send: Escape, accept: space, when: composing}
+    - {send: space, accept: space, when: has_menu}
+    - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
+    - { when: always, toggle: transcription, accept: Control+2}      # 切换简繁
+    - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集
+    - { when: always, toggle: full_shape, accept: Control+4 }        # 切换全半角
+    - { when: always, toggle: ascii_punct, accept: Control+5 }       # 切换中英标点
+
+recognizer:
+  import_preset: default
+  patterns:
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+    unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
+    number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
+    calculator: "^=.*$"                 # 计算器功能引导
+
+#super_comment_preedit.lua配置：
+super_comment:
+  candidate_length: 2  # 候选词辅助码提醒的生效长度，0为关闭  但同时清空其它，应当使用上面开关来处理
+  corrector_type: "〔comment〕"  # 随意更换左右括号，比如"〔comment〕" 不加括号为无括号，comment占位不能动
+  tone_isolate: true  # 是否将数字声调从转换后拼音中隔离出来（true=隔离， false 直接参与转换）例如：nǐ3
+  convert_abbrev_preedit: false  #单音节简码是否转换为全拼读音
+  cand_type:
+    completion: ""  # 长词联想，即补全标记
+    predict: ""  # 预测标记
+    abbrev: ""  # 简码标记
