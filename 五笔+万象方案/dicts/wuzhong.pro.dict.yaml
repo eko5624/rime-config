@@ -8443,7 +8443,7 @@ sort: by_weight
 海南䱗	hǎi;it nán;fm cān;hq	8
 海南椴	hǎi;it nán;fm duàn;sw	5
 海南𬶭	hǎi;it nán;fm jì;qg	7
-海南𫛚	hǎi;it nán;fm 𫛚;	5
+海南𫛚	hǎi;it nán;fm jiān;	5
 海鲶鱼	hǎi;it nián;qg yú;qg	92
 骇弄蝶	hài;cy nòng;ga dié;ja	6
 海诺龙	hǎi;it nuò;ya lóng;dx	7
@@ -17858,7 +17858,7 @@ sort: by_weight
 异翅香	yì;na chì;fc xiāng;tj	7
 异翅䗛	yì;na chì;fc xiū;jw	4
 异翅亚	yì;na chì;fc yà;go	28
-异齿𫚢	yì;na chǐ;hw 𫚢;	6
+异齿𫚢	yì;na chǐ;hw yǎn;	6
 异唇鲿	yì;na chún;df cháng;qg	5
 异唇兰	yì;na chún;df lán;uf	10
 异唇鳗	yì;na chún;df mán;qg	6
@@ -24064,6 +24064,7 @@ sort: by_weight
 颈毛线虫	jǐng;ca máo;tf xiàn;xg chóng;jh	1
 颈囊果蝠	jǐng;ca náng;gk guǒ;js fú;jg	1
 茎树须鱼	jīng;ac shù;sc xū;ed yú;qg	7
+靓唐纳雀	jìng;ge táng;yv nà;xm què;iw	1
 晶鰕虎鱼	jīng;jj xiā;qo hǔ;ha yú;qg	1
 晶星革菌	jīng;jj xīng;jt gé;af jūn;al	1
 鲸鹦嘴鱼	jīng;qg yīng;mm zuǐ;kh yú;qg	1
@@ -24733,7 +24734,6 @@ sort: by_weight
 两栖龙虱	liǎng;gm qī;ss lóng;dx shī;nt	1
 两色伞鸟	liǎng;gm sè;qc sǎn;wu niǎo;qy	1
 两色夜蛾	liǎng;gm sè;qc yè;yw é;jt	1
-靓唐纳雀	liàng;ge táng;yv nà;xm què;iw	1
 两条金鱼	liǎng;gm tiáo;ts jīn;qq yú;qg	7
 亮叶报春	liàng;yp yè;kf bào;rb chūn;dw	7
 亮叶冬青	liàng;yp yè;kf dōng;tu qīng;ge	31
@@ -34717,7 +34717,7 @@ sort: by_weight
 短尾叶鼻蝠	duǎn;td wěi;nt yè;kf bí;th fú;jg	1
 短尾叶口蝠	duǎn;td wěi;nt yè;kf kǒu;kk fú;jg	1
 短尾叶石栎	duǎn;td wěi;nt yè;kf shí;dg lì;sq	1
-短尾异齿𫚢	duǎn;td wěi;nt yì;na chǐ;hw 𫚢;
+短尾异齿𫚢	duǎn;td wěi;nt yì;na chǐ;hw yǎn;
 短尾紫灰蝶	duǎn;td wěi;nt zǐ;hx huī;do dié;ja	1
 短吻蝙蝠鱼	duǎn;td wěn;kq biān;jy fú;jg yú;qg	1
 短吻长尾鳕	duǎn;td wěn;kq cháng;ta wěi;nt xuě;qg	1
@@ -36542,7 +36542,7 @@ sort: by_weight
 海绵圣星虫	hǎi;it mián;xr shèng;cf xīng;jt chóng;jh	1
 海绵双腕虫	hǎi;it mián;xr shuāng;cc wàn;ep chóng;jh	1
 海南捕鸟蛛	hǎi;it nán;fm bǔ;rg niǎo;qy zhū;jr	1
-海南虎斑𫛚	hǎi;it nán;fm hǔ;ha bān;gy 𫛚;	1
+海南虎斑𫛚	hǎi;it nán;fm hǔ;ha bān;gy jiān;	1
 海南黄黝鱼	hǎi;it nán;fm huáng;am yǒu;lf yú;qg	1
 海南马口鱼	hǎi;it nán;fm mǎ;cn kǒu;kk yú;qg	1
 海南墨头鱼	hǎi;it nán;fm mò;lf tóu;ud yú;qg	1
