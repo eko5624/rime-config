@@ -159,13 +159,13 @@ translator:
   contextual_suggestions: false  #模型用来开启词组权重预测，效果一般关闭
   max_homophones: 8
   initial_quality: 1.2  #初始质量拼音的权重应该比英文大
+  spelling_hints: 30  #将注释以词典code字符串形式完全暴露，通过super_comment.lua完全接管，灵活配置。
+  always_show_comments: true  # Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供super_comment_preedit.lua做判断用。
   preedit_format:
     - xform/([nl])v/$1ü/
     - xform/([nl])ve/$1üe/
     - xform/([nl])ven/$1uen/
     - xform/([jqxy])v/$1u/
-    - 'xform ([aeiou])(ng?|r)([-;/<,>\\]) $1$3$2'
-    - 'xform ([aeo])([iuo])([-;/<,>\\]) $1$3$2'
   comment_format:                       # 提示码自定义
     - xform/;([a-z]{2})//
 
