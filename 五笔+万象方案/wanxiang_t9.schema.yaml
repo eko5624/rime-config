@@ -18,9 +18,6 @@ switches:
   - options: [ std, s2hk, s2twp ]
     states: [ 简体, 港繁, 台繁 ]
     reset: 0
-  - options: [ tone_hint ]  #开启后在输入编码的位置实时转换为带声调全拼或者不带声调全拼，不开启则采用系统配置原始编码，影响的是preedit_format,归属：super_preedit.lua
-    states: [ 无声调, 有声调 ]
-    reset: 1  #对于开关组从0开始数，第几个就reset几可设为默认
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 1
