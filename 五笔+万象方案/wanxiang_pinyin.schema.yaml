@@ -175,9 +175,9 @@ speller:
   #  auto_select: true
   #  auto_select_pattern: ^[a-z]+/|^[a-df-zA-DF-Z]\w{3}|^e\w{4}
   # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
-  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA-;/<,>\
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA7890;/<,>\
   # initials 定义仅作为始码的按键，排除 ` 让单个的 ` 可以直接上屏
-  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA7890
   delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
   algebra:
     - xform/^([a-z]+);/$1④;/
@@ -215,110 +215,24 @@ speller:
     - derive/^ng(\d)$/eng$1/
     - xform/^n(\d)/en$1/
     - xform/^m(\d)/me$1/
-    # 简拼
-    - abbrev/^([zcs]h).+$/$1/                        #zh ch sh作为整体
-    - abbrev/^([zcs]h).+(\d)$/$1$2/                  #zh ch sh作为整体
-    ## 改写规则
-    - xform/^n(\d)/en$1/      # 改写编码n1 → en1
-    - xform/^m(\d)/me$1/      # m1 → me1
-    ## 缩写规则
-    - abbrev/^ng(\d)$/ng/                            #ng1派生为ng
-    - erase/^ng(\d)$/                                #删除ng开头+数字结尾的输入编码
-    - abbrev/^([qwrtypsdfghjklzxcbnm]).+$/$1/        #不携带元音的声母派生出首字母简码来
-    - abbrev/^([qwrtypsdfghjklzxcbnm]).+(\d)$/$1$2/  #不携带元音的声母派生出首字母简码来+数字声调
-    - abbrev/^([aoe])([ioun])(\d)$/$1/               #携带两个字符的元音首字母派生出简码来
-    - abbrev/^([aoe])([ioun])(\d)$/$1$3/             #携带两个字符的元音首字母派生出简码来+数字声调
-    ## 派生规则
-    - derive/(.+)(\d)/$1/     # 字母+数字 → 字母
-    - derive/^ng(\d)$/eng$1/  # ng1 → eng1
-    - derive/(.+)ong$/$1on/   # lon → long
-    - derive/([tl])eng$/$1en/ # ten → teng
-    - derive/([nl])ve(\d)/$1ue$2/                    #让üè兼容ue
-    - derive/^([jqxy])v(\d)$/$1u$2/                  #让ü兼容u
-    - derive/^([jqxy])u(\d)$/$1v$2/                  #让u兼容ü
-    - derive/([zcs])h(a|e|i|u|ai|ei|an|en|ou|uo|ua|un|ui|uan|uai|uang|ang|eng|ong)$/h$1$2/  # hzi → zhi
-    - derive/([zcs])h([aeiu])$/$1$2h/  # zih → zhi
-    # ai
-    - derive/^([wghk])ai$/$1ia/  # wia → wai
-    # ia
-    - derive/([qjx])ia$/$1ai/  # qai → qia
-    # ei
-    - derive/([wtfghkz])ei$/$1ie/
-    # ie
-    - derive/([jqx])ie$/$1ei/
-    # ao
-    - derive/([rtypsdghklzcbnm])ao$/$1oa/
-    # ou
-    - derive/([ypfm])ou$/$1uo/
-    # ang
-    - derive/([wrtypsdfghklzcbnm])ang$/$1nag/
-    - derive/([wrtypsdfghklzcbnm])ang$/$1agn/
-    # eng
-    - derive/([wrtpsdfghklzcbnm])eng$/$1wng/
-    - derive/([wrtpsdfghklzcbnm])eng$/$1neg/
-    - derive/([wrtpsdfghklzcbnm])eng$/$1egn/
-    # ing
-    - derive/([qtypdjlxbnm])ing$/$1nig/
-    - derive/([qtypdjlxbnm])ing$/$1ign/
-    # ong
-    - derive/([rtysdghklzcn])ong$/$1nog/
-    - derive/([rtysdghklzcn])ong$/$1ogn/
-    # iao
-    - derive/([qtpdjlxbnm])iao$/$1ioa/
-    - derive/([qtpdjlxbnm])iao$/$1oia/
-    # ui
-    - derive/([rtsghkzc])ui$/$1iu/
-    # iu
-    - derive/([qjlxnm])iu$/$1ui/
-    # ian
-    # - derive/([qtpdjlxbnm])ian$/$1iam/
-    # iang
-    - derive/([qjlxn])iang$/$1aing/
-    - derive/([qjlxn])iang$/$1inag/
-    # ua
-    - derive/([g|k|h|zh|sh])ua$/$1au/
-    # uai
-    - derive/([g|h|k|zh|ch|sh])uai$/$1aui/
-    - derive/([g|h|k|zh|ch|sh])uai$/$1uia/
-    # un
-    - derive/([qrtysdghjklzxc])un$/$1nu/
-    # ue
-    - derive/([nlyjqx])ue$/$1eu/
-    # uang
-    - derive/([g|h|k|zh|ch|sh])uang$/$1aung/
-    - derive/([g|h|k|zh|ch|sh])uang$/$1uagn/
-    - derive/([g|h|k|zh|ch|sh])uang$/$1unag/
-    - derive/([g|h|k|zh|ch|sh])uang$/$1augn/
-    # iong
-    - derive/([jqx])iong$/$1inog/
-    - derive/([jqx])iong$/$1oing/
-    - derive/([jqx])iong$/$1iogn/
-    - derive/([jqx])iong$/$1oign/
-    # 其他
-    - derive/ong$/on/  # lon → long
-    - derive/([tl])eng$/$1en/  # ten → teng
-    - 'xlit 7890 -/<\'
-    - derive/^([a-z]+)(\d?);.*$/$1/  # 纯双拼的情况
-    #分号后面第一组辅助码
-    - derive/^([a-z]+)(\d?);.*$/$1$2/  # 双拼+声调的情况
-    - derive/^([a-z]+)(\d?);([a-z]).*$/$1$3/  # 双拼+1位辅助码的情况
-    - derive|^([a-z]+)(\d?);([a-z]).*$|$1$2$3|  # 双拼+声调+1位辅助码
-    - derive|^([a-z]+)(\d?);([a-z]).*$|$1$3$2|  # 双拼+1位辅助码+声调
-    - abbrev/^([a-z]+)(\d?);([a-z])([a-z]).*$/$1$3$4/  # 双拼+2位辅助码的情况 (简拼)
-    - derive|^([a-z]+)(\d?);([a-z])([a-z]).*$|$1$3$4$2|  # 双拼+字母 字母 数字
-    - derive|^([a-z]+)(\d?);([a-z])([a-z]).*$|$1$2$3$4|  # 双拼+数字 字母 字母
-    - derive|^([a-z]+)(\d?);([a-z])([a-z]).*$|$1$3$2$4|  # 双拼+字母 数字 字母
-    - derive|^([a-z]+)(\d?);([a-z])([a-z]).*$|$1$3$4/|  # 双拼+2位辅助码+/
-    #分号后面第二组辅助码 (极速跳过第一组，直达逗号)
-    - derive/^([a-z]+)(\d?);[^,]*,([a-z]).*$/$1$3/  # 双拼+1位辅助码的情况
-    - derive|^([a-z]+)(\d?);[^,]*,([a-z]).*$|$1$2$3|  # 双拼+声调+1位辅助码
-    - derive|^([a-z]+)(\d?);[^,]*,([a-z]).*$|$1$3$2|  # 双拼+1位辅助码+声调
-    - abbrev/^([a-z]+)(\d?);[^,]*,([a-z])([a-z]).*$/$1$3$4/  # 双拼+2位辅助码的情况
-    - derive|^([a-z]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1$3$4$2|  # 双拼+字母 字母 数字
-    - derive|^([a-z]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1$2$3$4|  # 双拼+数字 字母 字母
-    - derive|^([a-z]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1$3$2$4|  # 双拼+字母 数字 字母
-    - derive|^([a-z]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1$3$4/|  # 双拼+2位辅助码+/
+    - derive/^([a-z◯]+)\d?;.*$/$1/  # 纯双拼的情况
+    - derive/^([a-z◯]+)(\d?);.*$/$1$2/  # 双拼+声调的情况
+    # 分号后面第一组辅助码 (引入 / 间接标记)
+    - derive|^([a-z◯]+)(\d?);([a-z]).*$|$1/$3|  # 双拼+/1位辅码
+    - derive|^([a-z◯]+)(\d?);([a-z]).*$|$1$2/$3|  # 双拼+声调+/1位辅码
+    - derive|^([a-z◯]+)(\d?);([a-z])([a-z]).*$|$1/$3$4|  # 双拼+/2位辅码
+    - derive|^([a-z◯]+)(\d?);([a-z])([a-z]).*$|$1$2/$3$4|  # 双拼+声调+/2位辅码
+    # 分号后面第二组辅助码 (利用 [^,]* 零回溯直达逗号)
+    - derive|^([a-z◯]+)(\d?);[^,]*,([a-z]).*$|$1/$3|  # 双拼+/1位辅码
+    - derive|^([a-z◯]+)(\d?);[^,]*,([a-z]).*$|$1$2/$3|  # 双拼+声调+/1位辅码
+    - derive|^([a-z◯]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1/$3$4|  # 双拼+/2位辅码
+    - derive|^([a-z◯]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1$2/$3$4|  # 双拼+声调+/2位辅码
     - erase/.*;.*/  # 删除原始带分号编码，加速检索
+    - xform/◯/;/  # 释放微软/搜狗双拼保护的分号
+    # 以下直接大写辅助
+    - derive|^([a-z]{2})(\d?)/([a-z])([a-z]?)$|$1$2\u$3\u$4|
+    - derive|^([a-z]{2})(\d?)/([a-z])([a-z]?)$|$1\u$3$2\u$4|
+    - derive|^([a-z]{2})(\d?)/([a-z])([a-z]?)$|$1\u$3\u$4$2|
 
 wubi86_lookup:
   tag: wubi86
