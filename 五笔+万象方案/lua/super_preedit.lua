@@ -51,6 +51,7 @@ local function normalize_comment_delimiter(comment, delimiter_pattern)
     return (comment:gsub(delimiter_pattern, " "))
 end
 
+-- 只判断 UTF-8 字符数是否未超过上限。
 local function utf8_within(text, limit)
     if not text or text == "" then return true end
     if not limit or limit < 1 then return false end
@@ -70,9 +71,11 @@ local function apply_tone_digits(env, cand)
     end)
 end
 
+-- 按自动、手动分隔符拆分 preedit，并保留分隔符原位。
 local function split_preedit_parts(preedit, auto_delimiter, manual_delimiter)
     local parts = {}
     local current_segment = ""
+
     for char in preedit:gmatch("[%z\1-\127\194-\244][\128-\191]*") do
         if char == auto_delimiter or char == manual_delimiter then
             if current_segment ~= "" then
@@ -84,31 +87,40 @@ local function split_preedit_parts(preedit, auto_delimiter, manual_delimiter)
             current_segment = current_segment .. char
         end
     end
+
     if current_segment ~= "" then
         parts[#parts + 1] = current_segment
     end
+
     return parts
 end
 
+-- 从候选注释中提取与 preedit 音节一一对应的拼音。
 local function extract_pinyin_segments(initial_comment, split_pattern)
     local pinyins = {}
+    
     for segment in initial_comment:gmatch(split_pattern) do
         local pinyin = segment
         pinyins[#pinyins + 1] = pinyin:gsub("[%[%]]", "")
     end
+
     return pinyins
 end
 
+-- 取得真实拼音的显示声母；zh/ch/sh 优先使用完整声母。
 local function get_display_initial(py)
     if not py or py == "" then return "" end
+
     local normalized = remove_pinyin_tone(py):lower()
     local prefix = normalized:sub(1, 2)
     if prefix == "zh" or prefix == "ch" or prefix == "sh" then
         return prefix
     end
+
     return py:match("[%z\1-\127\194-\244][\128-\191]*") or ""
 end
 
+-- false：简码保留；true：简码直接转换为完整拼音。
 local function render_abbreviation(typed, py, should_convert)
     if should_convert then return py end
     local initial = get_display_initial(py)
@@ -120,39 +132,49 @@ end
 
 local function is_alpha_abbreviation(part, state)
     if part:match("^[%a]$") then return true end
+    
     local lower = part:lower()
     if lower ~= "zh" and lower ~= "ch" and lower ~= "sh" then
         return false
     end
-    return true
 end
 
+-- T9 优先处理：单数字是简码，多数字音节直接转换为完整拼音。
 local function convert_t9_syllable(part, py, state)
+    if not part:match("^%d$") then return py end
+
     local typed = get_display_initial(py)
     if typed == "" then return part end
     return render_abbreviation(typed, py, state.convert_abbrev_preedit)
 end
 
+
+-- 26键处理：简码按配置保留或转全拼，其他音节维持原有转换语义。
 local function convert_alpha_syllable(part, py, state)
     if is_alpha_abbreviation(part, state) then
         return render_abbreviation(part, py, state.convert_abbrev_preedit)
     end
+
     local _, tone = part:match("([%a]+)([^%a]+)")
     if state.tone_isolate then return py .. (tone or "") end
     return py
 end
 
+-- 单音节转换总入口：T9 优先，再进入26键处理。
 local function convert_preedit_syllable(part, py, state)
     if state.is_t9 then
         return convert_t9_syllable(part, py, state)
     end
+
     return convert_alpha_syllable(part, py, state)
 end
 
+-- 完成 preedit 拆分、拼音对齐、逐音节转换和最终去声调。
 local function convert_preedit(preedit, initial_comment, state)
     local parts = split_preedit_parts(preedit, state.auto_delimiter, state.manual_delimiter)
     local pinyins = extract_pinyin_segments(initial_comment, state.comment_split_pattern)
     local pinyin_index = 1
+
     for i, part in ipairs(parts) do
         if part ~= state.auto_delimiter and part ~= state.manual_delimiter then
             local py = pinyins[pinyin_index]
@@ -162,15 +184,19 @@ local function convert_preedit(preedit, initial_comment, state)
             pinyin_index = pinyin_index + 1
         end
     end
+
     local result = table.concat(parts)
     if state.is_full_pinyin and state.has_tone then
         result = remove_pinyin_tone(result)
     end
+
     return result
 end
 
+-- ----------------------
+-- 主函数：根据优先级处理候选词的注释和preedit
+-- ----------------------
 local ZH = {}
-
 function ZH.init(env)
     local config = env.engine.schema.config
     local schema_id = env.engine.schema.schema_id
