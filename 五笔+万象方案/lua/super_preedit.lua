@@ -6,6 +6,7 @@ local SCHEME_CAPABILITIES = {
     wanxiang_zrm = {tone = true, t9 = false},
     wanxiang_pinyin = {tone = true, t9 = false},
     wanxiang_t9 = {tone = true, t9 = true},
+    lite_t9 = {tone = false, t9 = true},
 }
 
 local COMMENT_CLEAR = 0

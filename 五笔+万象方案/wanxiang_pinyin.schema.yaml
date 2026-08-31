@@ -3,7 +3,7 @@
 # 方案说明
 schema:
   schema_id: wanxiang_pinyin
-  name: 万象·拼音
+  name: 全拼·带声调
   version: "LTS"
   icon: icons/zh.ico
   ascii_icon: icons/en.ico
