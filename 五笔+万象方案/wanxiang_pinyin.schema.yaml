@@ -29,6 +29,12 @@ switches:
   - options: [ std, s2hk, s2twp ]
     states: [ 简体, 港繁, 台繁 ]
     reset: 0
+  - options: [raw_input, tone_display, full_pinyin]  #开启后在输入编码的位置实时转换为带声调全拼或者不带声调全拼
+    states: [原编码, 有声调, 无声调]
+    reset: 1
+  - options: [comment_off, tone_hint, toneless_hint]  #开启后在候选的注释里面实时显示全拼声调
+    states: [注释关, 有声调, 无声调]
+    reset: 0
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 0
@@ -82,6 +88,7 @@ engine:
     - simplifier@emoji                          # Emoji OpenCC
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
+    - lua_filter@*super_preedit                 # preedit带调显示
     - lua_filter@*multi_line                    # 支持词条多行输出
     - uniquifier                                # 去重
 
@@ -166,8 +173,7 @@ translator:
     - xform/([nl])ve/$1üe/
     - xform/([nl])ven/$1uen/
     - xform/([jqxy])v/$1u/
-  comment_format:                       # 提示码自定义
-    - xform/;([a-z]{2})//
+  comment_format:
 
 # 拼写设定
 speller:
@@ -300,3 +306,8 @@ recognizer:
     unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
     number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
     calculator: "^=.*$"                 # 计算器功能引导
+
+#super_preedit.lua配置：
+super_comment:
+  tone_isolate: true  # 是否将数字声调从转换后拼音中隔离出来（true=隔离， false 直接参与转换）例如：nǐ3
+  convert_abbrev_preedit: false  #单音节简码是否转换为全拼读音
