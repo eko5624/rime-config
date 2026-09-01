@@ -11,7 +11,6 @@ local SCHEME_CAPABILITIES = {
 local COMMENT_CLEAR = 0
 local COMMENT_TONE = 1
 local COMMENT_TONELESS = 2
-local COMMENT_NATIVE_TONELESS = 4
 
 local tone_map = {
     ['ā']='a', ['á']='a', ['ǎ']='a', ['à']='a',
@@ -225,7 +224,7 @@ function ZH.init(env)
     if env.has_tone then
         env.settings.tone_isolate = config:get_bool("super_comment/tone_isolate")
     end
-    
+
     env.tone_map = nil
     if env.has_tone and not env.is_t9 then
         env.tone_map = {}
@@ -280,8 +279,6 @@ function ZH.func(input, env)
             elseif context:get_option("toneless_hint") then
                 comment_mode = COMMENT_TONELESS
             end
-        elseif context:get_option("toneless_hint") then
-            comment_mode = COMMENT_NATIVE_TONELESS
         end
     end
 
