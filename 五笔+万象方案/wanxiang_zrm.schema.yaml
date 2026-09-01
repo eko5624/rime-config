@@ -3,7 +3,7 @@
 # 方案说明
 schema:
   schema_id: wanxiang_zrm
-  name: 自然码·五笔辅
+  name: 万象Pro·自然码
   version: "LTS"
   icon: icons/zh.ico
   ascii_icon: icons/en.ico
