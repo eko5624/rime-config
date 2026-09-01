@@ -15,8 +15,6 @@ schema:
     - 发明人 王永民
   description: |
     敲 z 键进入拼音反查
-  dependencies:
-    - wanxiang_py        # 万象拼音，反查时用
 
 switches:
   - name: emoji
