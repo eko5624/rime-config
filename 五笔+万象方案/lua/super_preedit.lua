@@ -123,6 +123,7 @@ end
 -- false：简码保留；true：简码直接转换为完整拼音。
 local function render_abbreviation(typed, py, should_convert)
     if should_convert then return py end
+    
     local initial = get_display_initial(py)
     if initial == "zh" or initial == "ch" or initial == "sh" then
         return initial
@@ -224,6 +225,7 @@ function ZH.init(env)
     if env.has_tone then
         env.settings.tone_isolate = config:get_bool("super_comment/tone_isolate")
     end
+    
     env.tone_map = nil
     if env.has_tone and not env.is_t9 then
         env.tone_map = {}
