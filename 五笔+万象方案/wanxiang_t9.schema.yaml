@@ -20,7 +20,7 @@ switches:
     reset: 0
   - options: [ raw_input, tone_display, full_pinyin ]  #开启后在输入编码的位置实时转换为带声调全拼或者不带声调全拼
     states: [ 原编码, 有声调, 无声调 ]
-    reset: 1
+    reset: 2
   - options: [ comment_off, tone_hint, toneless_hint ]  #开启后在候选的注释里面实时显示全拼声调
     states: [ 注释关, 有声调, 无声调 ]
     reset: 0
