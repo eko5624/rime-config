@@ -4,6 +4,8 @@
 
 local SCHEME_CAPABILITIES = {
     wanxiang_zrm = {tone = true, t9 = false},
+    wanxiang_zrm_18keys = {tone = true, t9 = false},
+    wanxiang_zrm_14keys = {tone = true, t9 = false},
     wanxiang_pinyin = {tone = true, t9 = false},
     wanxiang_t9 = {tone = true, t9 = true},
 }
