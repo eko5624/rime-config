@@ -18,7 +18,7 @@
         {"type":"AlphabetKey","main":"S","alt":"*","displayText":"S"},
         {"type":"AlphabetKey","main":"d","alt":"#","displayText":"D"},
         {"type":"AlphabetKey","main":"f","alt":"@","displayText":"F"},
-        {"type":"AlphabetKey","main":"G","alt":"/","displayText":"G"},
+        {"type":"AlphabetKey","main":"G","alt":"%","displayText":"G"},
         {"type":"AlphabetKey","main":"H","alt":"'"},
         {"type":"AlphabetKey","main":"J","alt":"\""},
         {"type":"AlphabetKey","main":"K","alt":"(","displayText":"K"},
@@ -38,13 +38,25 @@
       [
         {"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
         {"type":"CommaKey","weight":0.12,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
-        {"type":"LanguageKey","weight":0.12,"composeOverride":{"altLabel":"Esc","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:barColor"},
+        {"type":"LanguageKey","weight":0.12,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
         {"type":"SpaceKey","weight":0.0},
-        {"type":"SymbolKey","weight":0.12,"label":"。","swipe":{"macro":[{"type":"layer","mode":"back","target":""}]},"composeOverride":{"label":"3","type":"NumPadKey","sym":65459,"independentColor":true}},
+        {"type":"SymbolKey","label":"。","swipeLabel":"/","weight":0.12,"swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"slash"}]}]},"composeOverride":{"label":"3","type":"NumPadKey","sym":65459,"independentColor":true}},
         {"type":"ReturnKey","weight":0.15}
       ]
     ],
     "wanxiang_zrm_18keys": [
+      [
+        {"type":"NumPadKey","label":"1","sym":"KP_1"},
+        {"type":"NumPadKey","label":"2","sym":"KP_2"},
+        {"type":"NumPadKey","label":"3","sym":"KP_3"},
+        {"type":"NumPadKey","label":"4","sym":"KP_4"},
+        {"type":"NumPadKey","label":"5","sym":"KP_5"},
+        {"type":"NumPadKey","label":"6","sym":"KP_6"},
+        {"type":"NumPadKey","label":"7","sym":"KP_7"},
+        {"type":"NumPadKey","label":"8","sym":"KP_8"},
+        {"type":"NumPadKey","label":"9","sym":"KP_9"},
+        {"type":"NumPadKey","label":"0","sym":"KP_0"}
+      ],
       [
         {"type":"AlphabetKey","main":"Q","alt":"`","displayText":"Q","weight":0.14,"rowHeightPercent":21.1},
         {"type":"AlphabetKey","main":"W","alt":"\"","displayText":"w e","weight":0.14},
@@ -74,9 +86,9 @@
       [
         {"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
         {"type":"CommaKey","weight":0.12,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
-        {"type":"LanguageKey","weight":0.12,"composeOverride":{"altLabel":"Esc","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:barColor"},
+        {"type":"LanguageKey","weight":0.12,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","independentColor":false},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
         {"type":"SpaceKey","weight":0.0},
-        {"type":"SymbolKey","weight":0.12,"label":"。","swipe":{"macro":[{"type":"layer","mode":"back","target":""}]},"composeOverride":{"label":"3","type":"NumPadKey","sym":65459,"independentColor":true}},
+        {"type":"SymbolKey","label":"。","swipeLabel":"/","weight":0.12,"swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"slash"}]}]},"composeOverride":{"label":"3","type":"NumPadKey","sym":65459,"independentColor":true}},
         {"type":"ReturnKey","weight":0.15}
       ]
     ],
