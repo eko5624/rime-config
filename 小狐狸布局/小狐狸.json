@@ -140,11 +140,10 @@
             },
             [
               { "ref": "foxy.Shift", "weight": 1.5, "override": { "keyType": "FUNCTION", "icon": "shift", "swipe": { "up": { "ref": "qwerty.layout.up" } }, "longPress": { "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } } } },
-              { "ref": "qwerty.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "label": "符号" }, "down": { "label": "" } }, "longPress": { "action": { "type": "switch_layout", "layout": "symbols" } },
-              { "ref": "qwerty.x", "weight": 1.4, "override": { "label": "X C", "swipe": { "up": { "label": "全选" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.SelectAll" } },
-              { "ref": "qwerty.v", "weight": 1.4, "override": { "label": "V", "swipe": { "up": { "label": "复制" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Copy" } },
-              { "ref": "qwerty.b", "weight": 1.4, "override": { "label": "B N", "swipe": { "up": { "label": "粘贴" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Paste" } },
-              { "ref": "qwerty.m", "weight": 1.4, "override": { "label": "M", "swipe": { "up": { "label": "剪切" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Cut" } },
+              { "ref": "qwerty.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "label": "符号" }, "down": { "label": "" } }, "longPress": { "action": { "type": "switch_layout", "layout": "symbols" } } } },
+              { "ref": "qwerty.x", "weight": 1.4, "override": { "label": "X C", "swipe": { "up": { "label": "全选" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.SelectAll" } } },
+              { "ref": "qwerty.v", "weight": 1.4, "override": { "label": "V", "swipe": { "up": { "label": "复制" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Copy" } } },
+              { "ref": "qwerty.b", "weight": 1.4, "override": { "label": "B N", "swipe": { "up": { "label": "粘贴" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Paste" } } },
               { "ref": "qwerty.backspace", "weight": 1.5 }
             ],
             [
