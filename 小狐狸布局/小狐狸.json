@@ -1,44 +1,443 @@
 {
   "keys": {
-    "qwerty.q": { "ref": "rime.q", "swipe": { "up": { "ref": "rime.1" } } },
-    "qwerty.w": { "ref": "rime.w", "swipe": { "up": { "ref": "rime.2" } } },
-    "qwerty.e": { "ref": "rime.e", "swipe": { "up": { "ref": "rime.3" } } },
-    "qwerty.r": { "ref": "rime.r", "swipe": { "up": { "ref": "rime.4" } } },
-    "qwerty.t": { "ref": "rime.t", "swipe": { "up": { "ref": "rime.5" } } },
-    "qwerty.y": { "ref": "rime.y", "swipe": { "up": { "ref": "rime.6" } } },
-    "qwerty.u": { "ref": "rime.u", "swipe": { "up": { "ref": "rime.7" } } },
-    "qwerty.i": { "ref": "rime.i", "swipe": { "up": { "ref": "rime.8" } } },
-    "qwerty.o": { "ref": "rime.o", "swipe": { "up": { "ref": "rime.9" } } },
-    "qwerty.p": { "ref": "rime.p", "swipe": { "up": { "ref": "rime.0" } } },
-    "qwerty.a": { "ref": "rime.a", "swipe": { "up": { "ref": "rime.at" } } },
-    "qwerty.s": { "ref": "rime.s", "swipe": { "up": { "ref": "rime.asciicircum" } } },
-    "qwerty.d": { "ref": "rime.d", "swipe": { "up": { "ref": "rime.numbersign" } } },
-    "qwerty.f": { "ref": "rime.f", "swipe": { "up": { "ref": "rime.asterisk" } } },
-    "qwerty.g": { "ref": "rime.g", "swipe": { "up": { "ref": "rime.KP_Add" } } },
-    "qwerty.h": { "ref": "rime.h", "swipe": { "up": { "ref": "rime.minus" } } },
-    "qwerty.j": { "ref": "rime.j", "swipe": { "up": { "ref": "rime.backslash" } } },
-    "qwerty.k": { "ref": "rime.k", "swipe": { "up": { "ref": "rime.parenleft" } } },
-    "qwerty.l": { "ref": "rime.l", "swipe": { "up": { "ref": "rime.parenright" } } },
-    "qwerty.z": { "ref": "rime.z", "swipe": { "up": { "ref": "rime.grave" }, "down": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } } } },
-    "qwerty.x": { "ref": "rime.x", "swipe": { "up": { "ref": "rime.ApostropheShift" }, "down": { "label": "表情", "action": { "type": "switch_layout", "layout": "emoji" } } } },
-    "qwerty.c": { "ref": "rime.c", "swipe": { "up": { "ref": "rime.dollar" }, "down": { "label": "颜文字", "action": { "type": "switch_layout", "layout": "kaomoji" } } } },
-    "qwerty.v": { "ref": "rime.v", "swipe": { "up": { "ref": "rime.semicolon" }, "down": { "label": "粘贴", "ref": "foxy.Paste" } } },
-    "qwerty.b": { "ref": "rime.b", "swipe": { "up": { "ref": "rime.percent" }, "down": { "label": "全选", "ref": "foxy.SelectAll" } } },
-    "qwerty.n": { "ref": "rime.n", "swipe": { "up": { "ref": "rime.colon" }, "down": { "label": "撤销", "ref": "foxy.Undo" } } },
-    "qwerty.m": { "ref": "rime.m", "swipe": { "up": { "ref": "rime.ampersand" }, "down": { "label": "重做", "ref": "foxy.Redo" } } },
-    "qwerty.backspace.up": { "label": "清空", "tap": { "macro": "clear_all" } },
-    "qwerty.backspace": { "ref": "rime.BackSpace", "keyType": "FUNCTION", "swipe": { "up": { "ref": "qwerty.backspace.up" } }, "longPress": { "repeat": true, "action": { "type": "key", "key": "BACKSPACE" } } },
-    "qwerty.layout.up": { "label": "Tab", "tap": { "ref": "rime.Tab" } },
-    "qwerty.layout": { "ref": "foxy.LayoutNumpad", "tap": { "action": { "type": "switch_layout", "layout": "numpad" } }, "textSize": 15 },
-    "qwerty.comma.composing": { "ref": "rime.2" },
-    "qwerty.comma": { "ref": "rime.comma", "swipe": { "up": { "ref": "rime.exclam" } }, "variants": [ { "when": { "rime": { "composing": true } }, "label": "2", "tap": {"ref": "qwerty.comma.composing"} } ] },
-    "qwerty.space": { "ref": "rime.space", "statusLabel": { "source": "schema_name" }, "tap": { "ref": "rime.space" }, "swipe": { "up": { "ref": "rime.Up", "label": "" }, "down": { "ref": "rime.Down", "label": "" }, "left": { "ref": "rime.Left", "label": "" }, "right": { "ref": "rime.Right", "label": "" } }, "hold": { "start": { "type": "app", "command": "voice_start" }, "end": { "type": "app", "command": "voice_stop" } }, "textSize": 14 },
+      "num.1": {
+      "ref": "rime.1",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.1", "label": " ! " } },
+      "longPress": { "ref": "rime.exclam" }
+    },
+    "num.2": {
+      "ref": "rime.2",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.2", "label": " @ " } },
+      "longPress": { "ref": "rime.at" }
+    },
+    "num.3": {
+      "ref": "rime.3",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.3", "label": " # " } },
+      "longPress": { "ref": "rime.numbersign" }
+    },
+    "num.4": {
+      "ref": "rime.4",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.4", "label": " $ " } },
+      "longPress": { "ref": "rime.dollar" }
+    },
+    "num.5": {
+      "ref": "rime.5",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.5", "label": " % " } },
+      "longPress": { "ref": "rime.percent" }
+    },
+    "num.6": {
+      "ref": "rime.6",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.6", "label": " ^ " } },
+      "longPress": { "ref": "rime.asciicircum" }
+    },
+    "num.7": {
+      "ref": "rime.7",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.7", "label": " & " } },
+      "longPress": { "ref": "rime.ampersand" }
+    },
+    "num.8": {
+      "ref": "rime.8",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.8", "label": " * " } },
+      "longPress": { "ref": "rime.asterisk" }
+    },
+    "num.9": {
+      "ref": "rime.9",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.9", "label": " ( " } },
+      "longPress": { "ref": "rime.parenleft" }
+    },
+    "num.0": {
+      "ref": "rime.0",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.0", "label": " ) " } },
+      "longPress": { "ref": "rime.parenright" }
+    },
+
+
+    "qwerty.q": {
+      "ref": "rime.q",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.Q", "label": " ` " } },
+      "longPress": { "ref": "rime.grave" }
+    },
+    "qwerty.w": {
+      "ref": "rime.w",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.W", "label": " ~ " } },
+      "longPress": { "ref": "rime.asciitilde" }
+    },
+    "qwerty.e": {
+      "ref": "rime.e",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.E", "label": " + " } },
+      "longPress": { "ref": "rime.plus" }
+    },
+    "qwerty.r": {
+      "ref": "rime.r",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.R", "label": " - " } },
+      "longPress": { "ref": "rime.minus" }
+    },
+    "qwerty.t": {
+      "ref": "rime.t",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.T", "label": " = " } },
+      "longPress": { "ref": "rime.equal" }
+    },
+    "qwerty.y": {
+      "ref": "rime.y",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.Y", "label": " _ " } },
+      "longPress": { "ref": "rime.underscore" }
+    },
+    "qwerty.u": {
+      "ref": "rime.u",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.U", "label": " { " } },
+      "longPress": { "ref": "rime.braceleft" }
+    },
+    "qwerty.i": {
+      "ref": "rime.i",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.I", "label": " } " } },
+      "longPress": { "ref": "rime.braceright" }
+    },
+    "qwerty.o": {
+      "ref": "rime.o",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.O", "label": " [ " } },
+      "longPress": { "type": "key", "key": "LEFT_BRACKET" }
+    },
+    "qwerty.p": {
+      "ref": "rime.p",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.P", "label": " ] " } },
+      "longPress": { "type": "key", "key": "RIGHT_BRACKET" }
+    },
+
+
+    "qwerty.a": {
+      "ref": "rime.a",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.A", "label": " \\ " } },
+      "longPress": { "ref": "rime.backslash" }
+    },
+    "qwerty.s": {
+      "ref": "rime.s",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.S", "label": " | " } },
+      "longPress": { "ref": "rime.bar" }
+    },
+    "qwerty.d": {
+      "ref": "rime.d",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.D", "label": " × " } },
+      "longPress": { "type": "text", "text": "×" }
+    },
+    "qwerty.f": {
+      "ref": "rime.f",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.F", "label": " ÷ " } },
+      "longPress": { "type": "text", "text": "÷" }
+    },
+    "qwerty.g": {
+      "ref": "rime.g",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.G", "label": " ← " } },
+      "longPress": { "ref": "rime.Home", "label": "行首" }
+    },
+    "qwerty.h": {
+      "ref": "rime.h",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.H", "label": " → " } },
+      "longPress": { "ref": "rime.End", "label": "行尾" }
+    },
+    "qwerty.j": {
+      "ref": "rime.j",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.J", "label": " ↶ " } },
+      "longPress": { "ref": "foxy.Undo", "label": "撤销" }
+    },
+    "qwerty.k": {
+      "ref": "rime.k",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.K", "label": " ↷ " } },
+      "longPress": { "ref": "foxy.Redo", "label": "重做" }
+    },
+    "qwerty.l": {
+      "ref": "rime.l",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.L", "label": " ⇐ " } },
+      "longPress": { "type": "key", "key": "L", "meta": ["CTRL"], "label": "回改" }
+    },
+    "qwerty.semicolon": {
+      "ref": "rime.semicolon",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.colon", "label": " : " } }
+    },
+
+
+    "qwerty.shift": {
+      "ref": "foxy.Shift",
+      "weight": 1.5,
+      "keyType": "FUNCTION",
+      "icon": "shift",
+      "longPress": { "label": "⇪", "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } },
+      "variants": [
+        { "when": { "rime": { "composing": true } }, "label": " Tab ", "icon": null, "modifier": null, "ref": "rime.Tab" }
+      ]
+    },
+    "qwerty.z": {
+      "ref": "rime.z",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.Z", "label": " 全选 " } },
+      "longPress": { "ref": "foxy.SelectAll" }
+    },
+    "qwerty.x": {
+      "ref": "rime.x",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.X", "label": " 剪切 " } },
+      "longPress": { "ref": "foxy.Cut" }
+    },
+    "qwerty.c": {
+      "ref": "rime.c",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.C", "label": " 复制 " } },
+      "longPress": { "ref": "foxy.Copy" }
+    },
+    "qwerty.v": {
+      "ref": "rime.v",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.V", "label": " 粘贴 " } },
+      "longPress": { "ref": "foxy.Paste" }
+    },
+    "qwerty.b": {
+      "ref": "rime.b",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.B", "label": " " } }
+    },
+    "qwerty.n": {
+      "ref": "rime.n",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.N", "label": " ️💠 " } },
+      "longPress": { "ref": "qwerty.editor" }
+    },
+    "qwerty.data_directory": {
+      "label": "方案目录",
+      "tap": { "action": { "type": "app", "command": "data_directory_list" } }
+    },
+    "qwerty.m": {
+      "ref": "rime.m",
+      "keyType": "LETTER",
+      "swipe": { "up": { "ref": "rime.M", "label": " 🍀 " } },
+      "longPress": { "ref": "qwerty.data_directory" }
+    },
+    "qwerty.backspace.up": {
+      "label": "清空",
+      "tap": { "macro": "clear_all" }
+    },
+    "qwerty.backspace": {
+      "ref": "rime.BackSpace",
+      "keyType": "FUNCTION",
+      "swipe": { "up": { "ref": "qwerty.backspace.up" } },
+      "longPress": { "repeat": true, "action": { "type": "key", "key": "BACKSPACE" } }
+    },
+
+
+    "qwerty.layout.up": {
+      "label": "Tab",
+      "tap": { "ref": "rime.Tab" }
+    },
+    "qwerty.layout": {
+      "ref": "foxy.LayoutNumpad",
+      "weight": 1.5,
+      "keyType": "FUNCTION",
+      "tap": { "action": { "type": "switch_layout", "layout": "numpad" } },
+      "textSize": 15
+    },
+    "qwerty.comma.composing": {"ref": "rime.2" },
+    "qwerty.comma": {
+      "ref": "rime.comma",
+      "swipe": { "up": { "ref": "rime.exclam" } },
+      "variants": [
+        {
+          "when": { "rime": { "composing": true } },
+          "label": "2",
+          "tap": { "ref": "qwerty.comma.composing" }
+        }
+      ]
+    },
+    "qwerty.space": {
+      "ref": "rime.space",
+      "statusLabel": { "source": "schema_name" },
+      "tap": { "ref": "rime.space" },
+      "swipe": { "up": { "ref": "rime.Up", "label": "" }, "down": { "ref": "rime.Down", "label": "" }, "left": { "ref": "rime.Left", "label": "" }, "right": { "ref": "rime.Right", "label": "" } },
+      "hold": { "start": { "type": "app", "command": "voice_start" }, "end": { "type": "app", "command": "voice_stop" } },
+      "textSize": 14
+    },
     "qwerty.period.composing": { "ref": "rime.3" },
-    "qwerty.period": { "ref": "rime.period", "swipe": { "up": { "ref": "rime.Question" } }, "variants": [ { "when": { "rime": { "composing": true } }, "label": "3", "tap": {"ref": "qwerty.period.composing"} } ] },
-    "qwerty.slash": { "ref": "rime.slash", "swipe": { "up": { "ref": "rime.apostrophe" } } },
-    "qwerty.enter": { "ref": "rime.Return", "keyType": "ACTION", "icon": "enter" },
-    "qwerty.lang.composing": { "ref": "rime.Escape", "label": "⎋" }
+    "qwerty.period": {
+      "ref": "rime.period",
+      "swipe": { "up": { "ref": "rime.Question" } },
+      "variants": [
+        {
+          "when": { "rime": { "composing": true } },
+          "label": "3",
+          "tap": {"ref": "qwerty.period.composing"}
+        }
+      ]
+    },
+    "qwerty.slash": {
+      "ref": "rime.slash",
+      "swipe": { "up": { "ref": "rime.apostrophe" } }
+    },
+    "qwerty.enter": {
+      "ref": "rime.Return",
+      "weight": 1.5,
+      "keyType": "ACTION",
+      "icon": "enter",
+      "swipe": {
+        "up": { "label": "上屏", "type": "key", "key": "ENTER", "meta": ["CTRL"] } }
+    },
+    "qwerty.lang.composing": { "ref": "rime.Escape", "label": "⎋" },
+
+
+    "qwerty.editor": {
+      "label": "编辑",
+      "textSize": 16,
+      "keyType": "FUNCTION",
+      "weight": 1.5,
+      "tap": { "type": "switch_layout", "layout": "editor" }
+    },
+    "editor.default": {
+      "ref": "foxy.LayoutDefault",
+      "label": "ABC",
+      "textSize": 16,
+      "keyType": "FUNCTION"
+    },
+    "editor.escape": {
+      "label": "Esc",
+      "textSize": 16,
+      "tap": { "type": "key", "key": "ESCAPE" }
+    },
+    "editor.home": {
+      "label": "HOME",
+      "textSize": 16,
+      "tap": { "ref": "rime.Home" }
+    },
+    "editor.end": {
+      "label": "End",
+      "textSize": 16,
+      "tap": { "ref": "rime.End" }
+    },
+    "editor.pageUp": {
+      "label": "PgUp",
+      "textSize": 16,
+      "tap": { "ref": "rime.Page_Up" }
+    },
+    "editor.pageDown": {
+      "label": "PgDn",
+      "textSize": 16,
+      "tap": { "ref": "rime.Page_Down" }
+    },
+    "editor.delete": {
+      "label": "Del",
+      "textSize": 16,
+      "tap": { "ref": "rime.Delete" }
+    },
+    "editor.selectAll": {
+      "ref": "foxy.SelectAll",
+      "label": "全选",
+      "textSize": 16
+    },
+    "editor.selectLeft": {
+      "label": "选←",
+      "textSize": 16,
+      "tap": { "type": "key", "key": "LEFT", "meta": ["SHIFT"] }
+    },
+    "editor.selectDown": {
+      "label": "选↓",
+      "textSize": 16,
+      "tap": { "type": "key", "key": "DOWN", "meta": ["SHIFT"] }
+    },
+    "editor.selectUp": {
+      "label": "选↑",
+      "textSize": 16,
+      "tap": { "type": "key", "key": "UP", "meta": ["SHIFT"] }
+    },
+    "editor.selectRight": {
+      "label": "选→",
+      "textSize": 16,
+      "tap": { "type": "key", "key": "RIGHT", "meta": ["SHIFT"] }
+    },
+    "editor.left": {
+      "label": "←",
+      "textSize": 16,
+      "tap": { "ref": "rime.Left" }
+    },
+    "editor.down": {
+      "label": "↓",
+      "textSize": 16,
+      "tap": { "ref": "rime.Down" }
+    },
+    "editor.up": {
+      "label": "↑",
+      "textSize": 16,
+      "tap": { "ref": "rime.Up" }
+    },
+    "editor.right": {
+      "label": "→",
+      "textSize": 16,
+      "tap": { "ref": "rime.Right" }
+    },
+    "editor.insert": {
+      "label": "Ins",
+      "textSize": 16,
+      "tap": { "ref": "rime.Insert" }
+    },
+    "editor.undo": {
+      "ref": "foxy.Undo",
+      "label": "撤销",
+      "textSize": 16
+    },
+    "editor.redo": {
+      "ref": "foxy.Redo",
+      "label": "重做",
+      "textSize": 16
+    },
+    "editor.cut": {
+      "ref": "foxy.Cut",
+      "label": "剪切",
+      "textSize": 16
+    },
+    "editor.copy": {
+      "ref": "foxy.Copy",
+      "label": "复制",
+      "textSize": 16
+    },
+    "editor.paste": {
+      "ref": "foxy.Paste",
+      "label": "粘贴",
+      "textSize": 16
+    },
+    "editor.backspace": {
+      "ref": "rime.BackSpace",
+      "label": "⌫",
+      "textSize": 16,
+      "keyType": "FUNCTION",
+      "icon": "backspace"
+    }
   },
+
+
   "actions": {
     "select_all": {
       "type": "key",
@@ -56,6 +455,8 @@
       { "action": "delete" }
     ]
   },
+
+
   "layouts": {
     "default": {
       "sections": [
@@ -63,49 +464,108 @@
           "type": "rows",
           "rows": [
             [
-              { "ref": "qwerty.q", "override": { "label": "Q" } },
-              { "ref": "qwerty.w", "override": { "label": "W" } },
-              { "ref": "qwerty.e", "override": { "label": "E" } },
-              { "ref": "qwerty.r", "override": { "label": "R" } },
-              { "ref": "qwerty.t", "override": { "label": "T" } },
-              { "ref": "qwerty.y", "override": { "label": "Y" } },
-              { "ref": "qwerty.u", "override": { "label": "U" } },
-              { "ref": "qwerty.i", "override": { "label": "I" } },
-              { "ref": "qwerty.o", "override": { "label": "O" } },
-              { "ref": "qwerty.p", "override": { "label": "P" } }
+              {
+                "ref": "qwerty.q",
+                "override": {
+                  "label": "Q",
+                  "swipe": { "up": { "ref": "rime.1", "label": " 1 " }, "down": { "ref": "rime.grave", "label": " ` " } }
+                }
+              },
+              {
+                "ref": "qwerty.w",
+                "override": {
+                  "label": "W",
+                  "swipe": { "up": { "ref": "rime.2", "label": " 2 " }, "down": { "ref": "rime.asciitilde", "label": " ~ " } }
+                }
+              },
+              {
+                "ref": "qwerty.e",
+                "override": {
+                  "label": "E",
+                  "swipe": { "up": { "ref": "rime.3", "label": " 3 " }, "down": { "ref": "rime.plus", "label": " + " } }
+                }
+              },
+              {
+                "ref": "qwerty.r",
+                "override": {
+                  "label": "R",
+                  "swipe": { "up": { "ref": "rime.4", "label": " 4 " }, "down": { "ref": "rime.minus", "label": " - " } }
+                }
+              },
+              {
+                "ref": "qwerty.t",
+                "override": {
+                  "label": "T",
+                  "swipe": { "up": { "ref": "rime.5", "label": " 5 " }, "down": { "ref": "rime.equal", "label": " = " } }
+                }
+              },
+              {
+                "ref": "qwerty.y",
+                "override": {
+                  "label": "Y",
+                  "swipe": { "up": { "ref": "rime.6", "label": " 6 " }, "down": { "ref": "rime.underscore", "label": " _ " } }
+                }
+              },
+              {
+                "ref": "qwerty.u",
+                "override": {
+                  "label": "U",
+                  "swipe": { "up": { "ref": "rime.7", "label": " 7 " }, "down": { "ref": "rime.braceleft", "label": " { " } }
+                }
+              },
+              {
+                "ref": "qwerty.i",
+                "override": {
+                  "label": "I",
+                  "swipe": { "up": { "ref": "rime.8", "label": " 8 " }, "down": { "ref": "rime.braceright", "label": " } " } }
+                }
+              },
+              {
+                "ref": "qwerty.o",
+                "override": {
+                  "label": "O",
+                  "swipe": { "up": { "ref": "rime.9", "label": " 9 " }, "down": { "ref": "rime.bracketleft", "label": " [ " } }
+                }
+              },
+              {
+                "ref": "qwerty.p",
+                "override": {
+                  "label": "P",
+                  "swipe": { "up": { "ref": "rime.0", "label": " 0 " }, "down": { "ref": "rime.bracketright", "label": " ] " } }
+                }
+              }
             ],
-            { "width": 0.9, "keys":
-              [
-                { "ref": "qwerty.a", "override": { "label": "A" } },
-                { "ref": "qwerty.s", "override": { "label": "S" } },
-                { "ref": "qwerty.d", "override": { "label": "D" } },
-                { "ref": "qwerty.f", "override": { "label": "F" } },
-                { "ref": "qwerty.g", "override": { "label": "G" } },
-                { "ref": "qwerty.h", "override": { "label": "H" } },
-                { "ref": "qwerty.j", "override": { "label": "J" } },
-                { "ref": "qwerty.k", "override": { "label": "K" } },
-                { "ref": "qwerty.l", "override": { "label": "L" } }
-              ]
-            },
+            [
+              { "ref": "qwerty.a", "override": { "label": "A", "swipe": { "up": { "ref": "rime.at", "label": " @ " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.s", "override": { "label": "S", "swipe": { "up": { "ref": "rime.numbersign", "label": " # " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.d", "override": { "label": "D", "swipe": { "up": { "ref": "rime.dollar", "label": " $ " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.f", "override": { "label": "F", "swipe": { "up": { "ref": "rime.percent", "label": " % " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.g", "override": { "label": "G", "swipe": { "up": { "ref": "rime.asciicircum", "label": " ^ " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.h", "override": { "label": "H", "swipe": { "up": { "ref": "rime.ampersand", "label": " & " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.j", "override": { "label": "J", "swipe": { "up": { "ref": "rime.asterisk", "label": " * " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.k", "override": { "label": "K", "swipe": { "up": { "ref": "rime.parenleft", "label": " ( " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.l", "override": { "label": "L", "swipe": { "up": { "ref": "rime.parenright", "label": " ) " }, "down": { "label": "" } } } },
+              { "ref": "qwerty.semicolon" }
+            ],
            [
-             { "ref": "foxy.Shift", "weight": 1.5, "override": { "keyType": "FUNCTION", "icon": "shift", "swipe": { "up": { "ref": "qwerty.layout.up" } }, "longPress": { "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } } } },
+             { "ref": "qwerty.shift", "override": { "swipe": { "up": { "type": "key", "key": "TAB", "meta": ["SHIFT"], "label": " " }, "down": { "ref": "rime.Page_Down", "label": " " } } } },
              { "ref": "qwerty.z", "override": { "label": "Z" } },
              { "ref": "qwerty.x", "override": { "label": "X" } },
              { "ref": "qwerty.c", "override": { "label": "C" } },
              { "ref": "qwerty.v", "override": { "label": "V" } },
-             { "ref": "qwerty.b", "override": { "label": "B" } },
+             { "ref": "qwerty.b", "override": { "label": "B", "swipe": { "up": { "label": "符号" }, "down": { "label": "" } }, "longPress": { "action": { "type": "switch_layout", "layout": "symbols" } } } },
              { "ref": "qwerty.n", "override": { "label": "N" } },
              { "ref": "qwerty.m", "override": { "label": "M" } },
              { "ref": "qwerty.backspace", "weight": 1.5 }
             ],
             [
-              { "ref": "qwerty.layout", "weight": 1.5 },
+              { "ref": "qwerty.layout" },
               { "ref": "rime.Shift_L", "weight": 1.1, "override": { "label": "🌐", "variants": [ { "when": { "rime": { "composing": true } }, "tap": {"ref": "qwerty.lang.composing"}, "label": "⎋" } ] } },
               { "ref": "qwerty.comma", "weight": 0.9 },
               { "ref": "qwerty.space", "weight": 3.0 },
               { "ref": "qwerty.period", "weight": 0.9 },
               { "ref": "qwerty.slash", "weight": 1.1 },
-              { "ref": "qwerty.enter", "weight": 1.5 }
+              { "ref": "qwerty.enter" }
             ]
           ]
         }
@@ -139,26 +599,67 @@
               ]
             },
             [
-              { "ref": "foxy.Shift", "weight": 1.5, "override": { "keyType": "FUNCTION", "icon": "shift", "swipe": { "up": { "ref": "qwerty.layout.up" } }, "longPress": { "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } } } },
+              { "ref": "qwerty.shift", "override": { "swipe": { "up": { "type": "key", "key": "TAB", "meta": ["SHIFT"], "label": " " }, "down": { "ref": "rime.Page_Down", "label": " " } } } },
               { "ref": "qwerty.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "label": "符号" }, "down": { "label": "" } }, "longPress": { "action": { "type": "switch_layout", "layout": "symbols" } } } },
               { "ref": "qwerty.x", "weight": 1.4, "override": { "label": "X C", "swipe": { "up": { "label": "全选" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.SelectAll" } } },
               { "ref": "qwerty.v", "weight": 1.4, "override": { "label": "V", "swipe": { "up": { "label": "复制" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Copy" } } },
               { "ref": "qwerty.b", "weight": 1.4, "override": { "label": "B N", "swipe": { "up": { "label": "粘贴" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Paste" } } },
+              { "ref": "qwerty.m", "weight": 1.4, "override": { "label": "M", "swipe": { "up": { "label": "剪切" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Cut" } } },
               { "ref": "qwerty.backspace", "weight": 1.5 }
             ],
             [
-              { "ref": "qwerty.layout", "weight": 1.5 },
+              { "ref": "qwerty.layout" },
               { "ref": "rime.Shift_L", "weight": 1.1, "override": { "label": "🌐", "variants": [ { "when": { "rime": { "composing": true } }, "tap": {"ref": "qwerty.lang.composing"}, "label": "⎋" } ] } },
               { "ref": "qwerty.comma", "weight": 0.9 },
               { "ref": "qwerty.space", "weight": 3.0 },
               { "ref": "qwerty.period", "weight": 0.9 },
               { "ref": "qwerty.slash", "weight": 1.1 },
-              { "ref": "qwerty.enter", "weight": 1.5 }
+              { "ref": "qwerty.enter" }
             ]
           ]
         }
       ]
     },
+    "editor": {
+      "sections": [
+        {
+          "type": "rows",
+          "rows": [
+            [
+              { "ref": "editor.escape" },
+              { "ref": "editor.home" },
+              { "ref": "editor.up" },
+              { "ref": "editor.end" },
+              { "ref": "editor.delete" }
+            ],
+            [
+              { "ref": "editor.selectAll" },
+              { "ref": "editor.selectLeft" },
+              { "ref": "editor.selectDown" },
+              { "ref": "editor.selectUp" },
+              { "ref": "editor.selectRight" }
+            ],
+            [
+              { "ref": "editor.pageUp" },
+              { "ref": "editor.left" },
+              { "ref": "editor.down" },
+              { "ref": "editor.right" },
+              { "ref": "editor.pageDown" }
+            ],
+            [
+              { "ref": "editor.default" },
+              { "ref": "editor.insert" },
+              { "ref": "editor.undo" },
+              { "ref": "editor.redo" },
+              { "ref": "editor.cut" },
+              { "ref": "editor.copy" },
+              { "ref": "editor.paste" },
+              { "ref": "editor.backspace" }
+            ]
+          ]
+        }
+      ]
+    },    
     "numpad": {
       "sections": [
         {
