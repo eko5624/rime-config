@@ -199,25 +199,25 @@
       "ref": "rime.z",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.Z", "label": " 全选 " } },
-      "longPress": { "ref": "foxy.SelectAll" }
+      "longPress": { "ref": "foxy.SelectAll", "popup": false }
     },
     "qwerty.x": {
       "ref": "rime.x",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.X", "label": " 剪切 " } },
-      "longPress": { "ref": "foxy.Cut" }
+      "longPress": { "ref": "foxy.Cut", "popup": false }
     },
     "qwerty.c": {
       "ref": "rime.c",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.C", "label": " 复制 " } },
-      "longPress": { "ref": "foxy.Copy" }
+      "longPress": { "ref": "foxy.Copy", "popup": false }
     },
     "qwerty.v": {
       "ref": "rime.v",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.V", "label": " 粘贴 " } },
-      "longPress": { "ref": "foxy.Paste" }
+      "longPress": { "ref": "foxy.Paste", "popup": false }
     },
     "qwerty.b": {
       "ref": "rime.b",
@@ -601,10 +601,10 @@
             [
               { "ref": "qwerty.shift", "override": { "swipe": { "up": { "type": "key", "key": "TAB", "meta": ["SHIFT"], "label": " " }, "down": { "ref": "rime.Page_Down", "label": " " } } } },
               { "ref": "qwerty.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "label": "符号" }, "down": { "label": "" } }, "longPress": { "action": { "type": "switch_layout", "layout": "symbols" } } } },
-              { "ref": "qwerty.x", "weight": 1.4, "override": { "label": "X C", "swipe": { "up": { "label": "全选" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.SelectAll" } } },
-              { "ref": "qwerty.v", "weight": 1.4, "override": { "label": "V", "swipe": { "up": { "label": "复制" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Copy" } } },
-              { "ref": "qwerty.b", "weight": 1.4, "override": { "label": "B N", "swipe": { "up": { "label": "粘贴" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Paste" } } },
-              { "ref": "qwerty.m", "weight": 1.4, "override": { "label": "M", "swipe": { "up": { "label": "剪切" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Cut" } } },
+              { "ref": "qwerty.x", "weight": 1.4, "override": { "label": "X C", "swipe": { "up": { "label": "全选" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.SelectAll", "popup": false } } },
+              { "ref": "qwerty.v", "weight": 1.4, "override": { "label": "V", "swipe": { "up": { "label": "复制" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Copy", "popup": false } } },
+              { "ref": "qwerty.b", "weight": 1.4, "override": { "label": "B N", "swipe": { "up": { "label": "粘贴" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Paste", "popup": false } } },
+              { "ref": "qwerty.m", "weight": 1.4, "override": { "label": "M", "swipe": { "up": { "label": "剪切" }, "down": { "label": "" } }, "longPress": { "ref": "foxy.Cut", "popup": false } } },
               { "ref": "qwerty.backspace", "weight": 1.5 }
             ],
             [
