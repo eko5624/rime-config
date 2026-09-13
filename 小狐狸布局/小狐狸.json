@@ -520,7 +520,7 @@
           "type": "rows",
           "rows": [
             {
-              "height": 0.6,
+              "height": 0.7,
               "keys": [
                 { "ref": "rime.1" },
                 { "ref": "rime.2" },
@@ -535,7 +535,7 @@
               ]
             },
             {
-              "height": 1.1,
+              "height": 1.075,
               "keys": [
                 { "ref": "rime.q", "override": { "label": "Q", "swipe": { "up": { "ref": "rime.grave" } } } },
                 { "ref": "rime.w", "override": { "label": "W E", "swipe": { "up": { "ref": "rime.ApostropheShift" } } } },
@@ -547,7 +547,7 @@
               ]
             },
             {
-              "height": 1.1,
+              "height": 1.075,
               "width": 0.85,
               "keys": [
                 { "ref": "rime.a", "override": { "label": "A", "swipe": { "up": { "ref": "rime.at" } } } },
@@ -559,7 +559,7 @@
               ]
             },
             {
-              "height": 1.1,
+              "height": 1.075,
               "keys": [
                 { "ref": "qwerty.shift", "override": { "swipe": { "up": { "type": "key", "key": "TAB", "meta": ["SHIFT"], "label": " " }, "down": { "ref": "rime.Page_Down", "label": " " } } } },
                 { "ref": "rime.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "label": "符号" } }, "longPress": { "action": { "type": "switch_layout", "layout": "symbols" } } } },
@@ -571,7 +571,7 @@
               ],
             },
             {
-              "height": 1.1,
+              "height": 1.075,
               "keys": [
                 { "ref": "qwerty.layout" },
                 { "ref": "rime.Shift_L", "weight": 1.1, "override": { "label": "🌐", "variants": [ { "when": { "rime": { "composing": true } }, "tap": {"ref": "qwerty.lang.composing"}, "label": "⎋" } ] } },
