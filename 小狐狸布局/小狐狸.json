@@ -494,8 +494,8 @@
              { "ref": "rime.c", "override": { "label": "C", "swipe": { "up": { "label": "复制" } }, "longPress": { "ref": "foxy.Copy", "popup": false } } },
              { "ref": "rime.v", "override": { "label": "V", "swipe": { "up": { "label": "粘贴" } }, "longPress": { "ref": "foxy.Paste", "popup": false } } },
              { "ref": "rime.b", "override": { "label": "B", "swipe": { "up": { "label": "符号" } }, "longPress": { "action": { "type": "switch_layout", "layout": "symbols" } } } },
-             { "ref": "rime.n", "override": { "label": "N" } },
-             { "ref": "rime.m", "override": { "label": "M" } },
+             { "ref": "qwerty.n", "override": { "label": "N" } },
+             { "ref": "qwerty.m", "override": { "label": "M" } },
              { "ref": "qwerty.backspace", "weight": 1.5 }
             ],
             [
