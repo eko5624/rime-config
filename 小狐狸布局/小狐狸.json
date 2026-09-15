@@ -500,8 +500,8 @@
             ],
             [
               { "ref": "qwerty.layout" },
-              { "ref": "rime.Shift_L", "weight": 1.1, "override": { "label": "🌐", "variants": [ { "when": { "rime": { "composing": true } }, "tap": {"ref": "qwerty.lang.composing"}, "label": "⎋" } ] } },
-              { "ref": "qwerty.comma", "weight": 0.9 },
+              { "ref": "rime.Shift_L", "weight": 1.05, "override": { "label": "🌐", "variants": [ { "when": { "rime": { "composing": true } }, "tap": {"ref": "qwerty.lang.composing"}, "label": "⎋" } ] } },
+              { "ref": "qwerty.comma", "weight": 0.95 },
               { "ref": "qwerty.space", "weight": 3.0 },
               { "ref": "qwerty.period", "weight": 0.9 },
               { "ref": "qwerty.slash", "weight": 1.1 },
@@ -574,8 +574,8 @@
               "height": 1.075,
               "keys": [
                 { "ref": "qwerty.layout" },
-                { "ref": "rime.Shift_L", "weight": 1.1, "override": { "label": "🌐", "variants": [ { "when": { "rime": { "composing": true } }, "tap": {"ref": "qwerty.lang.composing"}, "label": "⎋" } ] } },
-                { "ref": "qwerty.comma", "weight": 0.9 },
+                { "ref": "rime.Shift_L", "weight": 1.05, "override": { "label": "🌐", "variants": [ { "when": { "rime": { "composing": true } }, "tap": {"ref": "qwerty.lang.composing"}, "label": "⎋" } ] } },
+                { "ref": "qwerty.comma", "weight": 0.95 },
                 { "ref": "qwerty.space", "weight": 3.0 },
                 { "ref": "qwerty.period", "weight": 0.9 },
                 { "ref": "qwerty.slash", "weight": 1.1 },
