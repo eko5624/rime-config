@@ -74,7 +74,7 @@
           {"type":"AlphabetKey","main":"U","alt":":","displayText":"U","weight":0.14},
           {"type":"AlphabetKey","main":"I","alt":"?","displayText":"I O","weight":0.14},
           {"type":"AlphabetKey","main":"P","alt":"\\","displayText":"P","weight":0.14}
-        ]
+        ],
         [
           {"type":"AlphabetKey","main":"A","alt":"@","displayText":"A","weight":0.14,"rowHeightPercent":21.1},
           {"type":"AlphabetKey","main":"S","alt":"*","displayText":"S D","weight":0.14},
