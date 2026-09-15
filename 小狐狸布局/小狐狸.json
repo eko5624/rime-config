@@ -279,7 +279,7 @@
       "ref": "rime.space",
       "statusLabel": { "source": "schema_name" },
       "tap": { "ref": "rime.space" },
-      "swipe": { "up": { "ref": "rime.Up", "label": "" }, "down": { "ref": "rime.Down", "label": "" }, "left": { "ref": "rime.Left", "label": "" }, "right": { "ref": "rime.Right", "label": "" } },
+      "swipe": { "up": { "ref": "rime.Up", "label": "", "popup": false }, "down": { "ref": "rime.Down", "label": "", "popup": false }, "left": { "ref": "rime.Left", "label": "", "popup": false }, "right": { "ref": "rime.Right", "label": "", "popup": false } },
       "hold": { "start": { "type": "app", "command": "voice_start" }, "end": { "type": "app", "command": "voice_stop" } },
       "textSize": 14
     },
