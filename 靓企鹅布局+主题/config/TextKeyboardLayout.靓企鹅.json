@@ -134,7 +134,7 @@
           {"type":"MacroKey","displayText":"PQRS","label":"7","altLabel":"7","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"7"}]}]},"swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_7"}]}]}},
           {"type":"MacroKey","displayText":"TUV","label":"8","altLabel":"8","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"8"}]}]},"swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_8"}]}]}},
           {"type":"MacroKey","displayText":"WXYZ","label":"9","altLabel":"9","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"9"}]}]},"swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_9"}]}]}},
-          {"type":"MacroKey","label":"大写","weight":0.0,"tap":{"macro":[{"type":"layer","mode":"to","target":"default"},{"type":"tap","keys":[{"fcitx":"Caps_Lock"}]}]}}
+          {"type":"LanguageKey","weight":0.0}
         ],
         [
           {"type":"CommaKey","weight":0.15},
