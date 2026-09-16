@@ -40,7 +40,7 @@
         {"type":"BackspaceKey","weight":0.15}
       ],
       [
-        {"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
+        {"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Tab"}]}]},"label":"↹","type":"MacroKey","independentColor":false},"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
         {"type":"CommaKey","weight":0.12,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
         {"type":"LanguageKey","weight":0.12,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
         {"type":"SpaceKey","weight":0.0},
@@ -93,7 +93,7 @@
           {"type":"BackspaceKey","weight":0.15}
         ],
         [
-          {"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
+          {"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Tab"}]}]},"label":"↹","type":"MacroKey","independentColor":false},"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
           {"type":"CommaKey","weight":0.12,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
           {"type":"LanguageKey","weight":0.12,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","independentColor":false},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
           {"type":"SpaceKey","weight":0.0},
