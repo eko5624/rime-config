@@ -114,7 +114,7 @@
             {"displayText":"?","altLabel":"/","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"question"}]}]},"label":"？","type":"MacroKey","swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"slash"}]}]}},
             {"displayText":"!","altLabel":";","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"exclam"}]}]},"label":"!","type":"MacroKey","swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"semicolon"}]}]}},
             {"displayText":"\"","altLabel":"~","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"quotedbl"}]}]},"label":"\"","type":"MacroKey","swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"asciitilde"}]}]}},
-            {"type":"LayoutSwitchKey","label":"?123"}
+            {"type":"LayoutSwitchKey","label":"符","subLabel":"Symbol"}
           ]
         }
       },
@@ -138,7 +138,7 @@
           {"type":"LanguageKey","weight":0.0}
         ],
         [
-          {"type":"CommaKey","weight":0.15},
+          {"type":"MacroKey","label":",","altLabel":"123","weight":0.15,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"comma"}]}]},"swipe":{"macro":[{"type":"layer","mode":"to","target":"rime:数字"}]}},
           {"type":"SpaceKey"},
           {"type":"SymbolKey","label":".","weight":0.15},
           {"type":"ReturnKey","weight":0.2}
