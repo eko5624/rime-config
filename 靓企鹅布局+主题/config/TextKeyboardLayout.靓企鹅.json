@@ -30,7 +30,7 @@
       ],
       [
         {"type":"CapsKey","weight":0.15,"rowHeightPercent":21.1},
-        {"type":"MacroKey","displayText":"Z","label":"Z","altLabel":"全选","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"A"}]}]},"swipe":{"macro":[{"type":"edit","action":"selectAll"}]}},
+        {"type":"MacroKey","displayText":"Z","label":"Z","altLabel":"全选","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Z"}]}]},"swipe":{"macro":[{"type":"edit","action":"selectAll"}]}},
         {"type":"MacroKey","displayText":"X","label":"X","altLabel":"剪切","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"X"}]}]},"swipe":{"macro":[{"type":"edit","action":"cut"}]}},
         {"type":"MacroKey","displayText":"C","label":"C","altLabel":"复制","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"C"}]}]},"swipe":{"macro":[{"type":"edit","action":"copy"}]}},
         {"type":"MacroKey","displayText":"V","label":"V","altLabel":"粘贴","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"V"}]}]},"swipe":{"macro":[{"type":"edit","action":"paste"}]}},
