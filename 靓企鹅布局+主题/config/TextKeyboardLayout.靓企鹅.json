@@ -18,7 +18,7 @@
         {"type":"AlphabetKey","main":"P","alt":"0","displayText":"P"}
       ],
       [
-        {"type":"AlphabetKey","main":"A","alt":"~","displayText":"S"},
+        {"type":"AlphabetKey","main":"A","alt":"~","displayText":"A","rowHeightPercent":21.1},
         {"type":"AlphabetKey","main":"S","alt":"@","displayText":"S"},
         {"type":"AlphabetKey","main":"d","alt":"#","displayText":"D"},
         {"type":"AlphabetKey","main":"f","alt":"!","displayText":"F"},
