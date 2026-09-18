@@ -280,7 +280,7 @@
       "ref": "rime.space",
       "statusLabel": "schema_name",
       "keyType": "LETTER",
-      "tap": { "ref": "rime.space" },
+      "tap": { "ref": "rime.space", "popup": false },
       "swipe": { "up": { "ref": "rime.Up", "label": "", "popup": false }, "down": { "ref": "rime.Down", "label": "", "popup": false }, "left": { "ref": "rime.Left", "label": "", "popup": false }, "right": { "ref": "rime.Right", "label": "", "popup": false } },
       "hold": { "label": "🎤", "start": { "type": "app", "command": "voice_start" }, "end": { "type": "app", "command": "voice_stop" } },
       "textSize": 16
