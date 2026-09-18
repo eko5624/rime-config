@@ -190,6 +190,7 @@
       "weight": 1.5,
       "keyType": "FUNCTION",
       "icon": "shift",
+      "swipe": { "down": { "action": { "type": "app", "command": "text_editor" }, "label": "编辑" } },
       "longPress": { "label": "⇪", "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } },
       "variants": [
         { "when": { "rime": { "composing": true } }, "label": " Tab ", "icon": null, "modifier": null, "ref": "rime.Tab" }
@@ -653,6 +654,23 @@
             { "column": 2, "row": 3, "ref": "rime.0" },
             { "column": 3, "row": 3, "ref": "rime.KP_Decimal", "keyType": "FUNCTION" },
             { "column": 4, "row": 3, "ref": "foxy.KP_Enter" }
+          ]
+        }
+      ]
+    },
+    "text_editor": {
+      "sections": [
+        {
+          "type": "rows",
+          "rows": [
+            [
+              { "ref": "foxy.LayoutDefault" },
+              { "ref": "foxy.SelectAll", "override": { "label": "全选", "keyType": "FUNCTION" } },
+              { "ref": "foxy.Cut", "override": { "label": "剪切", "keyType": "FUNCTION" } },
+              { "ref": "foxy.Copy", "override": { "label": "复制", "keyType": "FUNCTION" } },
+              { "ref": "foxy.Paste", "override": { "label": "粘贴", "keyType": "FUNCTION" } },
+              { "ref": "qwerty.backspace", "weight": 1, "override": { "label": "退格" } }
+            ]
           ]
         }
       ]
