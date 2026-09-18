@@ -278,11 +278,12 @@
     },
     "qwerty.space": {
       "ref": "rime.space",
-      "statusLabel": { "source": "schema_name" },
+      "statusLabel": "schema_name",
+      "keyType": "LETTER",
       "tap": { "ref": "rime.space" },
       "swipe": { "up": { "ref": "rime.Up", "label": "", "popup": false }, "down": { "ref": "rime.Down", "label": "", "popup": false }, "left": { "ref": "rime.Left", "label": "", "popup": false }, "right": { "ref": "rime.Right", "label": "", "popup": false } },
-      "hold": { "start": { "type": "app", "command": "voice_start" }, "end": { "type": "app", "command": "voice_stop" } },
-      "textSize": 14
+      "hold": { "label": "🎤", "start": { "type": "app", "command": "voice_start" }, "end": { "type": "app", "command": "voice_stop" } },
+      "textSize": 16
     },
     "qwerty.period.composing": { "ref": "rime.3" },
     "qwerty.period": {
