@@ -571,7 +571,7 @@
                 { "ref": "rime.b", "weight": 1.4, "override": { "label": "B N", "swipe": { "up": { "label": "粘贴" } }, "longPress": { "ref": "foxy.Paste", "popup": false } } },
                 { "ref": "rime.m", "weight": 1.4, "override": { "label": "M", "swipe": { "up": { "label": "剪切" } }, "longPress": { "ref": "foxy.Cut", "popup": false } } },
                 { "ref": "qwerty.backspace", "weight": 1.5 }
-              ],
+              ]
             },
             {
               "height": 1.075,
