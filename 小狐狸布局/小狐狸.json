@@ -193,7 +193,7 @@
       "swipe": { "down": { "action": { "type": "app", "command": "text_editor" }, "label": "编辑" } },
       "longPress": { "label": "⇪", "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } },
       "variants": [
-        { "when": { "rime": { "composing": true } }, "label": " Tab ", "icon": null, "modifier": null, "ref": "rime.Tab" }
+        { "when": { "rime": { "composing": true } }, "label": " ↹ ", "icon": null, "modifier": null, "ref": "rime.Tab" }
       ]
     },
     "qwerty.z": {
@@ -489,7 +489,7 @@
               { "ref": "qwerty.semicolon" }
             ],
            [
-             { "ref": "qwerty.shift", "override": { "swipe": { "up": { "type": "key", "key": "TAB", "meta": ["SHIFT"], "label": " " }, "down": { "ref": "rime.Page_Down", "label": " " } } } },
+             { "ref": "qwerty.shift" },
              { "ref": "rime.z", "override": { "label": "Z", "swipe": { "up": { "label": "全选" } }, "longPress": { "ref": "foxy.SelectAll", "popup": false } } },
              { "ref": "rime.x", "override": { "label": "X", "swipe": { "up": { "label": "剪切" } }, "longPress": { "ref": "foxy.Cut", "popup": false } } },
              { "ref": "rime.c", "override": { "label": "C", "swipe": { "up": { "label": "复制" } }, "longPress": { "ref": "foxy.Copy", "popup": false } } },
@@ -562,7 +562,7 @@
             {
               "height": 1.075,
               "keys": [
-                { "ref": "qwerty.shift", "override": { "swipe": { "up": { "type": "key", "key": "TAB", "meta": ["SHIFT"], "label": " " }, "down": { "ref": "rime.Page_Down", "label": " " } } } },
+                { "ref": "qwerty.shift" },
                 { "ref": "rime.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "label": "符号" } }, "longPress": { "action": { "type": "switch_layout", "layout": "symbols" } } } },
                 { "ref": "rime.x", "weight": 1.4, "override": { "label": "X C", "swipe": { "up": { "label": "全选" } }, "longPress": { "ref": "foxy.SelectAll", "popup": false } } },
                 { "ref": "rime.v", "weight": 1.4, "override": { "label": "V", "swipe": { "up": { "label": "复制" } }, "longPress": { "ref": "foxy.Copy", "popup": false } } },
