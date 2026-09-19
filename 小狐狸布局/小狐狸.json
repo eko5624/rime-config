@@ -450,7 +450,15 @@
     "delete": {
       "type": "key",
       "key": "BACKSPACE"
-    }
+    },
+    "home": {
+      "type": "key",
+      "key": "HOME"
+    },
+    "select_end": {
+      "type": "key",
+      "key": "END",
+      "meta": [ "SHIFT" ] }
   },
   "macros": {
     "clear_all": [
