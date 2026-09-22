@@ -293,6 +293,14 @@ reverse_lookup:
   overwrite_comment: true
   dictionary: wanxiang_pro
 
+aux_code:
+  dictionary: wubi86  # 辅码码表文件名，不含 .txt
+  learn_trigger: ";"       # 辅码筛选，允许候选词进入用户词库
+  no_learn_trigger: ";;"   # 辅码筛选，仅上屏，不进入用户词库
+  show_aux_notice: true     # 在候选中显示单字辅码提示
+  update_mode: notify       # off、notify 或 auto，默认仅提醒
+  check_interval_days: 7   # 每隔多少天检查一次更新
+
 # 标点符号
 # punctuator 下面有三个子项：
 #   full_shape 全角标点映射
