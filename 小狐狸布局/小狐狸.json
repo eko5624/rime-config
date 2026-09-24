@@ -337,12 +337,12 @@
       "tap": { "type": "key", "key": "ESCAPE" }
     },
     "editor.home": {
-      "label": "HOME",
+      "label": "行首",
       "textSize": 16,
       "tap": { "ref": "rime.Home" }
     },
     "editor.end": {
-      "label": "End",
+      "label": "行尾",
       "textSize": 16,
       "tap": { "ref": "rime.End" }
     },
@@ -363,6 +363,7 @@
     },
     "editor.selectAll": {
       "ref": "foxy.SelectAll",
+      "keyType": "FUNCTION",
       "label": "全选",
       "textSize": 16
     },
@@ -423,16 +424,19 @@
     },
     "editor.cut": {
       "ref": "foxy.Cut",
+      "keyType": "FUNCTION",
       "label": "剪切",
       "textSize": 16
     },
     "editor.copy": {
       "ref": "foxy.Copy",
+      "keyType": "FUNCTION",
       "label": "复制",
       "textSize": 16
     },
     "editor.paste": {
       "ref": "foxy.Paste",
+      "keyType": "FUNCTION",
       "label": "粘贴",
       "textSize": 16
     },
@@ -442,6 +446,16 @@
       "textSize": 16,
       "keyType": "FUNCTION",
       "icon": "backspace"
+    },
+    "editor.toggle_locked": {
+      "ref": "foxy.Shift",
+      "label": "选择",
+      "keyType": "FUNCTION",
+      "tap": {
+        "type": "modifier",
+        "modifier": "SHIFT",
+        "state": "TOGGLE_LOCKED"
+      }
     }
   },
 
