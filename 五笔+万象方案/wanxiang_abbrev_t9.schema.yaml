@@ -1,0 +1,50 @@
+# Rime schema settings
+# encoding: utf-8
+schema:
+  schema_id: wanxiang_abbrev_t9
+  name: "万象·T9简码"
+  version: "LTS"
+  author: amzxyz
+  description: |
+    提供基础简码库
+engine:
+  processors:
+    - key_binder
+    - speller
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - abc_segmentor
+  translators:
+    - table_translator
+  filters:
+    - uniquifier
+
+key_binder:
+  __include: default:/key_binder?
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz;"
+  delimiter: " '"
+  algebra:
+    - xform/^(.*);.*$/$1/
+    - derive/^ng$/eng/
+    - xform/^n$/en/
+    - derive/^(.*)$/\U$1/
+    - derive/^([nl])ve$/$1ue/
+    - derive/^([NL])VE$/$1UE/
+    - derive/ong$/on/
+    - derive/iong$/ion/
+    - derive/eng$/en/
+    - derive/ONG$/ON/
+    - derive/IONG$/ION/
+    - derive/ENG$/EN/
+    - derive/^([jqxy])u/$1v/
+    - derive/^([JQXY])U/$1V/
+    - xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/22233344455566677778889999/
+
+translator:
+  dictionary: wanxiang_abbrev_t9
+  prism: wanxiang_abbrev_t9
+  enable_user_dict: false

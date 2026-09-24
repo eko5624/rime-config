@@ -7,6 +7,8 @@ schema:
   description: |
     万象拼音九宫格公共方案
   dependencies:
+    - wanxiang_abbrev_t9  #公共简码库
+    - wanxiang_phrase_t9  #自定义词库
 
 switches:
   - name: emoji
@@ -24,6 +26,9 @@ switches:
   - options: [ comment_off, tone_hint, toneless_hint ]  #开启后在候选的注释里面实时显示全拼声调
     states: [ 注释关, 有声调, 无声调 ]
     reset: 0
+  - name: abbrev
+    states: [简码关, 简码开]
+    reset: 1
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 1
@@ -63,12 +68,12 @@ engine:
     - lua_translator@*number                    # 数字金额大写
     - lua_translator@*force_gc                  # 暴力 GC 降低内存
     - lua_translator@*unicode                   # Unicode
-    - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
     - table_translator@chengyu                  # 简码成语
     - reverse_lookup_translator@radical_lookup
     - reverse_lookup_translator@wubi86_lookup
     - script_translator
   filters:
+    - lua_filter@*custom_phrase                 #用户自定义置顶词与简码前置
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@*super_preedit                 # preedit带调显示
@@ -103,14 +108,26 @@ s2tw:
   tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
   tips: all
 
-# 自定义短语
+# 自定义短语，用来置顶
 custom_phrase:
-  dictionary: ""
-  user_dict: custom_phrase  # 需要手动创建 custom_phrase.txt 文件
+  dictionary: custom_phrase
+  prism: wanxiang_phrase_t9
   db_class: stabledb
-  enable_completion: false # 补全提示
-  enable_sentence: false   # 禁止造句
-  initial_quality: 99
+  enable_user_dict: false
+  enable_completion: false
+  always_show_comments: true
+  spelling_hints: 50
+
+# 自定义简码，用来游走在候选任意位置
+abbrev_phrase:
+  dictionary: wanxiang_abbrev_t9
+  prism: wanxiang_abbrev_t9
+  enable_user_dict: false
+  enable_completion: false
+  always_show_comments: true
+  spelling_hints: 50
+  insert_position: 3  #前置简码到候选3
+  max_candidates: 3  #前置3个简码
 
 # 简码词库导入位于jm_dicts得txt文件词库
 chengyu:

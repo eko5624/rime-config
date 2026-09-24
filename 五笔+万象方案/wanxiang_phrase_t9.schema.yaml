@@ -1,0 +1,54 @@
+# Rime schema settings
+# encoding: utf-8
+schema:
+  schema_id: wanxiang_phrase_t9
+  name: "万象·T9短语"
+  version: "LTS"
+  author: amzxyz
+  description: |
+    为应对9键、14键、18键等场景下使用用户词，且共用用户词，用户词库变更为bin引用，而不是userdb-table
+engine:
+  processors:
+    - key_binder
+    - speller
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - abc_segmentor
+  translators:
+    - table_translator
+  filters:
+    - uniquifier
+
+key_binder:
+  __include: default:/key_binder?
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz;"
+  delimiter: " '"
+  algebra:
+    - xform/ⅱ//  #用于Lua判断输入类型的标记
+    - xform/^(.*);.*$/$1/
+    - xlit/āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜüńňǹ/aaaaooooeeeeiiiiuuuuvvvvvnnn/
+    - xform/ḿ/me/
+    - xform/m̀/me/
+    - derive/^ng$/eng/
+    - xform/^n$/en/
+    #- abbrev/^([a-z]).*/$1/
+    - derive/^(.*)$/\U$1/
+    #- abbrev/^([A-Z]).*/$1/
+    - derive/^([nl])ve$/$1ue/
+    - derive/^([NL])VE$/$1UE/
+    - derive/ong$/on/
+    - derive/iong$/ion/
+    - derive/ONG$/ON/
+    - derive/IONG$/ION/
+    - derive/^([jqxy])u/$1v/
+    - derive/^([JQXY])U/$1V/
+    - xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/22233344455566677778889999/
+
+translator:
+  dictionary: custom_phrase
+  prism: wanxiang_phrase_t9
+  enable_user_dict: false

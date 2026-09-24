@@ -1,0 +1,94 @@
+# Rime schema settings
+# encoding: utf-8
+schema:
+  schema_id: wanxiang_mixedcode
+  name: "万象·混合编码"
+  version: "LTS"
+  author: amzxyz
+  description: |
+    混合编码负责将英文、中英文混合、携带符号的词组等全部统一到这个方案中完成
+engine:
+  processors:
+    - key_binder
+    - speller
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - abc_segmentor
+  translators:
+    - echo_translator
+    - table_translator
+  filters:
+    - uniquifier
+
+key_binder:
+  __include: default:/key_binder?
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz;"
+  delimiter: " '"
+  algebra:
+    - derive|^([A-Z].{1,2})$|$1/|
+    # 数字派生，先将整数类派生出英文写法
+    - derive/(?<!\d)1([1-9])(?!\d)/'shí'$1/
+    - derive/([1-9])0000(?!0)/$1'wàn'/
+    - derive/([1-9])000(?!0)/$1'qiān'/
+    - derive/([1-9])00(?!0)/$1'bǎi'/
+    - derive/([2-9])0(?!0)/$1'shí'/
+    - derive/(?<!\d)([2-9])([1-9])(?!\d)/$1'shí'$2/
+    - derive/1([4-7|9])/$1'teen'/
+    - derive/11/'eleven'/
+    - derive/12/'twelve'/
+    - derive/13/'thirteen'/
+    - derive/15/'fifteen'/
+    - derive/18/'eighteen'/
+    - derive/0/o/
+    - derive/0/O/
+    - derive/0/'zero'/
+    - derive/1/'one'/
+    - derive/10/'ten'/
+    - derive/2/'to'/
+    - derive/2/'two'/
+    - derive/3/'three'/
+    - derive/4/'for'/
+    - derive/4/'four'/
+    - derive/5/'five'/
+    - derive/6/'six'/
+    - derive/7/'seven'/
+    - derive/8/'eight'/
+    - derive/9/'nine'/
+    - derive/10/'shí'/
+    - derive/0/'líng'/
+    - derive/1/'yī'/
+    - derive/2/'èr'/
+    - derive/3/'sān'/
+    - derive/4/'sì'/
+    - derive/5/'wǔ'/
+    - derive/6/'liù'/
+    - derive/7/'qī'/
+    - derive/8/'bā'/
+    - derive/9/'jiǔ'/
+    - derive/--/'jiǎn'jiǎn'/
+    - derive/^(.*)-$/$1'jiǎn/
+    - derive/-/'/
+    - derive/\./'diǎn'/
+    - derive/\+/'jiā'/
+    - derive/#/'jǐng'/
+    - xform/'+/'/
+    - xform/^'(.*)$/$1/
+    - xform/^(.*)'$/$1/
+    - derive/^.+$/\U$0/
+    - xlit/āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü/aaaaooooeeeeiiiiuuuuvvvvv/
+    - xform/'//
+    - derive/^([nl])ue$/$1ve/
+    - derive/'([nl])ue$/'$1ve/
+    - derive/^([jqxy])u/$1v/
+    - derive/'([jqxy])u/'$1v/
+    - derive/^.+$/\L$0/
+    - derive/^([A-Z]{1})/\L$1/
+    - derive/^([a-z]{2})/\U$1/
+    - erase/.*[\-+'_#@\.·0-9].*$/
+translator:
+  dictionary: wanxiang_mixedcode
+  enable_user_dict: false

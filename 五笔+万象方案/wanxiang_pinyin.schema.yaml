@@ -3,7 +3,7 @@
 # 方案说明
 schema:
   schema_id: wanxiang_pinyin
-  name: 万象Pro·拼音
+  name: 万象·拼音
   version: "LTS"
   icon: icons/zh.ico
   ascii_icon: icons/en.ico
@@ -14,6 +14,10 @@ schema:
   description: |
     请勾选【万象拼音PRO】以启用，万象拼音 支持常见双拼方案和全拼输入，辅助码同时支持 全拼拼音、墨奇码、鹤形、自然码、虎码首末、五笔前2、汉心码、首右，拥有超越大厂的输入体验！带声调的词库，支持语法模型，全拼、简拼、整句、声调辅助筛选
     请在文本框中直接输入对应方案的代码，例如：全拼输入“/pinyin”，自然码输入“/zrm”，小鹤输入“/flypy”（包含“/mspy”、“/sogou”、“/pyjj”等更多代码详见 README.md）。
+  dependencies:
+    - wanxiang_mixedcode  #混合编码
+    - wanxiang_abbrev  #公共简码库
+    - wanxiang_phrase  #用户词库
 
 # 开关
 # reset: 默认状态。注释掉后，切换窗口时不会重置到默认状态。
@@ -35,6 +39,9 @@ switches:
   - options: [ comment_off, tone_hint, toneless_hint ]  #开启后在候选的注释里面实时显示全拼声调
     states: [ 注释关, 有声调, 无声调 ]
     reset: 0
+  - name: abbrev
+    states: [简码关, 简码开]
+    reset: 1
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 0
@@ -69,20 +76,21 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
+    - script_translator
     - history_translator@history
     - lua_translator@time_date
     - lua_translator@*calculator
     - lua_translator@*number                    # 数字金额大写
     - lua_translator@*force_gc                  # 暴力 GC 降低内存
     - lua_translator@*unicode                   # Unicode
-    - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
     - table_translator@chengyu                  # 简码成语
+    - table_translator@wanxiang_mixedcode       #混合编码词汇表导入
     - reverse_lookup_translator@radical_lookup
     - reverse_lookup_translator@wubi86_lookup
-    - script_translator
   filters:
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
+    - lua_filter@*custom_phrase                 # 用户自定义置顶词与简码前置
     - lua_filter@*super_preedit                 # preedit带调显示
     - simplifier@s2hk
     - simplifier@s2tw
@@ -115,14 +123,35 @@ s2tw:
   tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
   tips: all
 
-# 自定义短语
+# 自定义短语，用来置顶
 custom_phrase:
-  dictionary: ""
-  user_dict: custom_phrase  # 需要手动创建 custom_phrase.txt 文件
+  dictionary: custom_phrase
+  prism: wanxiang_phrase
   db_class: stabledb
-  enable_completion: false # 补全提示
-  enable_sentence: false   # 禁止造句
-  initial_quality: 99
+  enable_user_dict: false
+  enable_completion: false
+  always_show_comments: true
+  spelling_hints: 50
+
+# 自定义简码，用来游走在候选任意位置
+abbrev_phrase:
+  dictionary: wanxiang_abbrev
+  prism: wanxiang_abbrev
+  enable_user_dict: false
+  enable_completion: false
+  always_show_comments: true
+  spelling_hints: 50
+  insert_position: 6  #前置简码到候选6
+  max_candidates: 1  #前置1个简码
+
+wanxiang_mixedcode:
+  dictionary: wanxiang_mixedcode
+  db_class: stabledb
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: 2
+  comment_format:  #这里很重要如果残留带声调字母，剩余编码提示计算出错引发程序崩溃
+    - xform/.*//
 
 # 简码词库导入位于jm_dicts得txt文件词库
 chengyu:
@@ -220,24 +249,19 @@ speller:
     - derive/^ng(\d)$/eng$1/
     - xform/^n(\d)/en$1/
     - xform/^m(\d)/me$1/
-    - derive/^([a-z◯]+)\d?;.*$/$1/  # 纯双拼的情况
-    - derive/^([a-z◯]+)(\d?);.*$/$1$2/  # 双拼+声调的情况
+    - derive/^([a-z]+)\d?;.*$/$1/  # 纯双拼的情况
+    - derive/^([a-z]+)(\d?);.*$/$1$2/  # 双拼+声调的情况
     # 分号后面第一组辅助码 (引入 / 间接标记)
-    - derive|^([a-z◯]+)(\d?);([a-z]).*$|$1/$3|  # 双拼+/1位辅码
-    - derive|^([a-z◯]+)(\d?);([a-z]).*$|$1$2/$3|  # 双拼+声调+/1位辅码
-    - derive|^([a-z◯]+)(\d?);([a-z])([a-z]).*$|$1/$3$4|  # 双拼+/2位辅码
-    - derive|^([a-z◯]+)(\d?);([a-z])([a-z]).*$|$1$2/$3$4|  # 双拼+声调+/2位辅码
+    - derive|^([a-z]+)(\d?);([a-z]).*$|$1/$3|  # 双拼+/1位辅码
+    - derive|^([a-z]+)(\d?);([a-z]).*$|$1$2/$3|  # 双拼+声调+/1位辅码
+    - derive|^([a-z]+)(\d?);([a-z])([a-z]).*$|$1/$3$4|  # 双拼+/2位辅码
+    - derive|^([a-z]+)(\d?);([a-z])([a-z]).*$|$1$2/$3$4|  # 双拼+声调+/2位辅码
     # 分号后面第二组辅助码 (利用 [^,]* 零回溯直达逗号)
-    - derive|^([a-z◯]+)(\d?);[^,]*,([a-z]).*$|$1/$3|  # 双拼+/1位辅码
-    - derive|^([a-z◯]+)(\d?);[^,]*,([a-z]).*$|$1$2/$3|  # 双拼+声调+/1位辅码
-    - derive|^([a-z◯]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1/$3$4|  # 双拼+/2位辅码
-    - derive|^([a-z◯]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1$2/$3$4|  # 双拼+声调+/2位辅码
+    - derive|^([a-z]+)(\d?);[^,]*,([a-z]).*$|$1/$3|  # 双拼+/1位辅码
+    - derive|^([a-z]+)(\d?);[^,]*,([a-z]).*$|$1$2/$3|  # 双拼+声调+/1位辅码
+    - derive|^([a-z]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1/$3$4|  # 双拼+/2位辅码
+    - derive|^([a-z]+)(\d?);[^,]*,([a-z])([a-z]).*$|$1$2/$3$4|  # 双拼+声调+/2位辅码
     - erase/.*;.*/  # 删除原始带分号编码，加速检索
-    - xform/◯/;/  # 释放微软/搜狗双拼保护的分号
-    # 以下直接大写辅助
-    - derive|^([a-z]{2})(\d?)/([a-z])([a-z]?)$|$1$2\u$3\u$4|
-    - derive|^([a-z]{2})(\d?)/([a-z])([a-z]?)$|$1\u$3$2\u$4|
-    - derive|^([a-z]{2})(\d?)/([a-z])([a-z]?)$|$1\u$3\u$4$2|
 
 wubi86_lookup:
   tag: wubi86

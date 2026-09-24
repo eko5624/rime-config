@@ -3,7 +3,7 @@
 # 方案说明
 schema:
   schema_id: wanxiang_zrm
-  name: 万象Pro·自然码
+  name: 自然码·26键
   version: "LTS"
   icon: icons/zh.ico
   ascii_icon: icons/en.ico
@@ -14,6 +14,10 @@ schema:
   description: |
     请勾选【万象拼音PRO】以启用，万象拼音 支持常见双拼方案和全拼输入，辅助码同时支持 全拼拼音、墨奇码、鹤形、自然码、虎码首末、五笔前2、汉心码、首右，拥有超越大厂的输入体验！带声调的词库，支持语法模型，全拼、简拼、整句、声调辅助筛选
     请在文本框中直接输入对应方案的代码，例如：全拼输入“/pinyin”，自然码输入“/zrm”，小鹤输入“/flypy”（包含“/mspy”、“/sogou”、“/pyjj”等更多代码详见 README.md）。
+  dependencies:
+    - wanxiang_mixedcode  #混合编码
+    - wanxiang_abbrev  #公共简码库
+    - wanxiang_phrase  #用户词库
 
 # 开关
 # reset: 默认状态。注释掉后，切换窗口时不会重置到默认状态。
@@ -35,6 +39,9 @@ switches:
   - options: [ comment_off, tone_hint, toneless_hint ]  #开启后在候选的注释里面实时显示全拼声调
     states: [ 注释关, 有声调, 无声调 ]
     reset: 0
+  - name: abbrev
+    states: [简码关, 简码开]
+    reset: 1
   - name: extend_charset # 0为CJK基本字符集+扩展A区，1为CJK全字符集
     states: [ 常, 扩 ]
     reset: 0
@@ -75,14 +82,16 @@ engine:
     - lua_translator@*number                    # 数字金额大写
     - lua_translator@*force_gc                  # 暴力 GC 降低内存
     - lua_translator@*unicode                   # Unicode
-    - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
     - table_translator@chengyu                  # 简码成语
+    - table_translator@wanxiang_mixedcode       #混合编码词汇表导入
     - reverse_lookup_translator@radical_lookup
     - reverse_lookup_translator@wubi86_lookup
     - script_translator
   filters:
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
+    - lua_filter@*custom_phrase                 # 用户自定义置顶词与简码前置
+    - lua_filter@*aux_code                      # 辅筛插件
     - lua_filter@*super_preedit                 # preedit带调显示
     - simplifier@s2hk
     - simplifier@s2tw
@@ -115,14 +124,35 @@ s2tw:
   tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
   tips: all
 
-# 自定义短语
+# 自定义短语，用来置顶
 custom_phrase:
-  dictionary: ""
-  user_dict: custom_phrase  # 需要手动创建 custom_phrase.txt 文件
+  dictionary: custom_phrase
+  prism: wanxiang_phrase
   db_class: stabledb
-  enable_completion: false # 补全提示
-  enable_sentence: false   # 禁止造句
-  initial_quality: 99
+  enable_user_dict: false
+  enable_completion: false
+  always_show_comments: true
+  spelling_hints: 50
+
+# 自定义简码，用来游走在候选任意位置
+abbrev_phrase:
+  dictionary: wanxiang_abbrev
+  prism: wanxiang_abbrev
+  enable_user_dict: false
+  enable_completion: false
+  always_show_comments: true
+  spelling_hints: 50
+  insert_position: 6  #前置简码到候选6
+  max_candidates: 1  #前置1个简码
+
+wanxiang_mixedcode:
+  dictionary: wanxiang_mixedcode
+  db_class: stabledb
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: 2
+  comment_format:  #这里很重要如果残留带声调字母，剩余编码提示计算出错引发程序崩溃
+    - xform/.*//
 
 # 简码词库导入位于jm_dicts得txt文件词库
 chengyu:
@@ -142,6 +172,14 @@ history:
   input: z
   size: 1
   initial_quality: 1
+
+aux_code:
+  dictionary: wubi86       # 辅码码表文件名，不含 .txt
+  learn_trigger: ";"       # 辅码筛选，允许候选词进入用户词库
+  no_learn_trigger: ";;"   # 辅码筛选，仅上屏，不进入用户词库
+  show_aux_notice: false   # 在候选中显示单字辅码提示
+  update_mode: off         # off、notify 或 auto，默认仅提醒
+  check_interval_days: 7   # 每隔多少天检查一次更新
 
 grammar:
   language: wanxiang-lts-zh-hans
@@ -176,9 +214,9 @@ speller:
   #  auto_select: true
   #  auto_select_pattern: ^[a-z]+/|^[a-df-zA-DF-Z]\w{3}|^e\w{4}
   # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
-  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`;/\›
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`;/\
   # initials 定义仅作为始码的按键，排除 ` 让单个的 ` 可以直接上屏
-  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/›
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/
   delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
   algebra:
     - xform/^([a-z]+);/$1④;/
@@ -292,14 +330,6 @@ reverse_lookup:
   tags: [wubi86,radical]
   overwrite_comment: true
   dictionary: wanxiang_pro
-
-aux_code:
-  dictionary: wubi86  # 辅码码表文件名，不含 .txt
-  learn_trigger: ";"       # 辅码筛选，允许候选词进入用户词库
-  no_learn_trigger: ";;"   # 辅码筛选，仅上屏，不进入用户词库
-  show_aux_notice: true     # 在候选中显示单字辅码提示
-  update_mode: notify       # off、notify 或 auto，默认仅提醒
-  check_interval_days: 7   # 每隔多少天检查一次更新
 
 # 标点符号
 # punctuator 下面有三个子项：
