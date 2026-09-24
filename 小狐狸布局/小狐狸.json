@@ -257,11 +257,16 @@
       "label": "Tab",
       "tap": { "ref": "rime.Tab" }
     },
+    "qwerty.layout.down": {
+      "label": "数据目录",
+      "tap": { "ref": "qwerty.data_directory" }
+    },
     "qwerty.layout": {
       "ref": "foxy.LayoutNumpad",
       "weight": 1.5,
       "keyType": "FUNCTION",
       "tap": { "action": { "type": "switch_layout", "layout": "numpad" } },
+      "swipe": { "up": { "label": "" }, "down": { "ref": "qwerty.layout.down" } },
       "textSize": 15
     },
     "qwerty.comma.composing": {"ref": "rime.2" },
@@ -563,14 +568,14 @@
             },
             {
               "height": 1.075,
-              "width": 0.85,
               "keys": [
                 { "ref": "rime.a", "override": { "label": "A", "swipe": { "up": { "ref": "rime.at" } } } },
                 { "ref": "rime.s", "override": { "label": "S D", "swipe": { "up": { "ref": "rime.asterisk" } } } },
                 { "ref": "rime.f", "override": { "label": "F G", "swipe": { "up": { "ref": "rime.KP_Equal" } } } },
                 { "ref": "rime.h", "override": { "label": "H", "swipe": { "up": { "ref": "rime.percent" } } } },
                 { "ref": "rime.j", "override": { "label": "J K", "swipe": { "up": { "ref": "rime.parenleft" } } } },
-                { "ref": "rime.l", "override": { "label": "L", "swipe": { "up": { "ref": "rime.parenright" } } } }
+                { "ref": "rime.l", "override": { "label": "L", "swipe": { "up": { "ref": "rime.parenright" } } } },
+                { "ref": "qwerty.semicolon" }
               ]
             },
             {
