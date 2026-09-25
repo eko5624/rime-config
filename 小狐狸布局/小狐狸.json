@@ -487,6 +487,14 @@
     "select_current_line": [
       { "action": "home" },
       { "action": "select_end" }
+    ],
+    "full_26.to_t9": [
+      { "type": "switch_layout", "layout": "wanxiang_t9" },
+      { "type": "modifier", "modifier": "SHIFT", "state": "OFF" }
+    ],
+    "wanxiang_t9.to_full_upper": [
+      { "type": "switch_layout", "layout": "full_26" },
+      { "type": "modifier", "modifier": "SHIFT", "state": "TOGGLE_LOCKED" }
     ]
   },
 
@@ -703,6 +711,100 @@
               { "ref": "foxy.Copy", "override": { "label": "复制", "keyType": "FUNCTION" } },
               { "ref": "foxy.Paste", "override": { "label": "粘贴", "keyType": "FUNCTION" } },
               { "ref": "qwerty.backspace", "weight": 1, "override": { "label": "退格" } }
+            ]
+          ]
+        }
+      ]
+    },
+    "full_26": {
+      "sections": [
+        {
+          "type": "rows",
+          "rows": [
+            [
+              { "ref": "qwerty.q" },
+              { "ref": "qwerty.w" },
+              { "ref": "qwerty.e" },
+              { "ref": "qwerty.r" },
+              { "ref": "qwerty.t" },
+              { "ref": "qwerty.y" },
+              { "ref": "qwerty.u" },
+              { "ref": "qwerty.i" },
+              { "ref": "qwerty.o" },
+              { "ref": "qwerty.p" }
+            ],
+            [
+              { "ref": "qwerty.a" },
+              { "ref": "qwerty.s" },
+              { "ref": "qwerty.d" },
+              { "ref": "qwerty.f" },
+              { "ref": "qwerty.g" },
+              { "ref": "qwerty.h" },
+              { "ref": "qwerty.j" },
+              { "ref": "qwerty.k" },
+              { "ref": "qwerty.l" },
+              { "ref": "qwerty.semicolon" }
+            ],
+            [
+              { "ref": "qwerty.shift" },
+              { "ref": "qwerty.z" },
+              { "ref": "qwerty.x" },
+              { "ref": "qwerty.c" },
+              { "ref": "qwerty.v" },
+              { "ref": "qwerty.b" },
+              { "ref": "qwerty.n" },
+              { "ref": "qwerty.m" },
+              { "ref": "qwerty.backspace" }
+            ],
+            {
+              "totalWeight": 10,
+              "keys": [
+                { "label": "九键", "keyType": "FUNCTION", "weight": 1.5, "tap": { "macro": "full_26.to_t9" } },
+                { "ref": "qwerty.comma" },
+                { "ref": "qwerty.space", "weight": "auto", "statusLabel": "schema_name" },
+                { "ref": "qwerty.period" },
+                { "ref": "qwerty.enter" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wanxiang_t9": {
+      "variants": [
+        { "when": { "rime": { "ascii_mode": true } }, "layout": "full_26" }
+      ],
+      "sections": [
+        {
+          "type": "rows",
+          "rows": [
+            [
+              { "ref": "rime.question" },
+              { "label": "分词", "tap": { "ref": "rime.apostrophe" }, "swipe": { "down": { "ref": "rime.1" } } },
+              { "label": "abc", "tap": { "ref": "rime.2" } },
+              { "label": "def", "tap": { "ref": "rime.3" } },
+              { "label": "🌐", "keyType": "FUNCTION", "tap": { "type": "switch_layout", "layout": "full_26" } }
+            ],
+            [
+              { "ref": "rime.exclam" },
+              { "label": "ghi", "tap": { "ref": "rime.4" } },
+              { "label": "jkl", "tap": { "ref": "rime.5" } },
+              { "label": "mno", "tap": { "ref": "rime.6" } },
+              { "label": "大写", "tap": { "macro": "wanxiang_t9.to_full_upper" }, "keyType": "FUNCTION" }
+            ],
+            [
+              { "ref": "rime.quotedbl" },
+              { "label": "pqrs", "tap": { "ref": "rime.7" } },
+              { "label": "tuv", "tap": { "ref": "rime.8" } },
+              { "label": "wxyz", "tap": { "ref": "rime.9" } },
+              { "ref": "qwerty.backspace", "icon": "backspace", "weight": 1 }
+            ],
+            [
+              { "ref": "rime.numbersign" },
+              { "ref": "rime.comma" },
+              { "ref": "rime.space" },
+              { "ref": "rime.period" },
+              { "ref": "rime.Return", "keyType": "ACTION", "icon": "enter" }
             ]
           ]
         }
