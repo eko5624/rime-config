@@ -76,6 +76,7 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
+    - script_translator
     - history_translator@history
     - lua_translator@time_date
     - lua_translator@*calculator
@@ -86,12 +87,14 @@ engine:
     - table_translator@wanxiang_mixedcode       #混合编码词汇表导入
     - reverse_lookup_translator@radical_lookup
     - reverse_lookup_translator@wubi86_lookup
-    - script_translator
+    - script_translator@user_dict_set           #自造词之使用词汇入口
+    - script_translator@add_user_dict           #自造词之制造词汇入口
   filters:
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@*custom_phrase                 # 用户自定义置顶词与简码前置
     - lua_filter@*aux_code                      # 辅筛插件
+    - lua_filter@*auto_phrase                   # 无感造词
     - lua_filter@*super_preedit                 # preedit带调显示
     - simplifier@s2hk
     - simplifier@s2tw
@@ -123,6 +126,34 @@ s2tw:
   option_name: s2twp
   tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
   tips: all
+
+user_dict_set:
+  dictionary: wanxiang_pro
+  initial_quality: 2.5
+  enable_completion: false
+  enable_sentence: false
+  core_word_length: 4  # >0 启用，按段学词 + 相邻段拼接
+  max_word_length: 7  # >0 启用，过长短语不记整词，只加元素权重
+  contextual_suggestions: false
+  max_homophones: 8
+  spelling_hints: 50
+  comment_format:
+  enable_user_dict: true
+  user_dict: zc
+  
+# 自定义词典加词(ac引导)
+add_user_dict:
+  tag: add_user_dict
+  dictionary: wanxiang_pro
+  initial_quality: -1
+  user_dict: zc
+  enable_completion: true  # 提前显示尚未输入完整码的字〔仅 table_translator 有效〕
+  enable_user_dict: true
+  spelling_hints: 50
+  enable_auto_phrase: true  # lua造词功能，在custom开启，相关功能位于auto_phrase.lua，开启后：模型能造的句子不造词，现有的词不造词，只造词库没有的，选词可造词
+  comment_format:
+  prefix: "``"
+  tips: "〔开始造词〕"
 
 # 自定义短语，用来置顶
 custom_phrase:
