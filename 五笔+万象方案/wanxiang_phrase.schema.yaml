@@ -27,6 +27,9 @@ key_binder:
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"
   delimiter: " '"
+  algebra:
+    __patch:
+      - wanxiang_algebra:/26jian
 
 translator:
   dictionary: custom_phrase

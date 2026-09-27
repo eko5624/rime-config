@@ -1,7 +1,7 @@
 ---
 name: user
 note: "用户词库"
-version: "2026-07-19"
+version: "2026-07-20"
 sort: by_weight
 columns:
   - text
@@ -24,3 +24,38 @@ columns:
 ## 示例: 哈\5	hhhhh	5
 ## 示例: 静夜思\n\s\3李白\n床前明月光\n疑似地上霜\n举头望明月\n低头思故乡	jys	5
 ...
+https://eko.ysepan.com/	ysep	30
+https://cloud.189.cn/	tyep	30
+https://cnb.cool/	cnb	30
+https://moran.rimeinn.org/zh-Hans/shuangpin/	mora	30
+https://github.com/amzxyz/rime-wanxiang/	moqi	30
+https://github.com/stars/eko5624/lists/toolchain	tool	30
+https://github.com/mstorsjo/llvm-mingw	llvm	30
+https://github.com/msys2/MINGW-packages	msys	30
+https://github.com/mpv-player/mpv	mpv	30
+https://mpv.io/manual/master	mpv	29
+https://github.com/stars/eko5624/lists/mpv	mpv	28
+https://github.com/Andarwinux/mpv-winbuild-cmake	anda	30
+https://github.com/stars/eko5624/lists/ffmpeg	ffmp	30
+https://github.com/stars/eko5624/lists/rime	rime	30
+https://github.com/clash-verge-rev/clash-verge-rev	clash	30
+https://sycm.taobao.com/portal/home.htm	sycm	30
+https://one.alimama.com/index.html#!/manage/onesite	ones	30
+https://one.alimama.com/index.html#!/manage/search	sear	30
+https://one.alimama.com/index.html#!/manage/display	disp	30
+https://one.alimama.com/index.html#!/manage/content	cont	30
+https://wangpu.taobao.com/wpFramework.htm#/wpdecorate/wpPageList/mobile/category	cate	30
+https://one.alimama.com/index.html#!/report/item_promotion?rptType=item_promotion&isRequestedQztDefaultSet=1	cost	30
+有姐妹问[疑问]，文胸+吊带不同价格的混拍怎么拍~\n\n如:【原价图1➕原价图2】➗2🟰活动价\n实际付款金额—活动价=差价\n收到联系我或者群内习习家，退差价哟~[调皮]	how	30
+在订单上给您申请啦，亲亲在淘宝客服聊天界面点击一下确认才能退款到账哈~	wwtk	30
+福利款需要确认收货评价支持后返差价呢~点亮5星即可返差价！\n温馨提示：晒图3张有5元额外晒图红包哟~[调皮]	mstk	30
+①收到货【点亮5⭐+15字以上穿着感受评语截图给我返差价】\n差价=实付款-群内福利价\n\n②新品宝贝评论晒图【需晒平铺图3张或者上身效果图】可返额外[红包]哟~\n\n买同款宝贝+晒图共返5️⃣元红包~\n买2款不同宝贝+晒图共8️⃣元红包~\n3款及以上（3款都需晒图3张哟）共返🔟元红包！	xptk	30
+原价拍下，收货评价支持后联系我或者群内习习家返差价~（尽量不要在淘宝上联系）\n差价🟰实付款➖福利价\n秒杀宝贝不与其它优惠叠加!优惠活动仅限当天有效，请知悉~[调皮]	tips	30
+⌛最后一天🔚【图上新品文胸/吊带任意2件5折】\n实际付款➖活动价🟰差价\n\n收货联系群内习习家或者我退差价[调皮]~\n这个价格之后不会再有，一定一定不要错过❎哦~	last	30
+📣秋冬上新新品所有视频新鲜出炉‼\n\n💥卖的最多的依旧是咱们的打底系列🔥羊毛莱赛尔☁️上新价仅需40+‼🙋‍♀️还有百搭耐穿的背心小吊带，喜欢的款式看中直接加购，犹豫就会错过【上新价哟】❗\n\n#今天最后一天❗❗❗	last	29
+今日VIP福利[红包]来啦❗【凉感微孔~杯大胸显小粉底液内衣】\n原价69，今日福利价45带回家~🏠	vip	30
+河南省许昌市襄城县文明路西段育人国际学校西门对面物流园,（商品不影响二次销售，拒收到付）丁雨 18637448890	addr	30
+浙江省杭州市钱塘新区义莲街道春园村河西路12号	addr	29
+黄熙蕾	aaaf	30
+411025202102100062	aaaf	29
+静夜思\n\s\3李白\3\n床前明月光\n疑似地上霜\n举头望明月\n低头思故乡	jys	5

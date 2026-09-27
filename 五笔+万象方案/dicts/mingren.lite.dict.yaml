@@ -184,6 +184,7 @@ sort: by_weight
 崔浩	cui hao	110
 崔颢	cui hao	94
 崔橹	cui lu	83
+崔沔	cui mian	28
 崔璞	cui pu	171
 崔琦	cui qi	616
 崔翘	cui qiao	230
@@ -688,6 +689,7 @@ sort: by_weight
 基冈	ji gang	57
 济公	ji gong	232
 机皇	ji huang	461
+季洁	ji jie	202
 嵇康	ji kang	521
 济科	ji ke	60
 基尼	ji ni	257
@@ -1492,6 +1494,7 @@ sort: by_weight
 肃顺	su shun	119
 苏童	su tong	423
 苏武	su wu	100
+苏雄	su xiong	113
 苏洵	su xun	973
 粟裕	su yu	408
 苏越	su yue	158
@@ -1616,7 +1619,7 @@ sort: by_weight
 王澍	wang shu	449
 王朔	wang shuo	996
 王肃	wang su	77
-王维	wang wei	279
+王维	wang wei	579
 王微	wang wei	48
 王吸	wang xi	78
 王献	wang xian	832
@@ -1849,29 +1852,43 @@ sort: by_weight
 玄宗	xuan zong	2047
 薛霸	xue ba	475
 薛逢	xue feng	81
+薛逢	xue feng	55
 薛刚	xue gang	16
 薛稷	xue ji	25
 薛举	xue ju	579
 薛据	xue ju	64
+薛据	xue ju	55
 雪莱	xue lai	549
 薛礼	xue li	102
 学良	xue liang	168
+薛蒙	xue meng	55
 薛讷	xue ne	446
 薛能	xue neng	1351
+薛能	xue neng	55
 薛蟠	xue pan	214
 雪芹	xue qin	368
+薛琼	xue qiong	55
+薛戎	xue rong	55
 薛绍	xue shao	915
+薛式	xue shi	55
 薛式	xue shi	35
 薛燧	xue sui	38
 薛涛	xue tao	680
+薛涛	xue tao	55
 薛瑄	xue xuan	13
 薛雪	xue xue	169
 薛洋	xue yang	170
 薛曜	xue yao	64
+薛曜	xue yao	55
+薛瑶	xue yao	55
+薛业	xue ye	55
 薛莹	xue ying	564
+薛莹	xue ying	55
+薛泳	xue yong	55
 学友	xue you	465
 薛岳	xue yue	112
 雪舟	xue zhou	564
+薛准	xue zhun	55
 迅哥	xun ge	201
 荀况	xun kuang	116
 荀卿	xun qing	116
@@ -1914,32 +1931,50 @@ sort: by_weight
 炀帝	yang di	141
 杨度	yang du	927
 杨妃	yang fei	116
+杨玢	yang fen	55
 杨阜	yang fu	80
 杨广	yang guang	1047
 杨过	yang guo	5787
+杨衡	yang heng	55
 杨弘	yang hong	108
+杨厚	yang hou	55
 羊祜	yang hu	296
+杨绘	yang hui	55
 杨戬	yang jian	977
 杨坚	yang jian	106
+杨谏	yang jian	55
 杨绛	yang jiang	307
+杨景	yang jing	55
 杨炯	yang jiong	50
 杨骏	yang jun	778
 杨浚	yang jun	102
+杨均	yang jun	55
+杨浚	yang jun	55
 杨濬	yang jun	47
 杨康	yang kang	949
 杨宽	yang kuan	698
 杨逵	yang kui	558
 杨夔	yang kui	137
+杨夔	yang kui	55
 杨牢	yang lao	46
+杨鸾	yang luan	55
 杨朴	yang pu	95
+杨朴	yang pu	55
 杨任	yang ren	110
 杨荣	yang rong	475
 杨慎	yang shen	134
+杨适	yang shi	55
+杨收	yang shou	55
 杨素	yang su	474
+杨素	yang su	55
 杨损	yang sun	234
+杨损	yang sun	55
+杨系	yang xi	55
 杨雄	yang xiong	914
 扬雄	yang xiong	581
 杨修	yang xiu	958
+杨续	yang xu	55
+杨颜	yang yan	55
 杨业	yang ye	2704
 杨仪	yang yi	477
 杨昭	yang zhao	910
@@ -1949,9 +1984,12 @@ sort: by_weight
 姚滨	yao bin	517
 姚苌	yao chang	232
 姚崇	yao chong	166
+姚发	yao fa	55
 姚合	yao he	168
+姚合	yao he	55
 姚泓	yao hong	433
 姚鹄	yao hu	116
+姚鹄	yao hu	55
 瑶姬	yao ji	8
 姚贾	yao jia	20
 姚揆	yao kui	4
@@ -2131,6 +2169,7 @@ sort: by_weight
 张悬	zhang xuan	914
 张勋	zhang xun	855
 张巡	zhang xun	812
+张也	zhang ye	577
 张毅	zhang yi	172
 张仪	zhang yi	109
 张嶷	zhang yi	0
@@ -2504,6 +2543,7 @@ sort: by_weight
 贝尼托	bei ni tuo	9
 贝润生	bei run sheng	13
 贝塞尔	bei sai er	170
+贝森特	bei sen te	155
 贝时璋	bei shi zhang	72
 贝索斯	bei suo si	436
 贝特洛	bei te luo	47
@@ -8200,20 +8240,7 @@ sort: by_weight
 秦仲文	qin zhong wen	3
 秦庄公	qin zhuang gong	16
 秦庄王	qin zhuang wang	189
-清德宗	qing de zong	16
-清嘉庆	qing jia qing	53
-清康熙	qing kang xi	126
-清乾隆	qing qian long	232
-清圣祖	qing sheng zu	22
-清世宗	qing shi zong	75
-清水崇	qing shui chong	410
-清顺治	qing shun zhi	60
-清太宗	qing tai zong	13
-清太祖	qing tai zu	31
-清同治	qing tong zhi	96
-清咸丰	qing xian feng	57
 顷襄王	qing xiang wang	22
-清雍正	qing yong zheng	75
 穷查理	qiong cha li	22
 邱宝昌	qiu bao chang	3
 仇保兴	qiu bao xing	504
@@ -12683,6 +12710,7 @@ sort: by_weight
 赵公明	zhao gong ming	41
 赵光义	zhao guang yi	823
 赵皇后	zhao huang hou	360
+赵家驹	zhao jia ju	52
 赵简子	zhao jian zi	88
 赵克志	zhao ke zhi	9
 赵匡义	zhao kuang yi	88
@@ -18283,6 +18311,7 @@ sort: by_weight
 雍正皇帝	yong zheng huang di	119
 雍正乾隆	yong zheng qian long	720
 尤阿希姆	you a xi mu	171
+楢崎正刚	you qi zheng gang	50
 羽田裕美	yu tian yu mei	212
 宇文昌龄	yu wen chang ling	220
 宇文成都	yu wen cheng du	69

@@ -64,6 +64,7 @@ sort: by_weight
 强肾片	qiang shen pian	10
 清肝片	qing gan pian	10
 青果片	qing guo pian	10
+清化饮	qing hua yin	84
 清火片	qing huo pian	10
 清降片	qing jiang pian	10
 清解片	qing jie pian	10
@@ -117,6 +118,10 @@ sort: by_weight
 阿帕他胺	a pa ta an	10
 阿帕替尼	a pa ti ni	10
 阿思尼布	a si ni bu	10
+阿昔洛韦	a xi luo wei	60
+阿西美辛	a xi mei xin	4
+阿昔莫司	a xi mo si	84
+阿昔替尼	a xi ti ni	212
 阿昔替尼	a xi ti ni	10
 艾伏尼布	ai fu ni bu	10
 埃克替尼	ai ke ti ni	10
@@ -344,6 +349,7 @@ sort: by_weight
 西达本胺	xi da ben an	10
 仙灵脾片	xian ling pi pian	10
 消癌平片	xiao ai ping pian	10
+小接骨丹	xiao jie gu dan	76
 消咳喘片	xiao ke chuan pian	10
 消渴灵片	xiao ke ling pian	10
 消渴平片	xiao ke ping pian	10
@@ -422,6 +428,7 @@ sort: by_weight
 阿司匹林片	a si pi lin pian	10
 阿司匹林散	a si pi lin san	10
 阿替洛尔片	a ti luo er pian	10
+阿维A胶囊	a wei a jiao nang	11
 阿魏八味丸	a wei ba wei wan	10
 阿魏化痞膏	a wei hua pi gao	10
 阿魏酸钠片	a wei suan na pian	10
@@ -5709,7 +5716,7 @@ sort: by_weight
 复方黄芩洗剂	fu fang huang qin xi ji	10
 复方黄松湿巾	fu fang huang song shi jin	10
 复方灰黄霉素	fu fang hui huang mei su	10
-复方鸡内金片	fu fang ji na jin pian	10
+复方鸡内金片	fu fang ji nei jin pian	10
 复方己酸睾酮	fu fang ji suan gao tong	10
 复方积雪草片	fu fang ji xue cao pian	10
 复方鸡血藤膏	fu fang ji xue teng gao	10
@@ -7681,7 +7688,9 @@ sort: by_weight
 双料喉风含片	shuang liao hou feng han pian	10
 双氯非那胺片	shuang lv fei na an pian	10
 双氯芬酸钾片	shuang lv fen suan jia pian	10
+双氯芬酸钾栓	shuang lv fen suan jia shuan	10
 双氯芬酸钠片	shuang lv fen suan na pian	10
+双氯芬酸钠栓	shuang lv fen suan na shuan	10
 双嘧啶混悬液	shuang mi ding hun xuan ye	10
 双扑伪麻胶囊	shuang pu wei ma jiao nang	10
 双扑伪麻颗粒	shuang pu wei ma ke li	10
@@ -8069,7 +8078,7 @@ sort: by_weight
 小儿和胃消食	xiao er he wei xiao shi	10
 小儿化毒胶囊	xiao er hua du jiao nang	10
 小儿化滞健脾	xiao er hua zhi jian pi	10
-小儿鸡内金散	xiao er ji na jin san	10
+小儿鸡内金散	xiao er ji nei jin san	10
 小儿健脾化积	xiao er jian pi hua ji	10
 小儿健脾止泻	xiao er jian pi zhi xie	10
 小儿健胃糖浆	xiao er jian wei tang jiang	10
@@ -10819,7 +10828,7 @@ sort: by_weight
 小儿风热清合剂	xiao er feng re qing he ji	10
 小儿风热清颗粒	xiao er feng re qing ke li	10
 小儿复方贝诺酯	xiao er fu fang bei nuo zhi	10
-小儿复方鸡内金	xiao er fu fang ji na jin	10
+小儿复方鸡内金	xiao er fu fang ji nei jin	10
 小儿复方四维亚	xiao er fu fang si wei ya	10
 小儿敷脐止泻散	xiao er fu qi zhi xie san	10
 小儿腹泻宁糖浆	xiao er fu xie ning tang jiang	10

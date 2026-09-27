@@ -1,6 +1,6 @@
 schema:
   schema_id: chengyu
-  name: 成语大全
+  name: 成语
   version: "1.0"
   author:
     - amzxyz

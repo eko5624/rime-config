@@ -11,7 +11,10 @@ patch:
     - schema: wanxiang_pinyin       # 万象拼音
     - schema: wanxiang_english      # 万象英文
     - schema: radical_pinyin        # 拆字反查
-    - schema: chengyu               # 成语大全
+    - schema: wanxiang_reverse      # 五笔反查
+    - schema: wanxiang_mixedcode    # 中英文混合词汇
+    - schema: wanxiang_abbrev       # 公共简码库
+    - schema: wanxiang_phrase       # 用户词库
 
   switcher:
     caption: 〈菜单项〉

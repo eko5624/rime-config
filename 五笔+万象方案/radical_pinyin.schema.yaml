@@ -5,7 +5,7 @@
 
 schema:
   schema_id: radical_pinyin
-  name: "偏旁部件拆字"
+  name: "拆字反查"
   version: "1.02"
   author: Mirtle
   description: |

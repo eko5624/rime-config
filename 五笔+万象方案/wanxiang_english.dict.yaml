@@ -5,6 +5,7 @@
 ---
 name: wanxiang_english
 version: "lts"
+sort: by_weight
 import_tables:
   - dicts/en     # 英文主词库
 ...
