@@ -5,7 +5,7 @@ local SCHEME_CAPABILITIES = {
     wanxiang_zrm = {tone = true, aux = true, pro = true, lite = false, t9 = false},
     wanxiang_zrm_18keys = {tone = true, aux = true, pro = true, lite = false, t9 = false},
     wanxiang_pinyin = {tone = true, aux = true, pro = true, lite = false, t9 = false},
-    wanxiang_t9 = {tone = true, aux = false, pro = false, lite = true, t9 = true},
+    wanxiang_t9 = {tone = false, aux = false, pro = false, lite = true, t9 = true},
 }
 
 local COMMENT_CLEAR = 0
