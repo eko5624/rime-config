@@ -2,7 +2,7 @@
 # encoding: utf-8
 schema:
   schema_id: wanxiang_abbrev_t9
-  name: "万象·T9简码"
+  name: "万象：T9简码"
   version: "LTS"
   author: amzxyz
   description: |
@@ -28,21 +28,8 @@ speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"
   delimiter: " '"
   algebra:
-    - xform/^(.*);.*$/$1/
-    - derive/^ng$/eng/
-    - xform/^n$/en/
-    - derive/^(.*)$/\U$1/
-    - derive/^([nl])ve$/$1ue/
-    - derive/^([NL])VE$/$1UE/
-    - derive/ong$/on/
-    - derive/iong$/ion/
-    - derive/eng$/en/
-    - derive/ONG$/ON/
-    - derive/IONG$/ION/
-    - derive/ENG$/EN/
-    - derive/^([jqxy])u/$1v/
-    - derive/^([JQXY])U/$1V/
-    - xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/22233344455566677778889999/
+    __patch:
+      - wanxiang_algebra:/9jian  #共键选一个任意自定义
 
 translator:
   dictionary: wanxiang_abbrev_t9

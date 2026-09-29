@@ -28,25 +28,8 @@ speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"
   delimiter: " '"
   algebra:
-    - xform/ⅱ//  #用于Lua判断输入类型的标记
-    - xform/^(.*);.*$/$1/
-    - xlit/āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜüńňǹ/aaaaooooeeeeiiiiuuuuvvvvvnnn/
-    - xform/ḿ/me/
-    - xform/m̀/me/
-    - derive/^ng$/eng/
-    - xform/^n$/en/
-    #- abbrev/^([a-z]).*/$1/
-    - derive/^(.*)$/\U$1/
-    #- abbrev/^([A-Z]).*/$1/
-    - derive/^([nl])ve$/$1ue/
-    - derive/^([NL])VE$/$1UE/
-    - derive/ong$/on/
-    - derive/iong$/ion/
-    - derive/ONG$/ON/
-    - derive/IONG$/ION/
-    - derive/^([jqxy])u/$1v/
-    - derive/^([JQXY])U/$1V/
-    - xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/22233344455566677778889999/
+    __patch:
+      - wanxiang_algebra:/9jian
 
 translator:
   dictionary: custom_phrase
