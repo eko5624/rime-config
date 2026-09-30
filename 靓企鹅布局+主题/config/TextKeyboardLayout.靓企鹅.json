@@ -26,7 +26,8 @@
         {"type":"AlphabetKey","main":"H","alt":"&","displayText":"H"},
         {"type":"AlphabetKey","main":"J","alt":"*","displayText":"J"},
         {"type":"AlphabetKey","main":"K","alt":"-","displayText":"K"},
-        {"type":"AlphabetKey","main":"L","alt":"_","displayText":"L"}
+        {"type":"AlphabetKey","main":"L","alt":"_","displayText":"L"},
+        {"type":"AlphabetKey","main":";","alt":":","displayText":";"}
       ],
       [
         {"type":"CapsKey","weight":0.15,"rowHeightPercent":21.1},
@@ -45,7 +46,7 @@
         {"type":"LanguageKey","weight":0.12,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
         {"type":"SpaceKey","weight":0.0},
         {"type":"SymbolKey","label":".","swipeLabel":"/","weight":0.12,"swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"slash"}]}]},"composeOverride":{"label":"3","type":"NumPadKey","sym":65459,"independentColor":true}},
-        {"type":"ReturnKey","swipeLabel":"上屏","weight":0.15,"swipe":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
+        {"type":"ReturnKey","swipeLabel":"编码","weight":0.15,"swipe":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
   
       ]
     ],
