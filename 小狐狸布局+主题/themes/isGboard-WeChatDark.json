@@ -1,0 +1,88 @@
+{
+  "type": "foxy.keyboard-theme",
+  "name": "isGboard-WeChatDark copy",
+  "light": {
+    "keyboardColor": "#FFF1EDE1",
+    "altKeyboardColor": "#FFF1EDE1",
+    "candidateBarColor": "#FFFFFFFF",
+    "keyTextColor": "#FF707240",
+    "keyHintTextColor": "#FF90916F",
+    "keyHintTextTopColor": "#FF90916F",
+    "keyHintTextBottomColor": "#FF90916F",
+    "keyHintTextLeftColor": "#FF90916F",
+    "keyHintTextRightColor": "#FF90916F",
+    "keyBackgroundColor": "#FFFFFFFF",
+    "altKeyBackgroundColor": "#FFE5E5BF",
+    "keyPressedColor": "#FFE2E4B9",
+    "keyBorderColor": "#FFF1EDE1",
+    "keyShadowColor": "#9990916F",
+    "candidateTextColor": "#FF707240",
+    "candidateCommentColor": "#FF90916F",
+    "candidateBackgroundColor": "#FFF1EDE1",
+    "candidatePressedColor": "#FFC7CC78",
+    "candidateHighlightColor": "#FFE2E4B9",
+    "toolTextColor": "#FF707240",
+    "preeditTextColor": "#FF707240",
+    "preeditBackgroundColor": "#FFF1EDE1",
+    "popupTextColor": "#FF707240",
+    "popupBackgroundColor": "#FFEEEEEE",
+    "popupBorderColor": "#FFE5E5BF",
+    "voiceWaveColor": "#FFC7CC78",
+    "accentColor": "#FF707240",
+    "keyTypes": {
+      "FUNCTION": {
+        "background": "#FFE5E5BF",
+        "pressed": "#FFD5D89A",
+        "hint": "#FF90916F"
+      },
+      "ACTION": {
+        "text": "#FFFFFFFF",
+        "background": "#FFC7CC78",
+        "pressed": "#FFD8DBA0",
+        "hint": "#B3FFFFFF"
+      }
+    }
+  },
+  "dark": {
+    "keyboardColor": "#64000000",
+    "altKeyboardColor": "#FF111111",
+    "candidateBarColor": "#FF232323",
+    "keyTextColor": "#FFFFFFFF",
+    "keyHintTextColor": "#FF9B9B9B",
+    "keyHintTextTopColor": "#C5F5F5F5",
+    "keyHintTextBottomColor": "#FF9B9B9B",
+    "keyHintTextLeftColor": "#FF9B9B9B",
+    "keyHintTextRightColor": "#FF9B9B9B",
+    "keyBackgroundColor": "#FF2D2D2D",
+    "altKeyBackgroundColor": "#FF3A3A3A",
+    "keyPressedColor": "#FF7F9F45",
+    "keyBorderColor": "#64000000",
+    "keyShadowColor": "#FF000000",
+    "candidateTextColor": "#FFF5F5F5",
+    "candidateCommentColor": "#FF9B9B9B",
+    "candidateBackgroundColor": "#FF111111",
+    "candidatePressedColor": "#FF7D9D43",
+    "candidateHighlightColor": "#FF08C160",
+    "toolTextColor": "#FFF5F5F5",
+    "preeditTextColor": "#FFF5F5F5",
+    "preeditBackgroundColor": "#FF2D2D2D",
+    "popupTextColor": "#FFF5F5F5",
+    "popupBackgroundColor": "#FF373737",
+    "popupBorderColor": "#FF3A3A3A",
+    "voiceWaveColor": "#FF08C160",
+    "accentColor": "#FF08C160",
+    "keyTypes": {
+      "FUNCTION": {
+        "background": "#FF3A3A3A",
+        "pressed": "#FF82A248",
+        "hint": "#FFF5F5F5"
+      },
+      "ACTION": {
+        "text": "#FFFFFFFF",
+        "background": "#FF08C160",
+        "pressed": "#FF78BD4F",
+        "hint": "#99FFFFFF"
+      }
+    }
+  }
+}
