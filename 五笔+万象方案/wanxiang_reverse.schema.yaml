@@ -2,7 +2,7 @@
 # encoding: utf-8
 schema:
   schema_id: wanxiang_reverse
-  name: "万象·五笔反查"
+  name: "万象：五笔反查"
   version: "LTS"
   author: amzxyz
   description: |
@@ -31,7 +31,6 @@ speller:
   algebra:
     __patch:
       - wanxiang_algebra:/reverse/全拼
-      - wanxiang_algebra:/reverse/hspzn  #笔画类型有hspzn，hupvd及hslzy（适配乱序17）可选
 
 translator:
   dictionary: wanxiang_reverse

@@ -2,7 +2,7 @@
 # encoding: utf-8
 schema:
   schema_id: wanxiang_abbrev
-  name: "万象·简码"
+  name: "万象：简码"
   version: "LTS"
   author: amzxyz
   description: |

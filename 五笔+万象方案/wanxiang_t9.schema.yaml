@@ -48,7 +48,7 @@ switches:
     reset: 0  #固定为无声调输出，其他前端用户可以适当patch修改
   - name: super_tips  #开启后在输入编码后面的提示区显示实时的提示数据，受tips数据库影响，表情、翻译、车牌、符号等对应关系数据，并可实现句号上屏，不开启则默认，影响的是segment.prompt参数，归属：super_tips.lua
     states: [提示关, 提示开]
-    reset: 0
+    reset: 1
   - name: abbrev
     states: [简码关, 简码开]
     reset: 1
@@ -150,9 +150,8 @@ abbrev_phrase:
 
 emoji:
   option_name: emoji
-  opencc_config: wanxiang_emoji.json
-  tips: none
-  inherit_comment: false
+  opencc_config: emoji.json
+  inherit_comment: false                # 在 corrector.lua 及反查中，emoji 返回空注释
 
 s2t:
   option_name: s2t

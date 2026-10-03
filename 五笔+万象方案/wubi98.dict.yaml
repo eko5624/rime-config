@@ -1,90 +1,274 @@
-# Rime dictionary: wubi.extended
+# Rime settings
 # encoding: utf-8
 # by: 空山明月
 # date: 2024-05-27
-# 添加cjk超大字符集
 
----
-name: wubi98
-version: "2.0"
-sort: by_weight
-import_tables:
-  - dicts/98/wubi98_ci
-  - user
-  - dicts/98/wubi98_emoji
-  - dicts/98/hotstring
-  - dicts/98/wubi98_zi
-columns:
-  - text
-  - code
-  - weight
-  - stem
-encoder:
-  exclude_patterns:
-    - '^z.*$'
-  rules:
-    - length_equal: 2
-      formula: "AaAbBaBb"
-    - length_equal: 3
-      formula: "AaBaCaCb"
-    - length_in_range: [4, 90]
-      formula: "AaBaCaZa"
-...
+schema:
+  schema_id: wubi98
+  name: "98五笔"
+  version: "2.1"
+  icon: icons/wubi.ico
+  ascii_icon: icons/en.ico
+  full_icon: icons/full.ico
+  half_icon: icons/half.ico
+  author:
+    - 发明人 王永民
+  description: |
+    敲 z 键进入拼音反查
 
-# ＊备注：
-# 本扩展词库文件是一个范例，用户在使用的时候最好复制一份，并重命名后使用
-# 因为在主方案更新时，会将此文件覆盖，否则用户在更新时需要提前将此文件备份
-# 下面是使用说明
-# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+switches:
+  - name: emoji
+    states: [ 💀, 😄 ]
+    reset: 1  
+  - name: ascii_mode
+    states: [ 中, 英 ]
+    reset: 0
+  - options: [s2s, s2t, s2hk, s2tw]  # 简繁转换开关组，可以在一个空选项和多个实际“- simplifier@s2hk”引入的项目之前切换，这是一个开关组，你可以将其中任意一个s2s等设置为toggle快捷键，多次按下将轮询
+    states: [简体, 通繁, 港繁, 臺繁]
+    reset: 0
+  - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
+    states: [ 常, 扩 ]
+    reset: 0
+  - name: chinese_english
+    states: [ 翻译关, 翻译开 ]
+  - name: chaifen
+    states: [ 隐, 显 ]
+    reset: 1
+  - name: pinyin_hint
+    states: [ 形, 音 ]
+    reset: 1
+  - name: single_char
+    states: [ 词, 单 ]
+    reset: 0
+  - name: full_shape
+    states: [ 半, 全 ]
+    reset: 0
+  - name: ascii_punct
+    states: [ "。，", "．，" ]
+    reset: 0
+  - name: charset_comment
+    states: [ 码区关, 码区开 ]
+    reset: 0
 
-# ↓ 扩展词库的用法一：「无码加词」
-# 无编码词条直接拷贝进来、保存一下，就批量加入了，下面几首诗，可以「五笔词条」的方式打出
-# 注意，末尾不可有符号。
+engine:
+  processors:
+    - ascii_composer
+    - lua_processor@alphabet_mode_processor
+    - recognizer
+    - key_binder
+    - speller
+    - lua_processor@alphabet_mode_post_speller_processor
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - affix_segmentor@pinyin_lookup
+    - affix_segmentor@wubi98_lookup
+    - affix_segmentor@radical_lookup
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - history_translator@history
+    - lua_translator@time_date
+    - lua_translator@*calculator
+    - lua_translator@*number                    # 数字金额大写
+    - lua_translator@*force_gc                  # 暴力 GC 降低内存
+    - lua_translator@*unicode                   # Unicode
+    - lua_translator@alphabet_mode_translator   # 临时字母模式
+    - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
+    - script_translator@pinyin_lookup
+    - script_translator@wubi98_lookup
+    - script_translator@radical_lookup
+  filters:
+    - simplifier@s2t                            # 简转繁
+    - simplifier@s2hk                           # 简转港
+    - simplifier@s2tw                           # 简转台
+    - simplifier@emoji                          # 候选表情
+    - lua_filter@*charset*filter                # CJK字符集过滤
+    - lua_filter@*charset*comment_hint          # CJK字符集码区提示
+    - lua_filter@single_char                    # 单字输入模式
+    - lua_filter@*multi_line                    # 支持词条多行输出
+    - reverse_lookup_filter@pinyin_reverse_lookup
+    - reverse_lookup_filter@radical_reverse_lookup
+    - simplifier@chaifen                        # 五笔字根拆分滤镜
+    - simplifier@pinyin_hint                    # 以形查音滤镜
+    - simplifier@chinese_english                # 英汉互译
+    - uniquifier                                # 去重
 
-# 春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少
-# 红豆生南国，春来发几枝。愿君多采撷，此物最相思
-# 向晚意不适，驱车登古原。夕阳无限好，只是近黄昏
-# 故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流
+speller:
+#  max_code_length: 4                   # 设置输入码的最大长度
+#  auto_select: true                    # 四码唯一时，自动上屏
+#  auto_clear: max_length               # 空码时自动清空
 
-# ↓ 扩展词库的用法二：「快捷输入」
-#  主词库中缺少的常用短语，个人信息等等，可如下快捷输入，删掉下面三行的「#」号，则可以定义在后面的「编码」输出
+translator:
+  dictionary: wubi98
+  db_class: tabledb
+  initial_quality: 1.5
+  enable_charset_filter: false
+  enable_sentence: false                # 开启句子输入模式
+  enable_user_dict: false               # 开启用户词典
+  enable_encoder: false                 # 开启自动造词
+  encode_commit_history: false          # 是否对已上屏词自动成词（仅 table_translator 有效）
+  max_phrase_length: 10                 # 设置候选词的最大长度
+  enable_completion: false              # 是否显示编码未输入完整的词条
+  preedit_format:                       # 上屏码自定义
+#    - xform/.+//
+  comment_format:                       # 提示码自定义
+    - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
+  disable_user_dict_for_patterns:       # 不需要录入用户词典的编码
+    - "^z.*$"
 
-#北京市海淀区清华大学医学科学楼	addr
-#tsps_e@tsinghua.edu.cn	mail
-#13552888888	tel
+# 自定义短语
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase  # 需要手动创建 custom_phrase.txt 文件
+  db_class: stabledb
+  enable_completion: false # 补全提示
+  enable_sentence: false   # 禁止造句
+  initial_quality: 99      # custom_phrase 的权重应该比 pinyin 和 melt_eng 大
 
-# ↓ 扩展词库的用法三：「局部调频」
-# 重码条目可以通过「词频」微调其排序，下诗默认排在其单字「暒」和「䗌」的后面，如果添加一个更大的词频，排序就将调前。
-# 注意，中州韵码表的标准格式是，「词条」「编码」「词频」「造词码」，故下面的「词条」和「词频」之间，跨过了「编码」列，所以有「 2 」个英文状态下的TAB缩进符。
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  inherit_comment: false                # 在 corrector.lua 及反查中，emoji 返回空注释
 
-# 日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天		90271400
+s2t:
+  option_name: s2t
+  opencc_config: wanxiang_s2t.json
+  tips: all
+  tags: [abc]
 
-# 单字「我」在「金」前，原因是「我」的词频大，给「金」调高到超过「我」，「金」就会前置了。
-# 注意，「单字」是无法在「五笔词组规则」下编码的，所以给单字调频需要加上它的编码，以防「中州韵」程序产生困惑。最好拷主码表相应条目到此修改。
-# 因为「主码表」和「扩展词库」是权级相等的关系，所以针对主表中已存在，你却想微调的部分，拷过来后，在这里定义个更大的频数，才会覆盖掉主表内容。
-# 通常而言，形码的「单字序」是固定的，这是做到盲打的基本条件，除非创造新的形码方案，否则不建议变更主码表单字排序。
+s2hk:
+  option_name: s2hk
+  opencc_config: wanxiang_s2hk.json
+  tips: all
+  tags: [abc]
 
-#我	q	90788800	trny
-#金	q	90788801	qqqq
+s2tw:
+  option_name: s2tw
+  opencc_config: wanxiang_s2tw.json
+  tips: all
+  tags: [abc]
 
-# ↓ 扩展词库的用法四：「码表魔改」
-# 此处的「单字表」如果不加「词频」，将会覆盖掉主表的排序，在「扩展词库」中魔改「单字」时，请注意。
-# 单行单义码表，直接拷入生效。例如，下是一些「二简第三重码字」，删了「#」号，即可生效。
+history:
+  input: z
+  size: 1
+  initial_quality: 1
 
-#行	tg
-#合	wg
-#教	ft
-#政	gh
-#海	it
-#期	dw
-#真	fh
-#程	tk
+chaifen:
+  opencc_config: wb98_spelling.json
+  option_name: chaifen
+  show_in_comment: true 
+  comment_format:     
+    - "xform/&nbsp;/ /"
+  tags: [pinyin_lookup]                 # 限制在对应 tag 只有在拼音反查五笔时才有拆分提示
+  tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
 
-# 附言：
-# 「主码表」与「扩展词库」最终在「Librime」引擎中「合二为一」。
-# 「扩展词库」可视为「主码表」的延伸与补充，两者权级平等，故遇着想改排序的重码，变更词频时，需要与主表对照。
-# 数据无价，注意保存备份，可以定期保存，程序升级前，可以先取出，再覆盖回去。
+pinyin_hint:
+  opencc_config: pinyin.json
+  option_name: pinyin_hint
+  show_in_comment: true 
+  comment_format:     
+    - "xform/&nbsp;/ /"
+  tags: [wubi98_lookup]                 # 限制在对应 tag
+  tips: all                             # 只给单字加滤镜，改为 char 。 词也显示，改为 all
 
-# 自定义词语
-空山明月
-中书君
+#汉译英
+chinese_english:
+  option_name: chinese_english
+  opencc_config: chinese_english.json
+  tags: [abc]
+  tips: all
+  comment_format:
+    - "xform/-/ /"
+      
+pinyin_lookup:                          # 拼音反查五笔
+  tag: pinyin_lookup
+  dictionary: wanxiang_pro
+  prefix: "z"
+  tips: 〔拼音反查〕
+
+pinyin_reverse_lookup:                  # 拼音反查五笔
+  tags: [pinyin_lookup]
+  dictionary: wubi98
+  overwrite_comment: true
+
+wubi98_lookup:                          # 五笔反查拼音
+  tag: wubi98_lookup
+  prefix: "`"
+  suffix: ;
+  dictionary: wubi98
+  tips: 〔以形查音〕
+  closing_tips: 〔五笔〕
+  initial_quality: 1
+
+radical_lookup:
+  tag: radical_lookup
+  enable_completion: false
+  enable_sentence: false
+  prefix: 'Uu'
+  dictionary: radical_pinyin
+  tips: 〔拆字查音〕
+  closing_tips: 〔五笔〕
+  comment_format:
+    - xform/;[a-z]{2}(,[a-z]{2})*// # 删除注释里的五笔首二辅助码
+
+radical_reverse_lookup:
+  tags: [radical_lookup]
+  overwrite_comment: true
+  dictionary: wanxiang_pro
+
+# 标点符号
+# punctuator 下面有三个子项：
+#   full_shape 全角标点映射
+#   half_shape 半角标点映射
+#   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符，自定义的 symbols_v.yaml 修改成了 'v' 开头。
+punctuator:
+  full_shape:
+    __include: default:/punctuator/full_shape  # 从 default.yaml 导入配置
+  half_shape:
+    __include: default:/punctuator/half_shape  # 从 default.yaml 导入配置
+  digit_separators:
+    __include: default:/punctuator/digit_separators # 从 default.yaml 导入配置
+  symbols:
+    __include: wanxiang_symbols:/symbols            # 从 wanxiang_symbols 导入配置
+
+key_binder:
+  import_preset: default
+  bindings:
+    # 上下翻页 - =
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    
+    # 上下翻页 tab
+    - { when: has_menu, accept: Tab, send: Page_Down }
+    - {send: Escape, accept: space, when: composing}
+    - {send: space, accept: space, when: has_menu}
+    - { when: always, select: .next, accept: Control+1 }             # 在最近的两个方案之间切换
+    - { when: always, set_option: std, accept: Control+2 }           # 重置为通用体
+    - { when: always, toggle: extend_charset, accept: Control+3 }    # 切换CJK字符集    
+    - { when: always, toggle: single_char, accept: Control+4 }       # 切换词组/单字
+    - { when: always, toggle: full_shape, accept: Control+5 }        # 切换全半角
+    - { when: always, toggle: ascii_punct, accept: Control+6 }       # 切换中英标点
+    - { when: always, toggle: chaifen, accept: Control+7}            # 切换字根拆分显隐
+    - { when: always, set_option: s2hk, accept: Control+8 }          # 切换 通用 -> 香港繁体
+    - { when: always, set_option: s2twp, accept: Control+9 }         # 切换 通用 -> 台湾片语
+
+# 处理符合特定规则的输入码，如网址、反查
+recognizer:
+  import_preset: default  # 从 default.yaml 继承通用的
+  patterns:  # 再增加方案专有的：
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+    pinyin_lookup: "z[a-z]*'?$"         # 拼音反查五笔
+    wubi98_lookup: "`[a-z]*'?$"         # 五笔反查拼音
+    radical_lookup: "Uu[a-z]*'?$"       # 拆字反查拼音
+    unicode: "^U[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@*unicode，输出 Unicode 字符
+    number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number，数字金额大写
+    calculator: "^=.*$"                 # 计算器功能引导
+    alphabet_mode: '^[;].*$'
