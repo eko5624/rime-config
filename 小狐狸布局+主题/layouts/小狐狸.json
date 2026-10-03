@@ -676,23 +676,23 @@
           "rows": 4,
           "keys": [
             { "column": 0, "row": 0, "ref": "rime.KP_Add", "keyType": "FUNCTION" },
-            { "column": 1, "row": 0, "ref": "rime.1" },
-            { "column": 2, "row": 0, "ref": "rime.2" },
-            { "column": 3, "row": 0, "ref": "rime.3" },
+            { "column": 1, "row": 0, "ref": "rime.KP_1" },
+            { "column": 2, "row": 0, "ref": "rime.KP_2" },
+            { "column": 3, "row": 0, "ref": "rime.KP_3" },
             { "column": 4, "row": 0, "ref": "rime.KP_Divide", "keyType": "FUNCTION" },
             { "column": 0, "row": 1, "ref": "rime.KP_Subtract", "keyType": "FUNCTION" },
-            { "column": 1, "row": 1, "ref": "rime.4" },
-            { "column": 2, "row": 1, "ref": "rime.5" },
-            { "column": 3, "row": 1, "ref": "rime.6" },
+            { "column": 1, "row": 1, "ref": "rime.KP_4" },
+            { "column": 2, "row": 1, "ref": "rime.KP_5" },
+            { "column": 3, "row": 1, "ref": "rime.KP_6" },
             { "column": 4, "row": 1, "ref": "rime.equal" },
             { "column": 0, "row": 2, "ref": "rime.KP_Multiply", "keyType": "FUNCTION" },
-            { "column": 1, "row": 2, "ref": "rime.7" },
-            { "column": 2, "row": 2, "ref": "rime.8" },
-            { "column": 3, "row": 2, "ref": "rime.9" },
+            { "column": 1, "row": 2, "ref": "rime.KP_7" },
+            { "column": 2, "row": 2, "ref": "rime.KP_8" },
+            { "column": 3, "row": 2, "ref": "rime.KP_9" },
             { "column": 4, "row": 2, "ref": "rime.BackSpace", "override": { "swipe": null, "keyType": "FUNCTION", "longPress": { "repeat": true, "action": { "type": "key", "key": "BACKSPACE" } } } },
             { "column": 0, "row": 3, "ref": "foxy.LayoutDefault" },
             { "column": 1, "row": 3, "ref": "rime.space", "label": "␣", "keyType": "FUNCTION" },
-            { "column": 2, "row": 3, "ref": "rime.0" },
+            { "column": 2, "row": 3, "ref": "rime.KP_0" },
             { "column": 3, "row": 3, "ref": "rime.KP_Decimal", "keyType": "FUNCTION" },
             { "column": 4, "row": 3, "ref": "foxy.KP_Enter" }
           ]
@@ -779,32 +779,32 @@
           "type": "rows",
           "rows": [
             [
-              { "ref": "rime.question" },
-              { "label": "分词", "tap": { "ref": "rime.apostrophe" }, "swipe": { "down": { "ref": "rime.1" } } },
-              { "label": "abc", "tap": { "ref": "rime.2" } },
-              { "label": "def", "tap": { "ref": "rime.3" } },
-              { "label": "🌐", "keyType": "FUNCTION", "tap": { "type": "switch_layout", "layout": "full_26" } }
+              { "label": " ，", "ref": "rime.comma", "weight": 1.7 },
+              { "label": "分词", "weight": 2.2, "tap": { "ref": "rime.apostrophe" }, "swipe": { "up": { "ref": "rime.KP_1" } } },
+              { "label": "ABC", "weight": 2.2, "tap": { "ref": "rime.2" }, "swipe": { "up": { "ref": "rime.KP_2" } } },
+              { "label": "DEF", "weight": 2.2, "tap": { "ref": "rime.3" }, "swipe": { "up": { "ref": "rime.KP_3" } } },
+              { "ref": "qwerty.backspace", "weight": 1.7, "icon": "backspace" }
             ],
             [
-              { "ref": "rime.exclam" },
-              { "label": "ghi", "tap": { "ref": "rime.4" } },
-              { "label": "jkl", "tap": { "ref": "rime.5" } },
-              { "label": "mno", "tap": { "ref": "rime.6" } },
-              { "label": "大写", "tap": { "macro": "wanxiang_t9.to_full_upper" }, "keyType": "FUNCTION" }
+              { "label": " 。", "ref": "rime.period", "weight": 1.7 },
+              { "label": "GHI", "weight": 2.2, "tap": { "ref": "rime.4" }, "swipe": { "up": { "ref": "rime.KP_4" } } },
+              { "label": "JKL", "weight": 2.2, "tap": { "ref": "rime.5" }, "swipe": { "up": { "ref": "rime.KP_5" } } },
+              { "label": "MNO", "weight": 2.2, "tap": { "ref": "rime.6" }, "swipe": { "up": { "ref": "rime.KP_6" } } },
+              { "label": "重输", "weight": 1.7, "ref": "rime.Escape" }
             ],
             [
-              { "ref": "rime.quotedbl" },
-              { "label": "pqrs", "tap": { "ref": "rime.7" } },
-              { "label": "tuv", "tap": { "ref": "rime.8" } },
-              { "label": "wxyz", "tap": { "ref": "rime.9" } },
-              { "ref": "qwerty.backspace", "icon": "backspace", "weight": 1 }
+              { "label": " ？", "ref": "rime.question", "weight": 1.7 },
+              { "label": "PQRS", "weight": 2.2, "tap": { "ref": "rime.7" }, "swipe": { "up": { "ref": "rime.KP_7" } } },
+              { "label": "TUV", "weight": 2.2, "tap": { "ref": "rime.8" }, "swipe": { "up": { "ref": "rime.KP_8" } } },
+              { "label": "WXYZ", "weight": 2.2, "tap": { "ref": "rime.9" }, "swipe": { "up": { "ref": "rime.KP_9" } } },
+              { "ref": "rime.KP_0", "weight": 1.7 }
             ],
             [
-              { "ref": "rime.numbersign" },
-              { "ref": "rime.comma" },
-              { "ref": "rime.space" },
-              { "ref": "rime.period" },
-              { "ref": "rime.Return", "keyType": "ACTION", "icon": "enter" }
+              { "label": "符", "weight": 1.7, "tap": { "type": "switch_layout", "layout": "symbols" } },
+              { "label": "123", "weight": 1.5, "tap": { "type": "switch_layout", "layout": "numpad" }, "variants": [ { "when": { "rime": { "composing": true } }, "label": " ↹ ", "tap": { "ref": "rime.Tab" } } ] },
+              { "ref": "qwerty.space", "weight": 3.6, "statusLabel": "schema_name" },
+              { "label": "🌐", "weight": 1.5, "keyType": "FUNCTION", "tap": { "type": "switch_layout", "layout": "full_26" } },
+              { "ref": "rime.Return", "weight": 1.7, "keyType": "ACTION", "icon": "enter" },
             ]
           ]
         }
