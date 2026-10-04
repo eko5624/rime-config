@@ -83,7 +83,8 @@
           {"type":"AlphabetKey","main":"F","alt":"=","displayText":"F G","weight":0.14},
           {"type":"AlphabetKey","main":"H","alt":"%","displayText":"H","weight":0.14},
           {"type":"AlphabetKey","main":"J","alt":"(","displayText":"J K","weight":0.14},
-          {"type":"AlphabetKey","main":"L","alt":")","displayText":"L","weight":0.14}
+          {"type":"AlphabetKey","main":"L","alt":")","displayText":"L","weight":0.14},
+          {"type":"AlphabetKey","main":";","alt":")","displayText":";","weight":0.14}
         ],
         [
           {"type":"CapsKey","weight":0.15,"rowHeightPercent":21.1},
