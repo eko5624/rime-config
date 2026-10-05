@@ -228,8 +228,8 @@
     "qwerty.n": {
       "ref": "rime.n",
       "keyType": "LETTER",
-      "swipe": { "up": { "ref": "rime.editor", "label": " ️💠 " } },
-      "longPress": { "ref": "rime.N" }
+      "swipe": { "up": { "ref": "rime.N", "label": " 💠 " } },
+      "longPress": { "ref": "qwerty.editor" }
     },
     "qwerty.data_directory": {
       "label": "方案目录",
@@ -536,7 +536,7 @@
              { "ref": "rime.c", "override": { "label": "C", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "ref": "rime.C" } } },
              { "ref": "rime.v", "override": { "label": "V", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "ref": "rime.V" } } },
              { "ref": "rime.b", "override": { "label": "B", "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } } }, "longPress": { "ref": "rime.B" } } },
-             { "ref": "qwerty.n" },
+             { "ref": "rime.n", "override": { "label": "N", "swipe": { "up": { "ref": "qwerty.editor", "label": " 💠 " } }, "longPress": { "ref": "rime.N" } } },
              { "ref": "qwerty.m", "override": { "label": "M", "swipe": { "up": { "ref": "rime.quotedbl", "label": "\"" } }, "longPress": { "ref": "rime.M" } } },
              { "ref": "qwerty.backspace", "weight": 1.5 }
             ],
