@@ -20,6 +20,7 @@ sort: by_weight
 乐山乐水	yao shan yao shui	12
 于思于思	yu sai yu sai	144
 伤着了	shang zhe le	130
+可能得	ke neng dei	67
 不落下	bu la xia	100
 横行	heng hang	554
 倒数	dao shu	1010
@@ -150,6 +151,7 @@ sort: by_weight
 出血线	chu xue xian	261
 出血	chu xue	6149
 逻辑	luo ji	4689
+露点	lu dian	443
 此行	ci hang	1292
 上头	shang tou	101
 长虫	zhang chong	377
@@ -537,7 +539,7 @@ sort: by_weight
 赶场	gan chang	126
 调配	diao pei	690
 更为	geng wei	1313
-可调	ke diao	1068
+可调	ke diao	268
 更为	geng wei	143
 行长	hang zhang	470
 见长	jian chang	851
@@ -4416,9 +4418,6 @@ sort: by_weight
 谁与共饮	shei yu gong yin	11
 谁与温存	shei yu wen cun	1
 谁与争锋	shei yu zheng feng	52
-谁与争疯	shei yu zheng feng	17
-谁与争风	shei yu zheng feng	13
-谁于争锋	shei yu zheng feng	1
 谁与争功	shei yu zheng gong	6
 谁愿为首	shei yuan wei shou	8
 谁在背后	shei zai bei hou	32
@@ -4713,7 +4712,6 @@ sort: by_weight
 两个余	liang ge yu	571
 两个予	liang ge yu	541
 两个禺	liang ge yu	511
-两个月	liang ge yue	18847
 两个曰	liang ge yue	18817
 两个真	liang ge zhen	808
 两个止	liang ge zhi	709

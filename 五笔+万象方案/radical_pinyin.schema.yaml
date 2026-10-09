@@ -5,7 +5,7 @@
 
 schema:
   schema_id: radical_pinyin
-  name: "拆字反查"
+  name: "偏旁部件拆字"
   version: "1.02"
   author: Mirtle
   description: |
@@ -40,7 +40,7 @@ speller:
   delimiter: " '"
   algebra:
     # 根据当前所用拼音方案选择 __include 的值
-    #__include: algebra_pinyin           # 全拼
+    __include: algebra_pinyin           # 全拼
     # __include: algebra_double_pinyin  # 自然码双拼
     # __include: algebra_flypy          # 小鹤双拼
     # __include: algebra_mspy           # 微软双拼

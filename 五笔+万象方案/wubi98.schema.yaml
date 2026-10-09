@@ -23,8 +23,8 @@ switches:
   - name: ascii_mode
     states: [ 中, 英 ]
     reset: 0
-  - options: [ std, s2hk, s2twp ]
-    states: [ 简体, 港繁, 台繁 ]
+  - options: [s2s, s2t, s2hk, s2tw]  # 简繁转换开关组，可以在一个空选项和多个实际“- simplifier@s2hk”引入的项目之前切换，这是一个开关组，你可以将其中任意一个s2s等设置为toggle快捷键，多次按下将轮询
+    states: [简体, 通繁, 港繁, 臺繁]
     reset: 0
   - name: extend_charset # 0滤除CJK扩展B-I区，1为CJK全字符集
     states: [ 常, 扩 ]
@@ -86,10 +86,10 @@ engine:
     - script_translator@wubi98_lookup
     - script_translator@radical_lookup
   filters:
-    - simplifier@emoji                          # Emoji
-    - simplifier@s2hk
-    - simplifier@s2tw
-    #- simplifier@transcription_cc               # 简繁切换
+    - simplifier@s2t                            # 简转繁
+    - simplifier@s2hk                           # 简转港
+    - simplifier@s2tw                           # 简转台
+    - simplifier@emoji                          # 候选表情
     - lua_filter@*charset*filter                # CJK字符集过滤
     - lua_filter@*charset*comment_hint          # CJK字符集码区提示
     - lua_filter@single_char                    # 单字输入模式
@@ -124,31 +124,6 @@ translator:
   disable_user_dict_for_patterns:       # 不需要录入用户词典的编码
     - "^z.*$"
 
-# 简繁转换
-# transcription_cc:
-  # option_name: transcription
-  # opencc_config: s2t.json             # 简 -> 繁
-  # opencc_config: s2hk.json              # 简 -> 香港
-  # opencc_config: t2s.json             # 繁 -> 简
-  # opencc_config: t2tw.json            # 繁 -> 台湾
-  # opencc_config: t2hk.json            # 繁 -> 香港
-  # opencc_config: s2tw.json            # 簡 -> 臺灣標準
-  # opencc_config: s2twp.json           # 簡 -> 臺灣片語
-  # tips: none                            # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
-  # tags: [abc]                           # 限制在对应 tag 只在五笔输入时启用简繁转换
-
-s2hk:
-  opencc_config: s2hk.json
-  option_name: s2hk
-  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
-  tips: all
-
-s2tw:
-  opencc_config: s2twp.json
-  option_name: s2twp
-  tags: [abc]                           # 限制在对应 tag 反查时不进行简繁转换
-  tips: all
-
 # 自定义短语
 custom_phrase:
   dictionary: ""
@@ -162,6 +137,24 @@ emoji:
   option_name: emoji
   opencc_config: emoji.json
   inherit_comment: false                # 在 corrector.lua 及反查中，emoji 返回空注释
+
+s2t:
+  option_name: s2t
+  opencc_config: wanxiang_s2t.json
+  tips: all
+  tags: [abc]
+
+s2hk:
+  option_name: s2hk
+  opencc_config: wanxiang_s2hk.json
+  tips: all
+  tags: [abc]
+
+s2tw:
+  option_name: s2tw
+  opencc_config: wanxiang_s2tw.json
+  tips: all
+  tags: [abc]
 
 history:
   input: z
@@ -224,7 +217,7 @@ radical_lookup:
   tips: 〔拆字查音〕
   closing_tips: 〔五笔〕
   comment_format:
-    - xform/;([a-z]{2})// # 删除注释里的五笔首二辅助码
+    - xform/;[a-z]{2}(,[a-z]{2})*// # 删除注释里的五笔首二辅助码
 
 radical_reverse_lookup:
   tags: [radical_lookup]
@@ -244,7 +237,7 @@ punctuator:
   digit_separators:
     __include: default:/punctuator/digit_separators # 从 default.yaml 导入配置
   symbols:
-    __include: symbols:/symbols                # 从 symbols.yaml 导入配置
+    __include: wanxiang_symbols:/symbols/symbols            # 从 wanxiang_symbols 导入配置
 
 key_binder:
   import_preset: default

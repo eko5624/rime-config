@@ -2,7 +2,7 @@
 # encoding: utf-8
 schema:
   schema_id: wanxiang_phrase_t9
-  name: "万象：T9短语"
+  name: "万象·T9短语"
   version: "LTS"
   author: amzxyz
   description: |

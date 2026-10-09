@@ -2,7 +2,7 @@
 # encoding: utf-8
 schema:
   schema_id: wanxiang_phrase
-  name: "万象·短语"
+  name: "万象：短语"
   version: "LTS"
   author: amzxyz
   description: |
@@ -27,9 +27,6 @@ key_binder:
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"
   delimiter: " '"
-  algebra:
-    __patch:
-      - wanxiang_algebra:/26jian
 
 translator:
   dictionary: custom_phrase

@@ -2,7 +2,7 @@
 # encoding: utf-8
 schema:
   schema_id: wanxiang_reverse
-  name: "万象：五笔反查"
+  name: "五笔反查/辅筛"
   version: "LTS"
   author: amzxyz
   description: |
@@ -28,9 +28,6 @@ key_binder:
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"
   delimiter: " '"
-  algebra:
-    __patch:
-      - wanxiang_algebra:/reverse/全拼
 
 translator:
   dictionary: wanxiang_reverse

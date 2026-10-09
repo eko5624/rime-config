@@ -27,9 +27,6 @@ key_binder:
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"
   delimiter: " '"
-  algebra:
-    __patch:
-      - wanxiang_algebra:/26jian  #共键选一个任意自定义
 
 translator:
   dictionary: wanxiang_abbrev
