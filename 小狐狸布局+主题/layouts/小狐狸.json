@@ -4,31 +4,37 @@
       "ref": "rime.1",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.1", "label": " ! " } },
+      "longPress": { "ref": "rime.exclam" }
     },
     "num.2": {
       "ref": "rime.2",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.2", "label": " @ " } },
+      "longPress": { "ref": "rime.at" }
     },
     "num.3": {
       "ref": "rime.3",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.3", "label": " # " } },
+      "longPress": { "ref": "rime.numbersign" }
     },
     "num.4": {
       "ref": "rime.4",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.4", "label": " $ " } },
+      "longPress": { "ref": "rime.dollar" }
     },
     "num.5": {
       "ref": "rime.5",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.5", "label": " % " } },
+      "longPress": { "ref": "rime.percent" }
     },
     "num.6": {
       "ref": "rime.6",
       "keyType": "LETTER",
       "swipe": { "up": { "ref": "rime.6", "label": " ^ " } },
+      "longPress": { "ref": "rime.asciicircum" }
     },
     "num.7": {
       "ref": "rime.7",
