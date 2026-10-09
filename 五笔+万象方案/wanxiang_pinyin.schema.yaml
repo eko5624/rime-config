@@ -252,9 +252,14 @@ speller:
 #   half_shape 半角标点映射
 #   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符，自定义的 symbols_v.yaml 修改成了 'v' 开头。
 punctuator:
-  digit_separators: ":,."  #数字分隔符
-  __include: wanxiang_symbols:/symbol_table  # 从 symbols.yaml 导入配置
-  __patch: wanxiang_symbols:/symbols
+  full_shape:
+    __include: default:/punctuator/full_shape  # 从 default.yaml 导入配置
+  half_shape:
+    __include: default:/punctuator/half_shape  # 从 default.yaml 导入配置
+  digit_separators:
+    __include: default:/punctuator/digit_separators # 从 default.yaml 导入配置
+  symbols:
+    __include: wanxiang_symbols:/symbols/symbols            # 从 wanxiang_symbols 导入配置
 
 key_binder:
   import_preset: default
