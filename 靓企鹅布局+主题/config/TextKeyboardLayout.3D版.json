@@ -85,7 +85,7 @@
       		{"type":"LanguageKey","weight":0.0}
       	],
       	[
-      		{"type":"MacroKey","label":",","swipeDownLabel":"123","weight":0.15,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"comma"}]}]},"swipeDown":{"macro":[{"type":"layer","mode":"to","target":"rime:数字"}]}},
+      		{"type":"MacroKey","label":",","swipeUpLabel":"123","weight":0.15,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"comma"}]}]},"swipeUp":{"macro":[{"type":"layer","mode":"to","target":"rime:数字"}]}},
       		{"type":"SpaceKey"},
       		{"type":"SymbolKey","label":".","weight":0.15},
       		{"type":"ReturnKey","weight":0.2}
