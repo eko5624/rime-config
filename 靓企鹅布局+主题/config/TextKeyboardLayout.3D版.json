@@ -129,14 +129,14 @@
     			{"type":"SymbolKey","label":";","swipeUpLabel":":","weight":0.0,"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"colon"}]}]}}
     		],
     		[
-				{"type":"CapsKey","weight":0.15,"rowHeightPercent":21.1,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Tab"}]}]},"label":"↹","type":"MacroKey","independentColor":false}},
+				  {"type":"CapsKey","weight":0.15,"rowHeightPercent":21.1,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Tab"}]}]},"label":"↹","type":"MacroKey","independentColor":false}},
           {"type":"MacroKey","displayText":"Z","label":"Z","swipeUpLabel":"全选","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Z"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"selectAll"}]}},
           {"type":"MacroKey","displayText":"X C","label":"X","swipeUpLabel":"复制","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"X"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"copy"}]}},
           {"type":"MacroKey","displayText":"V","label":"V","swipeUpLabel":"粘贴","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"V"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"paste"}]}},
           {"type":"MacroKey","displayText":"B N","label":"B","swipeUpLabel":"剪切","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"B"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"cut"}]}},
           {"type":"AlphabetKey","main":"M","alt":"~","displayText":"M","weight":0.14},
-          {"type":"BackspaceKey","swipeDownLabel":"清空","weight":0.15,"swipeDown":{"macro":[{"type":"edit","action":"selectAll"},{"type":"tap","keys":[{"fcitx":"Delete"}]}]}}
-    		],
+          {"type":"BackspaceKey","swipeUpLabel":"清空","weight":0.15,"swipeUp":{"macro":[{"type":"edit","action":"selectAll"},{"type":"tap","keys":[{"fcitx":"Delete"}]}]}}
+        ],
 				[
 					{"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
 					{"type":"CommaKey","weight":0.095,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
