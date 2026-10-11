@@ -115,8 +115,8 @@
     			{"type":"AlphabetKey","main":"W","alt":"\"","displayText":"W E","weight":0.14},
     			{"type":"AlphabetKey","main":"R","alt":"+","displayText":"R T","weight":0.14},
     			{"type":"AlphabetKey","main":"Y","alt":"-","displayText":"Y","weight":0.14},
-    			{"type":"AlphabetKey","main":"U","alt":":","displayText":"U","weight":0.14},
-    			{"type":"AlphabetKey","main":"I","alt":"?","displayText":"I O","weight":0.14},
+    			{"type":"AlphabetKey","main":"U","alt":"[","displayText":"U","weight":0.14},
+    			{"type":"AlphabetKey","main":"I","alt":"]","displayText":"I O","weight":0.14},
     			{"type":"AlphabetKey","main":"P","alt":"\\","displayText":"P","weight":0.14}
     		],
     		[
@@ -126,7 +126,7 @@
     			{"type":"AlphabetKey","main":"H","alt":"%","displayText":"H","weight":0.14},
     			{"type":"AlphabetKey","main":"J","alt":"(","displayText":"J K","weight":0.14},
     			{"type":"AlphabetKey","main":"L","alt":")","displayText":"L","weight":0.14},
-    			{"type":"AlphabetKey","main":";","alt":":","displayText":";","weight":0.14}
+    			{"type":"SymbolKey","label":";","swipeUpLabel":":","weight":0.14,"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"colon"}]}]}}
     		],
     		[
     			{"type":"CapsKey","weight":0.15,"rowHeightPercent":21.1},
@@ -137,14 +137,15 @@
     			{"type":"AlphabetKey","main":"M","alt":"'","displayText":"M","weight":0.14},
     			{"type":"BackspaceKey","swipeDownLabel":"清空","weight":0.15,"swipeDown":{"macro":[{"type":"edit","action":"selectAll"},{"type":"tap","keys":[{"fcitx":"Delete"}]}]}}
     		],
-    		[
-    			{"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Tab"}]}]},"label":"↹","type":"MacroKey","independentColor":false},"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
-    			{"type":"CommaKey","weight":0.12,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
-    			{"type":"LanguageKey","weight":0.12,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","independentColor":false},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
-    			{"type":"SpaceKey","weight":0.0},
-    			{"type":"SymbolKey","label":"。","swipeDownLabel":"/","weight":0.12,"swipeDown":{"macro":[{"type":"tap","keys":[{"fcitx":"slash"}]}]},"composeOverride":{"label":"3","type":"NumPadKey","sym":65459,"independentColor":true}},
-    			{"type":"ReturnKey","swipeDownLabel":"上屏","weight":0.15,"swipeDown":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
-    		]
+				[
+					{"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
+					{"type":"CommaKey","weight":0.095,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
+					{"type":"LanguageKey","weight":0.105,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
+					{"type":"SpaceKey","weight":0.3},
+					{"type":"SymbolKey","label":".","swipeUpLabel":"?","weight":0.09,"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"question"}]}]}},
+					{"type":"SymbolKey","label":"/","swipeUpLabel":"'","weight":0.11,"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]}},
+					{"type":"ReturnKey","swipeUpLabel":"编码","weight":0.15,"swipeUp":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
+				]
     	]
     },
     "数字": {
