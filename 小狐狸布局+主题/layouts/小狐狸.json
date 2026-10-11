@@ -583,8 +583,8 @@
                 { "ref": "rime.w", "override": { "label": "W E", "swipe": { "up": { "ref": "rime.ApostropheShift" } }, "longPress": { "popupKey": "w" } } },
                 { "ref": "rime.r", "override": { "label": "R T", "swipe": { "up": { "ref": "rime.KP_Add" } }, "longPress": { "popupKey": "r" } } },
                 { "ref": "rime.y", "override": { "label": "Y", "swipe": { "up": { "ref": "rime.minus" } }, "longPress": { "popupKey": "y" } } },
-                { "ref": "rime.u", "override": { "label": "U", "swipe": { "up": { "ref": "rime.colon" } }, "longPress": { "popupKey": "u" } } },
-                { "ref": "rime.i", "override": { "label": "I O", "swipe": { "up": { "ref": "rime.Question" } }, "longPress": { "popupKey": "i" } } },
+                { "ref": "rime.u", "override": { "label": "U", "swipe": { "up": { "ref": "rime.bracketleft" } }, "longPress": { "popupKey": "u" } } },
+                { "ref": "rime.i", "override": { "label": "I O", "swipe": { "up": { "ref": "rime.bracketright" } }, "longPress": { "popupKey": "i" } } },
                 { "ref": "rime.p", "override": { "label": "P", "swipe": { "up": { "ref": "rime.backslash" } }, "longPress": { "popupKey": "p" } } }
               ]
             },
