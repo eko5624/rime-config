@@ -1,4 +1,24 @@
 {
+  "type": "foxy.keyboard-layout",
+  "author": "562433403@qq.com",
+  "macros": {
+    "clear_all": [
+      { "action": "select_all" },
+      { "action": "delete" }
+    ],
+    "select_current_line": [
+      { "action": "home" },
+      { "action": "select_end" }
+    ],
+    "full_26.to_t9": [
+      { "type": "switch_layout", "layout": "wanxiang_t9" },
+      { "type": "modifier", "modifier": "SHIFT", "state": "OFF" }
+    ],
+    "wanxiang_t9.to_full_upper": [
+      { "type": "switch_layout", "layout": "full_26" },
+      { "type": "modifier", "modifier": "SHIFT", "state": "TOGGLE_LOCKED" }
+    ]
+  },
   "keys": {
     "num.1": {
       "ref": "rime.1",
@@ -460,45 +480,6 @@
   },
 
 
-  "actions": {
-    "select_all": {
-      "type": "key",
-      "key": "A",
-      "meta": ["CTRL"]
-    },
-    "delete": {
-      "type": "key",
-      "key": "BACKSPACE"
-    },
-    "home": {
-      "type": "key",
-      "key": "HOME"
-    },
-    "select_end": {
-      "type": "key",
-      "key": "END",
-      "meta": [ "SHIFT" ] }
-  },
-  "macros": {
-    "clear_all": [
-      { "action": "select_all" },
-      { "action": "delete" }
-    ],
-    "select_current_line": [
-      { "action": "home" },
-      { "action": "select_end" }
-    ],
-    "full_26.to_t9": [
-      { "type": "switch_layout", "layout": "wanxiang_t9" },
-      { "type": "modifier", "modifier": "SHIFT", "state": "OFF" }
-    ],
-    "wanxiang_t9.to_full_upper": [
-      { "type": "switch_layout", "layout": "full_26" },
-      { "type": "modifier", "modifier": "SHIFT", "state": "TOGGLE_LOCKED" }
-    ]
-  },
-
-
   "layouts": {
     "default": {
       "sections": [
@@ -551,7 +532,39 @@
             ]
           ]
         }
-      ]
+      ],
+      "split": {
+        "sections": [
+          {
+            "type": "rows",
+            "rows": [
+              [
+                {"ref": "qwerty.q"}, {"ref": "qwerty.w"}, {"ref": "qwerty.e"}, {"ref": "qwerty.r"}, {"ref": "qwerty.t"},
+                {"ref": "foxy.Spacer", "weight": 4},
+                {"ref": "qwerty.y"}, {"ref": "qwerty.u"}, {"ref": "qwerty.i"}, {"ref": "qwerty.o"}, {"ref": "qwerty.p"}
+              ],
+              [
+                {"ref": "qwerty.a"}, {"ref": "qwerty.s"}, {"ref": "qwerty.d"}, {"ref": "qwerty.f"}, {"ref": "qwerty.g"},
+                {"ref": "foxy.Spacer", "weight": 4},
+                {"ref": "qwerty.h"}, {"ref": "qwerty.j"}, {"ref": "qwerty.k"}, {"ref": "qwerty.l"}, {"ref": "qwerty.semicolon"}
+              ],
+              [
+                {"ref": "qwerty.shift", "weight": 1, "override": {"swipe": {"up": {"ref": "foxy.Redo", "label": "重做"}, "down": {"action": {"type": "app", "command": "text_editor"}, "label": "Edit"}}}},
+                {"ref": "qwerty.z"}, {"ref": "qwerty.x"}, {"ref": "qwerty.c"}, {"ref": "qwerty.v"},
+                {"ref": "foxy.Spacer", "weight": 4},
+                {"ref": "qwerty.v"}, {"ref": "qwerty.b"}, {"ref": "qwerty.n"}, {"ref": "qwerty.m"}, {"ref": "qwerty.backspace", "weight": 1}
+              ],
+              {
+                "totalWeight": 14,
+                "keys": [
+                  {"ref": "qwerty.layout", "weight": 1}, {"ref": "qwerty.comma"}, {"ref": "qwerty.space", "weight": "auto"},
+                  {"ref": "qwerty.period"}, {"ref": "qwerty.enter", "weight": 1}
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     "wanxiang_zrm_18keys": {
       "variants": [
