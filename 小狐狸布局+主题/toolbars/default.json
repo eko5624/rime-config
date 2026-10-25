@@ -1,0 +1,24 @@
+{
+  "type": "foxy.toolbar",
+  "version": 1,
+  "toolbars": {
+    "main": [
+      "schema",
+      "deploy",
+      "settings",
+      "clipboard",
+      "keyboard_tools",
+      "rime_switches",
+      "voice",
+      "hide_keyboard"
+    ],
+    "expanded": [
+      "theme",
+      "size",
+      "one_hand",
+      "split_keyboard"
+    ]
+  },
+  "buttons": {},
+  "containers": {}
+}
