@@ -625,7 +625,7 @@
               "height": 1.075,
               "keys": [
                 { "ref": "qwerty.shift" },
-                { "ref": "rime.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } } }, "longPress": { "popupKey": "z" } } },
+                { "ref": "rime.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } } }, "longPress": { "popupKey": "z", "icon": "" } } },
                 { "ref": "rime.x", "weight": 1.4, "override": { "label": "X C", "swipe": { "up": { "ref": "foxy.SelectAll", "label": "全选" } }, "longPress": { "popupKey": "x" } } },
                 { "ref": "rime.v", "weight": 1.4, "override": { "label": "V", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "popupKey": "v" } } },
                 { "ref": "rime.b", "weight": 1.4, "override": { "label": "B N", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "popupKey": "b" } } },
