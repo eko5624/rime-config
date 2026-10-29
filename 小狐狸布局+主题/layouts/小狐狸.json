@@ -505,7 +505,7 @@
             ],
             [
               { "ref": "qwerty.layout" },
-              { "ref": "rime.Shift_L", "weight": 1.05, "label": "", "icon": "custom.语言", "variants": [ { "when": { "rime": { "composing": true } }, "tap": { "ref": "qwerty.lang.composing" }, "label": "⎋" } ] },
+              { "ref": "rime.Shift_L", "weight": 1.05, "label": "", "icon": "custom.lang", "variants": [ { "when": { "rime": { "composing": true } }, "tap": { "ref": "qwerty.lang.composing" }, "label": "⎋", "icon": "" } ] },
               { "ref": "qwerty.comma", "weight": 0.95 },
               { "ref": "qwerty.space", "weight": 3.0 },
               { "ref": "qwerty.period", "weight": 0.9 },
