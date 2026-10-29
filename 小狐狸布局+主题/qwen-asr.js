@@ -49,8 +49,6 @@ const STRINGS = {
     streamModel: "Streaming model",
     streamModelDescription: "Choose a preset or enter a model ID.",
     heartbeat: "Keep connection during silence",
-    intermediate: "Request partial results",
-    intermediateDescription: "Enabled automatically for message-style models.",
     flashEndpoint: "Flash endpoint",
     flashEndpointDescription: "Keep the default to use the selected platform's endpoint.",
     flashModel: "Flash model",
@@ -77,8 +75,6 @@ const STRINGS = {
     streamModel: "流式识别模型",
     streamModelDescription: "可选预设模型，也可输入模型 ID。",
     heartbeat: "静音时保持连接",
-    intermediate: "请求中间结果",
-    intermediateDescription: "message 类模型会自动启用。",
     flashEndpoint: "Flash 识别地址",
     flashEndpointDescription: "保持默认值即可使用所选平台的地址。",
     flashModel: "Flash 识别模型",
@@ -105,8 +101,6 @@ const STRINGS = {
     streamModel: "串流辨識模型",
     streamModelDescription: "可選預設模型，也可輸入模型 ID。",
     heartbeat: "靜音時保持連線",
-    intermediate: "要求中間結果",
-    intermediateDescription: "message 類型模型會自動啟用。",
     flashEndpoint: "Flash 辨識端點",
     flashEndpointDescription: "保持預設值即可使用所選平台的端點。",
     flashModel: "Flash 辨識模型",
@@ -178,9 +172,9 @@ function parseTranscript(body) {
 foxy.plugin.register({
   id: "qwen-asr",
   name: stringsFor(foxy.locale).name,
-  version: "1.6.1",
+  version: "1.6.3",
   hosts: ["dashscope.aliyuncs.com", "maas.qianwenaiapi.com", "cn-beijing.maas.qianwenaiapi.com"],
-  features: [{type: "voice.asr", id: "qwen-asr", label: "Qwen ASR", sampleRate: 16000}],
+  features: [{type: "voice.asr", id: "qwen-asr", label: stringsFor(foxy.locale).name, sampleRate: 16000}],
   configure(ui, locale) {
     const t = stringsFor(locale);
     ui.secret("apiKey", t.apiKey, {
@@ -214,10 +208,6 @@ foxy.plugin.register({
     });
     ui.switch("heartbeat", t.heartbeat, true, {
       visibleWhen: {key: "mode", value: "streaming"}
-    });
-    ui.switch("intermediate", t.intermediate, false, {
-      visibleWhen: {key: "mode", value: "streaming"},
-      description: t.intermediateDescription
     });
     ui.text("flashEndpoint", t.flashEndpoint, DEFAULTS.bailian.flashEndpoint, {
       visibleWhen: {key: "mode", value: "flash"},
@@ -257,7 +247,7 @@ foxy.plugin.register({
       format: "pcm",
       heartbeat: context.heartbeat !== "false"
     };
-    if (context.intermediate === "true" || model.toLowerCase().includes("message")) {
+    if (model.toLowerCase().includes("message")) {
       parameters.intermediate_result_enabled = true;
     }
     await foxy.websocket.send(socket, JSON.stringify({
