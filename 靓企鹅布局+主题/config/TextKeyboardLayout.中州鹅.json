@@ -46,7 +46,7 @@
 				{"type":"LanguageKey","weight":0.105,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
 				{"type":"SpaceKey","weight":0.3},
 				{"type":"SymbolKey","label":".","swipeUpLabel":"?","weight":0.09,"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"question"}]}]}},
-				{"type":"SymbolKey","label":"/","swipeUpLabel":"'","weight":0.11,"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]}},
+				{"type":"MacroKey","displayText":"/","label":"/","swipeUpLabel":"'","weight":0.105,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"slash"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]}},
 				{"type":"ReturnKey","swipeUpLabel":"编码","weight":0.15,"swipeUp":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
 			]
 		],
