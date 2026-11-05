@@ -55,7 +55,7 @@
 			[
 				{"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.1,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
 				{"type":"CommaKey","weight":0.095,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
-				{"type":"MacroKey","displayText":"ㄓ","label":"ㄓ","weight":0.105,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Shift_L"}]}]},"longPress":{"macro":[{"type":"app","id":"switch_input_method"}]},"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
+        {"type":"LanguageKey","weight":0.105,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
 				{"type":"SpaceKey","weight":0.3},
 				{"type":"SymbolKey","label":".","swipeUpLabel":"?","weight":0.095,"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"question"}]}]}},
 				{"type":"MacroKey","displayText":"/","label":"/","swipeUpLabel":"'","weight":0.105,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"slash"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]}},

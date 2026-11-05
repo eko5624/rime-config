@@ -1,0 +1,53 @@
+{
+    "kawaiiBarButtons": [
+        {
+            "id": "ㄓ",
+            "label": "ㄓ",
+            "text": "ㄓ",
+            "macroSteps": [
+                {
+                    "type": "app_action",
+                    "id": "switch_input_method"
+                }
+            ]
+        },
+        {
+            "id": "undo"
+        },
+        {
+            "id": "redo"
+        },
+        {
+            "id": "cursor_move"
+        },
+        {
+            "id": "floating_toggle"
+        },
+        {
+            "id": "clipboard"
+        },
+        {
+            "id": "theme_toggle"
+        }
+    ],
+    "statusAreaButtons": [
+        {
+            "id": "theme"
+        },
+        {
+            "id": "icon_theme"
+        },
+        {
+            "id": "reload_config"
+        },
+        {
+            "id": "virtual_keyboard"
+        },
+        {
+            "id": "one_handed_keyboard"
+        },
+        {
+            "id": "language_switch"
+        }
+    ]
+}
