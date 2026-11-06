@@ -6,16 +6,16 @@
 		},
 		"default": [
   		[
-  			{"type":"NumPadKey","label":"1","sym":"KP_1"},
-  			{"type":"NumPadKey","label":"2","sym":"KP_2"},
-  			{"type":"NumPadKey","label":"3","sym":"KP_3"},
-  			{"type":"NumPadKey","label":"4","sym":"KP_4"},
-  			{"type":"NumPadKey","label":"5","sym":"KP_5"},
-  			{"type":"NumPadKey","label":"6","sym":"KP_6"},
-  			{"type":"NumPadKey","label":"7","sym":"KP_7"},
-  			{"type":"NumPadKey","label":"8","sym":"KP_8"},
-  			{"type":"NumPadKey","label":"9","sym":"KP_9"},
-  			{"type":"NumPadKey","label":"0","sym":"KP_0"}
+  			{"type":"NumPadKey","label":" 1 ","sym":"KP_1"},
+  			{"type":"NumPadKey","label":" 2 ","sym":"KP_2"},
+  			{"type":"NumPadKey","label":" 3 ","sym":"KP_3"},
+  			{"type":"NumPadKey","label":" 4 ","sym":"KP_4"},
+  			{"type":"NumPadKey","label":" 5 ","sym":"KP_5"},
+  			{"type":"NumPadKey","label":" 6 ","sym":"KP_6"},
+  			{"type":"NumPadKey","label":" 7 ","sym":"KP_7"},
+  			{"type":"NumPadKey","label":" 8 ","sym":"KP_8"},
+  			{"type":"NumPadKey","label":" 9 ","sym":"KP_9"},
+  			{"type":"NumPadKey","label":" 0 ","sym":"KP_0"}
   		],
 			[
 				{"type":"AlphabetKey","main":"Q","alt":"`","displayText":"Q","rowHeightPercent":21.1},
