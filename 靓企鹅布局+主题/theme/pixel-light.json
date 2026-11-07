@@ -1,5 +1,6 @@
 {
   "name": "Pixel Light",
+  "version": "2.1",
   "isDark": false,
   "backgroundColor": -328966,
   "backgroundImage": null,
@@ -22,6 +23,5 @@
   "dividerColor": -3355444,
   "clipboardEntryColor": -986896,
   "genericActiveBackgroundColor": -11751600,
-  "genericActiveForegroundColor": -1,
-  "version": "2.1"
+  "genericActiveForegroundColor": -1
 }
