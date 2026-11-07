@@ -51,7 +51,7 @@
       [
         {"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.3,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Tab"}]}]},"label":"↹","type":"MacroKey","independentColor":false},"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
         {"type":"CommaKey","weight":0.095,"composeOverride":{"label":"2","type":"NumPadKey","sym":65458,"independentColor":false}},
-        {"type":"LanguageKey","weight":0.105,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
+        {"type":"MacroKey","label":"ㄓ","weight":0.105,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Shift_L"}]}]},"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
         {"type":"SpaceKey","weight":0.0},
         {"type":"SymbolKey","label":".","swipeLabel":"?","weight":0.095,"swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"question"}]}]},"composeOverride":{"label":"3","type":"NumPadKey","sym":65459,"independentColor":true}},
         {"type":"SymbolKey","label":"/","swipeLabel":"'","swipe":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]}},
@@ -108,6 +108,40 @@
         {"type":"ReturnKey","swipeLabel":"编码","weight":0.15,"swipe":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
       ]
     ],
+    "number": [
+      [
+        {"type":"LayoutSwitchKey","label":"符号","subLabel":"Symbol","weight":0.13,"rowHeightPercent":25.0,"composeOverride":{"altLabel":"Esc","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true}},
+        {"type":"MacroKey","label":"+","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Add"}]}]}},
+        {"type":"MacroKey","label":"1","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_1"}]}]}},
+        {"type":"MacroKey","label":"2","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_2"}]}]}},
+        {"type":"MacroKey","label":"3","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_3"}]}]}},
+        {"type":"MacroKey","label":"×","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Multiply"}]}]}}
+      ],
+      [
+        {"type":"MacroKey","label":"( ","weight":0.13,"rowHeightPercent":25.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"parenleft"}]}]}},
+        {"type":"MacroKey","label":"-","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Subtract"}]}]}},
+        {"type":"MacroKey","label":"4","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_4"}]}]}},
+        {"type":"MacroKey","label":"5","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_5"}]}]}},
+        {"type":"MacroKey","label":"6","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_6"}]}]}},
+        {"type":"MacroKey","label":"÷","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Divide"}]}]}}
+      ],
+      [
+        {"type":"MacroKey","label":"）","weight":0.13,"rowHeightPercent":25.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"parenright"}]}]}},
+        {"type":"MacroKey","label":"=","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"equal"}]}]}},
+        {"type":"MacroKey","label":"7","altLabel":"剪切","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_7"}]}]},"swipe":{"macro":[{"type":"edit","action":"cut"}]}},
+        {"type":"MacroKey","label":"8","altLabel":"复制","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_8"}]}]},"swipe":{"macro":[{"type":"edit","action":"copy"}]}},
+        {"type":"MacroKey","label":"9","altLabel":"粘贴","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_9"}]}]},"swipe":{"macro":[{"type":"edit","action":"paste"}]}},
+        {"type":"BackspaceKey","weight":0.13,"swipe":{"macro":[{"type":"edit","action":"selectAll"},{"type":"tap","keys":[{"fcitx":"BackSpace"}]}]}}
+      ],
+      [
+        {"type":"LayoutSwitchKey","label":"返回","subLabel":"Text","weight":0.13,"rowHeightPercent":25.0},
+        {"type":"MacroKey","label":",","altLabel":"金额","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Separator"}]}]},"swipe":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"R"}}]}},
+        {"type":"MiniSpaceKey","weight":0.2,"backgroundColorMonet":"theme:barColor"},
+        {"type":"MacroKey","label":"0","altLabel":"全选","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_0"}]}]},"swipe":{"macro":[{"type":"edit","action":"selectAll"}]}},
+        {"type":"NumPadKey","label":".","sym":"KP_Decimal","weight":0.2},
+        {"type":"ReturnKey","weight":0.13}
+      ]
+    ],
     "wanxiang_t9": {
       "__meta__": {
         "aux_bar": {
@@ -147,40 +181,6 @@
           {"type":"ReturnKey","weight":0.2}
         ]
       ]
-    },
-    "number": [
-      [
-        {"type":"LayoutSwitchKey","label":"符号","subLabel":"Symbol","weight":0.13,"rowHeightPercent":25.0,"composeOverride":{"altLabel":"Esc","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true}},
-        {"type":"MacroKey","label":"+","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Add"}]}]}},
-        {"type":"MacroKey","label":"1","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_1"}]}]}},
-        {"type":"MacroKey","label":"2","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_2"}]}]}},
-        {"type":"MacroKey","label":"3","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_3"}]}]}},
-        {"type":"MacroKey","label":"×","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Multiply"}]}]}}
-      ],
-      [
-        {"type":"MacroKey","label":"( ","weight":0.13,"rowHeightPercent":25.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"parenleft"}]}]}},
-        {"type":"MacroKey","label":"-","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Subtract"}]}]}},
-        {"type":"MacroKey","label":"4","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_4"}]}]}},
-        {"type":"MacroKey","label":"5","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_5"}]}]}},
-        {"type":"MacroKey","label":"6","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_6"}]}]}},
-        {"type":"MacroKey","label":"÷","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Divide"}]}]}}
-      ],
-      [
-        {"type":"MacroKey","label":"）","weight":0.13,"rowHeightPercent":25.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"parenright"}]}]}},
-        {"type":"MacroKey","label":"=","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"equal"}]}]}},
-        {"type":"MacroKey","label":"7","altLabel":"剪切","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_7"}]}]},"swipe":{"macro":[{"type":"edit","action":"cut"}]}},
-        {"type":"MacroKey","label":"8","altLabel":"复制","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_8"}]}]},"swipe":{"macro":[{"type":"edit","action":"copy"}]}},
-        {"type":"MacroKey","label":"9","altLabel":"粘贴","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_9"}]}]},"swipe":{"macro":[{"type":"edit","action":"paste"}]}},
-        {"type":"BackspaceKey","weight":0.13,"swipe":{"macro":[{"type":"edit","action":"selectAll"},{"type":"tap","keys":[{"fcitx":"BackSpace"}]}]}}
-      ],
-      [
-        {"type":"LayoutSwitchKey","label":"返回","subLabel":"Text","weight":0.13,"rowHeightPercent":25.0},
-        {"type":"MacroKey","label":",","altLabel":"金额","weight":0.13,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_Separator"}]}]},"swipe":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"R"}}]}},
-        {"type":"MiniSpaceKey","weight":0.2,"backgroundColorMonet":"theme:barColor"},
-        {"type":"MacroKey","label":"0","altLabel":"全选","weight":0.2,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_0"}]}]},"swipe":{"macro":[{"type":"edit","action":"selectAll"}]}},
-        {"type":"NumPadKey","label":".","sym":"KP_Decimal","weight":0.2},
-        {"type":"ReturnKey","weight":0.13}
-      ]
-    ]
+    }
   }
 }
