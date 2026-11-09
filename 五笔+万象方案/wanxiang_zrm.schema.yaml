@@ -311,6 +311,12 @@ super_comment:  # 超级注释模块，子项配置 true 开启，false 关闭
     predict: ""
     fallback: "~"
 
+# 按需提交
+partial_commit:
+  control_digits: true  # Ctrl+数字上屏前N字
+  first_key: "["         # 以词定字：首字
+  last_key: "]"          # 以词定字：末字
+
 super_processor:
   enable_backspace_limit: true  # 开启/关闭退格限制
   enable_seg_loop: true  # 开启/关闭分词符（'）循环

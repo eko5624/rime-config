@@ -1,6 +1,6 @@
 # Rime dictionary
 # encoding: utf-8
-#https://github.com/amzxyz/RIME-LMDG
+#https://github.com/amzxyz/rime-wanxiang-data
 ---
 name: zi.lite
 version: "LTS"
@@ -6600,11 +6600,11 @@ sort: by_weight
 递	di	2597
 敌	di	1702
 弟	di	811
-的	di	770
 抵	di	666
 帝	di	657
 滴	di	650
 蒂	di	647
+狄	di	630
 堤	di	629
 笛	di	622
 迪	di	613
@@ -6612,13 +6612,13 @@ sort: by_weight
 涤	di	546
 提	di	542
 嘀	di	522
-狄	di	501
 邸	di	499
 睇	di	497
 谛	di	487
 嫡	di	468
 棣	di	452
 诋	di	444
+的	di	430
 砥	di	428
 骶	di	425
 荻	di	411
@@ -9180,13 +9180,13 @@ sort: by_weight
 锋	feng	2278
 凤	feng	2164
 疯	feng	2055
+冯	feng	1966
 奉	feng	1952
 逢	feng	800
 缝	feng	796
 蜂	feng	643
 讽	feng	637
 枫	feng	630
-冯	feng	610
 烽	feng	474
 俸	feng	459
 沣	feng	457
@@ -12537,10 +12537,10 @@ sort: by_weight
 䓳	hen	1
 𦚣	hen	1
 哼	heng	9137
-衡	heng	2974
-横	heng	2677
+横	heng	2974
+衡	heng	2677
 恒	heng	2409
-亨	heng	2065
+亨	heng	1465
 桁	heng	440
 蘅	heng	370
 橫	heng	348
@@ -12583,6 +12583,7 @@ sort: by_weight
 𩙯	heng	1
 𪏓	heng	1
 𫰟	heng	1
+噷	hm	1
 红	hong	24527
 洪	hong	2948
 宏	hong	2653
@@ -14424,9 +14425,9 @@ sort: by_weight
 亟	ji	313
 跻	ji	298
 伎	ji	297
-荠	ji	277
+蓟	ji	277
 畿	ji	266
-蓟	ji	255
+荠	ji	255
 笈	ji	241
 骥	ji	237
 稷	ji	229
@@ -16117,10 +16118,11 @@ sort: by_weight
 𪖄	jiao	1
 𪚰	jiao	1
 𫈇	jiao	1
-解	jie	27356
+姐	jie	27356
+借	jie	8614
 接	jie	3776
 结	jie	3398
-姐	jie	3058
+解	jie	3058
 节	jie	2748
 界	jie	1801
 届	jie	980
@@ -16137,7 +16139,6 @@ sort: by_weight
 阶	jie	653
 竭	jie	649
 芥	jie	638
-借	jie	614
 睫	jie	554
 诫	jie	537
 秸	jie	521
@@ -21586,13 +21587,13 @@ sort: by_weight
 𫟀	ling	1
 𫟑	ling	1
 六	liu	27707
-陆	liu	5322
 刘	liu	5215
 留	liu	5110
 流	liu	5100
 柳	liu	2843
 浏	liu	691
 瘤	liu	656
+陆	liu	646
 溜	liu	623
 硫	liu	590
 琉	liu	583
@@ -46858,7 +46859,6 @@ sort: by_weight
 诤	zheng	400
 钲	zheng	379
 烝	zheng	347
-憕	zheng	321
 證	zheng	313
 箏	zheng	308
 爭	zheng	307
@@ -46877,6 +46877,7 @@ sort: by_weight
 撜	zheng	166
 凧	zheng	160
 氶	zheng	151
+憕	zheng	147
 錚	zheng	146
 篜	zheng	127
 崝	zheng	124

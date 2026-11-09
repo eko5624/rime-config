@@ -1,6 +1,6 @@
 # Rime dictionary
 # encoding: utf-8
-#https://github.com/amzxyz/RIME-LMDG
+#https://github.com/amzxyz/rime-wanxiang-data
 #兼容词库，对于多字词汇两种读音的场景，手动维护到本表以及一些其他的杂项
 ---
 name: duoyin
@@ -25,12 +25,16 @@ sort: by_weight
 横行	héng;sa háng;tf	554
 转转	zhuǎn;lf zhuǎn;lf	100
 转一转	zhuǎn;lf yì;gg zhuǎn;lf	39
-倒数	dǎo;wg shù;ov	1010
+倒数	dào;wg shù;ov	1010
 省得	xǐng;it de;tj	100
 不省得	bù;gi xǐng;it de;tj	100
 长住	zhǎng;ta zhù;wy	330
 行行	háng;tf háng;tf	300
+行子	xíng;tf zǐ;bb	10
+行子	hàng;tf zi;bb	54
+系着	jì;tx zhe;ud	686
 满血	mǎn;ia xiě;tl	386
+校时	xiào;su shí;jf	76
 血肠	xiě;tl cháng;en	226
 给付	jǐ;xw fù;wf	277
 水磨	shuǐ;ii mó;ys	100
@@ -40,6 +44,7 @@ sort: by_weight
 一场	yì;gg cháng;fn	17575
 事了	shì;gk liǎo;bn	337
 会得	huì;wf dé;tj	554
+小种	xiǎo;ih zhǒng;tk	34
 越长越	yuè;fh zhǎng;ta yuè;fh	211
 哦哦	ò;kt ò;kt	1080
 吱吱	zī;kf zī;kf	100
@@ -262,13 +267,13 @@ sort: by_weight
 忒长了	tēi;an zhǎng;ta le;bn	60
 没落到	méi;im luò;ai dào;gc	220
 没落地	mò;im luò;ai de;fb	310
-血债血还	xuè;tl zhài;wg xiě;tl huán;gi
-血债血偿	xuè;tl zhài;wg xiě;tl cháng;wi
+血债血还	xuè;tl zhài;wg xiě;tl huán;gi	71
+血债血偿	xuè;tl zhài;wg xiě;tl cháng;wi	71
 难兄难弟	nán;cw xiōng;kq nàn;cw dì;ux	717
 卡在那里	qiǎ;hh zài;dh nà;vf lǐ;jf	39
 卡在哪里	qiǎ;hh zài;dh nǎ;kv lǐ;jf	32
 就卡在那里了	jiù;yi qiǎ;hh zài;dh nà;vf lǐ;jf le;bn	1
-碍着您了	ài;dj zháo;ud nín;wq le;bn
+碍着您了	ài;dj zháo;ud nín;wq le;bn	4
 忒矮了吧	tēi;an ǎi;td le;bn ba;kc	43
 忒白了吧	tēi;an bái;rr le;bn ba;kc	60
 忒薄了吧	tēi;an báo;ai le;bn ba;kc	60
@@ -344,7 +349,7 @@ sort: by_weight
 看不了	kàn;rh bù;gi le;bn	260
 卡住	qiǎ;hh zhù;wy	3355
 睡着	shuì;ht zhe;ud	664
-没地	mò;im dì;fb
+没地	mò;im dì;fb	12
 办不了	bàn;lw bù;gi le;bn	1213
 报不了	bào;rb bù;gi le;bn	180
 软弹	ruǎn;lq tán;xu	55
@@ -357,9 +362,9 @@ sort: by_weight
 不干	bù;gi gān;fg	4362
 大夫	dà;dd fū;fw	1191
 薄膜	bó;ai mó;ea	858
-没过了	mò;im guò;fp le;bn
-没过我	mò;im guò;fp wǒ;tr
-没过线	mò;im guò;fp xiàn;xg
+没过了	mò;im guò;fp le;bn	121
+没过我	mò;im guò;fp wǒ;tr	41
+没过线	mò;im guò;fp xiàn;xg	12
 没过	mò;im guò;fp	1291
 摩挲	mó;ys suō;ii	14040
 公差	gōng;wc chā;ud	853
@@ -407,10 +412,13 @@ sort: by_weight
 多行	duō;qq háng;tf	1490
 不了了	bù;gi liǎo;bn liǎo;bn	1622
 不了了	bù;gi liǎo;bn le;bn	1081
-爿字旁	chuáng;nh zì;pb páng;up
-爿字旁	pán;nh zì;pb páng;up
+爿字旁	chuáng;nh zì;pb páng;up	13
+爿字旁	pán;nh zì;pb páng;up	13
+钉死	dīng;qs sǐ;gq	126
 肚子	dù;ef zi;bb	13420
 肚子	dǔ;ef zi;bb	597
+躯壳	qū;tm ké;fp	93
+姓种	xìng;vt chóng;tk	3
 落了	là;ai le;bn	6074
 落了	luò;ai le;bn	4731
 迫降	pò;rp xiáng;bt	290
@@ -476,6 +484,7 @@ sort: by_weight
 什么时候还	shén;wf me;tc shí;jf hòu;wh huán;gi	1
 下次一定还	xià;gh cì;uq yī;gg dìng;pg huán;gi	1
 还都	huán;gi dū;ft	95
+弹弹	tán;xu tán;xu	163
 还都	hái;gi dōu;ft	2580
 重载	zhòng;tg zài;fa	472
 重载	chóng;tg zài;fa	808
