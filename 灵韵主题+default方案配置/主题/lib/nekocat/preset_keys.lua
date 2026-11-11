@@ -76,7 +76,6 @@ local pk = {
   KeyboardEditor     = { label = "ic@square-edit-outline", send = "Eisu_toggle", select = "editor" },    -- 编辑键盘
   KeyboardNumber     = { label = "ic@numeric", send = "Eisu_toggle", select = "number" },                -- 数字键盘
   KeyboardSettings   = { label = "ic@cogs", send = "Eisu_toggle", select = "settings" },                 -- 设置键盘
-  KeyboardLayouts    = { label = "ic@keyboard-variant", send = "Eisu_toggle", select = "layouts" },      -- 布局界面
   Keyboard45Eng      = { label = "\u{F840}", send = "Eisu_toggle", select = "english" },                 -- 英文布局
   KeyboardT9Number   = { label = "ic@numeric", send = "Eisu_toggle", select = "t9_number" },             -- T9 用数字
   Keyboardzrm        = { label = "\u{F842}", send = "Eisu_toggle", select = "wanxiang_zrm" },            -- 自然码布局
