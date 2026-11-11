@@ -29,6 +29,7 @@
    key(t)              —— 声明按键
    preedit(t)          —— 声明预编辑区样式
    window(t)           —— 声明候选窗口样式
+   sync_input(t)       —— 声明悬浮同步输入框样式
    toolbar(t)          —— 声明工具栏
    btn(t)              —— 声明工具栏按钮
    bg(t)               —— 声明按钮背景
@@ -1084,25 +1085,25 @@
 --- 预设按键行为定义
 --- 在 preset_keys 表中以键名为标识符（如 preset_keys = { Space = {...} }）
 ---@class PresetKey
----@field command?        Command   # 命令类型（如 "FUNCTION" 用于调用内置功能）
----@field option?         string    # 命令选项值
----@field select?         Select    # 键盘切换目标（如 "symbols"、"number"、".default"）
----@field toggle?         string    # Rime 运行时开关名称（如 "ascii_mode"、"full_shape"）
----@field label?          string    # 按键显示标签
----@field ascii_label?    string    # 英文模式下替换标签（为 nil 则沿用 label）
----@field popup_label?    string    # 弹窗键盘显示标签（优先于 label，不截断）
----@field preview?        string?   # 预览文字（nil 时使用 label）
----@field shift_lock?     ShiftLock # Shift 锁定模式： "long" | "click" | "ascii_long"
----@field commit?         string    # 直接提交的文本
----@field text?           string    # 多步动作序列（支持 {PresetKey} / {KeyCode} 序列）
----@field actions?        string[]  # 多步动作序列（PresetKey 名 或 KeyCode）
----@field sticky?         boolean   # 是否粘滞键（按下后保持激活）
----@field repeatable?     boolean   # 是否可长按重复
----@field slide_cursor?   boolean   # 是否启用滑动光标
----@field slide_delete?   boolean   # 是否启用滑动删除
----@field functional?     boolean   # 是否为功能键（不计入文本输入）
----@field states?         string[]  # 开关按键的双态标签 [off_label, on_label]
----@field send?           KeyName   # 发送的按键事件或键码（如 "space"、"BackSpace"、"Return"）
+---@field command?        Command         # 命令类型（如 "FUNCTION" 用于调用内置功能）
+---@field option?         string          # 命令选项值
+---@field select?         Select          # 键盘切换目标（如 "symbols"、"number"、".default"）
+---@field toggle?         string          # Rime 运行时开关名称（如 "ascii_mode"、"full_shape"）
+---@field label?          LabelSpec       # 按键显示标签
+---@field ascii_label?    LabelSpec       # 英文模式下替换标签（为 nil 则沿用 label）
+---@field popup_label?    string          # 弹窗键盘显示标签（优先于 label，不截断）
+---@field preview?        string?         # 预览文字（nil 时使用 label）
+---@field shift_lock?     ShiftLock       # Shift 锁定模式： "long" | "click" | "ascii_long"
+---@field commit?         string          # 直接提交的文本
+---@field text?           string          # 多步动作序列（支持 {PresetKey} / {KeyCode} 序列）
+---@field actions?        string[]        # 多步动作序列（PresetKey 名 或 KeyCode）
+---@field sticky?         boolean         # 是否粘滞键（按下后保持激活）
+---@field repeatable?     boolean         # 是否可长按重复
+---@field slide_cursor?   boolean         # 是否启用滑动光标
+---@field slide_delete?   boolean         # 是否启用滑动删除
+---@field functional?     boolean         # 是否为功能键（不计入文本输入）
+---@field states?         string[]        # 开关按键的双态标签 [off_label, on_label]
+---@field send?           KeyName         # 发送的按键事件或键码（如 "space"、"BackSpace"、"Return"）
 
 -- ============================================================================
 -- 全局样式 (GeneralStyle) 及子类型
@@ -1195,6 +1196,20 @@
 ---@field top_end_radius?     number            # 上端圆角半径
 ---@field alpha?              number            # 透明度 0.0~1.0（默认 0.8）
 ---@field foreground?         PreeditForeground # 前景样式
+
+-- ============================================================================
+-- 悬浮同步输入框 (SyncInput)
+-- ============================================================================
+
+--- 悬浮键盘上方的同步输入框样式。
+--- 所有字段均为可选；未设置时沿用对应默认值。
+---@class SyncInput
+---@field font_size?          number  # 字号（未设置时沿用 preedit.foreground.font_size）
+---@field alpha?              number  # 背景透明度 0.0~1.0（未设置时沿用 preedit.alpha）
+---@field corner_radius?      number  # 圆角 dp（未设置时 8）
+---@field horizontal_padding? integer # 左右内边距 dp（未设置时沿用 preedit.horizontal_padding）
+---@field vertical_padding?   integer # 上下内边距 dp（未设置时 6）
+---@field max_height?         integer # 最大高度 dp（未设置时约 3 行；<=0 视为未设置）
 
 -- ============================================================================
 -- 候选窗口/悬浮窗 (Window)
@@ -1372,6 +1387,7 @@
 ---@alias LabelSpec
 ---| LabelSegment[]                # 分段数组
 ---| LabelSegment                  # 字符串/数组 text + 样式
+---| string                        # 纯文本
 
 --- 按键定义。
 ---@class TextKey
@@ -1497,6 +1513,7 @@
 ---@field style                 GeneralStyle               # 全局样式
 ---@field preedit?              Preedit                    # 预编辑区样式（默认值见 Preedit）
 ---@field window?               Window                     # 候选窗口样式（默认值见 Window）
+---@field sync_input?           SyncInput                  # 悬浮同步输入框样式（默认值见 SyncInput）
 ---@field tool_bar?             ToolBar                    # 工具栏样式（默认值见 ToolBar）
 ---@field candidates_tool?      CandidatesTool             # 候选工具栏（nil = 隐藏）
 ---@field liquid_keyboard?      LiquidKeyboard             # 液态键盘（默认值见 LiquidKeyboard）
@@ -1562,6 +1579,13 @@ end
 ---@param t Preedit
 ---@return Preedit
 function preedit(t)
+  return t
+end
+
+--- 声明悬浮同步输入框样式。
+---@param t SyncInput
+---@return SyncInput
+function sync_input(t)
   return t
 end
 
