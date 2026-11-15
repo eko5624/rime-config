@@ -19,7 +19,7 @@ local keyboard = keyboard {
     row {
       keys = {
         key { spacer = true, width = 0.15 },
-        key(merge(S.kp1, { label = { { text = "分词" } }, click = "1", label_symbol = { { text = "`" } }, swipe_up = "`", hint = { { text = "1" } } })),
+        key(merge(S.kp1, { label = { { text = "分词" } }, click = "'", label_symbol = { { text = "'" } }, swipe_up = "'", hint = { { text = "1" } } })),
         key(merge(S.kp2, { label = { { text = "ABC" } }, click = "2", label_symbol = { { text = "#" } }, swipe_up = "#", popup = { "a", "b", "c", "A", "B", "C" }, hint = { { text = "2" } } })),
         key(merge(S.kp3, { label = { { text = "DEF" } }, click = "3", label_symbol = { { text = "@" } }, swipe_up = "@", popup = { "d", "e", "f", "D", "E", "F" }, hint = { { text = "3" } } })),
         key(merge(S.backspace, key { click = "BackSpace", key_text_size = func_key_text_size, width = 0.15 }))
