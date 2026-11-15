@@ -115,6 +115,10 @@ local pk = {
   SelectCandThree    = { label = "〣", send = "3" }, -- 选择第三个候选
   SelectCandFour     = { label = "〤", send = "4" }, -- 选择第四个候选
   SelectCandFive     = { label = "〥", send = "5" }, -- 选择第五个候选
+  SelectCandSix      = { label = { { text = "〦", align = "left" } }, send = "6" }, -- 选择第六个候选
+  SelectCandSeven    = { label = { { text = "〧", align = "left" } }, send = "7" }, -- 选择第七个候选
+  SelectCandEight    = { label = { { text = "〨", align = "left" } }, send = "8" }, -- 选择第八个候选
+  SelectCandNine     = { label = { { text = "〩", align = "left" } }, send = "9" }, -- 选择第九个候选
   SelectToneOne      = { label = "\u{F821}", send = "6" }, -- 音调一声
   SelectToneTwo      = { label = "\u{F822}", send = "7" }, -- 音调二声
   SelectToneThree    = { label = "\u{F823}", send = "8" }, -- 音调三声
