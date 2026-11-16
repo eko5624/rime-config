@@ -4,7 +4,7 @@
 # ------艺人词库-------
 # --目前加入的与主词库不构成干扰--
 ---
-name: yiren.lite
+name: yiren
 version: "LTS"
 sort: by_weight
 ...
@@ -345,7 +345,7 @@ sort: by_weight
 杜莹	du ying	31
 杜煜	du yu	0
 杜源	du yuan	72
-都钊	du zhao	1
+都钊	dou zhao	1
 段曦	duan xi	80
 段暄	duan xuan	648
 多亮	duo liang	122
@@ -452,10 +452,10 @@ sort: by_weight
 高叶	gao ye	1022
 高奕	gao yi	54
 高媛	gao yuan	386
-盖博	ge bo	671
-盖克	ge ke	189
+盖博	gai bo	671
+盖克	gai ke	189
 葛兰	ge lan	1048
-盖美	ge mei	5115
+盖美	gai mei	5115
 葛平	ge ping	57
 葛帅	ge shuai	15
 葛天	ge tian	2828
@@ -792,10 +792,10 @@ sort: by_weight
 凯莉	kai li	668
 凯叔	kai shu	206
 侃侃	kan kan	263
-阚昕	kan xin	1
+阚昕	han xin	1
 侃爷	kan ye	933
-阚宇	kan yu	2
-阚泽	kan ze	1616
+阚宇	han yu	2
+阚泽	han ze	1616
 康华	kang hua	774
 康辉	kang hui	279
 康凯	kang kai	495
@@ -929,7 +929,6 @@ sort: by_weight
 廖娟	liao juan	126
 列侬	lie nong	1048
 林澄	lin cheng	71
-林丹	lin dan	2336
 林峰	lin feng	1058
 林好	lin hao	1335
 林慧	lin hui	806
@@ -1149,7 +1148,7 @@ sort: by_weight
 米咪	mi mi	18
 米热	mi re	3933
 苗阜	miao fu	770
-缪杰	miao jie	83
+缪杰	mou jie	83
 苗苗	miao miao	314
 苗圃	miao pu	26416
 苗雨	miao yu	35
@@ -1195,7 +1194,7 @@ sort: by_weight
 牛群	niu qun	625
 欧弟	ou di	898
 欧豪	ou hao	788
-区宁	ou ning	4930
+区宁	qu ning	4930
 潘辰	pan chen	562
 潘虹	pan hong	53
 潘婕	pan jie	70
@@ -1220,10 +1219,10 @@ sort: by_weight
 彭尧	peng yao	130
 彭玉	peng yu	119
 彭筝	peng zheng	16
-朴成	piao cheng	352
-朴春	piao chun	544
-朴树	piao shu	2839
-朴铄	piao shuo	13
+朴成	pu cheng	352
+朴春	pu chun	544
+朴树	pu shu	2839
+朴铄	pu shuo	13
 品冠	pin guan	248
 浦克	pu ke	18
 蒲萄	pu tao	41
@@ -1280,7 +1279,7 @@ sort: by_weight
 邱林	qiu lin	241
 邱秋	qiu qiu	67
 邱天	qiu tian	268
-仇晓	qiu xiao	504
+仇晓	chou xiao	504
 邱晔	qiu ye	7
 邱泽	qiu ze	38
 曲博	qu bo	122
@@ -1319,10 +1318,10 @@ sort: by_weight
 森美	sen mei	16
 莎娜	sha na	819
 沙溢	sha yi	747
-单良	shan liang	37
-单涛	shan tao	323
-单薇	shan wei	4
-单雯	shan wen	20
+单良	dan liang	37
+单涛	dan tao	323
+单薇	dan wei	4
+单雯	dan wen	20
 商侃	shang kan	6
 商蓉	shang rong	22
 商毅	shang yi	157
@@ -1400,7 +1399,6 @@ sort: by_weight
 苏芮	su rui	710
 苏锐	su rui	66
 苏伟	su wei	1206
-苏醒	su xing	3291
 苏岩	su yan	491
 苏翼	su yi	4
 粟奕	su yi	1
@@ -1436,7 +1434,6 @@ sort: by_weight
 孙韶	sun shao	1212
 孙爽	sun shuang	35
 孙涛	sun tao	706
-孙雯	sun wen	759
 孙熙	sun xi	215
 孙祥	sun xiang	796
 孙馨	sun xin	10
@@ -1807,7 +1804,7 @@ sort: by_weight
 谢梦	xie meng	1526
 谢苗	xie miao	63
 谢娜	xie na	2556
-解男	xie nan	3931
+解男	jie nan	3931
 谢楠	xie nan	778
 谢宁	xie ning	670
 谢润	xie run	222
@@ -1882,6 +1879,7 @@ sort: by_weight
 玄彬	xuan bin	170
 宣璐	xuan lu	7
 宣美	xuan mei	92
+玄觞	xuan shang	218
 绚香	xuan xiang	575
 萱萱	xuan xuan	487
 宣萱	xuan xuan	244
@@ -2086,12 +2084,12 @@ sort: by_weight
 原雨	yuan yu	76
 袁苑	yuan yuan	4
 岳华	yue hua	239
-乐嘉	yue jia	1488
-乐进	yue jin	379
-乐靓	yue liang	35
-乐舒	yue shu	163
+乐嘉	le jia	1488
+乐进	le jin	379
+乐靓	le liang	35
+乐舒	le shu	163
 岳松	yue song	114
-乐羊	yue yang	1312
+乐羊	le yang	1312
 岳旸	yue yang	6
 允儿	yun er	1170
 云飞	yun fei	147
@@ -2104,9 +2102,9 @@ sort: by_weight
 曾昂	zeng ang	18
 曾黎	zeng li	128
 曾鸣	zeng ming	670
-曾淇	zeng qi	39
+曾淇	ceng qi	39
 曾毅	zeng yi	657
-查杰	zha jie	144
+查杰	cha jie	144
 詹佳	zhan jia	12
 战鹰	zhan ying	571
 战宇	zhan yu	133
@@ -2310,8 +2308,6 @@ sort: by_weight
 朱琳	zhu lin	711
 朱锐	zhu rui	191
 朱铁	zhu tie	86
-朱婷	zhu ting	1233
-朱熹	zhu xi	2166
 朱迅	zhu xun	4
 朱晏	zhu yan	1
 朱轶	zhu yi	38
@@ -3082,7 +3078,7 @@ sort: by_weight
 池珍熙	chi zhen xi	3
 迟志强	chi zhi qiang	60
 迟重瑞	chi zhong rui	44
-种丹妮	chong dan ni	364
+种丹妮	zhong dan ni	364
 初川南	chu chuan nan	10
 初俊辰	chu jun chen	310
 储兰兰	chu lan lan	330
@@ -3430,12 +3426,12 @@ sort: by_weight
 杜厚佳	du hou jia	12
 杜建桥	du jian qiao	12
 杜金京	du jin jing	12
-都暻秀	du jing xiu	670
+都暻秀	dou jing xiu	670
 杜憬仪	du jing yi	12
 杜俊泽	du jun ze	18
 渡濑晶	du lai jing	207
 杜丽莎	du li sha	138
-都美竹	du mei zhu	482
+都美竹	dou mei zhu	482
 杜敏赫	du min he	12
 杜宁林	du ning lin	312
 杜沁怡	du qin yi	226
@@ -3447,9 +3443,9 @@ sort: by_weight
 杜天皓	du tian hao	976
 杜维瀚	du wei han	137
 杜汶泽	du wen ze	66
-都肖萌	du xiao meng	12
+都肖萌	dou xiao meng	12
 杜肖雄	du xiao xiong	12
-都星言	du xing yan	12
+都星言	dou xing yan	12
 杜旭东	du xu dong	25
 杜旭光	du xu guang	12
 杜亚飞	du ya fei	18
@@ -3828,24 +3824,24 @@ sort: by_weight
 戈蒂耶	ge di ye	450
 葛荟婕	ge hui jie	85
 葛慧君	ge hui jun	392
-盖叫天	ge jiao tian	28
+盖叫天	gai jiao tian	28
 戈金斯	ge jin si	328
 格兰杰	ge lan jie	277
-盖勒特	ge le te	16
+盖勒特	gai le te	16
 葛蕾塔	ge lei ta	99
-盖丽丽	ge li li	3
-盖里奇	ge li qi	608
+盖丽丽	gai li li	3
+盖里奇	gai li qi	608
 格里森	ge li sen	100
 格列柯	ge lie ke	432
 格卢克	ge lu ke	136
 葛曼棋	ge man qi	9
 戈梅兹	ge mei zi	544
 葛民辉	ge min hui	50
-盖鸣晖	ge ming hui	410
+盖鸣晖	gai ming hui	410
 葛姆雷	ge mu lei	288
 葛珮帆	ge pei fan	482
 哥普拉	ge pu la	346
-盖瑞桑	ge rui sang	279
+盖瑞桑	gai rui sang	279
 葛瑞丝	ge rui si	544
 葛珊珊	ge shan shan	116
 葛斯林	ge si lin	464
@@ -3859,7 +3855,7 @@ sort: by_weight
 葛鑫怡	ge xin yi	15
 葛奕德	ge yi de	12
 歌浴森	ge yu sen	364
-盖玥希	ge yue xi	15
+盖玥希	gai yue xi	15
 葛昀珀	ge yun po	12
 戈治均	ge zhi jun	15
 葛仲珊	ge zhong shan	382
@@ -3913,7 +3909,7 @@ sort: by_weight
 苟伟志	gou wei zhi	16
 勾雪莹	gou xue ying	15
 苟芸慧	gou yun hui	522
-句兆杰	gou zhao jie	50
+句兆杰	ju zhao jie	50
 谷阿莫	gu a mo	576
 谷爱凌	gu ai ling	2776
 顾长卫	gu chang wei	257
@@ -5547,12 +5543,12 @@ sort: by_weight
 凯莉山	kai li shan	315
 凯莉亚	kai li ya	220
 凯维奇	kai wei qi	693
-阚犇犇	kan ben ben	12
+阚犇犇	han ben ben	12
 坎蒂丝	kan di si	19
 坎迪斯	kan di si	17
 坎迪丝	kan di si	15
-阚立文	kan li wen	306
-阚清子	kan qing zi	60
+阚立文	han li wen	306
+阚清子	han qing zi	60
 坎塞柯	kan sai ke	306
 康爱石	kang ai shi	12
 康春雷	kang chun lei	12
@@ -7088,13 +7084,13 @@ sort: by_weight
 米希亚	mi xi ya	467
 米学东	mi xue dong	243
 面筋哥	mian jin ge	279
-缪海梅	miao hai mei	30
+缪海梅	mou hai mei	30
 苗海忠	miao hai zhong	279
 缪浩昌	miao hao chang	225
 苗皓钧	miao hao jun	220
 苗浩生	miao hao sheng	12
 苗金凤	miao jin feng	536
-缪俊杰	miao jun jie	16
+缪俊杰	mou jun jie	16
 苗可丽	miao ke li	454
 苗可秀	miao ke xiu	495
 苗侨伟	miao qiao wei	69
@@ -7239,29 +7235,29 @@ sort: by_weight
 牛子藩	niu zi fan	26
 糯美子	nuo mei zi	12
 诺伊尔	nuo yi er	868
-区楚良	ou chu liang	558
+区楚良	qu chu liang	558
 欧得洋	ou de yang	9
 欧丁丁	ou ding ding	12
 欧汉声	ou han sheng	6
 欧姬芙	ou ji fu	486
 欧嘉慧	ou jia hui	256
 欧锦棠	ou jin tang	490
-区俊炫	ou jun xuan	243
+区俊炫	qu jun xuan	243
 欧铠淳	ou kai chun	500
 欧凯明	ou kai ming	180
 欧米德	ou mi de	22
-区诺轩	ou nuo xuan	558
+区诺轩	qu nuo xuan	558
 欧倩如	ou qian ru	12
 欧倩怡	ou qian yi	387
-区瑞华	ou rui hua	432
-区瑞强	ou rui qiang	508
+区瑞华	qu rui hua	432
+区瑞强	qu rui qiang	508
 欧瑞伟	ou rui wei	3
 欧伟伦	ou wei lun	346
 欧烜屹	ou xuan yi	225
 欧阳佳	ou yang jia	96
 欧阳靖	ou yang jing	113
 欧阳龙	ou yang long	432
-区永权	ou yong quan	396
+区永权	qu yong quan	396
 欧钰珊	ou yu shan	3
 帕丁森	pa ding sen	279
 派翠莎	pai cui sha	387
@@ -7401,104 +7397,104 @@ sort: by_weight
 片桐仁	pian tong ren	346
 朴宝剑	piao bao jian	41
 朴宝英	piao bao ying	41
-朴炳珊	piao bing shan	225
-朴丙垠	piao bing yin	99
+朴炳珊	pu bing shan	225
+朴丙垠	pu bing yin	99
 朴彩英	piao cai ying	38
-朴灿烈	piao can lie	738
-朴东赫	piao dong he	302
-朴恩惠	piao en hui	405
-朴恩智	piao en zhi	306
-朴根滢	piao gen ying	396
-朴圭瑛	piao gui ying	52
-朴海俊	piao hai jun	256
-朴海美	piao hai mei	292
-朴海日	piao hai ri	364
-朴海秀	piao hai xiu	261
-朴海英	piao hai ying	346
-朴韩星	piao han xing	37
-朴基雄	piao ji xiong	292
-朴甲淑	piao jia shu	50
-朴嘉熙	piao jia xi	310
-朴京林	piao jing lin	261
-朴炅熏	piao jiong xun	207
-朴炯植	piao jiong zhi	472
-朴俊炯	piao jun jiong	396
-朴奎利	piao kui li	306
-朴龙河	piao long he	297
-朴璐美	piao lu mei	554
-朴美善	piao mei shan	288
-朴美宣	piao mei xuan	212
-朴美英	piao mei ying	238
-朴珉河	piao min he	50
-朴敏英	piao min ying	608
-朴明秀	piao ming xiu	454
-朴明洙	piao ming zhu	423
-朴娜莱	piao na lai	292
-朴仁焕	piao ren huan	320
-朴容夏	piao rong xia	310
-朴善英	piao shan ying	306
-朴尚民	piao shang min	266
-朴升贤	piao sheng xian	220
-朴升智	piao sheng zhi	238
-朴诗恩	piao shi en	243
-朴世荣	piao shi rong	324
-朴诗妍	piao shi yan	364
-朴施妍	piao shi yan	171
-朴素丹	piao su dan	19
-朴素妍	piao su yan	6
-朴素珍	piao su zhen	52
-朴泰俊	piao tai jun	320
-朴喜洵	piao xi xun	333
-朴贤淑	piao xian shu	243
-朴贤珠	piao xian zhu	202
-朴相勉	piao xiang mian	252
-朴相元	piao xiang yuan	284
-朴孝敏	piao xiao min	369
-朴孝信	piao xiao xin	486
-朴信惠	piao xin hui	896
-朴新阳	piao xin yang	338
-朴信宇	piao xin yu	252
-朴修弘	piao xiu hong	302
-朴秀荣	piao xiu rong	274
-朴秀真	piao xiu zhen	464
-朴秀珍	piao xiu zhen	255
-朴叙俊	piao xu jun	477
-朴艺珍	piao yi zhen	346
-朴勇河	piao yong he	144
-朴有天	piao you tian	806
-朴源载	piao yuan zai	189
-朴宰范	piao zai fan	495
-朴载范	piao zai fan	327
-朴载相	piao zai xiang	369
-朴昭妍	piao zhao yan	266
-朴哲民	piao zhe min	374
-朴哲洙	piao zhe zhu	248
-朴振荣	piao zhen rong	428
-朴珍荣	piao zhen rong	334
-朴真熙	piao zhen xi	315
-朴贞雅	piao zhen ya	302
-朴振英	piao zhen ying	405
-朴镇宇	piao zhen yu	302
-朴正花	piao zheng hua	220
-朴正民	piao zheng min	504
-朴政珉	piao zheng min	338
-朴正炫	piao zheng xuan	378
-朴正宇	piao zheng yu	234
-朴正洙	piao zheng zhu	414
-朴智恩	piao zhi en	418
-朴志恩	piao zhi en	198
-朴志娟	piao zhi juan	248
-朴智旻	piao zhi min	513
-朴智敏	piao zhi min	319
-朴志效	piao zhi xiao	306
-朴智训	piao zhi xun	382
-朴智妍	piao zhi yan	374
-朴智胤	piao zhi yin	382
-朴智英	piao zhi ying	266
-朴智元	piao zhi yuan	382
-朴志洙	piao zhi zhu	274
-朴钟焕	piao zhong huan	202
-朴重勋	piao zhong xun	328
+朴灿烈	pu can lie	738
+朴东赫	pu dong he	302
+朴恩惠	pu en hui	405
+朴恩智	pu en zhi	306
+朴根滢	pu gen ying	396
+朴圭瑛	pu gui ying	52
+朴海俊	pu hai jun	256
+朴海美	pu hai mei	292
+朴海日	pu hai ri	364
+朴海秀	pu hai xiu	261
+朴海英	pu hai ying	346
+朴韩星	pu han xing	37
+朴基雄	pu ji xiong	292
+朴甲淑	pu jia shu	50
+朴嘉熙	pu jia xi	310
+朴京林	pu jing lin	261
+朴炅熏	pu jiong xun	207
+朴炯植	pu jiong zhi	472
+朴俊炯	pu jun jiong	396
+朴奎利	pu kui li	306
+朴龙河	pu long he	297
+朴璐美	pu lu mei	554
+朴美善	pu mei shan	288
+朴美宣	pu mei xuan	212
+朴美英	pu mei ying	238
+朴珉河	pu min he	50
+朴敏英	pu min ying	608
+朴明秀	pu ming xiu	454
+朴明洙	pu ming zhu	423
+朴娜莱	pu na lai	292
+朴仁焕	pu ren huan	320
+朴容夏	pu rong xia	310
+朴善英	pu shan ying	306
+朴尚民	pu shang min	266
+朴升贤	pu sheng xian	220
+朴升智	pu sheng zhi	238
+朴诗恩	pu shi en	243
+朴世荣	pu shi rong	324
+朴诗妍	pu shi yan	364
+朴施妍	pu shi yan	171
+朴素丹	pu su dan	19
+朴素妍	pu su yan	6
+朴素珍	pu su zhen	52
+朴泰俊	pu tai jun	320
+朴喜洵	pu xi xun	333
+朴贤淑	pu xian shu	243
+朴贤珠	pu xian zhu	202
+朴相勉	pu xiang mian	252
+朴相元	pu xiang yuan	284
+朴孝敏	pu xiao min	369
+朴孝信	pu xiao xin	486
+朴信惠	pu xin hui	896
+朴新阳	pu xin yang	338
+朴信宇	pu xin yu	252
+朴修弘	pu xiu hong	302
+朴秀荣	pu xiu rong	274
+朴秀真	pu xiu zhen	464
+朴秀珍	pu xiu zhen	255
+朴叙俊	pu xu jun	477
+朴艺珍	pu yi zhen	346
+朴勇河	pu yong he	144
+朴有天	pu you tian	806
+朴源载	pu yuan zai	189
+朴宰范	pu zai fan	495
+朴载范	pu zai fan	327
+朴载相	pu zai xiang	369
+朴昭妍	pu zhao yan	266
+朴哲民	pu zhe min	374
+朴哲洙	pu zhe zhu	248
+朴振荣	pu zhen rong	428
+朴珍荣	pu zhen rong	334
+朴真熙	pu zhen xi	315
+朴贞雅	pu zhen ya	302
+朴振英	pu zhen ying	405
+朴镇宇	pu zhen yu	302
+朴正花	pu zheng hua	220
+朴正民	pu zheng min	504
+朴政珉	pu zheng min	338
+朴正炫	pu zheng xuan	378
+朴正宇	pu zheng yu	234
+朴正洙	pu zheng zhu	414
+朴智恩	pu zhi en	418
+朴志恩	pu zhi en	198
+朴志娟	pu zhi juan	248
+朴智旻	pu zhi min	513
+朴智敏	pu zhi min	319
+朴志效	pu zhi xiao	306
+朴智训	pu zhi xun	382
+朴智妍	pu zhi yan	374
+朴智胤	pu zhi yin	382
+朴智英	pu zhi ying	266
+朴智元	pu zhi yuan	382
+朴志洙	pu zhi zhu	274
+朴钟焕	pu zhong huan	202
+朴重勋	pu zhong xun	328
 平采娜	ping cai na	9
 平井坚	ping jing jian	50
 平井桃	ping jing tao	13
@@ -7667,7 +7663,7 @@ sort: by_weight
 秋田弘	qiu tian hong	3
 邱万城	qiu wan cheng	252
 秋相美	qiu xiang mei	202
-仇小豹	qiu xiao bao	459
+仇小豹	chou xiao bao	459
 裘晓洁	qiu xiao jie	5
 邱欣怡	qiu xin yi	508
 邱心志	qiu xin zhi	500
@@ -7675,13 +7671,13 @@ sort: by_weight
 邱贻可	qiu yi ke	369
 邱意浓	qiu yi nong	1
 邱永传	qiu yong chuan	26
-仇永力	qiu yong li	12
+仇永力	chou yong li	12
 邱宇辰	qiu yu chen	328
 邱雨铄	qiu yu shuo	16
 萩原舞	qiu yuan wu	378
 邱岳峰	qiu yue feng	38
 邱月清	qiu yue qing	297
-仇云波	qiu yun bo	279
+仇云波	chou yun bo	279
 丘梓谦	qiu zi qian	252
 瞿澳晖	qu ao hui	135
 屈柏宇	qu bai yu	12
@@ -7871,22 +7867,22 @@ sort: by_weight
 杉本彩	shan ben cai	25
 山本彩	shan ben cai	22
 杉本优	shan ben you	310
-单丹娜	shan dan na	351
-单冠朝	shan guan chao	15
+单丹娜	dan dan na	351
+单冠朝	dan guan chao	15
 闪嘉晨	shan jia chen	12
 闪蓝桥	shan lan qiao	12
-单立文	shan li wen	518
+单立文	dan li wen	518
 山崎努	shan qi nu	405
-单色凌	shan se ling	252
+单色凌	dan se ling	252
 杉森建	shan sen jian	360
 杉十郎	shan shi lang	504
 单田芳	shan tian fang	248
-单霞丽	shan xia li	230
+单霞丽	dan xia li	230
 山下清	shan xia qing	396
 杉咲花	shan xiao hua	428
 山形健	shan xing jian	297
 单依纯	shan yi chun	141
-单应桂	shan ying gui	324
+单应桂	dan ying gui	324
 上白石	shang bai shi	558
 上坂堇	shang ban jin	391
 尚长荣	shang chang rong	454
@@ -7930,7 +7926,7 @@ sort: by_weight
 邵仲衡	shao zhong heng	3
 涉谷昴	she gu mao	207
 设乐统	she le tong	288
-折笠爱	she li ai	508
+折笠爱	zhe li ai	508
 佘曼妮	she man ni	12
 佘诗曼	she shi man	405
 佘颖欣	she ying xin	12
@@ -9484,7 +9480,7 @@ sort: by_weight
 谢春懿	xie chun yi	12
 谢东燊	xie dong shen	112
 谢和弦	xie he xian	28
-解惠清	xie hui qing	261
+解惠清	jie hui qing	261
 谢佳见	xie jia jian	432
 谢佳妤	xie jia yu	30
 谢金晶	xie jin jing	297
@@ -9495,16 +9491,16 @@ sort: by_weight
 谢可寅	xie ke yin	75
 谢坤达	xie kun da	396
 谢蕾蕾	xie lei lei	459
-解立彬	xie li bin	392
+解立彬	jie li bin	392
 谢丽金	xie li jin	297
 谢林彤	xie lin tong	194
 谢玲玲	xie ling ling	418
-解灵远	xie ling yuan	12
+解灵远	jie ling yuan	12
 谢孟伟	xie meng wei	91
 谢沛恩	xie pei en	306
 谢鹏飞	xie peng fei	608
 谢芊彤	xie qian tong	342
-解清帅	xie qing shuai	12
+解清帅	jie qing shuai	12
 谢琼煖	xie qiong nuan	369
 谢容儿	xie rong er	230
 谢锐韬	xie rui tao	16
@@ -9519,12 +9515,12 @@ sort: by_weight
 谢天依	xie tian yi	12
 谢霆锋	xie ting feng	6839
 谢婷婷	xie ting ting	19
-解伟苓	xie wei ling	315
+解伟苓	jie wei ling	315
 谢文骏	xie wen jun	41
 谢闻轩	xie wen xuan	2
 谢文雅	xie wen ya	270
 解晓东	xie xiao dong	378
-解小东	xie xiao dong	228
+解小东	jie xiao dong	228
 谢炘昊	xie xin hao	186
 谢欣华	xie xin hua	12
 谢欣桐	xie xin tong	12
@@ -10409,20 +10405,20 @@ sort: by_weight
 袁梓铭	yuan zi ming	12
 袁紫侨	yuan zi qiao	230
 袁子仪	yuan zi yi	56
-乐基儿	yue ji er	616
-乐珈彤	yue jia tong	237
+乐基儿	le ji er	616
+乐珈彤	le jia tong	237
 岳佳颐	yue jia yi	12
 岳丽娜	yue li na	418
 月乃雏	yue nai chu	10
 岳鹏飞	yue peng fei	330
-乐少华	yue shao hua	400
+乐少华	le shao hua	400
 岳士涵	yue shi han	12
-乐思宏	yue si hong	12
-乐小米	yue xiao mi	468
+乐思宏	le si hong	12
+乐小米	le xiao mi	468
 岳秀清	yue xiu qing	222
 月野霞	yue ye xia	10
 岳以恩	yue yi en	15
-乐易玲	yue yi ling	482
+乐易玲	le yi ling	482
 岳跃利	yue yue li	387
 岳云鹏	yue yun peng	1633
 乐正绫	yue zheng ling	57
@@ -10442,7 +10438,7 @@ sort: by_weight
 曾春蕾	zeng chun lei	60
 曾春年	zeng chun nian	230
 曾繁日	zeng fan ri	535
-曾格格	zeng ge ge	256
+曾格格	ceng ge ge	256
 曾国城	zeng guo cheng	13
 曾航生	zeng hang sheng	22
 曾虹畅	zeng hong chang	337
@@ -10470,14 +10466,14 @@ sort: by_weight
 曾卓君	zeng zhuo jun	130
 曾子墨	zeng zi mo	22
 乍甲蓬	zha jia peng	180
-查可欣	zha ke xin	360
-查理兹	zha li zi	69
-查曼若	zha man ruo	12
-查美竹	zha mei zhu	12
-查妮甘	zha ni gan	220
+查可欣	cha ke xin	360
+查理兹	cha li zi	69
+查曼若	cha man ruo	12
+查美竹	cha mei zhu	12
+查妮甘	cha ni gan	220
 扎帕塔	zha pa ta	288
-查斯特	zha si te	13
-查小欣	zha xiao xin	22
+查斯特	cha si te	13
+查小欣	cha xiao xin	22
 斋藤工	zhai teng gong	9
 翟天临	zhai tian lin	750
 詹秉熙	zhan bing xi	338
@@ -11898,8 +11894,8 @@ sort: by_weight
 池田真纪	chi tian zhen ji	99
 池田政典	chi tian zheng dian	284
 池田知聪	chi tian zhi cong	117
-种村有菜	chong cun you cai	387
-种田梨沙	chong tian li sha	6
+种村有菜	zhong cun you cai	387
+种田梨沙	zhong tian li sha	6
 冲田杏梨	chong tian xing li	16
 初音未来	chu yin wei lai	440
 川北里菜	chuan bei li cai	10
@@ -12213,8 +12209,8 @@ sort: by_weight
 隔壁老樊	ge bi lao fan	181
 葛城美里	ge cheng mei li	242
 戈德芬格	ge de fen ge	220
-盖尔盖伊	ge er gai yi	320
-盖尔克奇	ge er ke qi	306
+盖尔盖伊	gai er gai yi	320
+盖尔克奇	gai er ke qi	306
 格莱姆斯	ge lai mu si	490
 格兰姆斯	ge lan mu si	52
 格里杰夫	ge li jie fu	202
@@ -14181,7 +14177,7 @@ sort: by_weight
 月冈芳年	yue gang fang nian	392
 约翰蓝侬	yue han lan nong	508
 约翰列侬	yue han lie nong	465
-乐火男孩	yue huo nan hai	238
+乐火男孩	le huo nan hai	238
 月见伊织	yue jian yi zhi	10
 月乃露娜	yue nai lu na	10
 云丹久美	yun dan jiu mei	5
@@ -14211,16 +14207,16 @@ sort: by_weight
 泽旺多吉	ze wang duo ji	10
 增谷康纪	zeng gu kang ji	374
 増谷康纪	zeng gu kang ji	262
-曾美慧孜	zeng mei hui zi	3
+曾美慧孜	ceng mei hui zi	3
 增田俊树	zeng tian jun shu	5
 增田有华	zeng tian you hua	1
-查干希热	zha gan xi re	4
+查干希热	cha gan xi re	4
 扎格尼泽	zha ge ni ze	202
-查克贝里	zha ke bei li	28
+查克贝里	cha ke bei li	28
 扎克拉文	zha ke la wen	518
-查宁塔图	zha ning ta tu	468
-查宁坦图	zha ning tan tu	189
-查普托娃	zha pu tuo wa	274
+查宁塔图	cha ning ta tu	468
+查宁坦图	cha ning tan tu	189
+查普托娃	cha pu tuo wa	274
 扎西达吉	zha xi da ji	212
 扎西邓珠	zha xi deng zhu	1
 扎西顿珠	zha xi dun zhu	33
@@ -14425,6 +14421,7 @@ sort: by_weight
 桃尻香名芽	tao kao xiang ming ya	10
 桃濑友梨奈	tao lai you li nai	10
 桃乃木香奈	tao nai mu xiang nai	10
+田井中彩智	tian jing zhong cai zhi	10
 天音真比奈	tian yin zhen bi nai	10
 五十岚裕美	wu shi lan yu mei	32
 希崎杰西卡	xi qi jie xi ka	10

@@ -375,7 +375,7 @@ sort: by_weight
 鼻腔缩窄术	bí;th qiāng;ep suō;xp zhǎi;pw shù;sy	10
 鼻腔血管瘤	bí;th qiāng;ep xuè;tl guǎn;tp liú;uq	10
 鼻腔原位癌	bí;th qiāng;ep yuán;dr wèi;wu ái;uk	10
-鼻塞流鼻涕	bí;th sāi;pf liú;iy bí;th tì;iu	10
+鼻塞流鼻涕	bí;th sè;pf liú;iy bí;th tì;iu	10
 鼻伤衄血证	bí;th shāng;wt nǜ;tl xuè;tl zhèng;yg	10
 臂神经麻痹	bì;nk shén;py jīng;xc má;ys bì;ul	10
 鼻饲管置管	bí;th sì;qn guǎn;tp zhì;lf guǎn;tp	10
@@ -6008,7 +6008,7 @@ sort: by_weight
 尚茨截骨术	shàng;im cí;au jié;fa gǔ;me shù;sy	10
 上段支气管	shàng;hh duàn;wd zhī;fc qì;rn guǎn;tp	10
 上颚穿刺术	shàng;hh è;kk chuān;pw cì;gm shù;sy	10
-伤风鼻塞病	shāng;wt fēng;mq bí;th sāi;pf bìng;ug	10
+伤风鼻塞病	shāng;wt fēng;mq bí;th sè;pf bìng;ug	10
 上腹部不适	shàng;hh fù;et bù;uk bú;gi shì;td	10
 上工治未病	shàng;hh gōng;aa zhì;ic wèi;fi bìng;ug	10
 伤害感受器	shāng;wt hài;pd gǎn;dg shòu;ep qì;kk	10
@@ -7825,7 +7825,7 @@ sort: by_weight
 心身医学科	xīn;ny shēn;tm yī;at xué;ip kē;tu	10
 心肾阴虚证	xīn;ny shèn;jc yīn;be xū;ha zhèng;yg	10
 心肾综合征	xīn;ny shèn;jc zōng;xp hé;wg zhēng;tg	10
-新生儿鼻塞	xīn;us shēng;tg ér;qt bí;th sāi;pf	10
+新生儿鼻塞	xīn;us shēng;tg ér;qt bí;th sè;pf	10
 新生儿抚触	xīn;us shēng;tg ér;qt fǔ;rf chù;qe	10
 新生儿畸形	xīn;us shēng;tg ér;qt jī;ld xíng;ga	10
 新生儿疖肿	xīn;us shēng;tg ér;qt jiē;ub zhǒng;ek	10
@@ -11411,7 +11411,7 @@ sort: by_weight
 肺泡性肺气肿	fèi;eg pào;iq xìng;nt fèi;eg qì;rn zhǒng;ek	10
 肺脾肾阳虚证	fèi;eg pí;er shèn;jc yáng;bj xū;ha zhèng;yg	10
 非破坏性检查	fēi;dj pò;dh huài;fg xìng;nt jiǎn;sw chá;sj	10
-肺气虚鼻塞证	fèi;eg qì;rn xū;ha bí;th sāi;pf zhèng;yg	10
+肺气虚鼻塞证	fèi;eg qì;rn xū;ha bí;th sè;pf zhèng;yg	10
 肺气阴两虚证	fèi;eg qì;rn yīn;be liǎng;gm xū;ha zhèng;yg	10
 肺球孢子菌病	fèi;eg qiú;gf bāo;bq zǐ;bb jūn;al bìng;ug	10
 肺容量减少术	fèi;eg róng;pw liàng;jg jiǎn;ud shǎo;it shù;sy	10
@@ -18101,9 +18101,13 @@ sort: by_weight
 口腔病害切除术	kǒu;kk qiāng;ep bìng;ug hài;pd qiē;av chú;bw shù;sy	10
 口腔病损切除术	kǒu;kk qiāng;ep bìng;ug sǔn;rk qiē;av chú;bw shù;sy	10
 口腔关节病检查	kǒu;kk qiāng;ep guān;ud jié;ab bìng;ug jiǎn;sw chá;sj	10
+口腔关节病治疗	kǒu;kk qiāng;ep guān;ud jié;ab bìng;ug zhì;ic liáo;ub	10
 口腔颌面部囊肿	kǒu;kk qiāng;ep hé;wg miàn;dm bù;uk náng;gk zhǒng;ek	10
 口腔颌面部肿瘤	kǒu;kk qiāng;ep hé;wg miàn;dm bù;uk zhǒng;ek liú;uq	10
+口腔颌面解剖学	kǒu;kk qiāng;ep hé;wg miàn;dm jiě;qe pōu;uk xué;ip	10
+口腔解剖生理学	kǒu;kk qiāng;ep jiě;qe pōu;uk shēng;tg lǐ;gj xué;ip	10
 口腔开放性伤口	kǒu;kk qiāng;ep kāi;ga fàng;yt xìng;nt shāng;wt kǒu;kk	10
+口腔麻醉注射器	kǒu;kk qiāng;ep má;ys zuì;sg zhù;iy shè;tm qì;kk	10
 口腔囊肿摘除术	kǒu;kk qiāng;ep náng;gk zhǒng;ek zhāi;ru chú;bw shù;sy	10
 口腔内淋巴管瘤	kǒu;kk qiāng;ep nèi;mw lín;is bā;cn guǎn;tp liú;uq	10
 口腔黏膜白斑病	kǒu;kk qiāng;ep nián;tw mó;ea bái;rr bān;gy bìng;ug	10
@@ -18112,7 +18116,10 @@ sort: by_weight
 口腔黏膜移植术	kǒu;kk qiāng;ep nián;tw mó;ea yí;tq zhí;sf shù;sy	10
 口腔黏液腺囊肿	kǒu;kk qiāng;ep nián;tw yè;iy xiàn;er náng;gk zhǒng;ek	10
 口腔前庭成形术	kǒu;kk qiāng;ep qián;ue tíng;yt chéng;dn xíng;ga shù;sy	10
+口腔体腔摄影机	kǒu;kk qiāng;ep tǐ;ws qiāng;ep shè;rb yǐng;jy jī;sm	10
+口腔线一次成像	kǒu;kk qiāng;ep xiàn;xg yí;gg cì;uq chéng;dn xiàng;wq	10
 口腔异物取出术	kǒu;kk qiāng;ep yì;na wù;tr qǔ;bc chū;bm shù;sy	10
+口腔正畸点焊机	kǒu;kk qiāng;ep zhèng;gh jī;ld diǎn;hk hàn;oj jī;sm	10
 口下颌耳综合征	kǒu;kk xià;gh hé;wg ěr;bg zōng;xp hé;wg zhēng;tg	10
 库阿加莱综合征	kù;yl ā;bs jiā;lk lái;ag zōng;xp hé;wg zhēng;tg	10
 库波史三氏手术	kù;yl bō;ih shǐ;kq sān;dg shì;qa shǒu;rt shù;sy	10

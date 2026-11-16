@@ -3,7 +3,7 @@
 #https://github.com/amzxyz/rime-wanxiang-data
 #------行政区划
 ---
-name: diming.lite
+name: diming
 version: "LTS"
 sort: by_weight
 ...
@@ -29,7 +29,7 @@ sort: by_weight
 曹营	cao ying	429
 曹州	cao zhou	91
 曹庄	cao zhuang	13
-茶镇	cha zhen	155
+茶镇	cha zhen	125
 长白	chang bai	658
 长丰	chang feng	378
 长阳	chang yang	637
@@ -57432,7 +57432,7 @@ sort: by_weight
 雀幕桥村	que mu qiao cun	10
 雀山公园	que shan gong yuan	117
 却是故乡	que shi gu xiang	10
-𬒈石街道	que shi jie dao	10
+𬒈石街道	shi jie dao	10
 礐石街道	que shi jie dao	10
 雀噪荒村	que zao huang cun	10
 群巴克镇	qun ba ke zhen	10
@@ -63735,7 +63735,7 @@ sort: by_weight
 拓家湾村	tuo jia wan cun	10
 脱家塬村	tuo jia yuan cun	10
 鮀江街道	tuo jiang jie dao	10
-𬶍江街道	tuo jiang jie dao	10
+𬶍江街道	jiang jie dao	10
 托喀依乡	tuo ka yi xiang	10
 托克苏村	tuo ke su cun	10
 托克托县	tuo ke tuo xian	10
@@ -63747,7 +63747,7 @@ sort: by_weight
 托拉湾村	tuo la wan cun	10
 托勒盖村	tuo le gai cun	10
 鮀莲街道	tuo lian jie dao	10
-𬶍莲街道	tuo lian jie dao	10
+𬶍莲街道	lian jie dao	10
 拖木泥村	tuo mu ni cun	10
 驮娘岩村	tuo niang yan cun	10
 托帕纳乡	tuo pa na xiang	10
@@ -76650,7 +76650,7 @@ sort: by_weight
 八五八农场	ba wu ba nong chang	10
 八五二农场	ba wu er nong chang	10
 八五九农场	ba wu jiu nong chang	10
-八五〇农场	ba wu ling nong chang	10
+八五〇农场	ba wu nong chang	10
 八五六农场	ba wu liu nong chang	10
 八五七农场	ba wu qi nong chang	10
 八五三农场	ba wu san nong chang	10
@@ -76741,7 +76741,7 @@ sort: by_weight
 白沙路街道	bai sha lu jie dao	10
 白沙湾街道	bai sha wan jie dao	10
 白沙万街道	bai sha wan jie dao	10
-白沙𬇕街道	bai sha wan jie dao	10
+白沙𬇕街道	bai sha jie dao	10
 白沙洲街道	bai sha zhou jie dao	10
 白山抚松县	bai shan fu song xian	10
 白山靖宇县	bai shan jing yu xian	10
@@ -77598,7 +77598,7 @@ sort: by_weight
 二二八公园	er er ba gong yuan	10
 二号桥街道	er hao qiao jie dao	10
 二界沟街道	er jie gou jie dao	10
-二九〇农场	er jiu ling nong chang	10
+二九〇农场	er jiu nong chang	10
 二九一农场	er jiu yi nong chang	10
 二里岗街道	er li gang jie dao	10
 二连浩特市	er lian hao te shi	10
