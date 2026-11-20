@@ -49,11 +49,11 @@
 			],
 			[
 				{"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.3,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
-				{"type":"MacroKey","displayText":";","label":";","swipeUpLabel":":","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"semicolon"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"colon"}]}]}},
-				{"type":"MacroKey","displayText":",","label":",","swipeUpLabel":"'","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"comma"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]},"composeOverride":{"displayText":"2","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"2"}]}]},"label":"2","type":"MacroKey","independentColor":false}},
-				{"type":"SpaceKey","weight":0.3},
 				{"type":"MacroKey","displayText":".","label":".","swipeUpLabel":"?","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"period"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"question"}]}]},"composeOverride":{"displayText":"3","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"3"}]}]},"label":"3","type":"MacroKey","independentColor":false}},
-				{"type":"LanguageKey","composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
+        {"type":"MacroKey","displayText":",","label":",","swipeUpLabel":"'","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"comma"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]},"composeOverride":{"displayText":"2","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"2"}]}]},"label":"2","type":"MacroKey","independentColor":false}},
+				{"type":"SpaceKey","weight":0.3},
+				{"type":"MacroKey","displayText":";","label":";","swipeUpLabel":":","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"semicolon"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"colon"}]}]}},
+        {"type":"LanguageKey","composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
 				{"type":"ReturnKey","swipeUpLabel":"编码","weight":0.15,"swipeUp":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
 			]
 		],
@@ -72,40 +72,40 @@
           {"type":"MacroKey","displayText":" 0 ","label":"0","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"0"}]}]}}
         ],
     		[
-    			{"type":"AlphabetKey","main":"Q","alt":"`","displayText":"Q","weight":0.0,"rowHeightPercent":21.3},
-    			{"type":"AlphabetKey","main":"W","alt":"\"","displayText":"W E","weight":0.0},
-    			{"type":"AlphabetKey","main":"R","alt":"+","displayText":"R T","weight":0.0},
-    			{"type":"AlphabetKey","main":"Y","alt":"-","displayText":"Y","weight":0.0},
-    			{"type":"AlphabetKey","main":"U","alt":"[","displayText":"U","weight":0.0},
-    			{"type":"AlphabetKey","main":"I","alt":"]","displayText":"I O","weight":0.0},
-    			{"type":"AlphabetKey","main":"P","alt":"\\","displayText":"P","weight":0.0}
+    			{"type":"AlphabetKey","main":"Q","alt":"`","displayText":"q","weight":0.0,"rowHeightPercent":21.3},
+    			{"type":"AlphabetKey","main":"W","alt":"\"","displayText":"w e","weight":0.0},
+    			{"type":"AlphabetKey","main":"R","alt":"+","displayText":"r t","weight":0.0},
+    			{"type":"AlphabetKey","main":"Y","alt":"-","displayText":"y","weight":0.0},
+    			{"type":"AlphabetKey","main":"U","alt":"[","displayText":"u","weight":0.0},
+    			{"type":"AlphabetKey","main":"I","alt":"]","displayText":"i o","weight":0.0},
+    			{"type":"AlphabetKey","main":"P","alt":"\\","displayText":"p","weight":0.0}
     		],
     		[
-    			{"type":"AlphabetKey","main":"A","alt":"@","displayText":"A","weight":0.15,"rowHeightPercent":21.3},
-    			{"type":"AlphabetKey","main":"S","alt":"*","displayText":"S D","weight":0.15},
-    			{"type":"AlphabetKey","main":"F","alt":"=","displayText":"F G","weight":0.15},
-    			{"type":"AlphabetKey","main":"H","alt":"%","displayText":"H","weight":0.15},
-    			{"type":"AlphabetKey","main":"J","alt":"(","displayText":"J K","weight":0.15},
-    			{"type":"AlphabetKey","main":"L","alt":")","displayText":"L","weight":0.15}
+    			{"type":"AlphabetKey","main":"A","alt":"@","displayText":"a","weight":0.15,"rowHeightPercent":21.3},
+    			{"type":"AlphabetKey","main":"S","alt":"*","displayText":"s d","weight":0.15},
+    			{"type":"AlphabetKey","main":"F","alt":"=","displayText":"f g","weight":0.15},
+    			{"type":"AlphabetKey","main":"H","alt":"%","displayText":"h","weight":0.15},
+    			{"type":"AlphabetKey","main":"J","alt":"(","displayText":"j k","weight":0.15},
+    			{"type":"AlphabetKey","main":"L","alt":")","displayText":"l","weight":0.15}
     		],
     		[
 				  {"type":"CapsKey","weight":0.15,"rowHeightPercent":21.3,"composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Tab"}]}]},"label":"↹","type":"MacroKey","independentColor":false}},
-          {"type":"MacroKey","displayText":"Z","label":"Z","swipeUpLabel":"全选","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Z"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"selectAll"}]}},
-          {"type":"MacroKey","displayText":"X C","label":"X","swipeUpLabel":"复制","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"X"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"copy"}]}},
-          {"type":"MacroKey","displayText":"V ","label":"V","swipeUpLabel":"粘贴","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"V"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"paste"}]}},
-          {"type":"MacroKey","displayText":"B N","label":"B","swipeUpLabel":"剪切","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"B"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"cut"}]}},
-          {"type":"AlphabetKey","main":"M","alt":"~","displayText":"M","weight":0.14},
+          {"type":"MacroKey","displayText":"z","label":"Z","swipeUpLabel":"全选","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Z"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"selectAll"}]}},
+          {"type":"MacroKey","displayText":"x c","label":"X","swipeUpLabel":"复制","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"X"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"copy"}]}},
+          {"type":"MacroKey","displayText":"v","label":"V","swipeUpLabel":"粘贴","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"V"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"paste"}]}},
+          {"type":"MacroKey","displayText":"b n","label":"B","swipeUpLabel":"剪切","weight":0.14,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"B"}]}]},"swipeUp":{"macro":[{"type":"edit","action":"cut"}]}},
+          {"type":"AlphabetKey","main":"M","alt":"~","displayText":"m","weight":0.14},
           {"type":"BackspaceKey","swipeUpLabel":"清空","weight":0.15,"swipeUp":{"macro":[{"type":"edit","action":"selectAll"},{"type":"tap","keys":[{"fcitx":"Delete"}]}]}}
         ],
-				[
-					{"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.3,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
-					{"type":"MacroKey","displayText":";","label":";","swipeUpLabel":":","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"semicolon"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"colon"}]}]}},
-				{"type":"MacroKey","displayText":",","label":",","swipeUpLabel":"'","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"comma"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]},"composeOverride":{"displayText":"2","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"2"}]}]},"label":"2","type":"MacroKey","independentColor":false}},
-					{"type":"SpaceKey","weight":0.3},
-					{"type":"MacroKey","displayText":".","label":".","swipeUpLabel":"?","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"period"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"question"}]}]},"composeOverride":{"displayText":"3","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"3"}]}]},"label":"3","type":"MacroKey","independentColor":false}},
-					{"type":"LanguageKey","composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
-					{"type":"ReturnKey","swipeUpLabel":"编码","weight":0.15,"swipeUp":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
-				]
+			  [
+				  {"type":"LayoutSwitchKey","label":"?123","subLabel":"Number","weight":0.15,"rowHeightPercent":21.3,"textColorMonet":"theme:accentKeyTextColor","backgroundColorMonet":"theme:accentKeyBackgroundColor"},
+				  {"type":"MacroKey","displayText":".","label":".","swipeUpLabel":"?","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"period"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"question"}]}]},"composeOverride":{"displayText":"3","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"3"}]}]},"label":"3","type":"MacroKey","independentColor":false}},
+          {"type":"MacroKey","displayText":",","label":",","swipeUpLabel":"'","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"comma"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]},"composeOverride":{"displayText":"2","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"2"}]}]},"label":"2","type":"MacroKey","independentColor":false}},
+				  {"type":"SpaceKey","weight":0.3},
+				  {"type":"MacroKey","displayText":";","label":";","swipeUpLabel":":","tap":{"macro":[{"type":"tap","keys":[{"fcitx":"semicolon"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"colon"}]}]}},
+          {"type":"LanguageKey","composeOverride":{"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]},"label":"⎋","type":"MacroKey","backgroundColorMonet":"theme:altKeyBackgroundColor","independentColor":true},"backgroundColorMonet":"theme:altKeyBackgroundColor"},
+				  {"type":"ReturnKey","swipeUpLabel":"编码","weight":0.15,"swipeUp":{"macro":[{"type":"shortcut","modifiers":[{"fcitx":"Shift_L"}],"key":{"fcitx":"Enter"}}]}}
+			  ]
     	]
     },
     "wanxiang_t9": {
@@ -124,20 +124,20 @@
       "default": [
       	[
       		{"type":"MacroKey","displayText":"分词","label":"'","swipeUpLabel":"1","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"apostrophe"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_1"}]}]}},
-      		{"type":"MacroKey","displayText":"ABC","label":"2","swipeUpLabel":"2","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"2"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_2"}]}]}},
-      		{"type":"MacroKey","displayText":"DEF","label":"3","swipeUpLabel":"3","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"3"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_3"}]}]}},
+      		{"type":"MacroKey","displayText":"abc","label":"2","swipeUpLabel":"2","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"2"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_2"}]}]}},
+      		{"type":"MacroKey","displayText":"def","label":"3","swipeUpLabel":"3","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"3"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_3"}]}]}},
       		{"type":"BackspaceKey","weight":0.0}
       	],
       	[
-      		{"type":"MacroKey","displayText":"GHI","label":"4","swipeUpLabel":"4","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"4"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_4"}]}]}},
-      		{"type":"MacroKey","displayText":"JKL","label":"5","swipeUpLabel":"5","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"5"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_5"}]}]}},
-      		{"type":"MacroKey","displayText":"MNO","label":"6","swipeUpLabel":"6","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"6"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_6"}]}]}},
+      		{"type":"MacroKey","displayText":"ghi","label":"4","swipeUpLabel":"4","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"4"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_4"}]}]}},
+      		{"type":"MacroKey","displayText":"jkl","label":"5","swipeUpLabel":"5","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"5"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_5"}]}]}},
+      		{"type":"MacroKey","displayText":"mno","label":"6","swipeUpLabel":"6","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"6"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_6"}]}]}},
       		{"type":"MacroKey","label":"重输","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"Escape"}]}]}}
       	],
       	[
-      		{"type":"MacroKey","displayText":"PQRS","label":"7","swipeUpLabel":"7","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"7"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_7"}]}]}},
-      		{"type":"MacroKey","displayText":"TUV","label":"8","swipeUpLabel":"8","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"8"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_8"}]}]}},
-      		{"type":"MacroKey","displayText":"WXYZ","label":"9","swipeUpLabel":"9","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"9"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_9"}]}]}},
+      		{"type":"MacroKey","displayText":"pqrs","label":"7","swipeUpLabel":"7","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"7"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_7"}]}]}},
+      		{"type":"MacroKey","displayText":"tuv","label":"8","swipeUpLabel":"8","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"8"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_8"}]}]}},
+      		{"type":"MacroKey","displayText":"wxyz","label":"9","swipeUpLabel":"9","weight":0.0,"tap":{"macro":[{"type":"tap","keys":[{"fcitx":"9"}]}]},"swipeUp":{"macro":[{"type":"tap","keys":[{"fcitx":"KP_9"}]}]}},
       		{"type":"LanguageKey","weight":0.0}
       	],
       	[
