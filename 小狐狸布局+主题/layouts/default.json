@@ -252,7 +252,7 @@
       "weight": 1.5,
       "keyType": "FUNCTION",
       "icon": "custom.shift",
-      "swipe": { "up": { "ref": "qwerty.editor", "label": "编辑器" }, "down": { "action": { "type": "app", "command": "text_editor" }, "label": "触控板" } },
+      "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } }, "down": { "ref": "qwerty.editor", "label": "编辑器" } },
       "longPress": { "label": "⇪", "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } },
       "variants": [
         { "when": { "rime": { "composing": true } }, "label": " ↹ ", "icon": null, "modifier": null, "ref": "rime.Tab" }
@@ -287,7 +287,7 @@
     "qwerty.comma.composing": {"ref": "rime.2" },
     "qwerty.comma": {
       "ref": "rime.comma",
-      "swipe": { "up": { "ref": "rime.exclam" } },
+      "swipe": { "up": { "ref": "rime.apostrophe" } },
       "variants": [
         {
           "when": { "rime": { "composing": true } },
@@ -534,7 +534,7 @@
                 { "ref": "rime.x", "override": { "label": "X", "swipe": { "up": { "ref": "foxy.Cut", "label": "剪切" } }, "longPress": { "ref": "rime.X" } } },
                 { "ref": "rime.c", "override": { "label": "C", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "ref": "rime.C" } } },
                 { "ref": "rime.v", "override": { "label": "V", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "ref": "rime.V" } } },
-                { "ref": "rime.b", "override": { "label": "B", "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } } }, "longPress": { "ref": "rime.B" } } },
+                { "ref": "rime.b", "override": { "label": "B", "swipe": { "up": { "ref": "rime.slash", "label": " / " } }, "longPress": { "ref": "rime.B" } } },
                 { "ref": "rime.n", "override": { "label": "N", "swipe": { "up": { "ref": "rime.backslash", "label": " \\ " } }, "longPress": { "ref": "rime.N" } } },
                 { "ref": "rime.m", "override": { "label": "M", "swipe": { "up": { "ref": "rime.quotedbl", "label": "\"" } }, "longPress": { "ref": "rime.M" } } },
                 { "ref": "qwerty.backspace", "weight": 1.5 }
@@ -544,11 +544,11 @@
               "height": 1.0625,
               "keys": [
                 { "ref": "qwerty.layout" },
-                { "ref": "qwerty.slash" },
-                { "ref": "qwerty.comma" },
+                { "ref": "qwerty.semicolon", "weight": 1 },
+                { "ref": "qwerty.comma", "weight": 1 },
                 { "ref": "qwerty.space", "weight": 3 },
-                { "ref": "qwerty.period" },
-                { "ref": "qwerty.semicolon" },
+                { "ref": "qwerty.period", "weight": 1 },
+                { "ref": "rime.Shift_L", "weight": 1, "label": "", "icon": "custom.lang", "variants": [ { "when": { "rime": { "composing": true } }, "tap": { "ref": "qwerty.lang.composing" }, "label": "⎋", "icon": "" } ] },
                 { "ref": "qwerty.enter" }
               ]
             }
@@ -677,11 +677,11 @@
               "height": 1.0625,
               "keys": [
                 { "ref": "qwerty.layout" },
-                { "ref": "qwerty.slash" },
-                { "ref": "qwerty.comma" },
+                { "ref": "qwerty.semicolon", "weight": 1 },
+                { "ref": "qwerty.comma", "weight": 1 },
                 { "ref": "qwerty.space", "weight": 3 },
-                { "ref": "qwerty.period" },
-                { "ref": "qwerty.semicolon" },
+                { "ref": "qwerty.period", "weight": 1 },
+                { "ref": "rime.Shift_L", "weight": 1, "label": "", "icon": "custom.lang", "variants": [ { "when": { "rime": { "composing": true } }, "tap": { "ref": "qwerty.lang.composing" }, "label": "⎋", "icon": "" } ] },
                 { "ref": "qwerty.enter" }
               ]
             }
