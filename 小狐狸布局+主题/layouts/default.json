@@ -233,7 +233,7 @@
       "weight": 1.5,
       "keyType": "FUNCTION",
       "icon": "custom.shift",
-      "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } }, "down": { "ref": "qwerty.editor", "label": "编辑器" } },
+      "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } }, "down": { "ref": "qwerty.text_editor", "label": "触控板" } },
       "longPress": { "label": "⇪", "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } },
       "variants": [ { "when": { "rime": { "composing": true } }, "label": " ↹ ", "icon": null, "modifier": null, "ref": "rime.Tab" } ]
     },
@@ -623,11 +623,11 @@
               "height": 1.0625,
               "keys": [
                 { "ref": "qwerty.shift" },
-                { "ref": "rime.z", "weight": 1.4, "override": { "label": "z", "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } } }, "longPress": { "popupKey": "z" } } },
-                { "ref": "rime.x", "weight": 1.4, "override": { "label": "x c", "swipe": { "up": { "ref": "foxy.SelectAll", "label": "全选" } }, "longPress": { "popupKey": "x" } } },
-                { "ref": "rime.v", "weight": 1.4, "override": { "label": "v", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "popupKey": "v" } } },
-                { "ref": "rime.b", "weight": 1.4, "override": { "label": "b n", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "popupKey": "b" } } },
-                { "ref": "rime.m", "weight": 1.4, "override": { "label": "m", "swipe": { "up": { "ref": "foxy.Cut", "label": "剪切" } }, "longPress": { "popupKey": "m" } } },
+                { "ref": "rime.z", "weight": 1.4, "override": { "label": "z", "swipe": { "up": { "ref": "foxy.SelectAll", "label": "全选" } }, "longPress": { "popupKey": "z" } } },
+                { "ref": "rime.x", "weight": 1.4, "override": { "label": "x c", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "popupKey": "x" } } },
+                { "ref": "rime.v", "weight": 1.4, "override": { "label": "v", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "popupKey": "v" } } },
+                { "ref": "rime.b", "weight": 1.4, "override": { "label": "b n", "swipe": { "up": { "ref": "foxy.Cut", "label": "剪切" } }, "longPress": { "popupKey": "b" } } },
+                { "ref": "rime.m", "weight": 1.4, "override": { "label": "m", "swipe": { "up": { "ref": "rime.quotedbl", "label": "\"" } }, "longPress": { "popupKey": "m" } } },
                 { "ref": "qwerty.backspace", "weight": 1.5 }
               ]
             },
