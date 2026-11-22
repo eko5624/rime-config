@@ -233,7 +233,7 @@
       "weight": 1.5,
       "keyType": "FUNCTION",
       "icon": "custom.shift",
-      "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } }, "down": { "ref": "qwerty.text_editor", "label": "触控板" } },
+      "swipe": { "up": { "label": "符号", "action": { "type": "switch_layout", "layout": "symbols" } }, "down": { "action": { "type": "app", "command": "text_editor" }, "label": "触控板" } },
       "longPress": { "label": "⇪", "action": { "type": "modifier", "modifier": "SHIFT", "state": "LOCKED" } },
       "variants": [ { "when": { "rime": { "composing": true } }, "label": " ↹ ", "icon": null, "modifier": null, "ref": "rime.Tab" } ]
     },
@@ -457,44 +457,44 @@
             {
               "height": 1.0625,
               "keys": [
-                { "ref": "rime.q", "override": { "label": "q", "swipe": { "up": { "ref": "rime.grave", "label": " ` " } }, "longPress": { "ref": "rime.Q" } } },
-                { "ref": "rime.w", "override": { "label": "w", "swipe": { "up": { "ref": "rime.asciitilde", "label": " ~ " } }, "longPress": { "ref": "rime.W" } } },
-                { "ref": "rime.e", "override": { "label": "e", "swipe": { "up": { "ref": "rime.plus", "label": " + " } }, "longPress": { "ref": "rime.E" } } },
-                { "ref": "rime.r", "override": { "label": "r", "swipe": { "up": { "ref": "rime.minus", "label": " - " } }, "longPress": { "ref": "rime.R" } } },
-                { "ref": "rime.t", "override": { "label": "t", "swipe": { "up": { "ref": "rime.equal", "label": " = " } }, "longPress": { "ref": "rime.T" } } },
-                { "ref": "rime.y", "override": { "label": "y", "swipe": { "up": { "ref": "rime.underscore", "label": " _ " } }, "longPress": { "ref": "rime.Y" } } },
-                { "ref": "rime.u", "override": { "label": "u", "swipe": { "up": { "ref": "rime.braceleft", "label": " { " } }, "longPress": { "ref": "rime.U" } } },
-                { "ref": "rime.i", "override": { "label": "i", "swipe": { "up": { "ref": "rime.braceright", "label": " } " } }, "longPress": { "ref": "rime.I" } } },
-                { "ref": "rime.o", "override": { "label": "o", "swipe": { "up": { "ref": "rime.bracketleft", "label": " [ " } }, "longPress": { "ref": "rime.O" } } },
-                { "ref": "rime.p", "override": { "label": "p", "swipe": { "up": { "ref": "rime.bracketright", "label": " ] " } }, "longPress": { "ref": "rime.P" } } }
+                { "ref": "rime.q", "override": { "label": "Q", "swipe": { "up": { "ref": "rime.grave", "label": " ` " } }, "longPress": { "ref": "rime.Q" } } },
+                { "ref": "rime.w", "override": { "label": "W", "swipe": { "up": { "ref": "rime.asciitilde", "label": " ~ " } }, "longPress": { "ref": "rime.W" } } },
+                { "ref": "rime.e", "override": { "label": "E", "swipe": { "up": { "ref": "rime.plus", "label": " + " } }, "longPress": { "ref": "rime.E" } } },
+                { "ref": "rime.r", "override": { "label": "R", "swipe": { "up": { "ref": "rime.minus", "label": " - " } }, "longPress": { "ref": "rime.R" } } },
+                { "ref": "rime.t", "override": { "label": "T", "swipe": { "up": { "ref": "rime.equal", "label": " = " } }, "longPress": { "ref": "rime.T" } } },
+                { "ref": "rime.y", "override": { "label": "Y", "swipe": { "up": { "ref": "rime.underscore", "label": " _ " } }, "longPress": { "ref": "rime.Y" } } },
+                { "ref": "rime.u", "override": { "label": "U", "swipe": { "up": { "ref": "rime.braceleft", "label": " { " } }, "longPress": { "ref": "rime.U" } } },
+                { "ref": "rime.i", "override": { "label": "I", "swipe": { "up": { "ref": "rime.braceright", "label": " } " } }, "longPress": { "ref": "rime.I" } } },
+                { "ref": "rime.o", "override": { "label": "O", "swipe": { "up": { "ref": "rime.bracketleft", "label": " [ " } }, "longPress": { "ref": "rime.O" } } },
+                { "ref": "rime.p", "override": { "label": "P", "swipe": { "up": { "ref": "rime.bracketright", "label": " ] " } }, "longPress": { "ref": "rime.P" } } }
               ]
             },
             {
               "height": 1.0625,
               "width": 0.9,
               "keys": [
-                { "ref": "rime.a", "override": { "label": "a", "swipe": { "up": { "ref": "rime.at", "label": " @ " } }, "longPress": { "ref": "rime.A" } } },
-                { "ref": "rime.s", "override": { "label": "s", "swipe": { "up": { "ref": "rime.numbersign", "label": " # " } }, "longPress": { "ref": "rime.S" } } },
-                { "ref": "rime.d", "override": { "label": "d", "swipe": { "up": { "ref": "rime.dollar", "label": " $ " } }, "longPress": { "ref": "rime.D" } } },
-                { "ref": "rime.f", "override": { "label": "f", "swipe": { "up": { "ref": "rime.percent", "label": " % " } }, "longPress": { "ref": "rime.F" } } },
-                { "ref": "rime.g", "override": { "label": "g", "swipe": { "up": { "ref": "rime.asciicircum", "label": " ^ " } }, "longPress": { "ref": "rime.G" } } },
-                { "ref": "rime.h", "override": { "label": "h", "swipe": { "up": { "ref": "rime.ampersand", "label": " & " } } }, "longPress": { "ref": "rime.H" } },
-                { "ref": "rime.j", "override": { "label": "j", "swipe": { "up": { "ref": "rime.asterisk", "label": " * " }, "down": { "macro": "select_current_line", "label": "选行" } }, "longPress": { "ref": "rime.J" } } },
-                { "ref": "rime.k", "override": { "label": "k", "swipe": { "up": { "ref": "rime.parenleft", "label": " ( " }, "down": { "ref": "rime.Home", "label": "行首" } }, "longPress": { "ref": "rime.K" } } },
-                { "ref": "rime.l", "override": { "label": "l", "swipe": { "up": { "ref": "rime.parenright", "label": " ) " }, "down": { "ref": "rime.End", "label": "行尾" } }, "longPress": { "ref": "rime.L" } } }
+                { "ref": "rime.a", "override": { "label": "A", "swipe": { "up": { "ref": "rime.at", "label": " @ " } }, "longPress": { "ref": "rime.A" } } },
+                { "ref": "rime.s", "override": { "label": "S", "swipe": { "up": { "ref": "rime.numbersign", "label": " # " } }, "longPress": { "ref": "rime.S" } } },
+                { "ref": "rime.d", "override": { "label": "D", "swipe": { "up": { "ref": "rime.dollar", "label": " $ " } }, "longPress": { "ref": "rime.D" } } },
+                { "ref": "rime.f", "override": { "label": "F", "swipe": { "up": { "ref": "rime.percent", "label": " % " } }, "longPress": { "ref": "rime.F" } } },
+                { "ref": "rime.g", "override": { "label": "G", "swipe": { "up": { "ref": "rime.asciicircum", "label": " ^ " } }, "longPress": { "ref": "rime.G" } } },
+                { "ref": "rime.h", "override": { "label": "H", "swipe": { "up": { "ref": "rime.ampersand", "label": " & " } } }, "longPress": { "ref": "rime.H" } },
+                { "ref": "rime.j", "override": { "label": "J", "swipe": { "up": { "ref": "rime.asterisk", "label": " * " }, "down": { "macro": "select_current_line", "label": "选行" } }, "longPress": { "ref": "rime.J" } } },
+                { "ref": "rime.k", "override": { "label": "K", "swipe": { "up": { "ref": "rime.parenleft", "label": " ( " }, "down": { "ref": "rime.Home", "label": "行首" } }, "longPress": { "ref": "rime.K" } } },
+                { "ref": "rime.l", "override": { "label": "L", "swipe": { "up": { "ref": "rime.parenright", "label": " ) " }, "down": { "ref": "rime.End", "label": "行尾" } }, "longPress": { "ref": "rime.L" } } }
               ]
             },
             {
               "height": 1.0625,
               "keys": [
                 { "ref": "qwerty.shift" },
-                { "ref": "rime.z", "override": { "label": "z", "swipe": { "up": { "ref": "foxy.SelectAll", "label": "全选" } }, "longPress": { "ref": "rime.Z" } } },
-                { "ref": "rime.x", "override": { "label": "x", "swipe": { "up": { "ref": "foxy.Cut", "label": "剪切" } }, "longPress": { "ref": "rime.X" } } },
-                { "ref": "rime.c", "override": { "label": "c", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "ref": "rime.C" } } },
-                { "ref": "rime.v", "override": { "label": "v", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "ref": "rime.V" } } },
-                { "ref": "rime.b", "override": { "label": "b", "swipe": { "up": { "ref": "rime.slash", "label": " / " } }, "longPress": { "ref": "rime.B" } } },
-                { "ref": "rime.n", "override": { "label": "n", "swipe": { "up": { "ref": "rime.backslash", "label": " \\ " } }, "longPress": { "ref": "rime.N" } } },
-                { "ref": "rime.m", "override": { "label": "m", "swipe": { "up": { "ref": "rime.quotedbl", "label": "\"" } }, "longPress": { "ref": "rime.M" } } },
+                { "ref": "rime.z", "override": { "label": "Z", "swipe": { "up": { "ref": "foxy.SelectAll", "label": "全选" } }, "longPress": { "ref": "rime.Z" } } },
+                { "ref": "rime.x", "override": { "label": "X", "swipe": { "up": { "ref": "foxy.Cut", "label": "剪切" } }, "longPress": { "ref": "rime.X" } } },
+                { "ref": "rime.c", "override": { "label": "C", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "ref": "rime.C" } } },
+                { "ref": "rime.v", "override": { "label": "V", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "ref": "rime.V" } } },
+                { "ref": "rime.b", "override": { "label": "B", "swipe": { "up": { "ref": "rime.slash", "label": " / " } }, "longPress": { "ref": "rime.B" } } },
+                { "ref": "rime.n", "override": { "label": "N", "swipe": { "up": { "ref": "rime.backslash", "label": " \\ " } }, "longPress": { "ref": "rime.N" } } },
+                { "ref": "rime.m", "override": { "label": "M", "swipe": { "up": { "ref": "rime.quotedbl", "label": "\"" } }, "longPress": { "ref": "rime.M" } } },
                 { "ref": "qwerty.backspace", "weight": 1.5 }
               ]
             },
@@ -598,36 +598,36 @@
             {
               "height": 1.0625,
               "keys": [
-                { "ref": "rime.q", "override": { "label": "q", "swipe": { "up": { "ref": "rime.grave" } }, "longPress": { "popupKey": "q" } } },
-                { "ref": "rime.w", "override": { "label": "w e", "swipe": { "up": { "ref": "rime.ApostropheShift" } }, "longPress": { "popupKey": "w" } } },
-                { "ref": "rime.r", "override": { "label": "r t", "swipe": { "up": { "ref": "rime.KP_Add" } }, "longPress": { "popupKey": "r" } } },
-                { "ref": "rime.y", "override": { "label": "y", "swipe": { "up": { "ref": "rime.minus" } }, "longPress": { "popupKey": "y" } } },
-                { "ref": "rime.u", "override": { "label": "u", "swipe": { "up": { "ref": "rime.bracketleft" } }, "longPress": { "popupKey": "u" } } },
-                { "ref": "rime.i", "override": { "label": "i o", "swipe": { "up": { "ref": "rime.bracketright" } }, "longPress": { "popupKey": "i" } } },
-                { "ref": "rime.p", "override": { "label": "p", "swipe": { "up": { "ref": "rime.backslash" } }, "longPress": { "popupKey": "p" } } }
+                { "ref": "rime.q", "override": { "label": "Q", "swipe": { "up": { "ref": "rime.grave" } }, "longPress": { "popupKey": "q" } } },
+                { "ref": "rime.w", "override": { "label": "W E", "swipe": { "up": { "ref": "rime.ApostropheShift" } }, "longPress": { "popupKey": "w" } } },
+                { "ref": "rime.r", "override": { "label": "R T", "swipe": { "up": { "ref": "rime.KP_Add" } }, "longPress": { "popupKey": "r" } } },
+                { "ref": "rime.y", "override": { "label": "Y", "swipe": { "up": { "ref": "rime.minus" } }, "longPress": { "popupKey": "y" } } },
+                { "ref": "rime.u", "override": { "label": "U", "swipe": { "up": { "ref": "rime.bracketleft" } }, "longPress": { "popupKey": "u" } } },
+                { "ref": "rime.i", "override": { "label": "I O", "swipe": { "up": { "ref": "rime.bracketright" } }, "longPress": { "popupKey": "i" } } },
+                { "ref": "rime.p", "override": { "label": "P", "swipe": { "up": { "ref": "rime.backslash" } }, "longPress": { "popupKey": "p" } } }
               ]
             },
             {
               "height": 1.0625,
               "width": 0.9,
               "keys": [
-                { "ref": "rime.a", "override": { "label": "a", "swipe": { "up": { "ref": "rime.at" } }, "longPress": { "popupKey": "a" } } },
-                { "ref": "rime.s", "override": { "label": "s d", "swipe": { "up": { "ref": "rime.asterisk" } }, "longPress": { "popupKey": "s" } } },
-                { "ref": "rime.f", "override": { "label": "f g", "swipe": { "up": { "ref": "rime.KP_Equal" } }, "longPress": { "popupKey": "f" } } },
-                { "ref": "rime.h", "override": { "label": "h", "swipe": { "up": { "ref": "rime.percent" } }, "longPress": { "popupKey": "h" } } },
-                { "ref": "rime.j", "override": { "label": "j k", "swipe": { "up": { "ref": "rime.parenleft" } }, "longPress": { "popupKey": "j" } } },
-                { "ref": "rime.l", "override": { "label": "l", "swipe": { "up": { "ref": "rime.parenright" } }, "longPress": { "popupKey": "l" } } }
+                { "ref": "rime.a", "override": { "label": "A", "swipe": { "up": { "ref": "rime.at" } }, "longPress": { "popupKey": "a" } } },
+                { "ref": "rime.s", "override": { "label": "S D", "swipe": { "up": { "ref": "rime.asterisk" } }, "longPress": { "popupKey": "s" } } },
+                { "ref": "rime.f", "override": { "label": "F G", "swipe": { "up": { "ref": "rime.KP_Equal" } }, "longPress": { "popupKey": "f" } } },
+                { "ref": "rime.h", "override": { "label": "H", "swipe": { "up": { "ref": "rime.percent" } }, "longPress": { "popupKey": "h" } } },
+                { "ref": "rime.j", "override": { "label": "J K", "swipe": { "up": { "ref": "rime.parenleft" } }, "longPress": { "popupKey": "j" } } },
+                { "ref": "rime.l", "override": { "label": "L", "swipe": { "up": { "ref": "rime.parenright" } }, "longPress": { "popupKey": "l" } } }
               ]
             },
             {
               "height": 1.0625,
               "keys": [
                 { "ref": "qwerty.shift" },
-                { "ref": "rime.z", "weight": 1.4, "override": { "label": "z", "swipe": { "up": { "ref": "foxy.SelectAll", "label": "全选" } }, "longPress": { "popupKey": "z" } } },
-                { "ref": "rime.x", "weight": 1.4, "override": { "label": "x c", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "popupKey": "x" } } },
-                { "ref": "rime.v", "weight": 1.4, "override": { "label": "v", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "popupKey": "v" } } },
-                { "ref": "rime.b", "weight": 1.4, "override": { "label": "b n", "swipe": { "up": { "ref": "foxy.Cut", "label": "剪切" } }, "longPress": { "popupKey": "b" } } },
-                { "ref": "rime.m", "weight": 1.4, "override": { "label": "m", "swipe": { "up": { "ref": "rime.quotedbl", "label": "\"" } }, "longPress": { "popupKey": "m" } } },
+                { "ref": "rime.z", "weight": 1.4, "override": { "label": "Z", "swipe": { "up": { "ref": "foxy.SelectAll", "label": "全选" } }, "longPress": { "popupKey": "z" } } },
+                { "ref": "rime.x", "weight": 1.4, "override": { "label": "X C", "swipe": { "up": { "ref": "foxy.Copy", "label": "复制" } }, "longPress": { "popupKey": "x" } } },
+                { "ref": "rime.v", "weight": 1.4, "override": { "label": "V", "swipe": { "up": { "ref": "foxy.Paste", "label": "粘贴" } }, "longPress": { "popupKey": "v" } } },
+                { "ref": "rime.b", "weight": 1.4, "override": { "label": "B N", "swipe": { "up": { "ref": "foxy.Cut", "label": "剪切" } }, "longPress": { "popupKey": "b" } } },
+                { "ref": "rime.m", "weight": 1.4, "override": { "label": "M", "swipe": { "up": { "ref": "rime.quotedbl", "label": "\"" } }, "longPress": { "popupKey": "m" } } },
                 { "ref": "qwerty.backspace", "weight": 1.5 }
               ]
             },
