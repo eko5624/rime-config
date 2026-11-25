@@ -1,0 +1,214 @@
+{
+  "type": "foxy.toolbar",
+  "version": 1,
+  "toolbars": {
+    "main": [
+      "方案",
+      "部署",
+      "设置",
+      "撤销",
+      "重做",
+      "剪贴板",
+      "keyboard_tools",
+      "rime_switches",
+      "哔哩翻译",
+      "收起键盘",
+      "语音",
+      "llm助手"
+    ],
+    "expanded": [
+      "主题",
+      "悬浮键盘",
+      "单手键盘",
+      "同步",
+      "布局预览",
+      "分体键盘"
+    ]
+  },
+  "buttons": {
+    "方案": {
+      "id": "方案",
+      "label": "方案列表",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7.99998 3H8.99998C7.04998 8.84 7.04998 15.16 8.99998 21H7.99998\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M15 3C16.95 8.84 16.95 15.16 15 21\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M3 16V15C8.84 16.95 15.16 16.95 21 15V16\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M3 9.0001C8.84 7.0501 15.16 7.0501 21 9.0001\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "show_schema_list"
+      },
+      "longPress": {
+        "type": "app",
+        "action": "show_ime_picker"
+      }
+    },
+    "设置": {
+      "id": "设置",
+      "label": "设置",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M2 12.8799V11.1199C2 10.0799 2.85 9.21994 3.9 9.21994C5.71 9.21994 6.45 7.93994 5.54 6.36994C5.02 5.46994 5.33 4.29994 6.24 3.77994L7.97 2.78994C8.76 2.31994 9.78 2.59994 10.25 3.38994L10.36 3.57994C11.26 5.14994 12.74 5.14994 13.65 3.57994L13.76 3.38994C14.23 2.59994 15.25 2.31994 16.04 2.78994L17.77 3.77994C18.68 4.29994 18.99 5.46994 18.47 6.36994C17.56 7.93994 18.3 9.21994 20.11 9.21994C21.15 9.21994 22.01 10.0699 22.01 11.1199V12.8799C22.01 13.9199 21.16 14.7799 20.11 14.7799C18.3 14.7799 17.56 16.0599 18.47 17.6299C18.99 18.5399 18.68 19.6999 17.77 20.2199L16.04 21.2099C15.25 21.6799 14.23 21.3999 13.76 20.6099L13.65 20.4199C12.75 18.8499 11.27 18.8499 10.36 20.4199L10.25 20.6099C9.78 21.3999 8.76 21.6799 7.97 21.2099L6.24 20.2199C5.33 19.6999 5.02 18.5299 5.54 17.6299C6.45 16.0599 5.71 14.7799 3.9 14.7799C2.85 14.7799 2 13.9199 2 12.8799Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "open_settings",
+        "target": "ROOT"
+      }
+    },
+    "剪贴板": {
+      "id": "剪贴板",
+      "label": "剪贴板",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M8 12.2H15\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M8 16.2H12.38\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M10 6H14C16 6 16 5 16 4C16 2 15 2 14 2H10C9 2 8 2 8 4C8 6 9 6 10 6Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M16 4.02002C19.33 4.20002 21 5.43002 21 10V16C21 20 20 22 15 22H9C4 22 3 20 3 16V10C3 5.44002 4.67 4.20002 8 4.02002\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "show_clipboard"
+      }
+    },
+    "主题": {
+      "id": "主题",
+      "label": "主题",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M9.5 19.5V18H4.5C3.95 18 3.45 17.78 3.09 17.41C2.72 17.05 2.5 16.55 2.5 16C2.5 14.97 3.3 14.11 4.31 14.01C4.37 14 4.43 14 4.5 14H19.5C19.57 14 19.63 14 19.69 14.01C20.17 14.05 20.59 14.26 20.91 14.59C21.32 14.99 21.54 15.56 21.49 16.18C21.4 17.23 20.45 18 19.39 18H14.5V19.5C14.5 20.88 13.38 22 12 22C10.62 22 9.5 20.88 9.5 19.5Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M20.17 5.3L19.69 14.01C19.63 14 19.57 14 19.5 14H4.50001C4.43001 14 4.37001 14 4.31001 14.01L3.83001 5.3C3.65001 3.53 5.04001 2 6.81001 2H17.19C18.96 2 20.35 3.53 20.17 5.3Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7.98999 2V7\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M12 2V4\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "show_theme_picker"
+      }
+    },
+    "悬浮键盘": {
+      "id": "悬浮键盘",
+      "label": "悬浮键盘",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M7.25998 2H16.73C17.38 2 17.96 2.02003 18.48 2.09003C21.25 2.40003 22 3.70001 22 7.26001V13.58C22 17.14 21.25 18.44 18.48 18.75C17.96 18.82 17.39 18.84 16.73 18.84H7.25998C6.60998 18.84 6.02998 18.82 5.50998 18.75C2.73998 18.44 1.98999 17.14 1.98999 13.58V7.26001C1.98999 3.70001 2.73998 2.40003 5.50998 2.09003C6.02998 2.02003 6.60998 2 7.25998 2Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M13.58 8.32007H17.2599\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M6.73999 14.11H6.75998H17.27\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7 22H17\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7.1947 8.30005H7.20368\" stroke=\"#2c2c2c\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M10.4945 8.30005H10.5035\" stroke=\"#2c2c2c\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "activeIcon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M7.25998 2H16.73C17.38 2 17.96 2.02003 18.48 2.09003C21.25 2.40003 22 3.70001 22 7.26001V13.58C22 17.14 21.25 18.44 18.48 18.75C17.96 18.82 17.39 18.84 16.73 18.84H7.25998C6.60998 18.84 6.02998 18.82 5.50998 18.75C2.73998 18.44 1.98999 17.14 1.98999 13.58V7.26001C1.98999 3.70001 2.73998 2.40003 5.50998 2.09003C6.02998 2.02003 6.60998 2 7.25998 2Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M13.58 8.32007H17.2599\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M6.73999 14.11H6.75998H17.27\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7 22H17\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7.1947 8.30005H7.20368\" stroke=\"#2c2c2c\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M10.4945 8.30005H10.5035\" stroke=\"#2c2c2c\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "floating_keyboard"
+      },
+      "longPress": {
+        "type": "app",
+        "action": "enter_keyboard_adjust"
+      }
+    },
+    "语音识别": {
+      "id": "语音识别",
+      "label": "语音识别",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M12 19C15.31 19 18 16.31 18 13V8C18 4.69 15.31 2 12 2C8.69 2 6 4.69 6 8V13C6 16.31 8.69 19 12 19Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M3 11V13C3 17.97 7.03 22 12 22C16.97 22 21 17.97 21 13V11\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M9.11011 7.47993C10.8901 6.82993 12.8301 6.82993 14.6101 7.47993\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M10.03 10.4799C11.23 10.1499 12.5 10.1499 13.7 10.4799\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "activeIcon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M12 19C15.31 19 18 16.31 18 13V8C18 4.69 15.31 2 12 2C8.69 2 6 4.69 6 8V13C6 16.31 8.69 19 12 19Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M3 11V13C3 17.97 7.03 22 12 22C16.97 22 21 17.97 21 13V11\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M9.11011 7.47993C10.8901 6.82993 12.8301 6.82993 14.6101 7.47993\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M10.03 10.4799C11.23 10.1499 12.5 10.1499 13.7 10.4799\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "toggle_voice"
+      },
+      "longPress": {
+        "type": "app",
+        "action": "select_voice_engine"
+      }
+    },
+    "编辑": {
+      "id": "编辑",
+      "label": "编辑",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M19.79 7.27009L16.76 4.24009C15.61 3.09009 14.04 3.15009 13.27 4.38009L11.58 7.05009L16.98 12.4501L19.65 10.7601C20.8 10.0301 20.87 8.35009 19.79 7.27009Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M11.58 7.04996L7.65 6.80996C5.46 6.67996 4.69 7.34996 4.45 9.43996L3.47 17.76C3.26 19.51 4.53 20.77 6.27 20.56L14.59 19.58C16.68 19.33 17.44 18.57 17.22 16.38L16.99 12.45\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M4.61 19.4199L7.64 16.3799\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "show_text_editor_touchpad"
+      }
+    },
+    "数据目录": {
+      "id": "数据目录",
+      "label": "数据目录切换",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 8H4C2.9 8 2 7.1 2 6V4C2 2.9 2.9 2 4 2H7C8.1 2 9 2.9 9 4V6C9 7.1 8.1 8 7 8Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M20.8 7H17.2C16.54 7 16 6.45999 16 5.79999V4.20001C16 3.54001 16.54 3 17.2 3H20.8C21.46 3 22 3.54001 22 4.20001V5.79999C22 6.45999 21.46 7 20.8 7Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M20.8 14.5H17.2C16.54 14.5 16 13.96 16 13.3V11.7C16 11.04 16.54 10.5 17.2 10.5H20.8C21.46 10.5 22 11.04 22 11.7V13.3C22 13.96 21.46 14.5 20.8 14.5Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M9 5H16\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M12.5 5V18C12.5 19.1 13.4 20 14.5 20H16\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M12.5 12.5H16\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M20.8 22H17.2C16.54 22 16 21.46 16 20.8V19.2C16 18.54 16.54 18 17.2 18H20.8C21.46 18 22 18.54 22 19.2V20.8C22 21.46 21.46 22 20.8 22Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "click": {
+        "type": "app",
+        "action": "show_data_directory_list"
+      }
+    },
+    "单手键盘": {
+      "id": "单手键盘",
+      "label": "单手键盘",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M21.97 15V9C21.97 4 19.97 2 14.97 2H8.96997C3.96997 2 1.96997 4 1.96997 9V15C1.96997 20 3.96997 22 8.96997 22H14.97C19.97 22 21.97 20 21.97 15Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M14.97 2V22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7.96997 9.43994L10.53 11.9999L7.96997 14.5599\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "activeIcon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M21.97 15V9C21.97 4 19.97 2 14.97 2H8.96997C3.96997 2 1.96997 4 1.96997 9V15C1.96997 20 3.96997 22 8.96997 22H14.97C19.97 22 21.97 20 21.97 15Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M14.97 2V22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7.96997 9.43994L10.53 11.9999L7.96997 14.5599\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "one_handed_keyboard"
+      }
+    },
+    "撤销": {
+      "id": "撤销",
+      "label": "撤销",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M7.12988 18.3101H15.1299C17.8899 18.3101 20.1299 16.0701 20.1299 13.3101C20.1299 10.5501 17.8899 8.31006 15.1299 8.31006H4.12988\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M6.43012 10.8099L3.87012 8.24994L6.43012 5.68994\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "key_ref",
+        "ref": "foxy.Undo"
+      }
+    },
+    "重做": {
+      "id": "重做",
+      "label": "重做",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M16.8701 18.3101H8.87012C6.11012 18.3101 3.87012 16.0701 3.87012 13.3101C3.87012 10.5501 6.11012 8.31006 8.87012 8.31006H19.8701\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M17.5701 10.8099L20.1301 8.24994L17.5701 5.68994\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "key_ref",
+        "ref": "foxy.Redo"
+      }
+    },
+    "收起键盘": {
+      "id": "收起键盘",
+      "label": "收起键盘",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M9.16998 14.83L14.83 9.17004\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M14.83 14.83L9.16998 9.17004\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "hide_keyboard"
+      }
+    },
+    "部署": {
+      "id": "部署",
+      "label": "部署",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M9.6 20H14.4C18.4 20 20 18.4 20 14.4V9.6C20 5.6 18.4 4 14.4 4H9.6C5.6 4 4 5.6 4 9.6V14.4C4 18.4 5.6 20 9.6 20Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M10.5 17H13.5C16 17 17 16 17 13.5V10.5C17 8 16 7 13.5 7H10.5C8 7 7 8 7 10.5V13.5C7 16 8 17 10.5 17Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M8.01001 4V2\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M12 4V2\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M16 4V2\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M20 8H22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M20 12H22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M20 16H22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M16 20V22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M12.01 20V22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M8.01001 20V22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M2 8H4\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M2 12H4\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M2 16H4\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M12 9.69995L11.06 11.34C10.85 11.7 11.02 12 11.44 12H12.56C12.98 12 13.15 12.3 12.94 12.66L12 14.3\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g></svg>",
+      "click": {
+        "type": "app",
+        "action": "deploy_rime"
+      }
+    },
+    "同步": {
+      "id": "同步",
+      "label": "同步",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M22 5.15V8.85C22 11.1 21.1 12 18.85 12H16.15C13.9 12 13 11.1 13 8.85V5.15C13 2.9 13.9 2 16.15 2H18.85C21.1 2 22 2.9 22 5.15Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M11 15.15V18.85C11 21.1 10.1 22 7.85 22H5.15C2.9 22 2 21.1 2 18.85V15.15C2 12.9 2.9 12 5.15 12H7.85C10.1 12 11 12.9 11 15.15Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M22 15C22 18.87 18.87 22 15 22L16.05 20.25\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M2 9C2 5.13 5.13 2 9 2L7.95 3.75\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "sync_rime"
+      }
+    },
+    "布局预览": {
+      "id": "布局预览",
+      "label": "布局预览",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M18 7V17C18 17.62 17.98 18.17 17.91 18.66C17.62 21.29 16.38 22 13 22H11C7.62 22 6.38 21.29 6.09 18.66C6.02 18.17 6 17.62 6 17V7C6 6.38 6.02 5.83 6.09 5.34C6.38 2.71 7.62 2 11 2H13C16.38 2 17.62 2.71 17.91 5.34C17.98 5.83 18 6.38 18 7Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M6 17.0001C6 17.6201 6.02 18.1701 6.09 18.6601C5.95 18.6701 5.82 18.6701 5.67 18.6701H5.33C2.67 18.6701 2 18.0001 2 15.3301V8.67008C2 6.00008 2.67 5.33008 5.33 5.33008H5.67C5.82 5.33008 5.95 5.33008 6.09 5.34008C6.02 5.83008 6 6.38008 6 7.00008V17.0001Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M22 8.67008V15.3301C22 18.0001 21.33 18.6701 18.67 18.6701H18.33C18.18 18.6701 18.05 18.6701 17.91 18.6601C17.98 18.1701 18 17.6201 18 17.0001V7.00008C18 6.38008 17.98 5.83008 17.91 5.34008C18.05 5.33008 18.18 5.33008 18.33 5.33008H18.67C21.33 5.33008 22 6.00008 22 8.67008Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "show_keyboard_layout_picker"
+      }
+    },
+    "分体键盘": {
+      "id": "分体键盘",
+      "label": "分体键盘",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M12 2V22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "activeIcon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M12 2V22\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "toggle_split_keyboard"
+      },
+      "longPress": {
+        "type": "app",
+        "action": "enter_split_adjust"
+      }
+    },
+    "llm助手": {
+      "id": "llm助手",
+      "label": "LLM助手",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width: 800px; height: 800px; color: rgb(44, 44, 44);\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --> <path d=\"M15.59 12.26C18.4232 12.26 20.72 9.96323 20.72 7.13C20.72 4.29678 18.4232 2 15.59 2C12.7567 2 10.46 4.29678 10.46 7.13C10.46 9.96323 12.7567 12.26 15.59 12.26Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\"/> <path d=\"M6.36002 19.44C8.06105 19.44 9.44003 18.0611 9.44003 16.36C9.44003 14.659 8.06105 13.28 6.36002 13.28C4.65898 13.28 3.28003 14.659 3.28003 16.36C3.28003 18.0611 4.65898 19.44 6.36002 19.44Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\"/> <path d=\"M16.62 22C18.0338 22 19.18 20.8539 19.18 19.44C19.18 18.0262 18.0338 16.88 16.62 16.88C15.2061 16.88 14.06 18.0262 14.06 19.44C14.06 20.8539 15.2061 22 16.62 22Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-miterlimit=\"10\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "js.llm_assistant"
+      }
+    },
+    "哔哩翻译": {
+      "id": "哔哩翻译",
+      "label": "哔哩翻译",
+      "icon": "svg:<svg width=\"800px\" height=\"800px\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#2c2c2c\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"> <path d=\"M19.06 18.6699L16.92 14.3999L14.78 18.6699\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M15.1699 17.9099H18.6899\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M16.9201 22.0001C14.1201 22.0001 11.8401 19.73 11.8401 16.92C11.8401 14.12 14.1101 11.8401 16.9201 11.8401C19.7201 11.8401 22.0001 14.11 22.0001 16.92C22.0001 19.73 19.7301 22.0001 16.9201 22.0001Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M5.02 2H8.94C11.01 2 12.01 3.00002 11.96 5.02002V8.94C12.01 11.01 11.01 12.01 8.94 11.96H5.02C3 12 2 11 2 8.92999V5.01001C2 3.00001 3 2 5.02 2Z\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M9.00995 5.84985H4.94995\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M6.96997 5.16992V5.84991\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M7.98994 5.83984C7.98994 7.58984 6.61994 9.00983 4.93994 9.00983\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M9.0099 9.01001C8.2799 9.01001 7.61991 8.62 7.15991 8\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M2 15C2 18.87 5.13 22 9 22L7.95 20.25\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> <path d=\"M22 9C22 5.13 18.87 2 15 2L16.05 3.75\" stroke=\"#2c2c2c\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/> </g></svg>",
+      "click": {
+        "type": "app",
+        "action": "js.bilibili_translate"
+      }
+    }
+  },
+  "containers": {}
+}

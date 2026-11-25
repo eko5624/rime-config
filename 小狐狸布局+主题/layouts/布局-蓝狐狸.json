@@ -1,0 +1,2330 @@
+{
+  "type": "foxy.keyboard-layout",
+  "author": "油甘子",
+  "keys": {
+    "qwerty.shift": {
+      "ref": "foxy.Shift",
+      "weight": 1.5,
+      "keyType": "FUNCTION",
+      "icon": "my.转换",
+      "label": "转换",
+      "tap": {
+        "ref": "foxy.Shift",
+        "popup": false
+      },
+      "swipe": {
+        "down": {
+          "action": {
+            "type": "app",
+            "command": "text_editor"
+          },
+          "label": "编",
+          "popup": false
+        }
+      },
+      "longPress": {
+        "label": "⇪",
+        "action": [],
+        "popup": false
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "composing": true
+            }
+          },
+          "ref": "rime.slash",
+          "label": "分词",
+          "icon": "my.分词",
+          "modifier": null,
+          "tap": {
+            "ref": "rime.slash",
+            "popup": false
+          }
+        }
+      ]
+    },
+    "qwerty.q": {
+      "ref": "rime.q",
+      "label": "Q",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "q"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.1"
+        },
+        "down": {
+          "ref": "rime.Q"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "q"
+        }
+      ]
+    },
+    "qwerty.w": {
+      "ref": "rime.w",
+      "label": "W",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "w"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.2"
+        },
+        "down": {
+          "ref": "rime.W"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "w"
+        }
+      ]
+    },
+    "qwerty.e": {
+      "ref": "rime.e",
+      "label": "E",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "e"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.3"
+        },
+        "down": {
+          "ref": "rime.E"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "e"
+        }
+      ]
+    },
+    "qwerty.r": {
+      "ref": "rime.r",
+      "label": "R",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "r"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.4"
+        },
+        "down": {
+          "ref": "rime.R"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "r"
+        }
+      ]
+    },
+    "qwerty.t": {
+      "ref": "rime.t",
+      "label": "T",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "t"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.5"
+        },
+        "down": {
+          "ref": "rime.T"
+        },
+        "left": {
+          "ref": "rime.exclam"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "t"
+        }
+      ]
+    },
+    "qwerty.y": {
+      "ref": "rime.y",
+      "label": "Y",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "y"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.6"
+        },
+        "down": {
+          "ref": "rime.Y"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "y"
+        }
+      ]
+    },
+    "qwerty.u": {
+      "ref": "rime.u",
+      "label": "U",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "u"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.7"
+        },
+        "down": {
+          "ref": "rime.U"
+        },
+        "left": {
+          "ref": "rime.asciicircum"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "u"
+        }
+      ]
+    },
+    "qwerty.i": {
+      "ref": "rime.i",
+      "label": "I",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "i"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.8"
+        },
+        "down": {
+          "ref": "rime.I"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "i"
+        }
+      ]
+    },
+    "qwerty.o": {
+      "ref": "rime.o",
+      "label": "O",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "o"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.9"
+        },
+        "down": {
+          "ref": "rime.O"
+        },
+        "left": {
+          "ref": "rime.percent"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "o"
+        }
+      ]
+    },
+    "qwerty.p": {
+      "ref": "rime.p",
+      "label": "P",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "p"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.0"
+        },
+        "down": {
+          "ref": "rime.P"
+        },
+        "left": {
+          "ref": "rime.underscore"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "p"
+        }
+      ]
+    },
+    "qwerty.a": {
+      "ref": "rime.a",
+      "label": "A",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "a"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.at"
+        },
+        "down": {
+          "ref": "rime.A"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "a"
+        }
+      ]
+    },
+    "qwerty.s": {
+      "ref": "rime.s",
+      "label": "S",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "s"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.slash"
+        },
+        "down": {
+          "ref": "rime.S"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "s"
+        }
+      ]
+    },
+    "qwerty.d": {
+      "ref": "rime.d",
+      "label": "D",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "d"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.grave"
+        },
+        "down": {
+          "ref": "rime.D"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "d"
+        }
+      ]
+    },
+    "qwerty.f": {
+      "ref": "rime.f",
+      "label": "F",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "f"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.minus"
+        },
+        "down": {
+          "ref": "rime.F"
+        },
+        "left": {
+          "ref": "rime.semicolon"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "f"
+        }
+      ]
+    },
+    "qwerty.g": {
+      "ref": "rime.g",
+      "label": "G",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "g"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.equal"
+        },
+        "down": {
+          "ref": "rime.G"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "g"
+        }
+      ]
+    },
+    "qwerty.h": {
+      "ref": "rime.h",
+      "label": "H",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "h"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.apostrophe"
+        },
+        "down": {
+          "ref": "rime.H"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "h"
+        }
+      ]
+    },
+    "qwerty.j": {
+      "ref": "rime.j",
+      "label": "J",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "j"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.ApostropheShift"
+        },
+        "down": {
+          "ref": "rime.J"
+        },
+        "left": {
+          "ref": "rime.numbersign"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "j"
+        }
+      ]
+    },
+    "qwerty.k": {
+      "ref": "rime.k",
+      "label": "K",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "k"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.Question"
+        },
+        "down": {
+          "ref": "rime.K"
+        },
+        "left": {
+          "label": "•",
+          "action": {
+            "type": "text",
+            "text": "•"
+          }
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "k"
+        }
+      ]
+    },
+    "qwerty.l": {
+      "ref": "rime.l",
+      "label": "L",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "l"
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.backslash"
+        },
+        "down": {
+          "ref": "rime.L"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "l"
+        }
+      ]
+    },
+    "qwerty.z": {
+      "ref": "rime.z",
+      "label": "Z",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "z"
+      },
+      "swipe": {
+        "up": {
+          "macro": "select_all_copy",
+          "label": "複"
+        },
+        "down": {
+          "ref": "rime.Z"
+        },
+        "left": {
+          "ref": "rime.Home"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "z"
+        }
+      ]
+    },
+    "qwerty.x": {
+      "ref": "rime.x",
+      "label": "X",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "x"
+      },
+      "swipe": {
+        "up": {
+          "macro": "select_all_cut",
+          "label": "剪"
+        },
+        "down": {
+          "ref": "rime.X"
+        },
+        "left": {
+          "ref": "rime.Home"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "x"
+        }
+      ]
+    },
+    "qwerty.c": {
+      "ref": "rime.c",
+      "label": "C",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "c"
+      },
+      "swipe": {
+        "up": {
+          "ref": "foxy.Copy",
+          "label": "复"
+        },
+        "down": {
+          "ref": "rime.C"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "c"
+        }
+      ]
+    },
+    "qwerty.v": {
+      "ref": "rime.v",
+      "label": "V",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "v"
+      },
+      "swipe": {
+        "up": {
+          "ref": "foxy.Paste",
+          "label": "贴"
+        },
+        "down": {
+          "ref": "rime.V"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "v"
+        }
+      ]
+    },
+    "qwerty.b": {
+      "ref": "rime.b",
+      "label": "B",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "b"
+      },
+      "swipe": {
+        "up": {
+          "macro": "select_all_clear",
+          "label": "清"
+        },
+        "down": {
+          "ref": "rime.B"
+        },
+        "left": {
+          "ref": "rime.asciitilde"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "b"
+        }
+      ]
+    },
+    "qwerty.n": {
+      "ref": "rime.n",
+      "label": "N",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "n"
+      },
+      "swipe": {
+        "up": {
+          "ref": "foxy.Undo",
+          "label": "撤"
+        },
+        "down": {
+          "ref": "rime.N"
+        },
+        "right": {
+          "ref": "rime.End"
+        },
+        "left": {
+          "ref": "rime.asterisk"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "n"
+        }
+      ]
+    },
+    "qwerty.m": {
+      "ref": "rime.m",
+      "label": "M",
+      "keyType": "LETTER",
+      "longPress": {
+        "popupKey": "m"
+      },
+      "swipe": {
+        "up": {
+          "ref": "foxy.Redo",
+          "label": "重"
+        },
+        "down": {
+          "ref": "rime.M"
+        },
+        "right": {
+          "ref": "rime.End"
+        },
+        "left": {
+          "ref": "rime.colon"
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": true
+            }
+          },
+          "label": "m"
+        }
+      ]
+    },
+    "qwerty.semicolon": {
+      "ref": "rime.semicolon",
+      "keyType": "LETTER",
+      "tap": {
+        "ref": "rime.semicolon",
+        "popup": false
+      },
+      "swipe": {
+        "up": {
+          "ref": "rime.colon",
+          "popup": false
+        },
+        "down": {
+          "ref": "rime.Insert",
+          "popup": false
+        }
+      }
+    },
+    "qwerty.backspace.up": {
+      "label": "Esc",
+      "tap": {
+        "ref": "rime.Escape",
+        "popup": false
+      }
+    },
+    "qwerty.backspace": {
+      "ref": "rime.BackSpace",
+      "weight": 1.5,
+      "keyType": "FUNCTION",
+      "icon": "my.退格",
+      "label": "删除",
+      "colors": {
+        "hintTop": "#00000000"
+      },
+      "tap": {
+        "ref": "rime.BackSpace",
+        "popup": false
+      },
+      "swipe": {
+        "up": {
+          "ref": "qwerty.backspace.up",
+          "popup": false
+        }
+      },
+      "longPress": {
+        "label": "⌫",
+        "repeat": true,
+        "action": {
+          "type": "key",
+          "key": "BACKSPACE"
+        },
+        "popup": false
+      },
+      "drag": {
+        "popup": false,
+        "left": {
+          "action": {
+            "type": "app",
+            "command": "editor_select_step",
+            "argument": "left"
+          }
+        },
+        "right": {
+          "action": {
+            "type": "app",
+            "command": "editor_select_step",
+            "argument": "right"
+          }
+        },
+        "end": {
+          "action": {
+            "type": "app",
+            "command": "delete_selection"
+          }
+        }
+      }
+    },
+    "qwerty.layout.up": {
+      "label": "Tab",
+      "tap": {
+        "ref": "rime.Tab",
+        "popup": false
+      }
+    },
+    "qwerty.layout.down": {
+      "label": "目",
+      "tap": {
+        "action": {
+          "type": "app",
+          "command": "data_directory_list"
+        },
+        "popup": false
+      }
+    },
+    "qwerty.layout": {
+      "ref": "foxy.LayoutNumpad",
+      "weight": 1.5,
+      "keyType": "FUNCTION",
+      "label": "数字",
+      "icon": "my.数字",
+      "colors": {
+        "hintTop": "#00000000"
+      },
+      "tap": {
+        "action": {
+          "type": "switch_layout",
+          "layout": "numpad"
+        },
+        "popup": false
+      },
+      "swipe": {
+        "up": {
+          "ref": "qwerty.layout.up",
+          "popup": false
+        },
+        "down": {
+          "ref": "qwerty.layout.down",
+          "popup": false
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "composing": true
+            }
+          },
+          "label": "Esc",
+          "tap": {
+            "ref": "rime.Escape",
+            "popup": false
+          }
+        }
+      ]
+    },
+    "qwerty.comma.up": {
+      "label": "容",
+      "tap": {
+        "type": "switch_layout",
+        "layout": "emoji",
+        "popup": false
+      }
+    },
+    "qwerty.comma.composing": {
+      "ref": "rime.comma",
+      "tap": {
+        "ref": "rime.comma",
+        "popup": false
+      }
+    },
+    "qwerty.comma": {
+      "ref": "rime.comma",
+      "keyType": "FUNCTION",
+      "colors": {
+        "text": "#000000",
+        "hintTop": "#FF12151A"
+      },
+      "tap": {
+        "ref": "rime.comma",
+        "popup": false
+      },
+      "swipe": {
+        "up": {
+          "ref": "qwerty.comma.up",
+          "popup": false
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": false
+            }
+          },
+          "label": ","
+        },
+        {
+          "when": {
+            "rime": {
+              "composing": true
+            }
+          },
+          "label": ",",
+          "tap": {
+            "ref": "qwerty.comma.composing",
+            "popup": false
+          }
+        }
+      ]
+    },
+    "qwerty.space.up": {
+      "label": "Up",
+      "tap": {
+        "ref": "rime.Up",
+        "popup": false,
+        "label": "上"
+      }
+    },
+    "qwerty.space.down": {
+      "label": "Down",
+      "tap": {
+        "ref": "rime.Down",
+        "popup": false,
+        "label": "下"
+      }
+    },
+    "qwerty.space.left": {
+      "label": "Left",
+      "tap": {
+        "ref": "rime.Left",
+        "popup": false,
+        "label": "左"
+      }
+    },
+    "qwerty.space.right": {
+      "label": "Right",
+      "tap": {
+        "ref": "rime.Right",
+        "popup": false,
+        "label": "右"
+      }
+    },
+    "qwerty.space": {
+      "ref": "rime.space",
+      "weight": "auto",
+      "id": "space",
+      "statusLabel": "schema_name",
+      "keyType": "LETTER",
+      "textSize": 16,
+      "hintTextSize": 0,
+      "tap": {
+        "ref": "rime.space",
+        "popup": false
+      },
+      "swipe": {
+        "up": {
+          "ref": "qwerty.space.up",
+          "popup": false
+        },
+        "down": {
+          "ref": "qwerty.space.down",
+          "popup": false
+        },
+        "left": {
+          "ref": "qwerty.space.left",
+          "popup": false
+        },
+        "right": {
+          "ref": "qwerty.space.right",
+          "popup": false
+        }
+      },
+      "hold": {
+        "label": "🎤",
+        "popup": false,
+        "start": {
+          "type": "app",
+          "command": "voice_start"
+        },
+        "end": {
+          "type": "app",
+          "command": "voice_stop"
+        }
+      }
+    },
+    "qwerty.period.up": {
+      "label": "符",
+      "tap": {
+        "type": "switch_layout",
+        "layout": "symbols",
+        "popup": false
+      }
+    },
+    "qwerty.period.composing": {
+      "ref": "rime.period",
+      "tap": {
+        "ref": "rime.period",
+        "popup": false
+      }
+    },
+    "qwerty.period": {
+      "ref": "rime.period",
+      "keyType": "FUNCTION",
+      "colors": {
+        "text": "#000000",
+        "hintTop": "#00000000"
+      },
+      "tap": {
+        "ref": "rime.period",
+        "popup": false
+      },
+      "swipe": {
+        "up": {
+          "ref": "qwerty.period.up",
+          "popup": false
+        }
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "ascii_mode": false
+            }
+          },
+          "label": "."
+        },
+        {
+          "when": {
+            "rime": {
+              "composing": true
+            }
+          },
+          "label": ".",
+          "tap": {
+            "ref": "qwerty.period.composing",
+            "popup": false
+          }
+        }
+      ]
+    },
+    "qwerty.enter": {
+      "ref": "rime.Return",
+      "weight": 1.5,
+      "keyType": "ACTION",
+      "icon": "my.回车",
+      "colors": {
+        "hintTop": "#00000000"
+      },
+      "tap": {
+        "ref": "rime.Return",
+        "popup": false
+      },
+      "swipe": {
+        "up": {
+          "label": "颜",
+          "action": {
+            "type": "switch_layout",
+            "layout": "kaomoji"
+          },
+          "popup": false
+        }
+      }
+    },
+    "qwerty.lang": {
+      "ref": "rime.Shift_L",
+      "label": "语言",
+      "keyType": "FUNCTION",
+      "icon": "my.语言切换",
+      "colors": {
+        "hintTop": "#00000000",
+        "text": "#FF4C4B50"
+      },
+      "tap": {
+        "ref": "rime.Shift_L",
+        "popup": false
+      },
+      "variants": [
+        {
+          "when": {
+            "rime": {
+              "composing": true
+            }
+          },
+          "tap": {
+            "ref": "rime.apostrophe",
+            "popup": false
+          },
+          "label": "'"
+        }
+      ],
+      "swipe": {
+        "up": {
+          "label": "逐删",
+          "action": {
+            "type": "key",
+            "key": "BACKSPACE",
+            "meta": [
+              "SHIFT"
+            ]
+          },
+          "popup": false
+        }
+      }
+    },
+    "editor.toggle_locked": {
+      "ref": "foxy.Shift",
+      "label": "选择",
+      "textSize": 14,
+      "tap": {
+        "type": "modifier",
+        "modifier": "SHIFT",
+        "state": "TOGGLE_LOCKED",
+        "popup": false
+      }
+    }
+  },
+  "layouts": {
+    "default": {
+      "sections": [
+        {
+          "type": "rows",
+          "rows": [
+            [
+              {
+                "ref": "qwerty.q"
+              },
+              {
+                "ref": "qwerty.w"
+              },
+              {
+                "ref": "qwerty.e"
+              },
+              {
+                "ref": "qwerty.r"
+              },
+              {
+                "ref": "qwerty.t"
+              },
+              {
+                "ref": "qwerty.y"
+              },
+              {
+                "ref": "qwerty.u"
+              },
+              {
+                "ref": "qwerty.i"
+              },
+              {
+                "ref": "qwerty.o"
+              },
+              {
+                "ref": "qwerty.p"
+              }
+            ],
+            {
+              "width": 0.9,
+              "keys": [
+                {
+                  "ref": "qwerty.a",
+                  "weight": 1
+                },
+                {
+                  "ref": "qwerty.s",
+                  "weight": 1
+                },
+                {
+                  "ref": "qwerty.d",
+                  "weight": 1
+                },
+                {
+                  "ref": "qwerty.f",
+                  "weight": 1
+                },
+                {
+                  "ref": "qwerty.g",
+                  "weight": 1
+                },
+                {
+                  "ref": "qwerty.h",
+                  "weight": 1
+                },
+                {
+                  "ref": "qwerty.j",
+                  "weight": 1
+                },
+                {
+                  "ref": "qwerty.k",
+                  "weight": 1
+                },
+                {
+                  "ref": "qwerty.l",
+                  "weight": 1
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "ref": "qwerty.shift",
+                  "modifierStates": {
+                    "oneshot": {
+                      "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\">\n  <path fill=\"#000\" d=\"M42.5 22.7l-15.2-14.9c-.9-.9-2-1.3-3.3-1.3s-2.4.5-3.3 1.3l-15.2 14.9c-1 1-1.3 2.5-.8 3.7.5 1.1 1.5 1.8 2.7 1.8h5.5v7.8c0 3.1 2.6 5.7 5.7 5.7h10.8c3.1 0 5.7-2.6 5.7-5.7v-7.8h5.5c.9 0 2-.9 2.5-2 .5-1.3.3-2.5-.6-3.4Z\"/>\n</svg>"
+                    },
+                    "locked": {
+                      "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"#000\">\n  <path d=\"M42.5 18.9L27.3 4c-.9-.9-2-1.3-3.3-1.3s-2.4.5-3.3 1.3L5.5 18.9c-1 1-1.3 2.5-.8 3.7.5 1.1 1.5 1.8 2.7 1.8h5.5v7.8c0 3.1 2.6 5.7 5.7 5.7h10.8c3.1 0 5.7-2.6 5.7-5.7v-7.8h5.5c.9 0 2-.9 2.5-2 .5-1.3.3-2.5-.6-3.4Z\"/>\n  <rect x=\"12.9\" y=\"41.6\" width=\"22.2\" height=\"3.8\" rx=\"1.9\"/>\n</svg>"
+                    },
+                    "off": null
+                  },
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M18.7,41.6c-3.1,0-5.7-2.6-5.7-5.7v-7.8h-5.5c-1.3,0-2.3-.6-2.7-1.7-.5-1.2-.2-2.7.8-3.7l15.2-14.9c.9-.9,2-1.3,3.3-1.3s2.4.5,3.3,1.3l15.2,14.9c.9.9,1.1,2.1.6,3.4-.5,1.2-1.5,2-2.5,2h-5.5v7.8c0,3.1-2.5,5.7-5.6,5.7h-10.8ZM16.7,24.3v10.7c0,1.5,1.3,2.8,2.9,2.8h9c1.5,0,2.8-1.3,2.8-2.8v-10.6h7.3c0,0-13.6-13.4-13.6-13.4-.3-.3-.6-.4-1-.4s-.7.1-1,.4l-13.6,13.4h7.2Z\"/>\n</svg>",
+                  "variants": [
+                    {
+                      "when": {
+                        "rime": {
+                          "composing": true
+                        }
+                      },
+                      "ref": "rime.slash",
+                      "tap": {
+                        "ref": "rime.slash",
+                        "popup": false
+                      },
+                      "label": "分词"
+                    }
+                  ]
+                },
+                {
+                  "ref": "qwerty.z"
+                },
+                {
+                  "ref": "qwerty.x"
+                },
+                {
+                  "ref": "qwerty.c"
+                },
+                {
+                  "ref": "qwerty.v"
+                },
+                {
+                  "ref": "qwerty.b"
+                },
+                {
+                  "ref": "qwerty.n"
+                },
+                {
+                  "ref": "qwerty.m"
+                },
+                {
+                  "ref": "qwerty.backspace",
+                  "override": {
+                    "drag": {
+                      "popup": false,
+                      "left": {
+                        "action": {
+                          "type": "app",
+                          "command": "editor_select_step",
+                          "argument": "left"
+                        }
+                      },
+                      "right": {
+                        "action": {
+                          "type": "app",
+                          "command": "editor_select_step",
+                          "argument": "right"
+                        }
+                      },
+                      "end": {
+                        "action": {
+                          "type": "app",
+                          "command": "delete_selection"
+                        }
+                      }
+                    }
+                  },
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M37.8,7.6h-20.8c-3.1,0-5.9,1.5-7.6,4.1l-5.2,7.9c-1.8,2.7-1.8,6.2,0,8.9l5.2,7.9c1.7,2.6,4.5,4.1,7.6,4.1h20.8c4,0,7.3-3.3,7.3-7.3V14.9c0-4-3.3-7.3-7.3-7.3ZM41.4,33.1c0,2-1.6,3.6-3.6,3.6h-20.8c-1.8,0-3.5-.9-4.5-2.4l-5.2-7.9c-1-1.5-1-3.4,0-4.9l5.2-7.9c1-1.5,2.7-2.4,4.5-2.4h20.8c2,0,3.6,1.6,3.6,3.6v18.3Z\"/>\n  <path d=\"M33.9,18.6c0-.6-.3-1.1-.8-1.5-.3-.2-.7-.4-1.1-.4s-1.2.2-1.6.7l-3.8,3.8-3.8-3.8c-.4-.4-1-.7-1.6-.7s-.8.1-1.1.4c-.5.4-.8.9-.8,1.5,0,.6.2,1.1.6,1.6l3.9,3.9-3.8,3.8c-.8.8-.9,1.9-.3,2.7.4.5,1,.8,1.6.8s1-.2,1.4-.6l3.9-3.9,3.8,3.8c.4.4,1,.7,1.6.7.4,0,.8-.1,1.1-.4.5-.4.8-.9.8-1.5,0-.6-.2-1.1-.6-1.6l-3.9-3.9,3.9-3.9c.4-.4.6-1,.6-1.6Z\"/>\n</svg>"
+                }
+              ]
+            },
+            {
+              "totalWeight": 10,
+              "keys": [
+                {
+                  "ref": "qwerty.layout",
+                  "weight": 1.5,
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\">\n  <path fill=\"#3c3d3f\" d=\"M36.926,5.708c-.427-.993-1.065-1.97-1.908-2.651-1.593,2.749-3.709,5.39-6.702,6.669-.614.262-1.293.478-1.931.678-6.065,1.904-17.793,4.098-15.908,12.951.152.714.412,1.409.731,2.064.055.113.386.734.559,1.001h0s.232.401.232.401c0,0-.008-.274.264-.625,0-.001,0-.002.002-.003.121-.155.246-.324.334-.424,3.383-3.883,7.154-5.109,12.214-5.484,1.905-.141,3.949-.075,5.817-.475,5.932-1.271,8.546-8.867,6.297-14.101Z\"/>\n  <path fill=\"#7d7e7f\" d=\"M29.105,23.353c-3.123-.32-7.056.801-9.602,2.616-5.993,4.271-6.319,12.99-1.449,18.266.171.185.472.514.66.66.031.024.039.06.092.046-.088-.626-.052-1.259-.06-1.89-.041-3.477.398-7.172,3.299-9.502,2.731-2.193,6.122-2.13,9.419-2.584.065-.009.179-.023.298-.04h0s.451-.036.451-.036c.055-.097.085-.143.121-.204.038-.054.075-.114.117-.189.004-.006.019-.029.019-.029h-.003c.123-.227.246-.499.299-.626,1.419-3.419.09-6.103-3.661-6.487Z\"/>\n</svg>"
+                },
+                {
+                  "ref": "qwerty.comma",
+                  "weight": 1.1
+                },
+                {
+                  "ref": "qwerty.lang",
+                  "weight": 1.1,
+                  "variants": [
+                    {
+                      "ref": "rime.Shift_L",
+                      "icon": "svg:<svg id=\"_图层_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"0 0 48 48\">\n  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->\n  <path d=\"M13.97,16.819c.873.998,1.995,1.747,3.617,2.495s3.493,1.247,5.988,1.747l-1.497,3.368c-2.495-.624-4.615-1.373-6.236-2.246s-2.993-1.995-3.991-3.368c-.873,1.122-2.246,2.246-3.991,3.243-1.747.998-3.866,1.747-6.362,2.495l-1.497-3.243c2.62-.624,4.615-1.247,6.112-1.995,1.497-.749,2.62-1.497,3.243-2.495H.373v-2.993h2.495v-6.112h7.235v-1.747h3.119v1.747h7.359v6.112h2.495v2.993h-9.106ZM5.737,4.97H.498V1.851h5.239V.104h3.243v1.747h5.239V.104h3.243v1.747h5.114v3.119h-5.114v1.373h-3.243v-1.373h-5.239v1.373h-3.243v-1.373ZM5.861,13.825h4.117v-2.993h-4.117v2.993ZM13.097,10.832v2.993h4.117v-2.993s-4.117,0-4.117,0Z\" fill=\"#4d5051\"/>\n  <path d=\"M47.658,41.043h-8.023v7.067h-3.343v-7.067h-8.213v-11.556h8.213v-4.107h3.343v4.107h8.023v11.556ZM36.292,37.89v-5.157h-4.87v5.157h4.87ZM44.41,32.638h-4.776v5.157h4.776v-5.157Z\" fill=\"#929398\"/>\n  <path d=\"M8.952,47.62h6.542c1.199,0,2.072-.982,2.072-2.072s-.982-2.072-2.072-2.072h-5.56c-1.636,0-3.052-1.418-3.052-3.052v-.872h0v-4.58c0-1.199-.982-2.072-2.072-2.072s-2.072.982-2.072,2.072v6.433c0,3.38,2.835,6.215,6.215,6.215Z\" fill=\"#929398\"/>\n  <path d=\"M41.334,4.77h-6.433c-1.09,0-2.072.982-2.072,2.072,0,.019.006.035.006.054s-.006.035-.006.054c0,1.09.982,2.072,2.072,2.072h5.451c1.636,0,3.052,1.418,3.052,3.052v5.451c0,1.199.982,2.072,2.072,2.072s2.072-.872,2.072-2.072v-6.542c0-3.38-2.835-6.215-6.215-6.215Z\" fill=\"#929398\"/>\n  <metadata>\n    <sfw xmlns=\"http://ns.adobe.com/SaveForWeb/1.0/\">\n      <slices/>\n      <sliceSourceBounds x=\"0\" y=\"-0.11\" width=\"47.66\" height=\"48.01\" bottomLeftOrigin=\"true\"/>\n    </sfw>\n  </metadata>\n</svg>",
+                      "when": {
+                        "rime": {
+                          "ascii_mode": true
+                        }
+                      }
+                    }
+                  ],
+                  "icon": "svg:<svg id=\"_图层_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"0 0 48 48\">\n  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->\n  <path d=\"M39.264,40.846c.763.872,1.745,1.526,3.162,2.181s3.052,1.09,5.234,1.526l-1.309,2.944c-2.181-.546-4.034-1.199-5.451-1.962s-2.616-1.745-3.489-2.944c-.763.982-1.962,1.962-3.489,2.835-1.526.872-3.38,1.526-5.56,2.181l-1.309-2.835c2.289-.546,4.034-1.09,5.343-1.745s2.289-1.309,2.835-2.181h-7.851v-2.616h2.181v-5.343h6.324v-1.526h2.726v1.526h6.433v5.343h2.181v2.616h-7.96ZM32.068,30.487h-4.58v-2.726h4.58v-1.526h2.835v1.526h4.58v-1.526h2.835v1.526h4.47v2.726h-4.47v1.199h-2.835v-1.199h-4.58v1.199h-2.835v-1.199ZM32.178,38.229h3.598v-2.616h-3.598s0,2.616,0,2.616ZM38.501,35.612v2.616h3.598v-2.616h-3.598Z\" fill=\"#929398\"/>\n  <path d=\"M22.691,18.276h-9.158v8.068h-3.817v-8.068H.339V5.082h9.377V.394h3.817v4.688h9.158v13.193ZM9.716,14.678v-5.887h-5.56v5.887h5.56ZM18.984,8.68h-5.451v5.887h5.451s0-5.887,0-5.887Z\" fill=\"#4d5051\"/>\n  <path d=\"M8.953,47.606h6.542c1.199,0,2.072-.982,2.072-2.072s-.982-2.072-2.072-2.072h-5.56c-1.636,0-3.052-1.418-3.052-3.052v-.872h0v-4.58c0-1.199-.982-2.072-2.072-2.072s-2.072.982-2.072,2.072v6.433c0,3.38,2.835,6.215,6.215,6.215Z\" fill=\"#929398\"/>\n  <path d=\"M41.336,4.756h-6.433c-1.09,0-2.072.982-2.072,2.072,0,.019.006.035.006.054s-.006.035-.006.054c0,1.09.982,2.072,2.072,2.072h5.451c1.636,0,3.052,1.418,3.052,3.052v5.451c0,1.199.982,2.072,2.072,2.072s2.072-.872,2.072-2.072v-6.542c0-3.38-2.835-6.215-6.215-6.215Z\" fill=\"#929398\"/>\n  <metadata>\n    <sfw xmlns=\"http://ns.adobe.com/SaveForWeb/1.0/\">\n      <slices/>\n      <sliceSourceBounds x=\"0.34\" y=\"0.39\" width=\"47.32\" height=\"47.21\" bottomLeftOrigin=\"true\"/>\n    </sfw>\n  </metadata>\n</svg>",
+                  "colors": {
+                    "background": "#FFCBCED5"
+                  }
+                },
+                {
+                  "ref": "qwerty.space",
+                  "icon": "svg:<svg id=\"_图层_1\" data-name=\"图层_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"0 0 48 48\">\n  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->\n  <path d=\"M43.183,17.308h0c-1.022,0-1.85.828-1.85,1.85v4.298c0,1.897-1.538,3.436-3.436,3.436H10.103c-1.897,0-3.436-1.538-3.436-3.436v-4.199c0-.922-.63-1.776-1.539-1.924-1.159-.189-2.161.701-2.161,1.825v5.479c0,3.33,2.725,6.055,6.055,6.055h29.956c3.33,0,6.055-2.725,6.055-6.055v-5.479c0-1.022-.828-1.85-1.85-1.85Z\"/>\n  <metadata>\n    <sfw xmlns=\"http://ns.adobe.com/SaveForWeb/1.0/\">\n      <slices/>\n      <sliceSourceBounds x=\"-8167\" y=\"17.31\" width=\"16383\" height=\"13.65\" bottomLeftOrigin=\"true\"/>\n    </sfw>\n  </metadata>\n</svg>"
+                },
+                {
+                  "ref": "qwerty.period",
+                  "weight": 1.1
+                },
+                {
+                  "ref": "qwerty.enter",
+                  "weight": 2.0,
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M35.3,8.2h-8.4c-.4,0-.8.2-1.2.4-.5.3-.8.9-.8,1.5,0,1,.8,1.8,1.8,1.8h8.5c2,0,3.6,1.6,3.6,3.6v8.5c0,2-1.6,3.6-3.6,3.6H11.8l5.2-5.2c.6-.6.8-1.7.3-2.4-.7-.9-2-1-2.8-.2l-8.4,8.4c-.7.7-.7,1.9,0,2.6l8.3,8.3c.6.6,1.7.8,2.4.3.9-.7,1-2,.2-2.8l-5.2-5.3h23.5c4,0,7.3-3.3,7.3-7.3v-8.5c0-4-3.3-7.3-7.3-7.3Z\"/>\n</svg>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "split": {
+        "sections": [
+          {
+            "type": "rows",
+            "rows": [
+              {
+                "width": 0.8,
+                "totalWeight": 15,
+                "keys": [
+                  {
+                    "ref": "qwerty.q"
+                  },
+                  {
+                    "ref": "qwerty.w"
+                  },
+                  {
+                    "ref": "qwerty.e"
+                  },
+                  {
+                    "ref": "qwerty.r"
+                  },
+                  {
+                    "ref": "qwerty.t"
+                  },
+                  {
+                    "ref": "foxy.Spacer",
+                    "weight": "auto"
+                  },
+                  {
+                    "ref": "qwerty.y"
+                  },
+                  {
+                    "ref": "qwerty.u"
+                  },
+                  {
+                    "ref": "qwerty.i"
+                  },
+                  {
+                    "ref": "qwerty.o"
+                  },
+                  {
+                    "ref": "qwerty.p"
+                  }
+                ]
+              },
+              {
+                "width": 0.8,
+                "totalWeight": 15,
+                "keys": [
+                  {
+                    "ref": "qwerty.a",
+                    "weight": 1.25
+                  },
+                  {
+                    "ref": "qwerty.s"
+                  },
+                  {
+                    "ref": "qwerty.d"
+                  },
+                  {
+                    "ref": "qwerty.f"
+                  },
+                  {
+                    "ref": "qwerty.g"
+                  },
+                  {
+                    "ref": "foxy.Spacer",
+                    "weight": "auto"
+                  },
+                  {
+                    "ref": "qwerty.g"
+                  },
+                  {
+                    "ref": "qwerty.h"
+                  },
+                  {
+                    "ref": "qwerty.j"
+                  },
+                  {
+                    "ref": "qwerty.k"
+                  },
+                  {
+                    "ref": "qwerty.l",
+                    "weight": 1.25
+                  }
+                ]
+              },
+              {
+                "width": 0.8,
+                "totalWeight": 15,
+                "keys": [
+                  {
+                    "ref": "qwerty.shift",
+                    "weight": 1.5,
+                    "override": {
+                      "swipe": {
+                        "up": null,
+                        "down": {
+                          "action": {
+                            "type": "app",
+                            "command": "text_editor"
+                          },
+                          "label": "Edit",
+                          "popup": false
+                        }
+                      }
+                    },
+                    "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M18.7,41.6c-3.1,0-5.7-2.6-5.7-5.7v-7.8h-5.5c-1.3,0-2.3-.6-2.7-1.7-.5-1.2-.2-2.7.8-3.7l15.2-14.9c.9-.9,2-1.3,3.3-1.3s2.4.5,3.3,1.3l15.2,14.9c.9.9,1.1,2.1.6,3.4-.5,1.2-1.5,2-2.5,2h-5.5v7.8c0,3.1-2.5,5.7-5.6,5.7h-10.8ZM16.7,24.3v10.7c0,1.5,1.3,2.8,2.9,2.8h9c1.5,0,2.8-1.3,2.8-2.8v-10.6h7.3c0,0-13.6-13.4-13.6-13.4-.3-.3-.6-.4-1-.4s-.7.1-1,.4l-13.6,13.4h7.2Z\"/>\n</svg>"
+                  },
+                  {
+                    "ref": "qwerty.z"
+                  },
+                  {
+                    "ref": "qwerty.x"
+                  },
+                  {
+                    "ref": "qwerty.c"
+                  },
+                  {
+                    "ref": "qwerty.v"
+                  },
+                  {
+                    "ref": "foxy.Spacer",
+                    "weight": "auto"
+                  },
+                  {
+                    "ref": "qwerty.v"
+                  },
+                  {
+                    "ref": "qwerty.b"
+                  },
+                  {
+                    "ref": "qwerty.n"
+                  },
+                  {
+                    "ref": "qwerty.m"
+                  },
+                  {
+                    "ref": "qwerty.backspace",
+                    "weight": 1.5,
+                    "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M37.8,7.6h-20.8c-3.1,0-5.9,1.5-7.6,4.1l-5.2,7.9c-1.8,2.7-1.8,6.2,0,8.9l5.2,7.9c1.7,2.6,4.5,4.1,7.6,4.1h20.8c4,0,7.3-3.3,7.3-7.3V14.9c0-4-3.3-7.3-7.3-7.3ZM41.4,33.1c0,2-1.6,3.6-3.6,3.6h-20.8c-1.8,0-3.5-.9-4.5-2.4l-5.2-7.9c-1-1.5-1-3.4,0-4.9l5.2-7.9c1-1.5,2.7-2.4,4.5-2.4h20.8c2,0,3.6,1.6,3.6,3.6v18.3Z\"/>\n  <path d=\"M33.9,18.6c0-.6-.3-1.1-.8-1.5-.3-.2-.7-.4-1.1-.4s-1.2.2-1.6.7l-3.8,3.8-3.8-3.8c-.4-.4-1-.7-1.6-.7s-.8.1-1.1.4c-.5.4-.8.9-.8,1.5,0,.6.2,1.1.6,1.6l3.9,3.9-3.8,3.8c-.8.8-.9,1.9-.3,2.7.4.5,1,.8,1.6.8s1-.2,1.4-.6l3.9-3.9,3.8,3.8c.4.4,1,.7,1.6.7.4,0,.8-.1,1.1-.4.5-.4.8-.9.8-1.5,0-.6-.2-1.1-.6-1.6l-3.9-3.9,3.9-3.9c.4-.4.6-1,.6-1.6Z\"/>\n</svg>"
+                  }
+                ]
+              },
+              {
+                "width": 0.8,
+                "totalWeight": 15,
+                "keys": [
+                  {
+                    "ref": "qwerty.layout",
+                    "weight": 1.5,
+                    "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\">\n  <path fill=\"#3c3d3f\" d=\"M36.926,5.708c-.427-.993-1.065-1.97-1.908-2.651-1.593,2.749-3.709,5.39-6.702,6.669-.614.262-1.293.478-1.931.678-6.065,1.904-17.793,4.098-15.908,12.951.152.714.412,1.409.731,2.064.055.113.386.734.559,1.001h0s.232.401.232.401c0,0-.008-.274.264-.625,0-.001,0-.002.002-.003.121-.155.246-.324.334-.424,3.383-3.883,7.154-5.109,12.214-5.484,1.905-.141,3.949-.075,5.817-.475,5.932-1.271,8.546-8.867,6.297-14.101Z\"/>\n  <path fill=\"#7d7e7f\" d=\"M29.105,23.353c-3.123-.32-7.056.801-9.602,2.616-5.993,4.271-6.319,12.99-1.449,18.266.171.185.472.514.66.66.031.024.039.06.092.046-.088-.626-.052-1.259-.06-1.89-.041-3.477.398-7.172,3.299-9.502,2.731-2.193,6.122-2.13,9.419-2.584.065-.009.179-.023.298-.04h0s.451-.036.451-.036c.055-.097.085-.143.121-.204.038-.054.075-.114.117-.189.004-.006.019-.029.019-.029h-.003c.123-.227.246-.499.299-.626,1.419-3.419.09-6.103-3.661-6.487Z\"/>\n</svg>"
+                  },
+                  {
+                    "ref": "qwerty.comma",
+                    "swipe": {
+                      "down": {
+                        "ref": "rime.colon",
+                        "popup": false
+                      }
+                    }
+                  },
+                  {
+                    "ref": "qwerty.lang",
+                    "weight": 1.0,
+                    "icon": "svg:<svg id=\"_图层_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"0 0 48 48\">\n  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->\n  <path d=\"M39.264,40.846c.763.872,1.745,1.526,3.162,2.181s3.052,1.09,5.234,1.526l-1.309,2.944c-2.181-.546-4.034-1.199-5.451-1.962s-2.616-1.745-3.489-2.944c-.763.982-1.962,1.962-3.489,2.835-1.526.872-3.38,1.526-5.56,2.181l-1.309-2.835c2.289-.546,4.034-1.09,5.343-1.745s2.289-1.309,2.835-2.181h-7.851v-2.616h2.181v-5.343h6.324v-1.526h2.726v1.526h6.433v5.343h2.181v2.616h-7.96ZM32.068,30.487h-4.58v-2.726h4.58v-1.526h2.835v1.526h4.58v-1.526h2.835v1.526h4.47v2.726h-4.47v1.199h-2.835v-1.199h-4.58v1.199h-2.835v-1.199ZM32.178,38.229h3.598v-2.616h-3.598s0,2.616,0,2.616ZM38.501,35.612v2.616h3.598v-2.616h-3.598Z\" fill=\"#929398\"/>\n  <path d=\"M22.691,18.276h-9.158v8.068h-3.817v-8.068H.339V5.082h9.377V.394h3.817v4.688h9.158v13.193ZM9.716,14.678v-5.887h-5.56v5.887h5.56ZM18.984,8.68h-5.451v5.887h5.451s0-5.887,0-5.887Z\" fill=\"#4d5051\"/>\n  <path d=\"M8.953,47.606h6.542c1.199,0,2.072-.982,2.072-2.072s-.982-2.072-2.072-2.072h-5.56c-1.636,0-3.052-1.418-3.052-3.052v-.872h0v-4.58c0-1.199-.982-2.072-2.072-2.072s-2.072.982-2.072,2.072v6.433c0,3.38,2.835,6.215,6.215,6.215Z\" fill=\"#929398\"/>\n  <path d=\"M41.336,4.756h-6.433c-1.09,0-2.072.982-2.072,2.072,0,.019.006.035.006.054s-.006.035-.006.054c0,1.09.982,2.072,2.072,2.072h5.451c1.636,0,3.052,1.418,3.052,3.052v5.451c0,1.199.982,2.072,2.072,2.072s2.072-.872,2.072-2.072v-6.542c0-3.38-2.835-6.215-6.215-6.215Z\" fill=\"#929398\"/>\n  <metadata>\n    <sfw xmlns=\"http://ns.adobe.com/SaveForWeb/1.0/\">\n      <slices/>\n      <sliceSourceBounds x=\"0.34\" y=\"0.39\" width=\"47.32\" height=\"47.21\" bottomLeftOrigin=\"true\"/>\n    </sfw>\n  </metadata>\n</svg>",
+                    "variants": [
+                      {
+                        "ref": "rime.Shift_L",
+                        "icon": "svg:<svg id=\"_图层_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"0 0 48 48\">\n  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->\n  <path d=\"M13.97,16.819c.873.998,1.995,1.747,3.617,2.495s3.493,1.247,5.988,1.747l-1.497,3.368c-2.495-.624-4.615-1.373-6.236-2.246s-2.993-1.995-3.991-3.368c-.873,1.122-2.246,2.246-3.991,3.243-1.747.998-3.866,1.747-6.362,2.495l-1.497-3.243c2.62-.624,4.615-1.247,6.112-1.995,1.497-.749,2.62-1.497,3.243-2.495H.373v-2.993h2.495v-6.112h7.235v-1.747h3.119v1.747h7.359v6.112h2.495v2.993h-9.106ZM5.737,4.97H.498V1.851h5.239V.104h3.243v1.747h5.239V.104h3.243v1.747h5.114v3.119h-5.114v1.373h-3.243v-1.373h-5.239v1.373h-3.243v-1.373ZM5.861,13.825h4.117v-2.993h-4.117v2.993ZM13.097,10.832v2.993h4.117v-2.993s-4.117,0-4.117,0Z\" fill=\"#4d5051\"/>\n  <path d=\"M47.658,41.043h-8.023v7.067h-3.343v-7.067h-8.213v-11.556h8.213v-4.107h3.343v4.107h8.023v11.556ZM36.292,37.89v-5.157h-4.87v5.157h4.87ZM44.41,32.638h-4.776v5.157h4.776v-5.157Z\" fill=\"#929398\"/>\n  <path d=\"M8.952,47.62h6.542c1.199,0,2.072-.982,2.072-2.072s-.982-2.072-2.072-2.072h-5.56c-1.636,0-3.052-1.418-3.052-3.052v-.872h0v-4.58c0-1.199-.982-2.072-2.072-2.072s-2.072.982-2.072,2.072v6.433c0,3.38,2.835,6.215,6.215,6.215Z\" fill=\"#929398\"/>\n  <path d=\"M41.334,4.77h-6.433c-1.09,0-2.072.982-2.072,2.072,0,.019.006.035.006.054s-.006.035-.006.054c0,1.09.982,2.072,2.072,2.072h5.451c1.636,0,3.052,1.418,3.052,3.052v5.451c0,1.199.982,2.072,2.072,2.072s2.072-.872,2.072-2.072v-6.542c0-3.38-2.835-6.215-6.215-6.215Z\" fill=\"#929398\"/>\n  <metadata>\n    <sfw xmlns=\"http://ns.adobe.com/SaveForWeb/1.0/\">\n      <slices/>\n      <sliceSourceBounds x=\"0\" y=\"-0.11\" width=\"47.66\" height=\"48.01\" bottomLeftOrigin=\"true\"/>\n    </sfw>\n  </metadata>\n</svg>",
+                        "when": {
+                          "rime": {
+                            "ascii_mode": true
+                          }
+                        }
+                      }
+                    ],
+                    "colors": {
+                      "background": "#FFCBCED5"
+                    }
+                  },
+                  {
+                    "ref": "qwerty.space",
+                    "weight": "auto"
+                  },
+                  {
+                    "ref": "qwerty.period"
+                  },
+                  {
+                    "ref": "qwerty.enter",
+                    "weight": 1.5,
+                    "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M35.3,8.2h-8.4c-.4,0-.8.2-1.2.4-.5.3-.8.9-.8,1.5,0,1,.8,1.8,1.8,1.8h8.5c2,0,3.6,1.6,3.6,3.6v8.5c0,2-1.6,3.6-3.6,3.6H11.8l5.2-5.2c.6-.6.8-1.7.3-2.4-.7-.9-2-1-2.8-.2l-8.4,8.4c-.7.7-.7,1.9,0,2.6l8.3,8.3c.6.6,1.7.8,2.4.3.9-.7,1-2,.2-2.8l-5.2-5.3h23.5c4,0,7.3-3.3,7.3-7.3v-8.5c0-4-3.3-7.3-7.3-7.3Z\"/>\n</svg>"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "numpad": {
+      "sections": [
+        {
+          "type": "rows",
+          "rows": [
+            [
+              {
+                "ref": "rime.KP_Add",
+                "override": {
+                  "keyType": "FUNCTION"
+                },
+                "weight": 1.55,
+                "tap": {
+                  "ref": "rime.KP_Add",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_1",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_1",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_2",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_2",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_3",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_3",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_Divide",
+                "override": {
+                  "keyType": "FUNCTION"
+                },
+                "weight": 1.55,
+                "tap": {
+                  "ref": "rime.KP_Divide",
+                  "popup": false
+                }
+              }
+            ],
+            [
+              {
+                "ref": "rime.KP_Subtract",
+                "override": {
+                  "keyType": "FUNCTION"
+                },
+                "weight": 1.55,
+                "tap": {
+                  "ref": "rime.KP_Subtract",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_4",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_4",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_5",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_5",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_6",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_6",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.space",
+                "override": {
+                  "keyType": "FUNCTION"
+                },
+                "weight": 1.55,
+                "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M36,20v2.4538c0,1.9585-1.5877,3.5462-3.5462,3.5462H15.5462c-1.9585,0-3.5462-1.5877-3.5462-3.5462v-2.4538c0-1.1046-.8954-2-2-2h0c-1.1046,0-2,.8954-2,2v3.0367c0,3.8457,3.1176,6.9633,6.9633,6.9633h18.0734c3.8457,0,6.9633-3.1176,6.9633-6.9633v-3.0367c0-1.1046-.8954-2-2-2h0c-1.1046,0-2,.8954-2,2Z\"/>\n</svg>",
+                "tap": {
+                  "ref": "rime.space",
+                  "popup": false
+                },
+                "label": "空格"
+              }
+            ],
+            [
+              {
+                "ref": "rime.KP_Multiply",
+                "override": {
+                  "keyType": "FUNCTION"
+                },
+                "weight": 1.55,
+                "tap": {
+                  "ref": "rime.KP_Multiply",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_7",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_7",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_8",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_8",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_9",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_9",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.BackSpace",
+                "override": {
+                  "keyType": "FUNCTION",
+                  "longPress": {
+                    "label": "⌫",
+                    "repeat": true,
+                    "action": {
+                      "type": "key",
+                      "key": "BACKSPACE"
+                    },
+                    "popup": false
+                  },
+                  "drag": {
+                    "popup": false,
+                    "left": {
+                      "action": {
+                        "type": "app",
+                        "command": "editor_select_step",
+                        "argument": "left"
+                      }
+                    },
+                    "right": {
+                      "action": {
+                        "type": "app",
+                        "command": "editor_select_step",
+                        "argument": "right"
+                      }
+                    },
+                    "end": {
+                      "action": {
+                        "type": "app",
+                        "command": "delete_selection"
+                      }
+                    }
+                  },
+                  "label": "回车"
+                },
+                "weight": 1.55,
+                "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M37.8,7.6h-20.8c-3.1,0-5.9,1.5-7.6,4.1l-5.2,7.9c-1.8,2.7-1.8,6.2,0,8.9l5.2,7.9c1.7,2.6,4.5,4.1,7.6,4.1h20.8c4,0,7.3-3.3,7.3-7.3V14.9c0-4-3.3-7.3-7.3-7.3ZM41.4,33.1c0,2-1.6,3.6-3.6,3.6h-20.8c-1.8,0-3.5-.9-4.5-2.4l-5.2-7.9c-1-1.5-1-3.4,0-4.9l5.2-7.9c1-1.5,2.7-2.4,4.5-2.4h20.8c2,0,3.6,1.6,3.6,3.6v18.3Z\"/>\n  <path d=\"M33.9,18.6c0-.6-.3-1.1-.8-1.5-.3-.2-.7-.4-1.1-.4s-1.2.2-1.6.7l-3.8,3.8-3.8-3.8c-.4-.4-1-.7-1.6-.7s-.8.1-1.1.4c-.5.4-.8.9-.8,1.5,0,.6.2,1.1.6,1.6l3.9,3.9-3.8,3.8c-.8.8-.9,1.9-.3,2.7.4.5,1,.8,1.6.8s1-.2,1.4-.6l3.9-3.9,3.8,3.8c.4.4,1,.7,1.6.7.4,0,.8-.1,1.1-.4.5-.4.8-.9.8-1.5,0-.6-.2-1.1-.6-1.6l-3.9-3.9,3.9-3.9c.4-.4.6-1,.6-1.6Z\"/>\n</svg>",
+                "tap": {
+                  "ref": "rime.BackSpace",
+                  "popup": false
+                }
+              }
+            ],
+            [
+              {
+                "ref": "foxy.LayoutDefault",
+                "override": {
+                  "keyType": "FUNCTION"
+                },
+                "weight": 1.55,
+                "tap": {
+                  "ref": "foxy.LayoutDefault",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.at",
+                "weight": 1.15,
+                "override": {
+                  "keyType": "FUNCTION"
+                },
+                "tap": {
+                  "ref": "rime.at",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_Equal",
+                "weight": 1.15,
+                "tap": {
+                  "ref": "rime.KP_Equal",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_0",
+                "weight": 2.3,
+                "tap": {
+                  "ref": "rime.KP_0",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_Decimal",
+                "weight": 1.15,
+                "tap": {
+                  "ref": "rime.KP_Decimal",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.percent",
+                "weight": 1.15,
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "border": "#f4ddd0",
+                  "hintTop": "#00000000"
+                },
+                "tap": {
+                  "ref": "rime.percent",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "rime.KP_Enter",
+                "override": {
+                  "keyType": "ACTION"
+                },
+                "weight": 1.55,
+                "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M35.3,8.2h-8.4c-.4,0-.8.2-1.2.4-.5.3-.8.9-.8,1.5,0,1,.8,1.8,1.8,1.8h8.5c2,0,3.6,1.6,3.6,3.6v8.5c0,2-1.6,3.6-3.6,3.6H11.8l5.2-5.2c.6-.6.8-1.7.3-2.4-.7-.9-2-1-2.8-.2l-8.4,8.4c-.7.7-.7,1.9,0,2.6l8.3,8.3c.6.6,1.7.8,2.4.3.9-.7,1-2,.2-2.8l-5.2-5.3h23.5c4,0,7.3-3.3,7.3-7.3v-8.5c0-4-3.3-7.3-7.3-7.3Z\"/>\n</svg>",
+                "tap": {
+                  "ref": "rime.KP_Enter",
+                  "popup": false
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "text_editor": {
+      "sections": [
+        {
+          "type": "rows",
+          "rows": [
+            [
+              {
+                "ref": "foxy.LayoutDefault",
+                "tap": {
+                  "ref": "foxy.LayoutDefault",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "foxy.SelectAll",
+                "override": {
+                  "label": "全选",
+                  "keyType": "FUNCTION",
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\"><path d=\"M51.67,53.521h4.102l-6.734-17.484h-3.729l-6.734,17.484h4.079l1.388-3.81h6.242l1.388,3.81h-.001ZM45.409,45.978l1.762-4.783,1.747,4.783s-3.509,0-3.509,0Z\"/><path d=\"M33.34,16.554l4.237,9.924c.022.051.07.086.127.092l10.855.987c.134.012.188.179.085.266l-5.191,4.474c-.057.049-.07.132-.029.197h0c.039.063.119.087.188.059.892-.377,1.785-.636,2.655-.772.912-.142,1.829-.214,2.725-.214h2.09c.037,0,.072-.013.099-.037l8.407-7.303c.102-.088.047-.255-.087-.266l-18.778-1.585c-.057-.004-.106-.04-.128-.093l-7.254-17.19c-.052-.124-.228-.124-.281,0l-7.254,17.19c-.022.052-.071.087-.128.093l-18.778,1.585c-.133.011-.188.177-.088.265l14.084,12.439c.041.037.06.094.048.148l-4.207,18.231c-.029.13.11.233.225.165l16.615-9.759v-.075c0-.641.112-1.333.333-2.059.223-.73.461-1.433.706-2.09l.038-.102-1.377-.853c-.049-.031-.11-.031-.158,0l-9.403,5.689c-.116.07-.258-.034-.227-.165l2.495-10.618c.013-.055-.005-.112-.048-.15l-8.191-7.204c-.1-.088-.046-.253.086-.265l10.864-.988c.056-.005.104-.04.127-.092l4.237-9.924c.052-.123.227-.123.279,0h.003Z\"/></svg>"
+                },
+                "tap": {
+                  "ref": "foxy.SelectAll",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "foxy.Cut",
+                "override": {
+                  "label": "剪切",
+                  "keyType": "FUNCTION",
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\"><path d=\"M51.901,46.933c-.439,0-.834.059-1.185.176l-1.141-1.163,5.308-5.331v-3.225h-1.645l-6.296,6.318v-.395l-5.923-5.923h-1.645v3.225l5.331,5.331-1.163,1.163c-.336-.117-.73-.176-1.185-.176-1.038,0-1.927.373-2.665,1.119-.739.746-1.108,1.63-1.108,2.654,0,1.038.369,1.927,1.108,2.665.738.739,1.627,1.108,2.665,1.108s1.927-.369,2.666-1.108c.738-.738,1.107-1.627,1.107-2.665,0-.439-.051-.826-.154-1.163l1.163-1.163,1.163,1.163c-.117.336-.176.724-.176,1.163,0,1.038.369,1.927,1.108,2.665.738.739,1.627,1.108,2.665,1.108s1.927-.369,2.666-1.108c.738-.738,1.107-1.627,1.107-2.665,0-1.024-.369-1.908-1.107-2.654-.739-.746-1.628-1.119-2.666-1.119h.001ZM43.061,51.419c-.19.198-.424.297-.702.297s-.512-.099-.702-.297-.285-.435-.285-.713.095-.512.285-.702.424-.285.702-.285.512.095.702.285.285.424.285.702-.095.515-.285.713ZM52.603,51.419c-.19.198-.424.297-.702.297s-.512-.099-.702-.297-.285-.435-.285-.713.095-.512.285-.702.424-.285.702-.285.512.095.702.285.285.424.285.702-.095.515-.285.713Z\"/><path d=\"M48.918,20.007c1.491,1.513,2.237,3.39,2.237,5.627,0,2.399-1.052,5.052-3.158,7.963,1.652.132,3.18.548,4.584,1.25,2.062-3.174,3.093-6.245,3.093-9.213,0-1.754-.325-3.378-.976-4.87-.651-1.491-1.528-2.797-2.632-3.916-1.105-1.119-2.409-1.996-3.916-2.632s-3.122-.954-4.848-.954c-1.96,0-3.828.42-5.604,1.261-1.777.842-3.28,1.986-4.508,3.433-1.228-1.448-2.727-2.592-4.497-3.433-1.77-.841-3.634-1.261-5.594-1.261-1.726,0-3.342.318-4.848.954s-2.814,1.513-3.927,2.632-1.989,2.425-2.632,3.916-.965,3.115-1.262,4.87c0,2.106.464,4.15,1.393,6.131.928,1.983,2.226,4,3.893,6.055,1.667,2.055,3.678,4.187,6.033,6.394,3.261,3.086,6.976,6.508,11.143,10.265l1.535-1.36c-.805-1.55-1.279-3.144-1.426-4.782l-.109.087-.263-.263c-2.662-2.384-5.082-4.603-7.261-6.658-2.179-2.054-4.039-3.985-5.582-5.792-1.544-1.806-2.735-3.532-3.575-5.177-.842-1.645-1.262-3.278-1.262-4.902,0-2.237.746-4.114,2.237-5.627s3.364-2.27,5.616-2.27c1.711,0,3.323.508,4.837,1.524,1.513,1.017,2.562,2.286,3.147,3.807h4.212c.599-1.521,1.656-2.789,3.17-3.807,1.513-1.016,3.126-1.524,4.836-1.524,2.252,0,4.123.757,5.616,2.27h.001Z\"/></svg>"
+                },
+                "tap": {
+                  "ref": "foxy.Cut",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "foxy.Copy",
+                "override": {
+                  "label": "复制",
+                  "keyType": "FUNCTION",
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\"><path d=\"M59.961,25.15c-1.082-2.486-2.559-4.665-4.431-6.537s-4.058-3.356-6.559-4.453c-2.501-1.038-5.177-1.558-8.029-1.558-2.867,0-5.549.52-8.05,1.558-2.486,1.097-4.669,2.582-6.547,4.453-1.88,1.871-3.36,4.051-4.442,6.537-1.052,2.501-1.58,5.183-1.58,8.05,0,2.852.526,5.527,1.58,8.029,1.082,2.501,2.563,4.687,4.442,6.559,1.879,1.871,4.061,3.349,6.547,4.431,2.501,1.052,5.183,1.58,8.05,1.58,2.852,0,5.527-.526,8.029-1.58,2.501-1.082,4.687-2.559,6.559-4.431,1.871-1.871,3.349-4.058,4.431-6.559,1.052-2.501,1.58-5.177,1.58-8.029,0-2.867-.526-5.549-1.58-8.05ZM55.201,39.21c-.805,1.871-1.912,3.513-3.323,4.924-1.412,1.412-3.054,2.519-4.925,3.323s-3.876,1.206-6.01,1.206-4.139-.402-6.01-1.206-3.513-1.912-4.924-3.323c-1.412-1.411-2.519-3.052-3.323-4.924s-1.206-3.876-1.206-6.01.402-4.139,1.206-6.01,1.912-3.513,3.323-4.925c1.411-1.411,3.052-2.519,4.924-3.323s3.876-1.206,6.01-1.206,4.139.402,6.01,1.206,3.513,1.912,4.925,3.323c1.411,1.412,2.519,3.054,3.323,4.925s1.206,3.876,1.206,6.01-.402,4.139-1.206,6.01Z\"/><path d=\"M12.898,42.226c-.929-1.264-1.634-2.665-2.117-4.2-.526-1.535-.789-3.144-.789-4.825,0-1.697.263-3.312.789-4.848.483-1.521,1.188-2.917,2.117-4.19.928-1.272,2.014-2.369,3.257-3.29,1.258-.965,2.647-1.711,4.168-2.237v-5.375c-2.252.556-4.314,1.459-6.186,2.709s-3.502,2.753-4.892,4.508-2.467,3.711-3.235,5.867c-.767,2.157-1.152,4.442-1.152,6.855s.384,4.698,1.152,6.855c.767,2.157,1.846,4.11,3.235,5.857,1.389,1.748,3.02,3.247,4.892,4.497s3.933,2.162,6.186,2.731v-5.375c-1.521-.526-2.911-1.272-4.168-2.237-1.243-.937-2.329-2.036-3.257-3.301Z\"/></svg>"
+                },
+                "tap": {
+                  "ref": "foxy.Copy",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "foxy.Paste",
+                "override": {
+                  "label": "粘贴",
+                  "keyType": "FUNCTION",
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\"><path d=\"M59.961,25.15c-1.082-2.486-2.559-4.665-4.431-6.537s-4.058-3.356-6.559-4.453c-2.501-1.038-5.177-1.558-8.029-1.558-2.867,0-5.549.52-8.05,1.558-2.486,1.097-4.669,2.582-6.547,4.453-1.88,1.871-3.36,4.051-4.442,6.537-1.052,2.501-1.58,5.183-1.58,8.05,0,2.852.534,5.527,1.602,8.029s2.542,4.687,4.42,6.559c1.879,1.871,4.061,3.349,6.547,4.431,2.501,1.052,5.183,1.58,8.05,1.58,2.852,0,5.527-.534,8.029-1.602s4.687-2.537,6.559-4.409,3.342-4.058,4.409-6.559,1.602-5.177,1.602-8.029c0-2.867-.526-5.549-1.58-8.05ZM55.201,39.21c-.805,1.871-1.912,3.513-3.323,4.924-1.412,1.412-3.054,2.519-4.925,3.323s-3.876,1.206-6.01,1.206-4.139-.402-6.01-1.206-3.513-1.912-4.924-3.323c-1.412-1.411-2.519-3.052-3.323-4.924-.805-1.871-1.206-3.876-1.206-6.01s.402-4.139,1.206-6.01,1.912-3.513,3.323-4.925c1.411-1.411,3.052-2.519,4.924-3.323,1.871-.805,3.876-1.206,6.01-1.206s4.139.402,6.01,1.206,3.513,1.912,4.925,3.323c1.411,1.412,2.519,3.054,3.323,4.925s1.206,3.876,1.206,6.01-.402,4.139-1.206,6.01Z\"/><path d=\"M12.898,42.226c-.929-1.264-1.634-2.665-2.117-4.2-.526-1.535-.789-3.144-.789-4.825,0-1.697.263-3.312.789-4.848.483-1.521,1.188-2.917,2.117-4.19.928-1.272,2.019-2.38,3.269-3.323s2.635-1.678,4.156-2.204v-5.375c-2.252.556-4.314,1.459-6.186,2.709s-3.502,2.753-4.892,4.508-2.467,3.711-3.235,5.867c-.767,2.157-1.152,4.442-1.152,6.855s.384,4.698,1.152,6.855c.767,2.157,1.846,4.11,3.235,5.857,1.389,1.748,3.02,3.247,4.892,4.497s3.933,2.162,6.186,2.731v-5.375c-1.521-.526-2.906-1.265-4.156-2.215-1.25-.95-2.341-2.059-3.269-3.323Z\"/><path d=\"M45.846,24.744c-1.485-.884-3.127-1.326-4.925-1.326s-3.437.442-4.914,1.326c-1.477.885-2.654,2.067-3.532,3.543-.878,1.477-1.317,3.115-1.317,4.914s.439,3.437,1.317,4.914c.878,1.477,2.055,2.654,3.532,3.532s3.115,1.317,4.914,1.317,3.44-.439,4.925-1.317c1.484-.878,2.665-2.055,3.543-3.532s1.317-3.115,1.317-4.914-.439-3.437-1.317-4.914c-.878-1.477-2.059-2.657-3.543-3.543Z\"/></svg>"
+                },
+                "tap": {
+                  "ref": "foxy.Paste",
+                  "popup": false
+                }
+              },
+              {
+                "ref": "qwerty.backspace",
+                "weight": 1,
+                "override": {
+                  "label": "退格",
+                  "drag": {
+                    "popup": false,
+                    "left": {
+                      "action": {
+                        "type": "app",
+                        "command": "editor_select_step",
+                        "argument": "left"
+                      }
+                    },
+                    "right": {
+                      "action": {
+                        "type": "app",
+                        "command": "editor_select_step",
+                        "argument": "right"
+                      }
+                    },
+                    "end": {
+                      "action": {
+                        "type": "app",
+                        "command": "delete_selection"
+                      }
+                    }
+                  },
+                  "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\"><path d=\"M37.8,7.6h-20.8c-3.1,0-5.9,1.5-7.6,4.1l-5.2,7.9c-1.8,2.7-1.8,6.2,0,8.9l5.2,7.9c1.7,2.6,4.5,4.1,7.6,4.1h20.8c4,0,7.3-3.3,7.3-7.3V14.9c0-4-3.3-7.3-7.3-7.3ZM41.4,33.1c0,2-1.6,3.6-3.6,3.6h-20.8c-1.8,0-3.5-.9-4.5-2.4l-5.2-7.9c-1-1.5-1-3.4,0-4.9l5.2-7.9c1-1.5,2.7-2.4,4.5-2.4h20.8c2,0,3.6,1.6,3.6,3.6v18.3Z\"/><path d=\"M33.9,18.6c0-.6-.3-1.1-.8-1.5-.3-.2-.7-.4-1.1-.4s-1.2.2-1.6.7l-3.8,3.8-3.8-3.8c-.4-.4-1-.7-1.6-.7s-.8.1-1.1.4c-.5.4-.8.9-.8,1.5,0,.6.2,1.1.6,1.6l3.9,3.9-3.8,3.8c-.8.8-.9,1.9-.3,2.7.4.5,1,.8,1.6.8s1-.2,1.4-.6l3.9-3.9,3.8,3.8c.4.4,1,.7,1.6.7.4,0,.8-.1,1.1-.4.5-.4.8-.9.8-1.5,0-.6-.2-1.1-.6-1.6l-3.9-3.9,3.9-3.9c.4-.4.6-1,.6-1.6Z\"/></svg>"
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "editor": {
+      "sections": [
+        {
+          "type": "grid",
+          "columns": 26,
+          "rows": 4,
+          "keys": [
+            {
+              "column": 0,
+              "row": 0,
+              "columnSpan": 6,
+              "rowSpan": 3,
+              "ref": "rime.Left",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFFFFF",
+                  "pressed": "#1F000000"
+                },
+                "label": "左"
+              },
+              "weight": 2.33,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.45 66.45\" fill=\"currentColor\">\n  <path d=\"M38.567,20.978l-13.388,10.527c-1.114.876-1.114,2.564,0,3.44l13.388,10.527c1.436,1.129,3.541.106,3.541-1.72v-21.054c0-1.826-2.105-2.849-3.541-1.72Z\"/>\n</svg>",
+              "tap": {
+                "ref": "rime.Left",
+                "popup": false
+              }
+            },
+            {
+              "column": 6,
+              "row": 0,
+              "columnSpan": 6,
+              "rowSpan": 1,
+              "ref": "rime.Up",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFFFFF",
+                  "pressed": "#1F000000"
+                },
+                "label": "上"
+              },
+              "weight": 2.33,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.45 66.45\" fill=\"currentColor\">\n  <path d=\"M30.269,19.399l-18.087,23.004c-1.939,2.467-.182,6.084,2.955,6.084h36.175c3.137,0,4.895-3.616,2.955-6.084l-18.087-23.004c-1.505-1.914-4.406-1.914-5.912,0Z\"/>\n</svg>",
+              "tap": {
+                "ref": "rime.Up",
+                "popup": false
+              }
+            },
+            {
+              "column": 6,
+              "row": 1,
+              "columnSpan": 6,
+              "rowSpan": 1,
+              "ref": "editor.toggle_locked",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFFFFF",
+                  "pressed": "#1F000000"
+                },
+                "label": "选择"
+              },
+              "weight": 2.33,
+              "tap": {
+                "ref": "editor.toggle_locked",
+                "popup": false
+              }
+            },
+            {
+              "column": 6,
+              "row": 2,
+              "columnSpan": 6,
+              "rowSpan": 1,
+              "ref": "rime.Down",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFFFFF",
+                  "pressed": "#1F000000"
+                },
+                "label": "下"
+              },
+              "weight": 2.33,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.45 66.45\" fill=\"currentColor\">\n  <path d=\"M36.181,47.051l18.087-23.004c1.94-2.467.182-6.084-2.955-6.084H15.137c-3.137,0-4.894,3.616-2.955,6.084l18.087,23.004c1.505,1.914,4.406,1.914,5.912,0Z\"/>\n</svg>",
+              "tap": {
+                "ref": "rime.Down",
+                "popup": false
+              }
+            },
+            {
+              "column": 12,
+              "row": 0,
+              "columnSpan": 6,
+              "rowSpan": 3,
+              "ref": "rime.Right",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFFFFF",
+                  "pressed": "#1F000000"
+                },
+                "label": "右"
+              },
+              "weight": 2.33,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.45 66.45\" fill=\"currentColor\">\n  <path d=\"M27.883,20.978l13.388,10.527c1.114.876,1.114,2.564,0,3.44l-13.388,10.527c-1.436,1.129-3.541.106-3.541-1.72v-21.054c0-1.826,2.105-2.849,3.541-1.72Z\"/>\n</svg>",
+              "tap": {
+                "ref": "rime.Right",
+                "popup": false
+              }
+            },
+            {
+              "column": 18,
+              "row": 0,
+              "columnSpan": 4,
+              "rowSpan": 1,
+              "ref": "foxy.SelectAll",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "label": "全选"
+              },
+              "weight": 1.55,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\">\n  <path d=\"M51.67,53.521h4.102l-6.734-17.484h-3.729l-6.734,17.484h4.079l1.388-3.81h6.242l1.388,3.81h-.001ZM45.409,45.978l1.762-4.783,1.747,4.783s-3.509,0-3.509,0Z\"/>\n  <path d=\"M33.34,16.554l4.237,9.924c.022.051.07.086.127.092l10.855.987c.134.012.188.179.085.266l-5.191,4.474c-.057.049-.07.132-.029.197h0c.039.063.119.087.188.059.892-.377,1.785-.636,2.655-.772.912-.142,1.829-.214,2.725-.214h2.09c.037,0,.072-.013.099-.037l8.407-7.303c.102-.088.047-.255-.087-.266l-18.778-1.585c-.057-.004-.106-.04-.128-.093l-7.254-17.19c-.052-.124-.228-.124-.281,0l-7.254,17.19c-.022.052-.071.087-.128.093l-18.778,1.585c-.133.011-.188.177-.088.265l14.084,12.439c.041.037.06.094.048.148l-4.207,18.231c-.029.13.11.233.225.165l16.615-9.759v-.075c0-.641.112-1.333.333-2.059.223-.73.461-1.433.706-2.09l.038-.102-1.377-.853c-.049-.031-.11-.031-.158,0l-9.403,5.689c-.116.07-.258-.034-.227-.165l2.495-10.618c.013-.055-.005-.112-.048-.15l-8.191-7.204c-.1-.088-.046-.253.086-.265l10.864-.988c.056-.005.104-.04.127-.092l4.237-9.924c.052-.123.227-.123.279,0h.003Z\"/>\n</svg>",
+              "tap": {
+                "ref": "foxy.SelectAll",
+                "popup": false
+              }
+            },
+            {
+              "column": 18,
+              "row": 1,
+              "columnSpan": 4,
+              "rowSpan": 1,
+              "ref": "foxy.Copy",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "label": "复制"
+              },
+              "weight": 1.55,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\">\n  <path d=\"M59.961,25.15c-1.082-2.486-2.559-4.665-4.431-6.537s-4.058-3.356-6.559-4.453c-2.501-1.038-5.177-1.558-8.029-1.558-2.867,0-5.549.52-8.05,1.558-2.486,1.097-4.669,2.582-6.547,4.453-1.88,1.871-3.36,4.051-4.442,6.537-1.052,2.501-1.58,5.183-1.58,8.05,0,2.852.526,5.527,1.58,8.029,1.082,2.501,2.563,4.687,4.442,6.559,1.879,1.871,4.061,3.349,6.547,4.431,2.501,1.052,5.183,1.58,8.05,1.58,2.852,0,5.527-.526,8.029-1.58,2.501-1.082,4.687-2.559,6.559-4.431,1.871-1.871,3.349-4.058,4.431-6.559,1.052-2.501,1.58-5.177,1.58-8.029,0-2.867-.526-5.549-1.58-8.05ZM55.201,39.21c-.805,1.871-1.912,3.513-3.323,4.924-1.412,1.412-3.054,2.519-4.925,3.323s-3.876,1.206-6.01,1.206-4.139-.402-6.01-1.206-3.513-1.912-4.924-3.323c-1.412-1.411-2.519-3.052-3.323-4.924s-1.206-3.876-1.206-6.01.402-4.139,1.206-6.01,1.912-3.513,3.323-4.925c1.411-1.411,3.052-2.519,4.924-3.323s3.876-1.206,6.01-1.206,4.139.402,6.01,1.206,3.513,1.912,4.925,3.323c1.411,1.412,2.519,3.054,3.323,4.925s1.206,3.876,1.206,6.01-.402,4.139-1.206,6.01Z\"/>\n  <path d=\"M12.898,42.226c-.929-1.264-1.634-2.665-2.117-4.2-.526-1.535-.789-3.144-.789-4.825,0-1.697.263-3.312.789-4.848.483-1.521,1.188-2.917,2.117-4.19.928-1.272,2.014-2.369,3.257-3.29,1.258-.965,2.647-1.711,4.168-2.237v-5.375c-2.252.556-4.314,1.459-6.186,2.709s-3.502,2.753-4.892,4.508-2.467,3.711-3.235,5.867c-.767,2.157-1.152,4.442-1.152,6.855s.384,4.698,1.152,6.855c.767,2.157,1.846,4.11,3.235,5.857,1.389,1.748,3.02,3.247,4.892,4.497s3.933,2.162,6.186,2.731v-5.375c-1.521-.526-2.911-1.272-4.168-2.237-1.243-.937-2.329-2.036-3.257-3.301Z\"/>\n</svg>",
+              "tap": {
+                "ref": "foxy.Copy",
+                "popup": false
+              }
+            },
+            {
+              "column": 18,
+              "row": 2,
+              "columnSpan": 4,
+              "rowSpan": 1,
+              "ref": "rime.Home",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "label": "行首"
+              },
+              "weight": 1.55,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\">\n  <path d=\"M15.508,52.714h.021c1.66,0,3.011-1.24,3.011-2.763V16.446c0-1.524-1.35-2.764-3.031-2.764h0c-1.66,0-3.01,1.24-3.01,2.764v33.504c0,1.523,1.35,2.763,3.01,2.763h0Z\"/>\n  <path d=\"M53.02,51.835c1.174-1.172,1.174-3.083.002-4.257l-13.002-13.03c-.741-.743-.741-1.951,0-2.694l13.002-13.029c1.172-1.175,1.17-3.086-.003-4.258-.57-.57-1.324-.883-2.13-.883s-1.562.314-2.131.883l-14.477,14.477c-1.111,1.11-1.722,2.587-1.722,4.157s.611,3.047,1.722,4.157l14.477,14.478c.57.569,1.326.882,2.131.882s1.561-.313,2.131-.883Z\"/>\n</svg>",
+              "tap": {
+                "ref": "rime.Home",
+                "popup": false
+              }
+            },
+            {
+              "column": 22,
+              "row": 0,
+              "columnSpan": 4,
+              "rowSpan": 1,
+              "ref": "foxy.Cut",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "label": "剪切"
+              },
+              "weight": 1.55,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\">\n  <path d=\"M51.901,46.933c-.439,0-.834.059-1.185.176l-1.141-1.163,5.308-5.331v-3.225h-1.645l-6.296,6.318v-.395l-5.923-5.923h-1.645v3.225l5.331,5.331-1.163,1.163c-.336-.117-.73-.176-1.185-.176-1.038,0-1.927.373-2.665,1.119-.739.746-1.108,1.63-1.108,2.654,0,1.038.369,1.927,1.108,2.665.738.739,1.627,1.108,2.665,1.108s1.927-.369,2.666-1.108c.738-.738,1.107-1.627,1.107-2.665,0-.439-.051-.826-.154-1.163l1.163-1.163,1.163,1.163c-.117.336-.176.724-.176,1.163,0,1.038.369,1.927,1.108,2.665.738.739,1.627,1.108,2.665,1.108s1.927-.369,2.666-1.108c.738-.738,1.107-1.627,1.107-2.665,0-1.024-.369-1.908-1.107-2.654-.739-.746-1.628-1.119-2.666-1.119h.001ZM43.061,51.419c-.19.198-.424.297-.702.297s-.512-.099-.702-.297-.285-.435-.285-.713.095-.512.285-.702.424-.285.702-.285.512.095.702.285.285.424.285.702-.095.515-.285.713ZM52.603,51.419c-.19.198-.424.297-.702.297s-.512-.099-.702-.297-.285-.435-.285-.713.095-.512.285-.702.424-.285.702-.285.512.095.702.285.285.424.285.702-.095.515-.285.713Z\"/>\n  <path d=\"M48.918,20.007c1.491,1.513,2.237,3.39,2.237,5.627,0,2.399-1.052,5.052-3.158,7.963,1.652.132,3.18.548,4.584,1.25,2.062-3.174,3.093-6.245,3.093-9.213,0-1.754-.325-3.378-.976-4.87-.651-1.491-1.528-2.797-2.632-3.916-1.105-1.119-2.409-1.996-3.916-2.632s-3.122-.954-4.848-.954c-1.96,0-3.828.42-5.604,1.261-1.777.842-3.28,1.986-4.508,3.433-1.228-1.448-2.727-2.592-4.497-3.433-1.77-.841-3.634-1.261-5.594-1.261-1.726,0-3.342.318-4.848.954s-2.814,1.513-3.927,2.632-1.989,2.425-2.632,3.916-.965,3.115-.965,4.87c0,2.106.464,4.15,1.393,6.131.928,1.983,2.226,4,3.893,6.055,1.667,2.055,3.678,4.187,6.033,6.394,3.261,3.086,6.976,6.508,11.143,10.265l1.535-1.36c-.805-1.55-1.279-3.144-1.426-4.782l-.109.087-.263-.263c-2.662-2.384-5.082-4.603-7.261-6.658-2.179-2.054-4.039-3.985-5.582-5.792-1.544-1.806-2.735-3.532-3.575-5.177-.842-1.645-1.262-3.278-1.262-4.902,0-2.237.746-4.114,2.237-5.627s3.364-2.27,5.616-2.27c1.711,0,3.323.508,4.837,1.524,1.513,1.017,2.562,2.286,3.147,3.807h4.212c.599-1.521,1.656-2.789,3.17-3.807,1.513-1.016,3.126-1.524,4.836-1.524,2.252,0,4.123.757,5.616,2.27h.001Z\"/>\n</svg>",
+              "tap": {
+                "ref": "foxy.Cut",
+                "popup": false
+              }
+            },
+            {
+              "column": 22,
+              "row": 1,
+              "columnSpan": 4,
+              "rowSpan": 1,
+              "ref": "foxy.Paste",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "label": "粘贴"
+              },
+              "weight": 1.55,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\">\n  <path d=\"M59.961,25.15c-1.082-2.486-2.559-4.665-4.431-6.537s-4.058-3.356-6.559-4.453c-2.501-1.038-5.177-1.558-8.029-1.558-2.867,0-5.549.52-8.05,1.558-2.486,1.097-4.669,2.582-6.547,4.453-1.88,1.871-3.36,4.051-4.442,6.537-1.052,2.501-1.58,5.183-1.58,8.05,0,2.852.534,5.527,1.602,8.029s2.542,4.687,4.42,6.559c1.879,1.871,4.061,3.349,6.547,4.431,2.501,1.052,5.183,1.58,8.05,1.58,2.852,0,5.527-.534,8.029-1.602s4.687-2.537,6.559-4.409,3.342-4.058,4.409-6.559,1.602-5.177,1.602-8.029c0-2.867-.526-5.549-1.58-8.05ZM55.201,39.21c-.805,1.871-1.912,3.513-3.323,4.924-1.412,1.412-3.054,2.519-4.925,3.323s-3.876,1.206-6.01,1.206-4.139-.402-6.01-1.206-3.513-1.912-4.924-3.323c-1.412-1.411-2.519-3.052-3.323-4.924-.805-1.871-1.206-3.876-1.206-6.01s.402-4.139,1.206-6.01,1.912-3.513,3.323-4.925c1.411-1.411,3.052-2.519,4.924-3.323,1.871-.805,3.876-1.206,6.01-1.206s4.139.402,6.01,1.206,3.513,1.912,4.925,3.323c1.411,1.412,2.519,3.054,3.323,4.925s1.206,3.876,1.206,6.01-.402,4.139-1.206,6.01Z\"/>\n  <path d=\"M12.898,42.226c-.929-1.264-1.634-2.665-2.117-4.2-.526-1.535-.789-3.144-.789-4.825,0-1.697.263-3.312.789-4.848.483-1.521,1.188-2.917,2.117-4.19.928-1.272,2.019-2.38,3.269-3.323s2.635-1.678,4.156-2.204v-5.375c-2.252.556-4.314,1.459-6.186,2.709s-3.502,2.753-4.892,4.508-2.467,3.711-3.235,5.867c-.767,2.157-1.152,4.442-1.152,6.855s.384,4.698,1.152,6.855c.767,2.157,1.846,4.11,3.235,5.857,1.389,1.748,3.02,3.247,4.892,4.497s3.933,2.162,6.186,2.731v-5.375c-1.521-.526-2.906-1.265-4.156-2.215-1.25-.95-2.341-2.059-3.269-3.323Z\"/>\n  <path d=\"M45.846,24.744c-1.485-.884-3.127-1.326-4.925-1.326s-3.437.442-4.914,1.326c-1.477.885-2.654,2.067-3.532,3.543-.878,1.477-1.317,3.115-1.317,4.914s.439,3.437,1.317,4.914c.878,1.477,2.055,2.654,3.532,3.532s3.115,1.317,4.914,1.317,3.44-.439,4.925-1.317c1.484-.878,2.665-2.055,3.543-3.532s1.317-3.115,1.317-4.914-.439-3.437-1.317-4.914c-.878-1.477-2.059-2.657-3.543-3.543Z\"/>\n</svg>",
+              "tap": {
+                "ref": "foxy.Paste",
+                "popup": false
+              }
+            },
+            {
+              "column": 22,
+              "row": 2,
+              "columnSpan": 4,
+              "rowSpan": 1,
+              "ref": "rime.End",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "label": "行尾"
+              },
+              "weight": 1.55,
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 66.4 66.4\" fill=\"currentColor\">\n  <path d=\"M50.891,52.714h0c1.66,0,3.01-1.24,3.01-2.763V16.446c0-1.524-1.35-2.764-3.01-2.764h0c-1.682,0-3.031,1.24-3.031,2.764v33.504c0,1.523,1.351,2.763,3.011,2.763h.021,0Z\"/>\n  <path d=\"M15.51,52.718c.805,0,1.561-.313,2.131-.882l14.477-14.478c1.111-1.11,1.722-2.585,1.722-4.157,0-1.569-.611-3.047-1.722-4.157l-14.477-14.477c-.569-.569-1.325-.883-2.131-.883s-1.56.313-2.13.883c-1.173,1.173-1.175,3.084-.003,4.258l13.002,13.029c.741.743.741,1.951,0,2.694l-13.002,13.03c-1.172,1.175-1.172,3.086.002,4.257.57.57,1.326.883,2.131.883Z\"/>\n</svg>",
+              "tap": {
+                "ref": "rime.End",
+                "popup": false
+              }
+            },
+            {
+              "column": 0,
+              "row": 3,
+              "columnSpan": 6,
+              "rowSpan": 1,
+              "ref": "foxy.LayoutDefault",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "label": "ABC"
+              },
+              "tap": {
+                "ref": "foxy.LayoutDefault",
+                "popup": false
+              }
+            },
+            {
+              "column": 6,
+              "row": 3,
+              "columnSpan": 6,
+              "rowSpan": 1,
+              "ref": "qwerty.space",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "label": "空格"
+              },
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M36,20v2.4538c0,1.9585-1.5877,3.5462-3.5462,3.5462H15.5462c-1.9585,0-3.5462-1.5877-3.5462-3.5462v-2.4538c0-1.1046-.8954-2-2-2h0c-1.1046,0-2,.8954-2,2v3.0367c0,3.8457,3.1176,6.9633,6.9633,6.9633h18.0734c3.8457,0,6.9633-3.1176,6.9633-6.9633v-3.0367c0-1.1046-.8954-2-2-2h0c-1.1046,0-2,.8954-2,2Z\"/>\n</svg>"
+            },
+            {
+              "column": 12,
+              "row": 3,
+              "columnSpan": 6,
+              "rowSpan": 1,
+              "ref": "rime.BackSpace",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FFCBCED5",
+                  "text": "#FF4C4B50"
+                },
+                "drag": {
+                  "popup": false,
+                  "left": {
+                    "action": {
+                      "type": "app",
+                      "command": "editor_select_step",
+                      "argument": "left"
+                    }
+                  },
+                  "right": {
+                    "action": {
+                      "type": "app",
+                      "command": "editor_select_step",
+                      "argument": "right"
+                    }
+                  },
+                  "end": {
+                    "action": {
+                      "type": "app",
+                      "command": "delete_selection"
+                    }
+                  }
+                },
+                "label": "退格"
+              },
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M37.8,7.6h-20.8c-3.1,0-5.9,1.5-7.6,4.1l-5.2,7.9c-1.8,2.7-1.8,6.2,0,8.9l5.2,7.9c1.7,2.6,4.5,4.1,7.6,4.1h20.8c4,0,7.3-3.3,7.3-7.3V14.9c0-4-3.3-7.3-7.3-7.3ZM41.4,33.1c0,2-1.6,3.6-3.6,3.6h-20.8c-1.8,0-3.5-.9-4.5-2.4l-5.2-7.9c-1-1.5-1-3.4,0-4.9l5.2-7.9c1-1.5,2.7-2.4,4.5-2.4h20.8c2,0,3.6,1.6,3.6,3.6v18.3Z\"/>\n  <path d=\"M33.9,18.6c0-.6-.3-1.1-.8-1.5-.3-.2-.7-.4-1.1-.4s-1.2.2-1.6.7l-3.8,3.8-3.8-3.8c-.4-.4-1-.7-1.6-.7s-.8.1-1.1.4c-.5.4-.8.9-.8,1.5,0,.6.2,1.1.6,1.6l3.9,3.9-3.8,3.8c-.8.8-.9,1.9-.3,2.7.4.5,1,.8,1.6.8s1-.2,1.4-.6l3.9-3.9,3.8,3.8c.4.4,1,.7,1.6.7.4,0,.8-.1,1.1-.4.5-.4.8-.9.8-1.5,0-.6-.2-1.1-.6-1.6l-3.9-3.9,3.9-3.9c.4-.4.6-1,.6-1.6Z\"/>\n</svg>",
+              "tap": {
+                "ref": "rime.BackSpace",
+                "popup": false
+              }
+            },
+            {
+              "column": 18,
+              "row": 3,
+              "columnSpan": 8,
+              "rowSpan": 1,
+              "ref": "rime.Return",
+              "override": {
+                "keyType": "FUNCTION",
+                "colors": {
+                  "background": "#FF073B97",
+                  "text": "#FFFFFFFF"
+                },
+                "label": "回车"
+              },
+              "icon": "svg:<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" fill=\"currentColor\">\n  <path d=\"M35.3,8.2h-8.4c-.4,0-.8.2-1.2.4-.5.3-.8.9-.8,1.5,0,1,.8,1.8,1.8,1.8h8.5c2,0,3.6,1.6,3.6,3.6v8.5c0,2-1.6,3.6-3.6,3.6H11.8l5.2-5.2c.6-.6.8-1.7.3-2.4-.7-.9-2-1-2.8-.2l-8.4,8.4c-.7.7-.7,1.9,0,2.6l8.3,8.3c.6.6,1.7.8,2.4.3.9-.7,1-2,.2-2.8l-5.2-5.3h23.5c4,0,7.3-3.3,7.3-7.3v-8.5c0-4-3.3-7.3-7.3-7.3Z\"/>\n</svg>",
+              "tap": {
+                "ref": "rime.Return",
+                "popup": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "actions": {},
+  "macros": {
+    "select_all_copy": [
+      {
+        "type": "key",
+        "key": "A",
+        "meta": [
+          "CTRL"
+        ]
+      },
+      {
+        "type": "key",
+        "key": "C",
+        "meta": [
+          "CTRL"
+        ]
+      }
+    ],
+    "select_all_cut": [
+      {
+        "type": "key",
+        "key": "A",
+        "meta": [
+          "CTRL"
+        ]
+      },
+      {
+        "type": "key",
+        "key": "X",
+        "meta": [
+          "CTRL"
+        ]
+      }
+    ],
+    "select_all_clear": [
+      {
+        "type": "key",
+        "key": "A",
+        "meta": [
+          "CTRL"
+        ]
+      },
+      {
+        "type": "key",
+        "key": "BACKSPACE"
+      }
+    ]
+  }
+}
